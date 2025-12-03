@@ -63,7 +63,6 @@
             font-size: 1.1rem; line-height: 1.6; color: #afbac8;
         }
 
-
         nav {
             position: sticky; top: 0; z-index: 100; background: rgba(15,23,42,0.9); backdrop-filter: blur(15px);
             padding: 20px 0; border-bottom: 1px solid rgba(59,130,246,0.3);
@@ -73,16 +72,15 @@
         nav a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -10px; left: 50%; background: var(--accent); transition: 0.4s; }
         nav a:hover { color: var(--accent); }
         nav a:hover::after { width: 100%; left: 0; }
+
         .avatar {
-            width: 180px; 
+            width: 180px;
             border-radius: 50%;
             opacity: 0;
             transition: opacity 0.6s ease-in-out;
         }
+        .avatar.loaded { opacity: 1; }
 
-        .avatar.loaded {
-            opacity: 1;
-        }
         main { flex: 1; }
         section { padding: 50px 40px; max-width: 1500px; margin: 0 auto; }
         h3 { text-align: center; font-size: 2.5rem; margin-bottom: 70px; color: var(--accent); font-weight: 600; }
@@ -106,122 +104,50 @@
         .card li::before { content: '>'; color: var(--accent); font-weight: bold; margin-right: 12px; }
 
         /* Timeline */
-        .timeline {
-            max-width: 800px; margin: 0 auto; position: relative; padding-left: 40px;
-        }
-        .timeline::before {
-            content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 3px; background: var(--accent); opacity: 0.4;
-        }
-        .timeline-item {
-            position: relative; margin-bottom: 60px; padding-left: 40px;
-        }
-        .timeline-item::before {
-            content: ''; position: absolute; left: -8px; top: 8px; width: 16px; height: 16px;
-            background: var(--accent); border-radius: 50%; border: 4px solid var(--marine-light);
-        }
+        .timeline { max-width: 800px; margin: 0 auto; position: relative; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 3px; background: var(--accent); opacity: 0.4; }
+        .timeline-item { position: relative; margin-bottom: 60px; padding-left: 40px; }
+        .timeline-item::before { content: ''; position: absolute; left: -8px; top: 8px; width: 16px; height: 16px; background: var(--accent); border-radius: 50%; border: 4px solid var(--marine-light); }
         .timeline-item h4 { color: var(--accent); font-size: 1.1rem; margin-bottom: 10px; }
         .timeline-item p { color: var(--text-light); font-size: 1.1rem; line-height: 1.7; }
 
         /* Centres d'intérêt */
-        .interests {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px;
-            max-width: 1400px; margin: 0 auto;
-        }
-        .interest-card {
-            background: var(--card); border-radius: 20px; padding: 32px 24px; text-align: center;
-            border: 1px solid rgba(59,130,246,0.2); transition: all 0.4s ease;
-        }
-        .interest-card:hover {
-            transform: translateY(-12px); border-color: var(--accent);
-            box-shadow: 0 25px 50px rgba(59,130,246,0.25);
-        }
+        .interests { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; max-width: 1400px; margin: 0 auto; }
+        .interest-card { background: var(--card); border-radius: 20px; padding: 32px 24px; text-align: center; border: 1px solid rgba(59,130,246,0.2); transition: all 0.4s ease; }
+        .interest-card:hover { transform: translateY(-12px); border-color: var(--accent); box-shadow: 0 25px 50px rgba(59,130,246,0.25); }
         .interest-card h4 { margin-top: 16px; color: var(--box-name); font-size: 1.3rem; }
 
-        /* === PROJETS : FLÈCHE TOUJOURS VISIBLE === */
-        .projects-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-            gap: 35px; 
-        }
+        /* PROJETS – FLÈCHE TOUJOURS VISIBLE */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; }
         .project-card {
-            background: var(--card);
-            border-radius: 24px;
-            overflow: hidden;
-            cursor: pointer;
-            border: 1px solid rgba(59,130,246,0.2);
-            transition: all 0.5s ease;
-            position: relative;
+            background: var(--card); border-radius: 24px; overflow: hidden; cursor: pointer;
+            border: 1px solid rgba(59,130,246,0.2); transition: all 0.5s ease; position: relative;
             padding: 30px 30px 70px 30px;
         }
-        .project-card:hover {
-            transform: translateY(-15px);
-            border-color: var(--accent);
-            box-shadow: 0 25px 50px rgba(59,130,246,0.25);
-        }
-        .project-card h4 { 
-            font-size: 1.45rem; 
-            color: var(--box-name); 
-            margin-bottom: 12px;
-        }
-        .project-card p { 
-            color: var(--text-light); 
-            font-size: 0.98rem; 
-            margin-bottom: 20px;
-        }
+        .project-card:hover { transform: translateY(-15px); border-color: var(--accent); box-shadow: 0 25px 50px rgba(59,130,246,0.25); }
+        .project-card h4 { font-size: 1.45rem; color: var(--box-name); margin-bottom: 12px; }
+        .project-card p { color: var(--text-light); font-size: 0.98rem; margin-bottom: 20px; }
 
-        /* Flèche + texte toujours visibles */
         .project-card::after {
             content: "Cliquez pour voir les détails";
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.9rem;
-            color: var(--accent);
-            font-weight: 500;
-            opacity: 0.9;
+            position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+            font-size: 0.9rem; color: var(--accent); font-weight: 500; opacity: 0.9;
         }
         .project-card::before {
-            content: "";
-            position: absolute;
-            bottom: 22px;
-            left: calc(50% + 80px);
-            width: 10px;
-            height: 10px;
-            border-top: 2.5px solid var(--accent);
-            border-right: 2.5px solid var(--accent);
-            transform: rotate(45deg);
-            opacity: 0.9;
+            content: ""; position: absolute; bottom: 22px; left: calc(50% + 80px);
+            width: 10px; height: 10px;
+            border-top: 2.5px solid var(--accent); border-right: 2.5px solid var(--accent);
+            transform: rotate(45deg); opacity: 0.9;
         }
+        .project-card:hover::before { animation: bounce 1.5s infinite; }
+        @keyframes bounce { 0%,100%{transform: translateX(0) rotate(45deg)} 50%{transform: translateX(6px) rotate(45deg)} }
 
-        /* Petite animation au hover */
-        .project-card:hover::before {
-            animation: bounce 1.5s infinite;
-        }
-        @keyframes bounce {
-            0%, 100% { transform: translateX(0) rotate(45deg); }
-            50% { transform: translateX(6px) rotate(45deg); }
-        }
-
-        .modal { 
-            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
-            background: rgba(0,0,0,0.95); justify-content: center; align-items: center; 
-            z-index: 9999; backdrop-filter: blur(12px); 
-        }
-        .modal-content {
-            background: #1e293b; padding: 50px; border-radius: 28px; max-width: 800px; width: 90%;
-            max-height: 90vh; overflow-y: auto; border: 2px solid var(--accent); position: relative;
-            box-shadow: 0 20px 80px rgba(59,130,246,0.4);
-        }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); justify-content: center; align-items: center; z-index: 9999; backdrop-filter: blur(12px); }
+        .modal-content { background: #1e293b; padding: 50px; border-radius: 28px; max-width: 800px; width: 90%; max-height: 90vh; overflow-y: auto; border: 2px solid var(--accent); position: relative; box-shadow: 0 20px 80px rgba(59,130,246,0.4); }
         .close { position: absolute; top: 20px; right: 25px; font-size: 2.5rem; color: var(--accent); cursor: pointer; }
         .close:hover { transform: scale(1.2); }
 
-        footer {
-            padding: 70px 20px 40px;
-            text-align: center;
-            background: rgba(15, 23, 42, 0.95);
-            border-top: 1px solid rgba(59,130,246,0.3);
-        }
+        footer { padding: 70px 20px 40px; text-align: center; background: rgba(15, 23, 42, 0.95); border-top: 1px solid rgba(59,130,246,0.3); }
         footer a { color: var(--accent); text-decoration: none; font-weight: 600; margin: 0 12px; }
         footer p { margin: 20px 0 10px; font-size: 1.2rem; line-height: 2; }
         footer .copyright { margin-top: 30px; font-size: 0.95rem; color: var(--text-light); }
@@ -264,9 +190,8 @@
 <main>
     <section class="about" style="padding-top: 50px;">
         <div class="about">
-            J’apprends vite, je suis rigoureuse, curieuse et surtout j'ai soif d'apprendre :) <br><br>
+            J’apprends vite, je suis rigoureuse, curieuse et surtout j'ai soif d'apprendre :)<br><br>
             Ce qui me motive : contribuer à des projets à fort impact, où la technologie peut réellement améliorer les choses… et éviter de créer un énième bug<br><br>
-
             Mon objectif : évoluer comme développeuse polyvalente, toujours en progrès, toujours en quête de solutions plus efficaces et plus utiles… avec un minimum de caféine et beaucoup de plaisir
         </div>
     </section>
@@ -374,88 +299,83 @@
 
 <footer id="contact">
     <p>
-        <a href="https://www.linkedin.com/in/soraya-codo-537b7b195" target="_blank">LinkedIn</a> • 
-        <a href="https://github.com/soraya-21" target="_blank">GitHub</a> • 
+        <a href="https://www.linkedin.com/in/soraya-codo-537b7b195" target="_blank">LinkedIn</a> •
+        <a href="https://github.com/soraya-21" target="_blank">GitHub</a> •
         <a href="https://gitlab.com/Soraya_Anais" target="_blank">GitLab</a>
     </p>
     <p><a href="mailto:sorayacodo4@gmail.com">sorayacodo4@gmail.com</a></p>
     <div class="copyright">© 2025 Soraya Codo – Portfolio personnel</div>
 </footer>
 
-<!-- Modal -->
+<!-- Modal SANS images -->
 <div id="modal-template" class="modal">
     <div class="modal-content">
         <span class="close">×</span>
         <h3 class="modal-title"></h3>
-        <div class="modal-images"></div>
-        <p class="modal-desc"></p>
-        <p class="modal-tech"></p>
+        <p class="modal-desc" style="margin: 30px 0; font-size: 1.1rem; line-height: 1.7;"></p>
+        <p class="modal-tech" style="color: var(--accent); font-weight: 600;"></p>
     </div>
 </div>
 
 <script>
+// Avatar aléatoire
 const avatars = [
     "./assets/images/avatar_soraya_blue_1_portfolio.png",
     "./assets/images/avatar_soraya_blue_2_portfolio.png",
     "./assets/images/avatar_soraya_blue_portfolio.png",
     "./assets/images/avatar_soraya_portfolio.png"
 ];
-
 const imgAvatar = document.getElementById("profile-avatar");
 const randomAvatar = avatars[Math.floor(Math.random() * avatars.length)];
-
 imgAvatar.onload = () => imgAvatar.classList.add("loaded");
 imgAvatar.src = randomAvatar;
-</script>
 
-<script>
-// Particules animées
+// Particules
 const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth; canvas.height = window.innerHeight;
 let particles = []; const num = 120;
-
 class Particle {
-    constructor() { 
-        this.x = Math.random() * canvas.width; 
+    constructor() {
+        this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2.5 + 0.8; 
-        this.speedX = Math.random() * 0.6 - 0.3; 
-        this.speedY = Math.random() * 0.6 - 0.3; 
+        this.size = Math.random() * 2.5 + 0.8;
+        this.speedX = Math.random() * 0.6 - 0.3;
+        this.speedY = Math.random() * 0.6 - 0.3;
     }
-    update() { 
+    update() {
         this.x += this.speedX; this.y += this.speedY;
         if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
-        if (this.y > canvas.height || this.y < 0) this.speedY *= -1; 
+        if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
     }
-    draw() { 
-        ctx.fillStyle = 'rgba(59, 130, 246, 0.8)'; 
-        ctx.beginPath(); 
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); 
-        ctx.fill(); 
+    draw() {
+        ctx.fillStyle = 'rgba(59, 130, 246, 0.8)';
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
     }
 }
 function init() { particles = []; for (let i = 0; i < num; i++) particles.push(new Particle()); }
 init();
-function animate() { 
+function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => { p.update(); p.draw(); }); 
-    requestAnimationFrame(animate); 
+    particles.forEach(p => { p.update(); p.draw(); });
+    requestAnimationFrame(animate);
 }
 animate();
 window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; init(); });
 
-// Projets avec modals
+// Projets SANS images
 const projects = [
-    { title: "AREA – Automatisation & Interconnexions", short: "Plateforme type IFTTT avec Node, React, Docker.", desc: "Plateforme type IFTTT permettant d'automatiser des actions entre services (API, triggers, tasks, webhooks).", tech: "Node, React, Docker, API, Webhooks", images: ["https://via.placeholder.com/800x450/1e293b/3b82f6?text=AREA"] },
-    { title: "Radiant – Analyse IA du comportement utilisateur", short: "Analyse de logs et interactions web basées IA.", desc: "Analyse de logs, détection d’anomalies et optimisation des interactions web basées IA.", tech: "Python, IA, Data Analysis, Logs", images: ["https://via.placeholder.com/800x450/1e293b/3b82f6?text=Radiant"] },
-    { title: "Analyse Bitcoin & Ethereum", short: "Pipeline data complet et analyses ML.", desc: "Scraping, nettoyage, analyses statistiques, prédictions machine learning, visualisations.", tech: "Python, Pandas, NumPy, ML, DataViz", images: ["https://via.placeholder.com/800x450/1e293b/3b82f6?text=Crypto"] },
-    { title: "PowerBI", short: "Dashboards Power BI + DAX + SQL + Python.", desc: "Dashboards Power BI de monitoring d'activités commerciales", tech: "Power BI, Python, SQL, DAX", images: ["https://via.placeholder.com/800x450/1e293b/3b82f6?text=PowerBI"] },
-    { title: "E-learning", short: "Formation en ligne sur les basiques du développement web.", desc: "Plateforme interactive pour apprendre les fondamentaux du développement web, avec exercices et suivi personnalisé.", tech: "Python, IA, Image Processing, ML", images: ["https://via.placeholder.com/800x450/1e293b/3b82f6?text=AgriSense"] },
-    { title: "Geo-Monitoring", short: "Surveillance géospatiale et alertes automatisées.", desc: "Plateforme de monitoring géographique en temps réel et suivi détaillé de chaque produit dans toutes les zones surveillées", tech: "Python, IA, Géospatiale, Automation", images: ["https://via.placeholder.com/800x450/1e293b/3b82f6?text=GeoMonitoring"] },
-    { title: "Chatbot Python + MongoDB", short: "Chatbot intelligent avec mémoire de contexte.", desc: "Chatbot avec mémoire de contexte, recherche produit, synonymes d’intention et autocorrection.", tech: "Python, MongoDB, NLP, Context Memory", images: ["https://via.placeholder.com/800x450/1e293b/3b82f6?text=Chatbot"] },
-    { title: "Scraping", short: "Scraper automatisé basé sur différentes sources.", desc: "Récupération automatisée d’informations.", tech: "Python, Scraping, Automation", images: ["https://via.placeholder.com/800x450/1e293b/3b82f6?text=Mairies"] },
-    { title: "Export PDF Cartes d'identité – Django", short: "Génération automatique de cartes format bancaire en PDF.", desc: "Génération automatisée de PDFs avec photo, QR code, informations administratives.", tech: "Python, Django, PDF, QR Code", images: ["https://via.placeholder.com/800x450/1e293b/3b82f6?text=PDF+ID"] }
+    { title: "AREA – Automatisation & Interconnexions", short: "Plateforme type IFTTT avec Node, React, Docker.", desc: "Plateforme type IFTTT permettant d'automatiser des actions entre services (API, periodic tasks, webhooks).", tech: "Node, React, Docker, API, Webhooks, SMTP, OAUTH" },
+    { title: "Radiant – Conseils personnalisés & recommandations produits", short: "Interactions web basées IA.", desc: "Collecte d'informations utilisateur et génération de conseils personnalisés avec recommandations de produits en stock.", tech: "Python, OpenApi, ReactJs" },
+    { title: "Analyse Bitcoin & Ethereum", short: "Pipeline data complet et analyses ML.", desc: "Scraping, nettoyage, analyses statistiques, visualisations.", tech: "Python, Pandas, NumPy, plotly" },
+    { title: "PowerBI", short: "Dashboards Power BI + DAX + SQL + Python.", desc: "Dashboards Power BI de monitoring d'activités commerciales", tech: "Power BI, Python, SQL, DAX" },
+    { title: "E-learning", short: "Formation en ligne sur les basiques du développement web.", desc: "Plateforme interactive pour apprendre les fondamentaux du développement web, avec exercices et suivi personnalisé.", tech: "Python, HTML/CSS/JS, SMTP" },
+    { title: "Geo-Monitoring", short: "Cartographie et suivi géographique des produits surveillés.", desc: "Plateforme de monitoring géographique en temps réel et suivi détaillé de chaque produit dans toutes les zones surveillées", tech: "Python, Django, Celery" },
+    { title: "Chatbot Python + MongoDB", short: "Chatbot intelligent avec mémoire de contexte.", desc: "Chatbot avec mémoire de contexte, recherche produit, synonymes d’intention et autocorrection.", tech: "Python, MongoDB, NLP, Context Memory" },
+    { title: "Scraping", short: "Scraper automatisé basé sur différentes sources.", desc: "Récupération automatisée d’informations.", tech: "Python, Scraping, Automation" },
+    { title: "Export PDF Cartes d'identité – Django", short: "Génération automatique de cartes format bancaire en PDF.", desc: "Génération automatisée de PDFs avec photo, QR code, informations administratives.", tech: "Python, Django, PDF, QR Code" }
 ];
 
 const container = document.getElementById('projects-container');
@@ -468,22 +388,11 @@ projects.forEach(proj => {
     container.appendChild(card);
 
     const modal = modalTemplate.cloneNode(true);
-    modal.id = ''; 
+    modal.id = '';
     modal.style.display = 'none';
     modal.querySelector('.modal-title').textContent = proj.title;
     modal.querySelector('.modal-desc').textContent = proj.desc;
-    modal.querySelector('.modal-tech').innerHTML = `<strong style="color:var(--accent)">Technologies :</strong> ${proj.tech}`;
-
-    const imagesDiv = modal.querySelector('.modal-images');
-    proj.images.forEach(src => {
-        const img = document.createElement('img');
-        img.src = src; 
-        img.alt = proj.title;
-        img.style.cssText = 'width:100%; border-radius:16px; margin:12px 0; transition:0.3s;';
-        img.onmouseover = () => img.style.transform = 'scale(1.03)';
-        img.onmouseout = () => img.style.transform = 'scale(1)';
-        imagesDiv.appendChild(img);
-    });
+    modal.querySelector('.modal-tech').textContent = 'Technologies : ' + proj.tech;
 
     document.body.appendChild(modal);
 
@@ -492,6 +401,5 @@ projects.forEach(proj => {
     modal.onclick = e => { if (e.target === modal) modal.style.display = 'none'; };
 });
 </script>
-
 </body>
 </html>
