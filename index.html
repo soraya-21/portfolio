@@ -312,6 +312,7 @@
     <div class="modal-content">
         <span class="close">×</span>
         <h3 class="modal-title"></h3>
+        <div class="modal-images" style="margin: 20px 0;"></div>
         <p class="modal-desc" style="margin: 30px 0; font-size: 1.1rem; line-height: 1.7;"></p>
         <p class="modal-tech" style="color: var(--accent); font-weight: 600;"></p>
     </div>
@@ -367,6 +368,7 @@ window.addEventListener('resize', () => { canvas.width = window.innerWidth; canv
 
 // Projets SANS images
 const projects = [
+    { title: "Champions League Stats", short: "Analyse et comparaisons des stats des joueurs par équipe, pays, league...", desc: "Analyse détaillée des performances des joueurs et équipes en Ligue des Champions, avec visualisations et comparaisons avancées.", tech: "Python, Pandas, NumPy, plotly, streamlit", images: ["./assets/images/champiosn_league_4.png", "./assets/images/champiosn_league_2.png"] },
     { title: "AREA – Automatisation & Interconnexions", short: "Plateforme type IFTTT avec Node, React, Docker.", desc: "Plateforme type IFTTT permettant d'automatiser des actions entre services (API, periodic tasks, webhooks).", tech: "Node, React, Docker, API, Webhooks, SMTP, OAUTH" },
     { title: "Radiant – Conseils personnalisés & recommandations produits", short: "Interactions web basées IA.", desc: "Collecte d'informations utilisateur et génération de conseils personnalisés avec recommandations de produits en stock.", tech: "Python, OpenApi, ReactJs" },
     { title: "Analyse Bitcoin & Ethereum", short: "Pipeline data complet et analyses ML.", desc: "Scraping, nettoyage, analyses statistiques, visualisations.", tech: "Python, Pandas, NumPy, plotly" },
@@ -393,6 +395,26 @@ projects.forEach(proj => {
     modal.querySelector('.modal-title').textContent = proj.title;
     modal.querySelector('.modal-desc').textContent = proj.desc;
     modal.querySelector('.modal-tech').textContent = 'Technologies : ' + proj.tech;
+    
+    const imagesDiv = modal.querySelector('.modal-images');
+
+    // 🔥 Si le projet contient des images → on les affiche
+    if (proj.images && proj.images.length > 0) {
+        proj.images.forEach(src => {
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = proj.title;
+            img.style.cssText =
+                'width:100%; border-radius:16px; margin:12px 0; transition:0.3s;';
+            img.onmouseover = () => img.style.transform = 'scale(1.03)';
+            img.onmouseout = () => img.style.transform = 'scale(1)';
+            imagesDiv.appendChild(img);
+        });
+    } 
+    // ❌ Sinon → on cache la zone d’images
+    else {
+        imagesDiv.style.display = "none";
+    }
 
     document.body.appendChild(modal);
 
