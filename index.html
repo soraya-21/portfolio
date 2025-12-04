@@ -202,12 +202,13 @@
             <div class="card">
                 <h4>Langages & Frameworks</h4>
                 <ul>
+                    <li><strong>C</strong> / <strong>C++</strong></li>
                     <li><strong>Python</strong> – backend, IA, scripts, automatisation</li>
                     <li><strong>Django</strong> + <strong>Django REST Framework</strong></li>
                     <li><strong>JavaScript</strong> / <strong>Node.js</strong></li>
-                    <li><strong>React</strong> (frontend moderne)</li>
-                    <li>SQL & DAX (Power BI)</li>
-                    <li>HTML / CSS (responsive & animations)</li>
+                    <li><strong>ReactJs</strong></li>
+                    <li><strong>SQL & DAX (Power BI)</strong></li>
+                    <li><strong>HTML</strong> / <strong>CSS</strong></li>
                     <li><strong>Docker</strong> – conteneurisation</li>
                 </ul>
             </div>
@@ -289,10 +290,26 @@
     <section id="interests">
         <h3>Centres d’intérêt</h3>
         <div class="interests">
-            <div class="interest-card"><h4>Nature</h4></div>
-            <div class="interest-card"><h4>Psychologie et santé mentale</h4></div>
-            <div class="interest-card"><h4>Histoire</h4></div>
-            <div class="interest-card"><h4>Musique</h4></div>
+            <div class="interest-card">
+                <h4>Nature</h4>
+                <p>Découvertes de nouveaux paysages et l'impact sur l'être humain</p>
+            </div>
+            <div class="interest-card">
+                <h4>Psychologie et santé mentale</h4>
+                <p>Comprendre les comportements humains et promouvoir le bien-être</p>
+            </div>
+            <div class="interest-card">
+                <h4>Histoire</h4>
+                <p>Civilisations passées et leurs influences sur le présent</p>
+            </div>
+            <div class="interest-card">
+                <h4>Musique</h4>
+                <p>Écoute variée et découverte de nouveaux genres avec une préférence pour le Soul, le RnB, le Rap…</p>
+            </div>
+            <div class="interest-card">
+                <h4>Lecture</h4>
+                <p>Exploration de divers genres littéraires et développement personnel (Paulo Coelho, Lise Bourbeau, Mark Manson…)</p>
+            </div>
         </div>
     </section>
 </main>
@@ -307,7 +324,7 @@
     <div class="copyright">© 2025 Soraya Codo – Portfolio personnel</div>
 </footer>
 
-<!-- Modal SANS images -->
+<!-- Modal -->
 <div id="modal-template" class="modal">
     <div class="modal-content">
         <span class="close">×</span>
@@ -399,7 +416,7 @@ projects.forEach(proj => {
     
     const imagesDiv = modal.querySelector('.modal-images');
 
-    // 🔥 Si le projet contient des images → on les affiche
+    // Si le projet contient des images on les affiche
     if (proj.images && proj.images.length > 0) {
         proj.images.forEach(src => {
             const img = document.createElement('img');
@@ -412,7 +429,7 @@ projects.forEach(proj => {
             imagesDiv.appendChild(img);
         });
     } 
-    // ❌ Sinon → on cache la zone d’images
+    // Sinon on cache la zone d’images
     else {
         imagesDiv.style.display = "none";
     }
