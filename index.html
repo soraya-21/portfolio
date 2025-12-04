@@ -366,17 +366,18 @@ function animate() {
 animate();
 window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; init(); });
 
-// Projets SANS images
+// Projets
 const projects = [
     { title: "Champions League Stats", short: "Analyse et comparaisons des stats des joueurs par équipe, pays, league...", desc: "Analyse détaillée des performances des joueurs et équipes en Ligue des Champions, avec visualisations et comparaisons avancées.", tech: "Python, Pandas, NumPy, plotly, streamlit", images: ["./assets/images/champiosn_league_4.png", "./assets/images/champiosn_league_2.png"] },
     { title: "AREA – Automatisation & Interconnexions", short: "Plateforme type IFTTT avec Node, React, Docker.", desc: "Plateforme type IFTTT permettant d'automatiser des actions entre services (API, periodic tasks, webhooks).", tech: "Node, React, Docker, API, Webhooks, SMTP, OAUTH" },
     { title: "Radiant – Conseils personnalisés & recommandations produits", short: "Interactions web basées IA.", desc: "Collecte d'informations utilisateur et génération de conseils personnalisés avec recommandations de produits en stock.", tech: "Python, OpenApi, ReactJs" },
+    { title: "Dashboard Temps Réel – NASA APOD + Météo", short: "Tableau de bord interactif affichant la météo en direct et l’image NASA du jour.", desc: "Dashboard dynamique affichant la météo en temps réel (API OpenWeatherMap) et l’image astronomique du jour (NASA APOD). Données rafraîchies automatiquement, composants réactifs et gestion des erreurs réseau.", tech: "NodeJs, API NASA, OpenWeatherMap, docker"},
     { title: "Analyse Bitcoin & Ethereum", short: "Pipeline data complet et analyses ML.", desc: "Scraping, nettoyage, analyses statistiques, visualisations.", tech: "Python, Pandas, NumPy, plotly" },
     { title: "PowerBI", short: "Dashboards Power BI + DAX + SQL + Python.", desc: "Dashboards Power BI de monitoring d'activités commerciales", tech: "Power BI, Python, SQL, DAX" },
     { title: "E-learning", short: "Formation en ligne sur les basiques du développement web.", desc: "Plateforme interactive pour apprendre les fondamentaux du développement web, avec exercices et suivi personnalisé.", tech: "Python, HTML/CSS/JS, SMTP" },
     { title: "Geo-Monitoring", short: "Cartographie et suivi géographique des produits surveillés.", desc: "Plateforme de monitoring géographique en temps réel et suivi détaillé de chaque produit dans toutes les zones surveillées", tech: "Python, Django, Celery" },
-    { title: "Chatbot Python + MongoDB", short: "Chatbot intelligent avec mémoire de contexte.", desc: "Chatbot avec mémoire de contexte, recherche produit, synonymes d’intention et autocorrection.", tech: "Python, MongoDB, NLP, Context Memory" },
-    { title: "Scraping", short: "Scraper automatisé basé sur différentes sources.", desc: "Récupération automatisée d’informations.", tech: "Python, Scraping, Automation" },
+    { title: "Chatbot Python + MongoDB", short: "Chatbot intelligent avec mémoire de contexte.", desc: "Chatbot avec mémoire de contexte, recherche produit, synonymes d’intention et autocorrection.", tech: "Python, MongoDB, NLP" },
+    { title: "Scraping", short: "Scraper automatisé basé sur différentes sources.", desc: "Récupération automatisée d’informations.", tech: "Python, Scraping" },
     { title: "Export PDF Cartes d'identité – Django", short: "Génération automatique de cartes format bancaire en PDF.", desc: "Génération automatisée de PDFs avec photo, QR code, informations administratives.", tech: "Python, Django, PDF, QR Code" }
 ];
 
