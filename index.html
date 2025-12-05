@@ -85,25 +85,62 @@
         section { padding: 50px 40px; max-width: 1500px; margin: 0 auto; }
         h3 { text-align: center; font-size: 2.5rem; margin-bottom: 70px; color: var(--accent); font-weight: 600; }
 
+        /* === SECTION CV === */
+        #cv { text-align: center; padding: 60px 40px; }
+        .cv-buttons {
+            display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; margin: 50px 0;
+        }
+        .btn {
+            display: inline-flex; align-items: center; gap: 14px; padding: 18px 36px; border-radius: 60px;
+            font-weight: 600; font-size: 1.15rem; text-decoration: none; transition: all 0.4s ease;
+            box-shadow: 0 12px 35px rgba(75,130,197,0.4);
+        }
+        .btn-preview {
+            background: transparent; color: var(--accent); border: 2.5px solid var(--accent);
+        }
+        .btn-preview:hover {
+            background: var(--accent); color: white; transform: translateY(-6px);
+            box-shadow: 0 18px 50px rgba(75,130,197,0.6);
+        }
+        .btn-download {
+            background: var(--accent); color: white;
+        }
+        .btn-download:hover {
+            background: var(--accent-hover); transform: translateY(-6px);
+            box-shadow: 0 18px 50px rgba(96,165,250,0.6);
+        }
+        .btn svg { width: 26px; height: 26px; }
+
+        /* Popup CV */
+        #cv-popup {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95); z-index: 9999; justify-content: center; align-items: center;
+            backdrop-filter: blur(15px);
+        }
+        #cv-popup.active { display: flex; }
+        .cv-content {
+            background: white; width: 100%; max-width: 1000px; height: 900px; border-radius: 24px;
+            overflow: hidden; box-shadow: 0 40px 120px rgba(0,0,0,0.8);
+        }
+        .cv-content iframe {
+            width: 100%; height: 100%; border: none;
+        }
+        .cv-close {
+            position: absolute; top: 18px; right: 22px; background: rgba(0,0,0,0.7); color: white;
+            width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; cursor: pointer; z-index: 10; transition: 0.3s;
+        }
+        .cv-close:hover { background: rgba(0,0,0,0.9); transform: scale(1.1); }
+
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 35px; }
-        .card {
-            background: var(--card); backdrop-filter: blur(14px); border: 1px solid rgba(59,130,246,0.25);
-            border-radius: 24px; padding: 38px; transition: all 0.5s ease; position: relative; overflow: hidden;
-        }
-        .card::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px;
-            background: var(--accent); transform: translateX(-100%); transition: 0.8s;
-        }
-        .card:hover {
-            transform: translateY(-18px); background: var(--card-hover); border-color: var(--accent);
-            box-shadow: 0 30px 60px rgba(59,130,246,0.3);
-        }
+        .card { background: var(--card); backdrop-filter: blur(14px); border: 1px solid rgba(59,130,246,0.25); border-radius: 24px; padding: 38px; transition: all 0.5s ease; position: relative; overflow: hidden; }
+        .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: var(--accent); transform: translateX(-100%); transition: 0.8s; }
+        .card:hover { transform: translateY(-18px); background: var(--card-hover); border-color: var(--accent); box-shadow: 0 30px 60px rgba(59,130,246,0.3); }
         .card:hover::before { transform: translateX(100%); }
         .card h4 { color: var(--box-name); margin-bottom: 22px; font-size: 1.6rem; }
         .card ul { list-style: none; line-height: 2.6; font-size: 1.02rem; }
         .card li::before { content: '>'; color: var(--accent); font-weight: bold; margin-right: 12px; }
 
-        /* Timeline */
         .timeline { max-width: 800px; margin: 0 auto; position: relative; padding-left: 40px; }
         .timeline::before { content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 3px; background: var(--accent); opacity: 0.4; }
         .timeline-item { position: relative; margin-bottom: 60px; padding-left: 40px; }
@@ -111,34 +148,19 @@
         .timeline-item h4 { color: var(--accent); font-size: 1.1rem; margin-bottom: 10px; }
         .timeline-item p { color: var(--text-light); font-size: 1.1rem; line-height: 1.7; }
 
-        /* Centres d'intérêt */
         .interests { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; max-width: 1400px; margin: 0 auto; }
         .interest-card { background: var(--card); border-radius: 20px; padding: 32px 24px; text-align: center; border: 1px solid rgba(59,130,246,0.2); transition: all 0.4s ease; }
         .interest-card:hover { transform: translateY(-12px); border-color: var(--accent); box-shadow: 0 25px 50px rgba(59,130,246,0.25); }
         .interest-card h4 { margin-top: 16px; color: var(--box-name); font-size: 1.3rem; }
         .interest-card p { margin-top: 12px; color: var(--text-light); font-size: 1rem; line-height: 1.6; }
-        /* PROJETS – FLÈCHE TOUJOURS VISIBLE */
+
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; }
-        .project-card {
-            background: var(--card); border-radius: 24px; overflow: hidden; cursor: pointer;
-            border: 1px solid rgba(59,130,246,0.2); transition: all 0.5s ease; position: relative;
-            padding: 30px 30px 70px 30px;
-        }
+        .project-card { background: var(--card); border-radius: 24px; overflow: hidden; cursor: pointer; border: 1px solid rgba(59,130,246,0.2); transition: all 0.5s ease; position: relative; padding: 30px 30px 70px 30px; }
         .project-card:hover { transform: translateY(-15px); border-color: var(--accent); box-shadow: 0 25px 50px rgba(59,130,246,0.25); }
         .project-card h4 { font-size: 1.45rem; color: var(--box-name); margin-bottom: 12px; }
         .project-card p { color: var(--text-light); font-size: 0.98rem; margin-bottom: 20px; }
-
-        .project-card::after {
-            content: "Cliquez pour voir les détails";
-            position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
-            font-size: 0.9rem; color: var(--accent); font-weight: 500; opacity: 0.9;
-        }
-        .project-card::before {
-            content: ""; position: absolute; bottom: 22px; left: calc(50% + 80px);
-            width: 10px; height: 10px;
-            border-top: 2.5px solid var(--accent); border-right: 2.5px solid var(--accent);
-            transform: rotate(45deg); opacity: 0.9;
-        }
+        .project-card::after { content: "Cliquez pour voir les détails"; position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); font-size: 0.9rem; color: var(--accent); font-weight: 500; opacity: 0.9; }
+        .project-card::before { content: ""; position: absolute; bottom: 22px; left: calc(50% + 80px); width: 10px; height: 10px; border-top: 2.5px solid var(--accent); border-right: 2.5px solid var(--accent); transform: rotate(45deg); opacity: 0.9; }
         .project-card:hover::before { animation: bounce 1.5s infinite; }
         @keyframes bounce { 0%,100%{transform: translateX(0) rotate(45deg)} 50%{transform: translateX(6px) rotate(45deg)} }
 
@@ -158,6 +180,7 @@
             nav ul { gap: 30px; }
             .project-card::after { font-size: 0.85rem; }
             .project-card::before { width: 9px; height: 9px; left: calc(50% + 70px); }
+            .cv-buttons { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
@@ -181,6 +204,7 @@
     <ul>
         <li><a href="#skills">Stack</a></li>
         <li><a href="#education">Parcours</a></li>
+        <li><a href="#cv">CV</a></li>
         <li><a href="#projects">Projets</a></li>
         <li><a href="#interests">Intérêts</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -190,9 +214,24 @@
 <main>
     <section class="about" style="padding-top: 50px;">
         <div class="about">
-            J’apprends vite, je suis rigoureuse, curieuse et surtout j'ai soif d'apprendre :)<br><br>
+            Curieuse, rigoureuse et avide d'apprendre... :)<br><br>
             Ce qui me motive : contribuer à des projets à fort impact, où la technologie peut réellement améliorer les choses… et éviter de créer un énième bug<br><br>
             Mon objectif : évoluer comme développeuse polyvalente, toujours en progrès, toujours en quête de solutions plus efficaces et plus utiles… avec un minimum de caféine et beaucoup de plaisir
+        </div>
+    </section>
+
+    <!--SECTION CV -->
+    <section id="cv">
+        <h3>Mon CV</h3>
+        <div class="cv-buttons">
+            <a href="#" id="open-cv" class="btn btn-preview">
+                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                Voir mon CV
+            </a>
+            <a href="./assets/files/CV_june_Soraya_Codo_data_alternance.pdf" download class="btn btn-download" target="_blank">
+                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 17v2h14v-2H5z"/></svg>
+                Télécharger mon CV (PDF)
+            </a>
         </div>
     </section>
 
@@ -260,6 +299,15 @@
                     <li><strong>CI/CD :</strong> automatisation des tests, linting et déploiements (GitHub Actions / Docker).</li>
                 </ul>
             </div>
+            
+            <div class="card">
+                <h4>Collaboration</h4>
+                <ul>
+                    <li><strong>Notion</strong>, <strong>Confluence</strong> ou <strong>GitHub Wiki</strong>.</li>
+                    <li><strong>Figma</strong></li>
+                    <li><strong>Gestion du code & collaboration technique :</strong> collaboration via <strong>GitHub</strong>, <strong>GitLab</strong>, <strong>Azure</strong></li>
+                </ul>
+            </div>
         </div>
     </section>
 
@@ -292,7 +340,7 @@
         <div class="interests">
             <div class="interest-card">
                 <h4>Nature</h4>
-                <p>Découvertes de nouveaux paysages et l'impact sur l'être humain</p>
+                <p>Découvertes de nouveaux paysages et impacts sur l'être humain</p>
             </div>
             <div class="interest-card">
                 <h4>Psychologie et santé mentale</h4>
@@ -324,7 +372,15 @@
     <div class="copyright">© 2025 Soraya Codo – Portfolio personnel</div>
 </footer>
 
-<!-- Modal -->
+<!-- POPUP CV -->
+<div id="cv-popup">
+    <div class="cv-content">
+        <div class="cv-close" id="close-cv">×</div>
+        <iframe src="./assets/files/CV_june_Soraya_Codo_data_alternance.pdf" title="CV Soraya Codo"></iframe>
+    </div>
+</div>
+
+<!-- Modal projets -->
 <div id="modal-template" class="modal">
     <div class="modal-content">
         <span class="close">×</span>
@@ -348,7 +404,21 @@ const randomAvatar = avatars[Math.floor(Math.random() * avatars.length)];
 imgAvatar.onload = () => imgAvatar.classList.add("loaded");
 imgAvatar.src = randomAvatar;
 
-// Particules
+// Popup CV
+document.getElementById('open-cv').addEventListener('click', e => {
+    e.preventDefault();
+    document.getElementById('cv-popup').classList.add('active');
+});
+document.getElementById('close-cv').addEventListener('click', () => {
+    document.getElementById('cv-popup').classList.remove('active');
+});
+document.getElementById('cv-popup').addEventListener('click', e => {
+    if (e.target === document.getElementById('cv-popup')) {
+        document.getElementById('cv-popup').classList.remove('active');
+    }
+});
+
+// Particules + Projets (ton code 100% intact)
 const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth; canvas.height = window.innerHeight;
@@ -383,7 +453,6 @@ function animate() {
 animate();
 window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; init(); });
 
-// Projets
 const projects = [
     { title: "Champions League Stats", short: "Analyse et comparaisons des stats des joueurs par équipe, pays, league...", desc: "Analyse détaillée des performances des joueurs et équipes en Ligue des Champions, avec visualisations et comparaisons avancées.", tech: "Python, Pandas, NumPy, plotly, streamlit", images: ["./assets/images/champiosn_league_4.png", "./assets/images/champiosn_league_2.png"] },
     { title: "Dashboard Temps Réel – NASA APOD + Météo", short: "Tableau de bord interactif affichant la météo en direct et l’image NASA du jour.", desc: "Dashboard dynamique affichant la météo en temps réel (API OpenWeatherMap) et l’image astronomique du jour (NASA APOD). Données rafraîchies automatiquement, composants réactifs et gestion des erreurs réseau.", tech: "NodeJs, API NASA, OpenWeatherMap, docker"},
@@ -415,22 +484,17 @@ projects.forEach(proj => {
     modal.querySelector('.modal-tech').textContent = 'Technologies : ' + proj.tech;
     
     const imagesDiv = modal.querySelector('.modal-images');
-
-    // Si le projet contient des images on les affiche
     if (proj.images && proj.images.length > 0) {
         proj.images.forEach(src => {
             const img = document.createElement('img');
             img.src = src;
             img.alt = proj.title;
-            img.style.cssText =
-                'width:100%; border-radius:16px; margin:12px 0; transition:0.3s;';
+            img.style.cssText = 'width:100%; border-radius:16px; margin:12px 0; transition:0.3s;';
             img.onmouseover = () => img.style.transform = 'scale(1.03)';
             img.onmouseout = () => img.style.transform = 'scale(1)';
             imagesDiv.appendChild(img);
         });
-    } 
-    // Sinon on cache la zone d’images
-    else {
+    } else {
         imagesDiv.style.display = "none";
     }
 
