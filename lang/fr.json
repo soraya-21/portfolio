@@ -161,7 +161,7 @@
     },
     "side_quests": {
         "title": "Side Quests",
-        "subtitle": "Explorez des outils expérimentaux mêlant IA, créativité et bien-être.",
+        "subtitle": "Des expérimentations nées de la curiosité et du plaisir d'explorer l'IA et la créativité.",
         "simulation": "(Simulation interactive)",
         "loading": "L'IA réfléchit...",
         "messages": {
