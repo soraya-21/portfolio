@@ -1,0 +1,161 @@
+{
+    "header": {
+        "role": "Développeuse Full-Stack orientée Backend & Intelligence Artificielle",
+        "location": "Montpellier, France"
+    },
+    "languages": {
+        "fr": "Français",
+        "en": "Anglais",
+        "yo": "Yoruba",
+        "zh": "Chinois",
+        "ja": "Japonais",
+        "ko": "Coréen"
+    },
+    "nav": {
+        "stack": "Stack",
+        "education": "Parcours",
+        "cv": "CV",
+        "projects": "Projets",
+        "interests": "Intérêts",
+        "contact": "Contact"
+    },
+    "about": {
+        "text1": "Curieuse, rigoureuse et avide d'apprendre... :)",
+        "text2": "Ce qui me motive : contribuer à des projets à fort impact, où la technologie peut réellement améliorer les choses… et éviter de créer un énième bug",
+        "text3": "Mon objectif : évoluer comme développeuse polyvalente, toujours en progrès, toujours en quête de solutions plus efficaces et plus utiles… avec un minimum de caféine et beaucoup de plaisir"
+    },
+    "cv": {
+        "title": "Mon CV",
+        "view": "Voir mon CV",
+        "download": "📄 Télécharger mon CV"
+    },
+    "skills": {
+        "title": "Stack Technologique",
+        "languages": "Langages & Frameworks",
+        "databases": "Bases de données",
+        "data_ai": "Data • IA • Machine Learning",
+        "web_automation": "Web • Scraping • Automatisation",
+        "tools": "Outils • DevOps • BI",
+        "tests": "Politique de Tests & CI/CD",
+        "collaboration": "Collaboration",
+        "details": {
+            "lang_desc": "<ul><li><strong>C</strong> / <strong>C++</strong></li><li><strong>Python</strong> – backend, IA, scripts, automatisation</li><li><strong>Django</strong> + <strong>Django REST Framework</strong></li><li><strong>JavaScript</strong> / <strong>Node.js</strong></li><li><strong>ReactJs</strong></li><li><strong>SQL & DAX (Power BI)</strong></li><li><strong>HTML</strong> / <strong>CSS</strong></li><li><strong>Docker</strong> – conteneurisation</li></ul>",
+            "db_desc": "<ul><li><strong>MongoDB</strong> (NoSQL)</li><li><strong>MySQL / PostgreSQL</strong></li><li>Bases relationnelles via <strong>Django</strong></li><li>Conception de schémas & migrations</li></ul>",
+            "data_desc": "<ul><li>NumPy • pandas • scikit-learn</li><li>NLP (traitement du langage naturel)</li><li>Pipelines complets : scraping → nettoyage → analyse → prédiction</li><li>Whisper + FFMPEG (transcription audio/vidéo)</li></ul>",
+            "web_desc": "<ul><li>Scraping avancé (Selenium, requests)</li><li>Automatisation de tâches répétitives</li><li>APIs REST • Webhooks • Intégrations tierces</li><li>OAuth2 (Youtube, Google, Linkedin…)</li><li><strong>Celery</strong> + Redis (tâches asynchrones)</li></ul>",
+            "tools_desc": "<ul><li><strong>Power BI</strong></li><li><strong>Azure</strong> (bases : VMs, Blob, Functions)</li><li><strong>Git</strong> & GitHub Actions (CI/CD)</li><li>Docker • Docker Compose</li><li>Postman • Swagger</li></ul>",
+            "tests_desc": "<ul><li><strong>Tests unitaires :</strong> couverture des fonctions critiques, logique métier, services, utils.</li><li><strong>Tests fonctionnels :</strong> vérification complète des workflows utilisateur et endpoints API.</li><li><strong>Tests d’intégration :</strong> interactions entre services, base de données, APIs externes.</li><li><strong>Mocking & fixtures :</strong> isolation des dépendances, reproductibilité des scénarios.</li><li><strong>CI/CD :</strong> automatisation des tests, linting et déploiements (GitHub Actions / Docker).</li></ul>",
+            "collab_desc": "<ul><li><strong>Git</strong> / <strong>GitLab</strong> / <strong>GitHub</strong></li><li><strong>Jira</strong></li><li><strong>Trello</strong></li><li><strong>Microsoft Teams</strong></li></ul>"
+        }
+    },
+    "education": {
+        "title": "Parcours académique",
+        "master": "Master — Intelligence Artificielle & Data Management",
+        "master_school": "IASchool / Nexa Digital School — Lyon",
+        "courses": "Cours externes",
+        "courses_desc": "<p>Université de Laval — Mathématiques pour les affaires</p><p>Udemy — PowerBI</p>",
+        "bachelor": "Bachelor — Computer Science",
+        "bachelor_desc": "Epitech Technology — Pédagogie par projet<br>Développement avancé • Autonomie totale et gestion de projets"
+    },
+    "projects": {
+        "title": "Quelques projets réalisés",
+        "click_details": "Cliquez pour les détails →",
+        "tech_label": "Technologies : ",
+        "list": [
+            { 
+                "title": "Champions League Stats", 
+                "short": "Analyse et comparaisons des stats des joueurs par équipe, pays, league...", 
+                "desc": "Analyse détaillée des performances des joueurs et équipes en Ligue des Champions, avec visualisations et comparaisons avancées.", 
+                "tech": "Python, Pandas, NumPy, plotly, streamlit", 
+                "images": ["./assets/images/champions_league_4.png", "./assets/images/champions_league_2.png"] 
+            },
+            { 
+                "title": "PowerBI", 
+                "short": "Dashboards Power BI + DAX + SQL + Python.", 
+                "desc": "Dashboards Power BI de monitoring d'activités commerciales", 
+                "tech": "Power BI, Python, SQL, DAX", 
+                "images": ["./assets/images/powerBi_adventure_works_1.png", "./assets/images/powerBi_adventure_works_2.png"] 
+            },
+            { 
+                "title": "Dashboard Temps Réel – NASA APOD + Météo", 
+                "short": "Tableau de bord interactif affichant la météo en direct et l’image NASA du jour.", 
+                "desc": "Dashboard dynamique affichant la météo en temps réel (API OpenWeatherMap) et l’image astronomique du jour (NASA APOD). Données rafraîchies automatiquement, composants réactifs et gestion des erreurs réseau.", 
+                "tech": "NodeJs, API NASA, OpenWeatherMap, docker"
+            },
+            { 
+                "title": "AREA – Automatisation & Interconnexions", 
+                "short": "Plateforme type IFTTT avec Node, React, Docker.", 
+                "desc": "Plateforme type IFTTT permettant d'automatiser des actions entre services (API, periodic tasks, webhooks).", 
+                "tech": "Node, React, Docker, API, Webhooks, SMTP, OAUTH" 
+            },
+            { 
+                "title": "Radiant – Conseils personnalisés & recommandations produits", 
+                "short": "Interactions web basées IA.", 
+                "desc": "Collecte d'informations utilisateur et génération de conseils personnalisés avec recommandations de produits en stock.", 
+                "tech": "Python, OpenApi, ReactJs" 
+            },
+            { 
+                "title": "Analyse Bitcoin & Ethereum", 
+                "short": "Pipeline data complet et analyses ML.", 
+                "desc": "Scraping, nettoyage, analyses statistiques, visualisations.", 
+                "tech": "Python, Pandas, NumPy, plotly" 
+            },
+            { 
+                "title": "E-learning", 
+                "short": "Formation en ligne sur les basiques du développement web.", 
+                "desc": "Plateforme interactive pour apprendre les fondamentaux du développement web, avec exercices et suivi personnalisé.", 
+                "tech": "Python, HTML/CSS/JS, SMTP" 
+            },
+            { 
+                "title": "Geo-Monitoring", 
+                "short": "Cartographie et suivi géographique des produits surveillés.", 
+                "desc": "Plateforme de monitoring géographique en temps réel et suivi détaillé de chaque produit dans toutes les zones surveillées", 
+                "tech": "Python, Django, Celery" 
+            },
+            { 
+                "title": "Chatbot Python + MongoDB", 
+                "short": "Chatbot intelligent avec mémoire de contexte.", 
+                "desc": "Chatbot avec mémoire de contexte, recherche produit, synonymes d’intention et autocorrection.", 
+                "tech": "Python, MongoDB, NLP" 
+            },
+            { 
+                "title": "Scraping", 
+                "short": "Scraper automatisé basé sur différentes sources.", 
+                "desc": "Récupération automatisée d’informations.", 
+                "tech": "Python, Scraping" 
+            },
+            { 
+                "title": "Export PDF Cartes d'identité – Django", 
+                "short": "Génération automatique de cartes format bancaire en PDF.", 
+                "desc": "Génération automatisée de PDFs avec photo, QR code, informations administratives.", 
+                "tech": "Python, Django, PDF, QR Code" 
+            }
+        ]
+    },
+    "interests": {
+        "title": "Centres d’intérêt",
+        "nature": {
+            "title": "Nature",
+            "desc": "Découvertes de nouveaux paysages et impacts sur l'être humain"
+        },
+        "psychology": {
+            "title": "Psychologie et santé mentale",
+            "desc": "Comprendre les comportements humains et promouvoir le bien-être"
+        },
+        "history": {
+            "title": "Histoire",
+            "desc": "Civilisations passées et leurs influences sur le présent"
+        },
+        "music": {
+            "title": "Musique",
+            "desc": "Écoute variée et découverte de nouveaux genres avec une préférence pour le Soul, le RnB, le Rap…"
+        },
+        "reading": {
+            "title": "Lecture",
+            "desc": "Exploration de divers genres littéraires et développement personnel (Jusqu'ici, gros coup de coeur pour Paulo Coelho, Lise Bourbeau, Mark Manson…)"
+        }
+    },
+    "footer": {
+        "copyright": "© 2025 Soraya Codo – Portfolio personnel"
+    }
+}

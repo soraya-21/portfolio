@@ -1,0 +1,161 @@
+{
+    "header": {
+        "role": "Olùgbéejáde Full-Stack tí ó dá lórí Backend & AI",
+        "location": "Montpellier, France"
+    },
+    "languages": {
+        "fr": "Faranse",
+        "en": "Geesi",
+        "yo": "Yoruba",
+        "zh": "Ṣaina",
+        "ja": "Japani",
+        "ko": "Koria"
+    },
+    "nav": {
+        "stack": "Ìmọ̀ Ẹ̀rọ",
+        "education": "Ẹ̀kọ́",
+        "cv": "Ìwé Ìtàn",
+        "projects": "Àwọn Iṣẹ́",
+        "interests": "Àwọn Ifẹ",
+        "contact": "Kàn sí mi"
+    },
+    "about": {
+        "text1": "Mo ní ìfẹ́ láti mọ̀, mo ní àkíyèsí kíkún, mo sì ṣetán láti kọ́...",
+        "text2": "Ohun tí ń fún mi ní okun: ṣíṣe alabapin sí àwọn iṣẹ́ tí ó ní ipa gidi, níbi tí ìmọ̀ ẹ̀rọ ti lè mú kí nǹkan dára sí i... kí n sì yẹra fún ṣíṣe kòkòrò (bug) mìíràn",
+        "text3": "Ète mi: láti dàgbà bí olùgbéejáde tí ó mọ ọ̀pọ̀lọpọ̀ nǹkan, tí ń sunwọ̀n sí i nígbà gbogbo, tí ń wá àwọn ojútùú tí ó dára àti tí ó wúlò jùlọ... pẹ̀lú caffeine díẹ̀ àti ìdùnnú púpọ̀"
+    },
+    "cv": {
+        "title": "Ìwé Ìtàn Mi",
+        "view": "Wo Ìwé Ìtàn Mi",
+        "download": "📄 Ṣe igbasilẹ Ìwé Ìtàn Mi"
+    },
+    "skills": {
+        "title": "Ìmọ̀ Ẹ̀rọ",
+        "languages": "Àwọn Èdè & Frameworks",
+        "databases": "Àwọn Ibishura (Databases)",
+        "data_ai": "Data • AI • Machine Learning",
+        "web_automation": "Web • Scraping • Automation",
+        "tools": "Àwọn Irinṣẹ • DevOps • BI",
+        "tests": "Ìlànà Àyẹ̀wò & CI/CD",
+        "collaboration": "Ìfọwọ́sowọ́pọ̀",
+        "details": {
+            "lang_desc": "<ul><li><strong>C</strong> / <strong>C++</strong></li><li><strong>Python</strong> – backend, AI, scripts, automation</li><li><strong>Django</strong> + <strong>Django REST Framework</strong></li><li><strong>JavaScript</strong> / <strong>Node.js</strong></li><li><strong>ReactJs</strong></li><li><strong>SQL & DAX (Power BI)</strong></li><li><strong>HTML</strong> / <strong>CSS</strong></li><li><strong>Docker</strong> – containerization</li></ul>",
+            "db_desc": "<ul><li><strong>MongoDB</strong> (NoSQL)</li><li><strong>MySQL / PostgreSQL</strong></li><li>Relational databases nipasẹ <strong>Django</strong></li><li>Apẹrẹ Schema & migrations</li></ul>",
+            "data_desc": "<ul><li>NumPy • pandas • scikit-learn</li><li>NLP (Natural Language Processing)</li><li>Full pipelines: scraping → cleaning → analysis → prediction</li><li>Whisper + FFMPEG (audio/video transcription)</li></ul>",
+            "web_desc": "<ul><li>Scraping to gaju (Selenium, requests)</li><li>Adaṣiṣẹ awọn iṣẹ ṣiṣe ti o tun ṣe</li><li>REST APIs • Webhooks • Awọn isopọ ẹni-kẹta</li><li>OAuth2 (Youtube, Google, Linkedin…)</li><li><strong>Celery</strong> + Redis (asynchronous tasks)</li></ul>",
+            "tools_desc": "<ul><li><strong>Power BI</strong></li><li><strong>Azure</strong> (awọn ipilẹ: VMs, Blob, Functions)</li><li><strong>Git</strong> & GitHub Actions (CI/CD)</li><li>Docker • Docker Compose</li><li>Postman • Swagger</li></ul>",
+            "tests_desc": "<ul><li><strong>Unit tests:</strong> agbegbe awọn iṣẹ pataki, ọgbọn iṣowo, awọn iṣẹ, awọn ohun elo.</li><li><strong>Functional tests:</strong> ijerisi pipe ti awọn ṣiṣan iṣẹ olumulo ati awọn endpoints API.</li><li><strong>Integration tests:</strong> awọn ibaraẹnisọrọ laarin awọn iṣẹ, data data, awọn APIs ita.</li><li><strong>Mocking & fixtures:</strong> ipinya awọn igbẹkẹle, atunṣe awọn oju iṣẹlẹ.</li><li><strong>CI/CD:</strong> idanwo adaṣe, linting ati awọn imuṣiṣẹ (GitHub Actions / Docker).</li></ul>",
+            "collab_desc": "<ul><li><strong>Git</strong> / <strong>GitLab</strong> / <strong>GitHub</strong></li><li><strong>Jira</strong></li><li><strong>Trello</strong></li><li><strong>Microsoft Teams</strong></li></ul>"
+        }
+    },
+    "education": {
+        "title": "Ìtàn Ẹ̀kọ́",
+        "master": "Master — Artificial Intelligence & Data Management",
+        "master_school": "IASchool / Nexa Digital School — Lyon",
+        "courses": "Àwọn Ẹ̀kọ́ Ita",
+        "courses_desc": "<p>Laval University — Mathematics for Business</p><p>Udemy — PowerBI</p>",
+        "bachelor": "Bachelor — Computer Science",
+        "bachelor_desc": "Epitech Technology — Pédagogie par projet<br>Idagbasoke to ti ni ilọsiwaju • Idaduro lapapọ ati iṣakoso ise agbese"
+    },
+    "projects": {
+        "title": "Àwọn Iṣẹ́ tí mo ti ṣe",
+        "click_details": "Tẹ fun awọn alaye →",
+        "tech_label": "Àwọn Ìmọ̀ Ẹ̀rọ: ",
+        "list": [
+            { 
+                "title": "Champions League Stats", 
+                "short": "Atupale ati afiwe ti awọn iṣiro ẹrọ orin nipasẹ ẹgbẹ, orilẹ-ede, liigi...", 
+                "desc": "Atupale alaye ti awọn iṣẹ ẹrọ orin ati ẹgbẹ ni Champions League, pẹlu awọn wiwo ilọsiwaju ati awọn afiwera.", 
+                "tech": "Python, Pandas, NumPy, plotly, streamlit", 
+                "images": ["./assets/images/champions_league_4.png", "./assets/images/champions_league_2.png"] 
+            },
+            { 
+                "title": "PowerBI", 
+                "short": "Power BI Dashboards + DAX + SQL + Python.", 
+                "desc": "Power BI dashboards fun mimojuto awọn iṣẹ iṣowo", 
+                "tech": "Power BI, Python, SQL, DAX", 
+                "images": ["./assets/images/powerBi_adventure_works_1.png", "./assets/images/powerBi_adventure_works_2.png"] 
+            },
+            { 
+                "title": "Real-Time Dashboard – NASA APOD + Weather", 
+                "short": "Dashboard ibaraenisepo ti o ṣafihan oju-ọjọ laaye ati aworan NASA ti ọjọ naa.", 
+                "desc": "Dashboard ti o ni agbara ti o ṣafihan oju-ọjọ gidi (OpenWeatherMap API) ati aworan astronomical ti ọjọ (NASA APOD). Awọn data ti o tunṣe laifọwọyi, awọn paati ifaseyin, ati mimu aṣiṣe nẹtiwọọki.", 
+                "tech": "NodeJs, API NASA, OpenWeatherMap, docker"
+            },
+            { 
+                "title": "AREA – Automation & Interconnections", 
+                "short": "Syeed iru IFTTT pẹlu Node, React, Docker.", 
+                "desc": "Syeed iru IFTTT gbigba adaṣiṣẹ ti awọn iṣe laarin awọn iṣẹ (API, awọn iṣẹ igbagbogbo, webhooks).", 
+                "tech": "Node, React, Docker, API, Webhooks, SMTP, OAUTH" 
+            },
+            { 
+                "title": "Radiant – Personalized Advice & Product Recommendations", 
+                "short": "Awọn ibaraẹnisọrọ wẹẹbu ti o da lori AI.", 
+                "desc": "Gbigba alaye olumulo ati iran ti imọran ti ara ẹni pẹlu awọn iṣeduro ti awọn ọja ni iṣura.", 
+                "tech": "Python, OpenApi, ReactJs" 
+            },
+            { 
+                "title": "Bitcoin & Ethereum Analysis", 
+                "short": "Pipeline data pipe ati awọn atupale ML.", 
+                "desc": "Scraping, mimọ, awọn atupale iṣiro, awọn wiwo.", 
+                "tech": "Python, Pandas, NumPy, plotly" 
+            },
+            { 
+                "title": "E-learning", 
+                "short": "Ikẹkọ lori ayelujara lori awọn ipilẹ idagbasoke wẹẹbu.", 
+                "desc": "Syeed ibaraenisepo lati kọ ẹkọ awọn ipilẹ ti idagbasoke wẹẹbu, pẹlu awọn adaṣe ati ipasẹ ti ara ẹni.", 
+                "tech": "Python, HTML/CSS/JS, SMTP" 
+            },
+            { 
+                "title": "Geo-Monitoring", 
+                "short": "Iyaworan ati ipasẹ agbegbe ti awọn ọja ti a ṣe abojuto.", 
+                "desc": "Syeed ibojuwo agbegbe gidi-akoko ati ipasẹ alaye ti ọja kọọkan ni gbogbo awọn agbegbe ti a ṣe abojuto", 
+                "tech": "Python, Django, Celery" 
+            },
+            { 
+                "title": "Python + MongoDB Chatbot", 
+                "short": "Chatbot oloye pẹlu iranti agbegbe.", 
+                "desc": "Chatbot pẹlu iranti agbegbe, wiwa ọja, awọn itumọ ete, ati atunṣe adaṣe.", 
+                "tech": "Python, MongoDB, NLP" 
+            },
+            { 
+                "title": "Scraping", 
+                "short": "Scraper adaṣe ti o da lori awọn orisun oriṣiriṣi.", 
+                "desc": "Imupadabọ alaye adaṣe.", 
+                "tech": "Python, Scraping" 
+            },
+            { 
+                "title": "ID Card PDF Export – Django", 
+                "short": "Iran adaṣe ti awọn kaadi ọna kika banki ni PDF.", 
+                "desc": "Iran adaṣe ti awọn PDFs pẹlu fọto, koodu QR, alaye iṣakoso.", 
+                "tech": "Python, Django, PDF, QR Code" 
+            }
+        ]
+    },
+    "interests": {
+        "title": "Àwọn Ifẹ",
+        "nature": {
+            "title": "Iseda",
+            "desc": "Ṣiṣawari awọn ilẹ tuntun ati ipa wọn lori eniyan"
+        },
+        "psychology": {
+            "title": "Ẹmi-ọkan ati Ilera Ọpọlọ",
+            "desc": "Loye awọn ihuwasi eniyan ati igbega alafia"
+        },
+        "history": {
+            "title": "Ìtàn",
+            "desc": "Awọn ọlaju ti o kọja ati awọn ipa wọn lori lọwọlọwọ"
+        },
+        "music": {
+            "title": "Orin",
+            "desc": "Gbigbọ orisirisi ati iwari awọn oriṣi tuntun pẹlu ifẹ fun Soul, RnB, Rap..."
+        },
+        "reading": {
+            "title": "Kika",
+            "desc": "Iwakiri ti awọn oriṣi iwe-kikọ ati idagbasoke ti ara ẹni (Titi di bayi, awọn ayanfẹ nla fun Paulo Coelho, Lise Bourbeau, Mark Manson...)"
+        }
+    },
+    "footer": {
+        "copyright": "© 2025 Soraya Codo – Portfolio ti ara ẹni"
+    }
+}

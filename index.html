@@ -5,184 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio – Soraya Codo</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --marine: #0f172a;
-            --marine-light: #1e293b;
-            --box-name: #275a9c;
-            --accent: #4b82c5;
-            --accent-hover: #60a5fa;
-            --text: #e2e8f0;
-            --text-light: #94a3b8;
-            --card: rgba(30, 41, 59, 0.7);
-            --card-hover: rgba(51, 65, 85, 0.95);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body {
-            height: 100%;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
-            color: var(--text);
-            font-family: 'Poppins', sans-serif;
-            overflow-x: hidden;
-        }
-        body { min-height: 100vh; display: flex; flex-direction: column; position: relative; }
-
-        canvas#particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.6; }
-
-        .blob {
-            position: absolute; border-radius: 50%; background: radial-gradient(circle, rgba(59,130,246,0.2), transparent);
-            filter: blur(90px); z-index: -1; animation: float 25s infinite ease-in-out;
-        }
-        .blob1 { width: 600px; height: 600px; top: -200px; left: -200px; }
-        .blob2 { width: 800px; height: 800px; bottom: -300px; right: -250px; animation-delay: 10s; }
-
-        @keyframes float { 0%,100%{transform:translate(0,0) rotate(0deg)} 50%{transform:translate(100px,-100px) rotate(180deg)} }
-
-        header {
-            text-align: center; padding: 120px 20px 60px; position: relative; z-index: 2;
-        }
-        header img {
-            width: 170px; height: 170px; border-radius: 50%; border: 5px solid var(--accent);
-            box-shadow: 0 0 60px rgba(59,130,246,0.5); margin-bottom: 25px; object-fit: cover;
-        }
-        h1 {
-            font-size: 4.2rem; font-weight: 700;
-            background: linear-gradient(90deg, #60a5fa, #93c5fd, #60a5fa);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        h2 { font-size: 1.1rem; color: var(--text-light); letter-spacing: 3px; font-weight: 400; margin-top: 10px; }
-
-        .location {
-            margin-top: 20px; font-size: 1.1rem; color: var(--accent);
-        }
-        .location svg { width: 18px; height: 18px; margin-right: 8px; vertical-align: -3px; }
-
-        .about {
-            text-align: justify; max-width: 900px; margin: 0 auto 80px; padding: 0 20px;
-            font-size: 1.1rem; line-height: 1.6; color: #afbac8;
-        }
-
-        nav {
-            position: sticky; top: 0; z-index: 100; background: rgba(15,23,42,0.9); backdrop-filter: blur(15px);
-            padding: 20px 0; border-bottom: 1px solid rgba(59,130,246,0.3);
-        }
-        nav ul { display: flex; justify-content: center; gap: 60px; list-style: none; flex-wrap: wrap; }
-        nav a { color: #cbd5e1; text-decoration: none; font-weight: 600; letter-spacing: 1.5px; position: relative; transition: 0.4s; }
-        nav a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -10px; left: 50%; background: var(--accent); transition: 0.4s; }
-        nav a:hover { color: var(--accent); }
-        nav a:hover::after { width: 100%; left: 0; }
-
-        .avatar {
-            width: 180px;
-            border-radius: 50%;
-            opacity: 0;
-            transition: opacity 0.6s ease-in-out;
-        }
-        .avatar.loaded { opacity: 1; }
-
-        main { flex: 1; }
-        section { padding: 50px 40px; max-width: 1500px; margin: 0 auto; }
-        h3 { text-align: center; font-size: 2.5rem; margin-bottom: 70px; color: var(--accent); font-weight: 600; }
-
-        /* === SECTION CV === */
-        #cv { text-align: center; padding: 60px 40px; }
-        .cv-buttons {
-            display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; margin: 50px 0;
-        }
-        .btn {
-            display: inline-flex; align-items: center; gap: 14px; padding: 18px 36px; border-radius: 60px;
-            font-weight: 600; font-size: 1.15rem; text-decoration: none; transition: all 0.4s ease;
-            box-shadow: 0 12px 35px rgba(75,130,197,0.4);
-        }
-        .btn-preview {
-            background: transparent; color: var(--accent); border: 2.5px solid var(--accent);
-        }
-        .btn-preview:hover {
-            background: var(--accent); color: white; transform: translateY(-6px);
-            box-shadow: 0 18px 50px rgba(75,130,197,0.6);
-        }
-        .btn-download {
-            background: var(--accent); color: white;
-        }
-        .btn-download:hover {
-            background: var(--accent-hover); transform: translateY(-6px);
-            box-shadow: 0 18px 50px rgba(96,165,250,0.6);
-        }
-        .btn svg { width: 26px; height: 26px; }
-
-        /* Popup CV */
-        #cv-popup {
-            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.95); z-index: 9999; justify-content: center; align-items: center;
-            backdrop-filter: blur(15px);
-        }
-        #cv-popup.active { display: flex; }
-        .cv-content {
-            background: white; width: 90%; max-width: 1000px; height: 90vh; border-radius: 24px;
-            overflow: hidden; box-shadow: 0 40px 120px rgba(0,0,0,0.8); position: absolute;
-        }
-        .cv-content iframe {
-            width: 100%; height: 100%; border: none;
-        }
-        .cv-close {
-            position: absolute; top: 18px; right: 22px; background: rgba(0,0,0,0.7); color: white;
-            width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            font-size: 2rem; cursor: pointer; z-index: 10; transition: 0.3s;
-        }
-        .cv-close:hover { background: rgba(0,0,0,0.9); transform: scale(1.1); }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 35px; }
-        .card { background: var(--card); backdrop-filter: blur(14px); border: 1px solid rgba(59,130,246,0.25); border-radius: 24px; padding: 38px; transition: all 0.5s ease; position: relative; overflow: hidden; }
-        .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: var(--accent); transform: translateX(-100%); transition: 0.8s; }
-        .card:hover { transform: translateY(-18px); background: var(--card-hover); border-color: var(--accent); box-shadow: 0 30px 60px rgba(59,130,246,0.3); }
-        .card:hover::before { transform: translateX(100%); }
-        .card h4 { color: var(--box-name); margin-bottom: 22px; font-size: 1.6rem; }
-        .card ul { list-style: none; line-height: 2.6; font-size: 1.02rem; }
-        .card li::before { content: '>'; color: var(--accent); font-weight: bold; margin-right: 12px; }
-
-        .timeline { max-width: 800px; margin: 0 auto; position: relative; padding-left: 40px; }
-        .timeline::before { content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 3px; background: var(--accent); opacity: 0.4; }
-        .timeline-item { position: relative; margin-bottom: 60px; padding-left: 40px; }
-        .timeline-item::before { content: ''; position: absolute; left: -8px; top: 8px; width: 16px; height: 16px; background: var(--accent); border-radius: 50%; border: 4px solid var(--marine-light); }
-        .timeline-item h4 { color: var(--accent); font-size: 1.1rem; margin-bottom: 10px; }
-        .timeline-item p { color: var(--text-light); font-size: 1.1rem; line-height: 1.7; }
-
-        .interests { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; max-width: 1400px; margin: 0 auto; }
-        .interest-card { background: var(--card); border-radius: 20px; padding: 32px 24px; text-align: center; border: 1px solid rgba(59,130,246,0.2); transition: all 0.4s ease; }
-        .interest-card:hover { transform: translateY(-12px); border-color: var(--accent); box-shadow: 0 25px 50px rgba(59,130,246,0.25); }
-        .interest-card h4 { margin-top: 16px; color: var(--box-name); font-size: 1.3rem; }
-        .interest-card p { margin-top: 12px; color: var(--text-light); font-size: 1rem; line-height: 1.6; }
-
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; }
-        .project-card { background: var(--card); border-radius: 24px; overflow: hidden; cursor: pointer; border: 1px solid rgba(59,130,246,0.2); transition: all 0.5s ease; position: relative; padding: 30px 30px 70px 30px; }
-        .project-card:hover { transform: translateY(-15px); border-color: var(--accent); box-shadow: 0 25px 50px rgba(59,130,246,0.25); }
-        .project-card h4 { font-size: 1.45rem; color: var(--box-name); margin-bottom: 12px; }
-        .project-card p { color: var(--text-light); font-size: 0.98rem; margin-bottom: 20px; }
-        .project-card::after { content: "Cliquez pour voir les détails"; position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); font-size: 0.9rem; color: var(--accent); font-weight: 500; opacity: 0.9; }
-        .project-card::before { content: ""; position: absolute; bottom: 22px; left: calc(50% + 80px); width: 10px; height: 10px; border-top: 2.5px solid var(--accent); border-right: 2.5px solid var(--accent); transform: rotate(45deg); opacity: 0.9; }
-        .project-card:hover::before { animation: bounce 1.5s infinite; }
-        @keyframes bounce { 0%,100%{transform: translateX(0) rotate(45deg)} 50%{transform: translateX(6px) rotate(45deg)} }
-
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); justify-content: center; align-items: center; z-index: 9999; backdrop-filter: blur(12px); }
-        .modal-content { background: #1e293b; padding: 50px; border-radius: 28px; max-width: 800px; width: 90%; max-height: 90vh; overflow-y: auto; border: 2px solid var(--accent); position: relative; box-shadow: 0 20px 80px rgba(59,130,246,0.4); }
-        .close { position: absolute; top: 20px; right: 25px; font-size: 2.5rem; color: var(--accent); cursor: pointer; }
-        .close:hover { transform: scale(1.2); }
-
-        footer { padding: 70px 20px 40px; text-align: center; background: rgba(15, 23, 42, 0.95); border-top: 1px solid rgba(59,130,246,0.3); }
-        footer a { color: var(--accent); text-decoration: none; font-weight: 600; margin: 0 12px; }
-        footer p { margin: 20px 0 10px; font-size: 1.2rem; line-height: 2; }
-        footer .copyright { margin-top: 30px; font-size: 0.95rem; color: var(--text-light); }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 3.2rem; }
-            header { padding: 100px 20px 60px; }
-            nav ul { gap: 30px; }
-            .project-card::after { font-size: 0.85rem; }
-            .project-card::before { width: 9px; height: 9px; left: calc(50% + 70px); }
-            .cv-buttons { flex-direction: column; align-items: center; }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -191,185 +14,212 @@
 <div class="blob blob2"></div>
 
 <header>
-    <img id="profile-avatar" src="" alt="Avatar" class="avatar loaded">
+    <img id="profile-avatar" src="" alt="Avatar" class="avatar">
     <h1>Soraya CODO</h1>
-    <h2>Développeuse Full-Stack orientée Backend & Intelligence Artificielle</h2>
+    <h2 data-i18n="header.role">Développeuse Full-Stack orientée Backend & Intelligence Artificielle</h2>
     <div class="location">
         <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-        Montpellier, France
+        <span data-i18n="header.location">Montpellier, France</span>
+    </div>
+    
+    <div class="lang-selector">
+        <div class="custom-select-wrapper">
+            <div class="custom-select">
+                <div class="custom-select-trigger">
+                    <img id="selected-flag" src="" alt="flag" class="flag-icon">
+                    <span id="selected-lang-text"></span>
+                    <div class="arrow"></div>
+                </div>
+                <div class="custom-options">
+                    <!-- Options will be populated by JS -->
+                </div>
+            </div>
+        </div>
+        <!-- Hidden select for fallback/logic -->
+        <select id="language-select" style="display: none;">
+            <option value="fr">Français</option>
+            <option value="en">English</option>
+            <option value="yo">Yorùbá</option>
+            <option value="zh">中文</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+        </select>
     </div>
 </header>
 
 <nav>
     <ul>
-        <li><a href="#skills">Stack</a></li>
-        <li><a href="#education">Parcours</a></li>
-        <li><a href="#cv">CV</a></li>
-        <li><a href="#projects">Projets</a></li>
-        <li><a href="#interests">Intérêts</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#skills" data-i18n="nav.stack">Stack</a></li>
+        <li><a href="#education" data-i18n="nav.education">Parcours</a></li>
+        <li><a href="#cv" data-i18n="nav.cv">CV</a></li>
+        <li><a href="#projects" data-i18n="nav.projects">Projets</a></li>
+        <li><a href="#interests" data-i18n="nav.interests">Intérêts</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
     </ul>
 </nav>
 
 <main>
     <section class="about" style="padding-top: 50px;">
-        <div class="about">
-            Curieuse, rigoureuse et avide d'apprendre... :)<br><br>
-            Ce qui me motive : contribuer à des projets à fort impact, où la technologie peut réellement améliorer les choses… et éviter de créer un énième bug<br><br>
-            Mon objectif : évoluer comme développeuse polyvalente, toujours en progrès, toujours en quête de solutions plus efficaces et plus utiles… avec un minimum de caféine et beaucoup de plaisir
+        <div class="about-content">
+            <span data-i18n="about.text1">Curieuse, rigoureuse et avide d'apprendre... :)</span><br><br>
+            <span data-i18n="about.text2">Ce qui me motive : contribuer à des projets à fort impact, où la technologie peut réellement améliorer les choses… et éviter de créer un énième bug</span><br><br>
+            <span data-i18n="about.text3">Mon objectif : évoluer comme développeuse polyvalente, toujours en progrès, toujours en quête de solutions plus efficaces et plus utiles… avec un minimum de caféine et beaucoup de plaisir</span>
         </div>
     </section>
 
     <!--SECTION CV -->
     <section id="cv">
-        <h3>Mon CV</h3>
+        <h3 data-i18n="cv.title">Mon CV</h3>
         <div class="cv-buttons">
             <a href="#" id="open-cv" class="btn btn-preview">
                 <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
-                Voir mon CV
+                <span data-i18n="cv.view">Voir mon CV</span>
             </a>
             <a href="./assets/files/CV_june_Soraya_Codo_data_alternance.pdf" download 
-                style="
-                        padding:14px 32px;
-                        font-size:1.2rem;
-                        font-weight:600;
-                        background:var(--accent);
-                        color:white;
-                        text-decoration:none;
-                        border-radius:14px;
-                        box-shadow:0 8px 25px rgba(59,130,246,0.35);
-                        transition:0.25s;
-                "
-                onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 12px 32px rgba(59,130,246,0.45)';"
-                onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 25px rgba(59,130,246,0.35)';"
-                >
-                    📄 Télécharger mon CV
+                class="btn btn-download">
+                    <span data-i18n="cv.download">📄 Télécharger mon CV</span>
             </a>
         </div>
     </section>
 
     <section id="skills">
-        <h3>Stack Technologique</h3>
+        <h3 data-i18n="skills.title">Stack Technologique</h3>
         <div class="grid">
             <div class="card">
-                <h4>Langages & Frameworks</h4>
-                <ul>
-                    <li><strong>C</strong> / <strong>C++</strong></li>
-                    <li><strong>Python</strong> – backend, IA, scripts, automatisation</li>
-                    <li><strong>Django</strong> + <strong>Django REST Framework</strong></li>
-                    <li><strong>JavaScript</strong> / <strong>Node.js</strong></li>
-                    <li><strong>ReactJs</strong></li>
-                    <li><strong>SQL & DAX (Power BI)</strong></li>
-                    <li><strong>HTML</strong> / <strong>CSS</strong></li>
-                    <li><strong>Docker</strong> – conteneurisation</li>
-                </ul>
+                <h4 data-i18n="skills.languages">Langages & Frameworks</h4>
+                <div data-i18n="skills.details.lang_desc" data-i18n-html="true">
+                    <ul>
+                        <li><strong>C</strong> / <strong>C++</strong></li>
+                        <li><strong>Python</strong> – backend, IA, scripts, automatisation</li>
+                        <li><strong>Django</strong> + <strong>Django REST Framework</strong></li>
+                        <li><strong>JavaScript</strong> / <strong>Node.js</strong></li>
+                        <li><strong>ReactJs</strong></li>
+                        <li><strong>SQL & DAX (Power BI)</strong></li>
+                        <li><strong>HTML</strong> / <strong>CSS</strong></li>
+                        <li><strong>Docker</strong> – conteneurisation</li>
+                    </ul>
+                </div>
             </div>
             <div class="card">
-                <h4>Bases de données</h4>
-                <ul>
-                    <li><strong>MongoDB</strong> (NoSQL)</li>
-                    <li><strong>MySQL / PostgreSQL</strong></li>
-                    <li>Bases relationnelles via <strong>Django</strong></li>
-                    <li>Conception de schémas & migrations</li>
-                </ul>
+                <h4 data-i18n="skills.databases">Bases de données</h4>
+                <div data-i18n="skills.details.db_desc" data-i18n-html="true">
+                    <ul>
+                        <li><strong>MongoDB</strong> (NoSQL)</li>
+                        <li><strong>MySQL / PostgreSQL</strong></li>
+                        <li>Bases relationnelles via <strong>Django</strong></li>
+                        <li>Conception de schémas & migrations</li>
+                    </ul>
+                </div>
             </div>
             <div class="card">
-                <h4>Data • IA • Machine Learning</h4>
-                <ul>
-                    <li>NumPy • pandas • scikit-learn</li>
-                    <li>NLP (traitement du langage naturel)</li>
-                    <li>Pipelines complets : scraping → nettoyage → analyse → prédiction</li>
-                    <li>Whisper + FFMPEG (transcription audio/vidéo)</li>
-                </ul>
+                <h4 data-i18n="skills.data_ai">Data • IA • Machine Learning</h4>
+                <div data-i18n="skills.details.data_desc" data-i18n-html="true">
+                    <ul>
+                        <li>NumPy • pandas • scikit-learn</li>
+                        <li>NLP (traitement du langage naturel)</li>
+                        <li>Pipelines complets : scraping → nettoyage → analyse → prédiction</li>
+                        <li>Whisper + FFMPEG (transcription audio/vidéo)</li>
+                    </ul>
+                </div>
             </div>
             <div class="card">
-                <h4>Web • Scraping • Automatisation</h4>
-                <ul>
-                    <li>Scraping avancé (Selenium, requests)</li>
-                    <li>Automatisation de tâches répétitives</li>
-                    <li>APIs REST • Webhooks • Intégrations tierces</li>
-                    <li>OAuth2 (Youtube, Google, Linkedin…)</li>
-                    <li><strong>Celery</strong> + Redis (tâches asynchrones)</li>
-                </ul>
+                <h4 data-i18n="skills.web_automation">Web • Scraping • Automatisation</h4>
+                <div data-i18n="skills.details.web_desc" data-i18n-html="true">
+                    <ul>
+                        <li>Scraping avancé (Selenium, requests)</li>
+                        <li>Automatisation de tâches répétitives</li>
+                        <li>APIs REST • Webhooks • Intégrations tierces</li>
+                        <li>OAuth2 (Youtube, Google, Linkedin…)</li>
+                        <li><strong>Celery</strong> + Redis (tâches asynchrones)</li>
+                    </ul>
+                </div>
             </div>
             <div class="card">
-                <h4>Outils • DevOps • BI</h4>
-                <ul>
-                    <li><strong>Power BI</strong></li>
-                    <li><strong>Azure</strong> (bases : VMs, Blob, Functions)</li>
-                    <li><strong>Git</strong> & GitHub Actions (CI/CD)</li>
-                    <li>Docker • Docker Compose</li>
-                    <li>Postman • Swagger</li>
-                </ul>
+                <h4 data-i18n="skills.tools">Outils • DevOps • BI</h4>
+                <div data-i18n="skills.details.tools_desc" data-i18n-html="true">
+                    <ul>
+                        <li><strong>Power BI</strong></li>
+                        <li><strong>Azure</strong> (bases : VMs, Blob, Functions)</li>
+                        <li><strong>Git</strong> & GitHub Actions (CI/CD)</li>
+                        <li>Docker • Docker Compose</li>
+                        <li>Postman • Swagger</li>
+                    </ul>
+                </div>
             </div>
             <div class="card">
-                <h4>Politique de Tests & CI/CD</h4>
-                <ul>
-                    <li><strong>Tests unitaires :</strong> couverture des fonctions critiques, logique métier, services, utils.</li>
-                    <li><strong>Tests fonctionnels :</strong> vérification complète des workflows utilisateur et endpoints API.</li>
-                    <li><strong>Tests d’intégration :</strong> interactions entre services, base de données, APIs externes.</li>
-                    <li><strong>Mocking & fixtures :</strong> isolation des dépendances, reproductibilité des scénarios.</li>
-                    <li><strong>CI/CD :</strong> automatisation des tests, linting et déploiements (GitHub Actions / Docker).</li>
-                </ul>
+                <h4 data-i18n="skills.tests">Politique de Tests & CI/CD</h4>
+                <div data-i18n="skills.details.tests_desc" data-i18n-html="true">
+                    <ul>
+                        <li><strong>Tests unitaires :</strong> couverture des fonctions critiques, logique métier, services, utils.</li>
+                        <li><strong>Tests fonctionnels :</strong> vérification complète des workflows utilisateur et endpoints API.</li>
+                        <li><strong>Tests d’intégration :</strong> interactions entre services, base de données, APIs externes.</li>
+                        <li><strong>Mocking & fixtures :</strong> isolation des dépendances, reproductibilité des scénarios.</li>
+                        <li><strong>CI/CD :</strong> automatisation des tests, linting et déploiements (GitHub Actions / Docker).</li>
+                    </ul>
+                </div>
             </div>
             
             <div class="card">
-                <h4>Collaboration</h4>
-                <ul>
-                    <li><strong>Notion</strong>, <strong>Confluence</strong> ou <strong>GitHub Wiki</strong>.</li>
-                    <li><strong>Figma</strong></li>
-                    <li><strong>Gestion du code & collaboration technique :</strong> collaboration via <strong>GitHub</strong>, <strong>GitLab</strong>, <strong>Azure</strong></li>
-                </ul>
+                <h4 data-i18n="skills.collaboration">Collaboration</h4>
+                <div data-i18n="skills.details.collab_desc" data-i18n-html="true">
+                    <ul>
+                        <li><strong>Notion</strong>, <strong>Confluence</strong> ou <strong>GitHub Wiki</strong>.</li>
+                        <li><strong>Figma</strong></li>
+                        <li><strong>Gestion du code & collaboration technique :</strong> collaboration via <strong>GitHub</strong>, <strong>GitLab</strong>, <strong>Azure</strong></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="education">
-        <h3>Parcours académique</h3>
+        <h3 data-i18n="education.title">Parcours académique</h3>
         <div class="timeline">
             <div class="timeline-item">
-                <h4>Master — Intelligence Artificielle & Data Management</h4>
-                <p><strong>IASchool / Nexa Digital School — Lyon</strong></p>
+                <h4 data-i18n="education.master">Master — Intelligence Artificielle & Data Management</h4>
+                <p><strong data-i18n="education.master_school">IASchool / Nexa Digital School — Lyon</strong></p>
             </div>
             <div class="timeline-item">
-                <h4>Cours externes</h4>
-                <p>Université de Laval — Mathématiques pour les affaires</p>
-                <p>Udemy — PowerBI</p>
+                <h4 data-i18n="education.courses">Cours externes</h4>
+                <div data-i18n="education.courses_desc" data-i18n-html="true">
+                    <p>Université de Laval — Mathématiques pour les affaires</p>
+                    <p>Udemy — PowerBI</p>
+                </div>
             </div>
             <div class="timeline-item">
-                <h4>Bachelor — Computer Science</h4>
-                <p>Epitech Technology — Pédagogie par projet<br>Développement avancé • Autonomie totale et gestion de projets</p>
+                <h4 data-i18n="education.bachelor">Bachelor — Computer Science</h4>
+                <p data-i18n="education.bachelor_desc" data-i18n-html="true">Epitech Technology — Pédagogie par projet<br>Développement avancé • Autonomie totale et gestion de projets</p>
             </div>
         </div>
     </section>
 
     <section id="projects">
-        <h3>Quelques projets réalisés</h3>
+        <h3 data-i18n="projects.title">Quelques projets réalisés</h3>
         <div class="projects-grid" id="projects-container"></div>
     </section>
 
     <section id="interests">
-        <h3>Centres d’intérêt</h3>
+        <h3 data-i18n="interests.title">Centres d’intérêt</h3>
         <div class="interests">
             <div class="interest-card">
-                <h4>Nature</h4>
-                <p>Découvertes de nouveaux paysages et impacts sur l'être humain</p>
+                <h4 data-i18n="interests.nature.title">Nature</h4>
+                <p data-i18n="interests.nature.desc">Découvertes de nouveaux paysages et impacts sur l'être humain</p>
             </div>
             <div class="interest-card">
-                <h4>Psychologie et santé mentale</h4>
-                <p>Comprendre les comportements humains et promouvoir le bien-être</p>
+                <h4 data-i18n="interests.psychology.title">Psychologie et santé mentale</h4>
+                <p data-i18n="interests.psychology.desc">Comprendre les comportements humains et promouvoir le bien-être</p>
             </div>
             <div class="interest-card">
-                <h4>Histoire</h4>
-                <p>Civilisations passées et leurs influences sur le présent</p>
+                <h4 data-i18n="interests.history.title">Histoire</h4>
+                <p data-i18n="interests.history.desc">Civilisations passées et leurs influences sur le présent</p>
             </div>
             <div class="interest-card">
-                <h4>Musique</h4>
-                <p>Écoute variée et découverte de nouveaux genres avec une préférence pour le Soul, le RnB, le Rap…</p>
+                <h4 data-i18n="interests.music.title">Musique</h4>
+                <p data-i18n="interests.music.desc">Écoute variée et découverte de nouveaux genres avec une préférence pour le Soul, le RnB, le Rap…</p>
             </div>
             <div class="interest-card">
-                <h4>Lecture</h4>
-                <p>Exploration de divers genres littéraires et développement personnel (Jusqu'ici, gros coup de coeur pour Paulo Coelho, Lise Bourbeau, Mark Manson…)</p>
+                <h4 data-i18n="interests.reading.title">Lecture</h4>
+                <p data-i18n="interests.reading.desc">Exploration de divers genres littéraires et développement personnel (Jusqu'ici, gros coup de coeur pour Paulo Coelho, Lise Bourbeau, Mark Manson…)</p>
             </div>
         </div>
     </section>
@@ -382,7 +232,7 @@
         <a href="https://gitlab.com/Soraya_Anais" target="_blank">GitLab</a>
     </p>
     <p><a href="mailto:sorayacodo4@gmail.com">sorayacodo4@gmail.com</a></p>
-    <div class="copyright">© 2025 Soraya Codo – Portfolio personnel</div>
+    <div class="copyright" data-i18n="footer.copyright">© 2025 Soraya Codo – Portfolio personnel</div>
 </footer>
 
 <!-- POPUP CV -->
@@ -393,8 +243,8 @@
     </div>
 </div>
 
-<!-- Modal projets -->
-<div id="modal-template" class="modal">
+<!-- Modal projets (Single Instance) -->
+<div id="project-modal" class="modal">
     <div class="modal-content">
         <span class="close">×</span>
         <h3 class="modal-title"></h3>
@@ -404,119 +254,6 @@
     </div>
 </div>
 
-<script>
-// Avatar aléatoire
-const avatars = [
-    "./assets/images/avatar_soraya_blue_1_portfolio.png",
-    "./assets/images/avatar_soraya_blue_2_portfolio.png",
-    "./assets/images/avatar_soraya_blue_portfolio.png",
-    "./assets/images/avatar_soraya_portfolio.png"
-];
-const imgAvatar = document.getElementById("profile-avatar");
-const randomAvatar = avatars[Math.floor(Math.random() * avatars.length)];
-imgAvatar.onload = () => imgAvatar.classList.add("loaded");
-imgAvatar.src = randomAvatar;
-
-// Popup CV
-document.getElementById('open-cv').addEventListener('click', e => {
-    e.preventDefault();
-    document.getElementById('cv-popup').classList.add('active');
-});
-document.getElementById('close-cv').addEventListener('click', () => {
-    document.getElementById('cv-popup').classList.remove('active');
-});
-document.getElementById('cv-popup').addEventListener('click', e => {
-    if (e.target === document.getElementById('cv-popup')) {
-        document.getElementById('cv-popup').classList.remove('active');
-    }
-});
-
-// Particules + Projets (ton code 100% intact)
-const canvas = document.getElementById('particles');
-const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth; canvas.height = window.innerHeight;
-let particles = []; const num = 120;
-class Particle {
-    constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2.5 + 0.8;
-        this.speedX = Math.random() * 0.6 - 0.3;
-        this.speedY = Math.random() * 0.6 - 0.3;
-    }
-    update() {
-        this.x += this.speedX; this.y += this.speedY;
-        if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
-        if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
-    }
-    draw() {
-        ctx.fillStyle = 'rgba(59, 130, 246, 0.8)';
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-    }
-}
-function init() { particles = []; for (let i = 0; i < num; i++) particles.push(new Particle()); }
-init();
-function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => { p.update(); p.draw(); });
-    requestAnimationFrame(animate);
-}
-animate();
-window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; init(); });
-
-const projects = [
-    { title: "Champions League Stats", short: "Analyse et comparaisons des stats des joueurs par équipe, pays, league...", desc: "Analyse détaillée des performances des joueurs et équipes en Ligue des Champions, avec visualisations et comparaisons avancées.", tech: "Python, Pandas, NumPy, plotly, streamlit", images: ["./assets/images/champiosn_league_4.png", "./assets/images/champiosn_league_2.png"] },
-    { title: "PowerBI", short: "Dashboards Power BI + DAX + SQL + Python.", desc: "Dashboards Power BI de monitoring d'activités commerciales", tech: "Power BI, Python, SQL, DAX", images: ["./assets/images/powerBi_adventure_works (1).png", "./assets/images/powerBi_adventure_works (2).png"] },
-    { title: "Dashboard Temps Réel – NASA APOD + Météo", short: "Tableau de bord interactif affichant la météo en direct et l’image NASA du jour.", desc: "Dashboard dynamique affichant la météo en temps réel (API OpenWeatherMap) et l’image astronomique du jour (NASA APOD). Données rafraîchies automatiquement, composants réactifs et gestion des erreurs réseau.", tech: "NodeJs, API NASA, OpenWeatherMap, docker"},
-    { title: "AREA – Automatisation & Interconnexions", short: "Plateforme type IFTTT avec Node, React, Docker.", desc: "Plateforme type IFTTT permettant d'automatiser des actions entre services (API, periodic tasks, webhooks).", tech: "Node, React, Docker, API, Webhooks, SMTP, OAUTH" },
-    { title: "Radiant – Conseils personnalisés & recommandations produits", short: "Interactions web basées IA.", desc: "Collecte d'informations utilisateur et génération de conseils personnalisés avec recommandations de produits en stock.", tech: "Python, OpenApi, ReactJs" },
-    { title: "Analyse Bitcoin & Ethereum", short: "Pipeline data complet et analyses ML.", desc: "Scraping, nettoyage, analyses statistiques, visualisations.", tech: "Python, Pandas, NumPy, plotly" },
-    { title: "E-learning", short: "Formation en ligne sur les basiques du développement web.", desc: "Plateforme interactive pour apprendre les fondamentaux du développement web, avec exercices et suivi personnalisé.", tech: "Python, HTML/CSS/JS, SMTP" },
-    { title: "Geo-Monitoring", short: "Cartographie et suivi géographique des produits surveillés.", desc: "Plateforme de monitoring géographique en temps réel et suivi détaillé de chaque produit dans toutes les zones surveillées", tech: "Python, Django, Celery" },
-    { title: "Chatbot Python + MongoDB", short: "Chatbot intelligent avec mémoire de contexte.", desc: "Chatbot avec mémoire de contexte, recherche produit, synonymes d’intention et autocorrection.", tech: "Python, MongoDB, NLP" },
-    { title: "Scraping", short: "Scraper automatisé basé sur différentes sources.", desc: "Récupération automatisée d’informations.", tech: "Python, Scraping" },
-    { title: "Export PDF Cartes d'identité – Django", short: "Génération automatique de cartes format bancaire en PDF.", desc: "Génération automatisée de PDFs avec photo, QR code, informations administratives.", tech: "Python, Django, PDF, QR Code" }
-];
-
-const container = document.getElementById('projects-container');
-const modalTemplate = document.getElementById('modal-template');
-
-projects.forEach(proj => {
-    const card = document.createElement('div');
-    card.className = 'project-card';
-    card.innerHTML = `<h4>${proj.title}</h4><p>${proj.short}</p>`;
-    container.appendChild(card);
-
-    const modal = modalTemplate.cloneNode(true);
-    modal.id = '';
-    modal.style.display = 'none';
-    modal.querySelector('.modal-title').textContent = proj.title;
-    modal.querySelector('.modal-desc').textContent = proj.desc;
-    modal.querySelector('.modal-tech').textContent = 'Technologies : ' + proj.tech;
-    
-    const imagesDiv = modal.querySelector('.modal-images');
-    if (proj.images && proj.images.length > 0) {
-        proj.images.forEach(src => {
-            const img = document.createElement('img');
-            img.src = src;
-            img.alt = proj.title;
-            img.style.cssText = 'width:100%; border-radius:16px; margin:12px 0; transition:0.3s;';
-            img.onmouseover = () => img.style.transform = 'scale(1.03)';
-            img.onmouseout = () => img.style.transform = 'scale(1)';
-            imagesDiv.appendChild(img);
-        });
-    } else {
-        imagesDiv.style.display = "none";
-    }
-
-    document.body.appendChild(modal);
-
-    card.onclick = () => modal.style.display = 'flex';
-    modal.querySelector('.close').onclick = () => modal.style.display = 'none';
-    modal.onclick = e => { if (e.target === modal) modal.style.display = 'none'; };
-});
-</script>
+<script src="js/script.js"></script>
 </body>
 </html>
