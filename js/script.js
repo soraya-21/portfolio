@@ -124,6 +124,11 @@ async function loadTranslations(lang) {
         updateText();
         updateProjects(); // Update projects when language changes
         updateLanguageSelector(); // Update language selector options
+        
+        // Dispatch event for other scripts (like side-quests.js)
+        window.dispatchEvent(new CustomEvent('translationsLoaded', { 
+            detail: { language: lang, translations: translations } 
+        }));
     } catch (error) {
         console.error('Error loading translations:', error);
     }
@@ -136,7 +141,7 @@ function updateText() {
         let value = translations;
         
         for (const k of keys) {
-            value = value[k];
+            if (value) value = value[k];
         }
         
         if (value) {
@@ -145,6 +150,20 @@ function updateText() {
             } else {
                 element.textContent = value;
             }
+        }
+    });
+
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+        const key = element.getAttribute('data-i18n-placeholder');
+        const keys = key.split('.');
+        let value = translations;
+        
+        for (const k of keys) {
+            if (value) value = value[k];
+        }
+        
+        if (value) {
+            element.placeholder = value;
         }
     });
 }

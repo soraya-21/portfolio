@@ -157,5 +157,157 @@
     },
     "footer": {
         "copyright": "© 2025 Soraya Codo – Portfolio ti ara ẹni"
+    },
+    "side_quests": {
+        "title": "Àwọn Iṣẹ́ Ẹgbẹ́",
+        "subtitle": "Ṣawari awọn irinṣẹ idanwo ti o dapọ AI, ẹda, ati alafia.",
+        "simulation": "(Àfarawé Ibaraẹnisọrọ)",
+        "loading": "AI n ronu...",
+        "messages": {
+            "error_skin_type": "Jọwọ yan iru awọ ara rẹ.",
+            "error_rhyme_input": "Jọwọ tẹ akori tabi nkan kan sii.",
+            "rhyme_title_prefix": "Ẹmi ti:"
+        },
+        "beauty": {
+            "title": "Ẹwà & Itọju",
+            "radiant": {
+                "title": "Radiant Skincare",
+                "desc": "Gba ilana ṣiṣe ti ara ẹni ti o da lori iru awọ ara rẹ.",
+                "skin_type_label": "Iru Awọ",
+                "concerns_label": "Àwọn Àníyàn (Aṣayan)",
+                "concerns_placeholder": "Fun apẹẹrẹ: Iru, Awọn aami, Wrinkles...",
+                "button": "Ṣe ipilẹṣẹ Ilana Mi",
+                "options": {
+                    "oily": "Oily",
+                    "dry": "Dry",
+                    "combo": "Combination",
+                    "sensitive": "Sensitive"
+                },
+                "results": {
+                    "see_more": "Wo diẹ sii",
+                    "usage_title": "Awọn imọran lilo",
+                    "usage": {
+                        "oily": "Owurọ: Ọṣẹ mimọ, Omi-ara purifing, Ipara fẹlẹfẹlẹ. Alẹ: Ifọmọ meji, Active (AHA/BHA), Ipara.",
+                        "dry": "Owurọ: Omi itanna tabi wara, Omi-ara hydratant, Ipara ọlọrọ. Alẹ: Yiyọ atike epo, Ipara onjẹ, Epo oju.",
+                        "combo": "Owurọ: Ọṣẹ jeli, Omi-ara iwọntunwọnsi, Omi fẹlẹfẹlẹ. Alẹ: Ifọmọ pẹlẹ, Retinol (aṣayan), Ipara.",
+                        "sensitive": "Owurọ: Omi gbona, Omi-ara itura, Ipara idena. Alẹ: Epo ifọmọ, Itọju atunṣe. Yago fun fifi pa.",
+                        "default": "Owurọ: Fọ, Mu omi, Dabobo. Alẹ: Fọ, Tọju, Mu omi."
+                    },
+                    "title": "Ilana Ti Ara Ẹni Rẹ",
+                    "pro_tip": "Imọran Pro:",
+                    "routines": {
+                        "oily": "Purifying Foaming Cleanser + Niacinamide Serum + Mattifying Gel Moisturizer",
+                        "dry": "Gentle Cleansing Milk + Hyaluronic Acid Serum + Rich Ceramide Cream",
+                        "combo": "Gentle Cleansing Gel + Balancing Serum + Light Fluid",
+                        "sensitive": "Soothing Micellar Water + Centella Asiatica Serum + Barrier Repair Balm",
+                        "default": "Gentle Cleanser + Light Moisturizer + Sun Protection"
+                    },
+                    "advice": {
+                        "oily": "Lo salicylic acid lẹmeji ni ọsẹ kan.",
+                        "dry": "Yago fun omi gbigbona ati awọn ọja ti o ni ọti.",
+                        "combo": "Fi omi si ẹrẹkẹ rẹ daradara ki o tọju agbegbe T ni agbegbe.",
+                        "sensitive": "Kere jẹ diẹ sii. Ṣe pataki awọn ọja ti ko ni oorun."
+                    },
+                    "bonus_text": "Ẹbun fun \"{0}\": Ṣafikun eroja ti n ṣiṣẹ ni irọlẹ (fun apẹẹrẹ, Retinol fun ti ogbo, Vitamin C fun didan)."
+                }
+            }
+        },
+        "literature": {
+            "title": "Iwe-kikọ & Iseda",
+            "quote": {
+                "title": "Ọrọ Olokiki",
+                "desc": "Yan akori kan lati ṣawari ero ailakoko.",
+                "themes": {
+                    "love": "Ifẹ",
+                    "courage": "Igboya",
+                    "time": "Aago",
+                    "success": "Aṣeyọri",
+                    "wisdom": "Ọgbọn",
+                    "nature": "Iseda",
+                    "happiness": "Idunnu",
+                    "peace": "Alafia"
+                },
+                "database": {
+                    "love": [
+                        { "text": "Love does not consist in gazing at each other, but in looking outward together in the same direction.", "author": "Antoine de Saint-Exupéry" },
+                        { "text": "The only true language in the world is a kiss.", "author": "Alfred de Musset" }
+                    ],
+                    "courage": [
+                        { "text": "Courage is not the absence of fear, but the triumph over it.", "author": "Nelson Mandela" },
+                        { "text": "It takes courage to grow up and become who you really are.", "author": "E.E. Cummings" }
+                    ],
+                    "time": [
+                        { "text": "Make haste slowly.", "author": "Boileau" },
+                        { "text": "Time is a great teacher, but unfortunately it kills all its pupils.", "author": "Hector Berlioz" }
+                    ],
+                    "success": [
+                        { "text": "Success is stumbling from failure to failure with no loss of enthusiasm.", "author": "Winston Churchill" },
+                        { "text": "The only way to do great work is to love what you do.", "author": "Steve Jobs" }
+                    ],
+                    "wisdom": [
+                        { "text": "Know thyself.", "author": "Socrates" },
+                        { "text": "The only true wisdom is in knowing you know nothing.", "author": "Socrates" }
+                    ],
+                    "nature": [
+                        { "text": "Nature does nothing in vain.", "author": "Aristotle" },
+                        { "text": "Look deep into nature, and then you will understand everything better.", "author": "Albert Einstein" }
+                    ],
+                    "happiness": [
+                        { "text": "Happiness is sometimes hidden in the unknown.", "author": "Victor Hugo" },
+                        { "text": "Happiness is not something ready made. It comes from your own actions.", "author": "Dalai Lama" }
+                    ],
+                    "peace": [
+                        { "text": "Peace begins with a smile.", "author": "Mother Teresa" },
+                        { "text": "There was never a good war, or a bad peace.", "author": "Benjamin Franklin" }
+                    ]
+                }
+            },
+            "rhyme": {
+                "title": "Rhyme-Me Green",
+                "desc": "Tẹ ipilẹṣẹ iseda tabi akori kan (fun apẹẹrẹ, Okun, Igbo, Ifẹ) ki o ka.",
+                "placeholder": "Fun apẹẹrẹ: Igi Atijọ, Iji, Idakẹjẹ...",
+                "button": "Ka",
+                "responses": {
+                    "forest": "Emi ni ẹdọ aye, awọn gbongbo mi gba itan aye mọra. Tẹtisi kẹlẹkẹlẹ awọn ewe mi, o gbe ọgbọn ti awọn ọgọrun ọdun.",
+                    "ocean": "O tobi o si jin, mo pa awọn asiri ibú mọ. Oju mi n ṣe afihan ọrun, ṣugbọn ọkan mi n lu pẹlu ariwo omi ayeraye.",
+                    "sun": "Mo n jo laisi opin lati funni ni iye. Imọlẹ mi n lé okunkun lọ, o n mu ki gbogbo ọkan, gbogbo okuta, gbogbo ireti gbona.",
+                    "moon": "Ayaba oru, mo n ṣọ awọn ala rẹ. Ninu idakẹjẹ fadaka mi, mo n tọ awọn arinrin-ajo ti o sọnù ati awọn akewi ti o dawa.",
+                    "wind": "Airi ati alagbara, emi ni ẹmi iyipada. Mo n fi ọwọ kan awọn oju ati fa awọn iyemeji tu, arinrin-ajo laisi asopọ.",
+                    "mountain": "Duro ṣinṣin ati igberaga, mo kan awọn awọsanma. Awọn oke mi jẹ ipenija, awọn afonifoji mi jẹ ibi aabo. Emi ni suuru ti o di okuta.",
+                    "flower": "Ẹwa ti ko pẹ, mo ṣii si aye pẹlu ore-ọfẹ. Gbogbo petal jẹ ileri ti awọ, ẹrin ti a funni si imọlẹ.",
+                    "default": [
+                        "In the silence of {0},<br>The wind whispers an ancient secret,<br>Leaves dance, the spirit calms,<br>Nature reclaims its rights, serene.",
+                        "The echo of {0} resounds afar,<br>Like a morning caress,<br>Everything awakens, everything is light,<br>In this world, a prayer.",
+                        "Under the sky, {0} stands tall,<br>Witness of time, without weakness,<br>Deep roots, vibrant heart,<br>Hymn to life, eternally."
+                    ]
+                }
+            }
+        },
+        "science": {
+            "title": "Imọ-jinlẹ",
+            "gallery": {
+                "title": "Gbọ̀ngàn NASA",
+                "desc": "Iwakiri ti awọn iyalẹnu 20 to kẹhin lati Ile-ikawe Aworan ati Fidio NASA.",
+                "loading": "Ikojọpọ ile-ikawe...",
+                "source": "Orisun: NASA Image and Video Library",
+                "refresh": "Sọ Gbọ̀ngàn dọtun",
+                "no_images": "Ko si awọn aworan ti a rii fun ọdun yii.",
+                "error": "Ko le kojọpọ ibi aworan.",
+                "error_detail": "(Aṣiṣe nẹtiwọọki tabi API ko si)",
+                "untitled": "Lai ni akọle",
+                "no_desc": "Ko si apejuwe ti o wa.",
+                "lang_note": "(Apejuwe atilẹba ni Gẹẹsi)",
+                "date_label": "Ọjọ aimọ"
+            },
+            "chatgpt": {
+                "title": "ChatGPT",
+                "desc": "Wiwọle iyara si oluranlọwọ AI ayanfẹ rẹ fun gbogbo awọn ibeere rẹ.",
+                "button": "Ṣii ChatGPT"
+            }
+        },
+        "footer": {
+            "back": "Pada si Portfolio",
+            "copyright": "© 2025 Soraya Codo – Side Quests"
+        }
     }
 }

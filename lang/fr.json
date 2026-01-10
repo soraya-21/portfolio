@@ -12,6 +12,7 @@
         "ko": "Coréen"
     },
     "nav": {
+        "home": "Accueil",
         "stack": "Stack",
         "education": "Parcours",
         "cv": "CV",
@@ -156,6 +157,158 @@
         }
     },
     "footer": {
-        "copyright": "© 2025 Soraya Codo – Portfolio personnel"
+        "copyright": "© 2025 Soraya Codo – Portfolio Personnel"
+    },
+    "side_quests": {
+        "title": "Side Quests",
+        "subtitle": "Explorez des outils expérimentaux mêlant IA, créativité et bien-être.",
+        "simulation": "(Simulation interactive)",
+        "loading": "L'IA réfléchit...",
+        "messages": {
+            "error_skin_type": "Veuillez sélectionner votre type de peau.",
+            "error_rhyme_input": "Veuillez entrer un thème ou un élément.",
+            "rhyme_title_prefix": "L'Esprit de :"
+        },
+        "beauty": {
+            "title": "Beauté & Soin",
+            "radiant": {
+                "title": "Radiant Skincare",
+                "desc": "Obtenez une routine sur-mesure basée sur votre type de peau.",
+                "skin_type_label": "Type de Peau",
+                "concerns_label": "Préoccupations (Optionnel)",
+                "concerns_placeholder": "Ex: Acné, Taches, Rides, Teint terne...",
+                "button": "Générer ma Routine",
+                "options": {
+                    "oily": "Grasse",
+                    "dry": "Sèche",
+                    "combo": "Mixte",
+                    "sensitive": "Sensible"
+                },
+                "results": {
+                    "see_more": "Voir plus",
+                    "usage_title": "Conseils d'utilisation",
+                    "usage": {
+                        "oily": "Matin : Nettoyant doux, Sérum purifiant, Hydratant léger. Soir : Double nettoyage, Actif (AHA/BHA), Hydratant.",
+                        "dry": "Matin : Eau florale ou lait, Sérum hydratant, Crème riche. Soir : Démaquillant huile, Crème nourrissante, Huile visage.",
+                        "combo": "Matin : Nettoyant gel, Sérum équilibrant, Fluide. Soir : Nettoyage doux, Rétinol (optionnel), Hydratant.",
+                        "sensitive": "Matin : Eau thermale, Sérum apaisant, Crème barrière. Soir : Huile démaquillante, Soin réparateur. Évitez les frottements.",
+                        "default": "Matin : Nettoyer, Hydrater, Protéger. Soir : Nettoyer, Traiter, Hydrater."
+                    },
+                    "title": "Votre Routine Personnalisée",
+                    "pro_tip": "Conseil Pro :",
+                    "routines": {
+                        "oily": "Nettoyant moussant purifiant + Sérum Niacinamide + Gel hydratant matifiant",
+                        "dry": "Lait nettoyant doux + Sérum Acide Hyaluronique + Crème riche aux céramides",
+                        "combo": "Gel nettoyant doux + Sérum Équilibrant + Fluide léger",
+                        "sensitive": "Eau micellaire apaisante + Sérum Centella Asiatica + Baume barrière cutanée",
+                        "default": "Nettoyant doux + Hydratant léger + Protection solaire"
+                    },
+                    "advice": {
+                        "oily": "Utilisez de l'acide salicylique 2x par semaine.",
+                        "dry": "Évitez l'eau trop chaude et les produits contenant de l'alcool.",
+                        "combo": "Hydratez bien les joues et traitez la zone T localement.",
+                        "sensitive": "Moins c'est plus. Privilégiez les produits sans parfum."
+                    },
+                    "bonus_text": "Bonus pour \"{0}\" : Ajoutez un actif ciblé le soir (ex: Rétinol pour l'âge, Vitamine C pour l'éclat)."
+                }
+            }
+        },
+        "literature": {
+            "title": "Littérature & Nature",
+            "quote": {
+                "title": "Citation Célèbre",
+                "desc": "Choisissez un thème pour découvrir une pensée intemporelle.",
+                "themes": {
+                    "love": "Amour",
+                    "courage": "Courage",
+                    "time": "Temps",
+                    "success": "Succès",
+                    "wisdom": "Sagesse",
+                    "nature": "Nature",
+                    "happiness": "Bonheur",
+                    "peace": "Paix"
+                },
+                "database": {
+                    "love": [
+                        { "text": "Aimer, ce n'est pas se regarder l'un l'autre, c'est regarder ensemble dans la même direction.", "author": "Antoine de Saint-Exupéry" },
+                        { "text": "Le seul vrai langage au monde est un baiser.", "author": "Alfred de Musset" }
+                    ],
+                    "courage": [
+                        { "text": "Le courage n'est pas l'absence de peur, mais la capacité de la vaincre.", "author": "Nelson Mandela" },
+                        { "text": "Il faut du courage pour grandir et devenir qui l'on est vraiment.", "author": "E.E. Cummings" }
+                    ],
+                    "time": [
+                        { "text": "Hâte-toi lentement.", "author": "Boileau" },
+                        { "text": "Le temps est un grand maître, dit-on. Le malheur est qu'il tue ses élèves.", "author": "Hector Berlioz" }
+                    ],
+                    "success": [
+                        { "text": "Le succès, c'est d'aller d'échec en échec sans perdre son enthousiasme.", "author": "Winston Churchill" },
+                        { "text": "La seule façon de faire du bon travail est d'aimer ce que vous faites.", "author": "Steve Jobs" }
+                    ],
+                    "wisdom": [
+                        { "text": "Connais-toi toi-même.", "author": "Socrate" },
+                        { "text": "La vraie sagesse est de ne pas sembler sage.", "author": "Eschyle" }
+                    ],
+                    "nature": [
+                        { "text": "La nature ne fait rien en vain.", "author": "Aristote" },
+                        { "text": "Regardez profondément dans la nature, et alors vous comprendrez tout mieux.", "author": "Albert Einstein" }
+                    ],
+                    "happiness": [
+                        { "text": "Le bonheur est parfois caché dans l'inconnu.", "author": "Victor Hugo" },
+                        { "text": "Le bonheur n'est pas chose aisée. Il est très difficile de le trouver en nous, et impossible de le trouver ailleurs.", "author": "Chamfort" }
+                    ],
+                    "peace": [
+                        { "text": "La paix commence par un sourire.", "author": "Mère Teresa" },
+                        { "text": "Il n'y a jamais eu de bonne guerre ni de mauvaise paix.", "author": "Benjamin Franklin" }
+                    ]
+                }
+            },
+            "rhyme": {
+                "title": "Rime-Moi Vert",
+                "desc": "Entrez un élément de la nature ou un thème (ex: Océan, Forêt, Amour) et lisez.",
+                "placeholder": "Ex: Vieux Chêne, Tempête, Silence...",
+                "button": "Lire",
+                "responses": {
+                    "forest": "Je suis le poumon de la terre, mes racines embrassent l'histoire du monde. Écoute le murmure de mes feuilles, il porte la sagesse des siècles.",
+                    "ocean": "Vaste et profond, je garde les secrets des abysses. Ma surface reflète le ciel, mais mon cœur bat au rythme des marées éternelles.",
+                    "sun": "Je brûle sans fin pour offrir la vie. Ma lumière chasse les ombres, réchauffant chaque âme, chaque pierre, chaque espoir.",
+                    "moon": "Reine de la nuit, je veille sur tes rêves. Dans mon silence d'argent, je guide les voyageurs égarés et les poètes solitaires.",
+                    "wind": "Invisible et puissant, je suis le souffle du changement. Je caresse les visages et déracine les doutes, voyageur sans attache.",
+                    "mountain": "Immobile et fière, je touche les nuages. Mes sommets sont des défis, mes vallées des refuges. Je suis la patience faite pierre.",
+                    "flower": "Éphémère beauté, je m'ouvre au monde avec grâce. Chaque pétale est une promesse de couleur, un sourire offert à la lumière.",
+                    "default": [
+                        "Dans le silence de {0},<br>Le vent murmure un secret ancien,<br>Les feuilles dansent, l'esprit s'apaise,<br>La nature reprend ses droits, sereine.",
+                        "L'écho de {0} résonne au loin,<br>Comme une caresse du matin,<br>Tout s'éveille, tout est lumière,<br>Dans ce monde, une prière.",
+                        "Sous le ciel, {0} se dresse,<br>Témoin du temps, sans faiblesse,<br>Racines profondes, cœur vibrant,<br>Hymne à la vie, éternellement."
+                    ]
+                }
+            }
+        },
+        "science": {
+            "title": "Science",
+            "gallery": {
+                "title": "Galerie NASA",
+                "desc": "Exploration des 20 dernières merveilles de la NASA Image and Video Library.",
+                "loading": "Chargement de la librairie...",
+                "source": "Source : NASA Image and Video Library",
+                "refresh": "Actualiser la Galerie",
+                "no_images": "Aucune image trouvée pour cette année.",
+                "error": "Impossible de charger la galerie.",
+                "error_detail": "(Erreur réseau ou API indisponible)",
+                "date_label": "Date inconnue",
+                "untitled": "Sans titre",
+                "no_desc": "Aucune description disponible.",
+                "lang_note": "(Description originale en anglais)"
+            },
+            "chatgpt": {
+                "title": "ChatGPT",
+                "desc": "Accès rapide à votre assistant IA préféré pour toutes vos questions.",
+                "button": "Ouvrir ChatGPT"
+            }
+        },
+        "footer": {
+            "back": "Retour au Portfolio",
+            "copyright": "© 2025 Soraya Codo – Side Quests"
+        }
     }
 }

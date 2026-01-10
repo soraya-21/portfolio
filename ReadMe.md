@@ -13,3 +13,7 @@ Les fonctionnalités suivqntes ont été ajoutées:
     - Choix de mode (Clair/Sombre)
     - Traductions en Francais, Anglais, Mandarin, Japonais, Coréen et en Yoruba
     - Voir et télécharger mon CV
+    - Generer des conseils de soin de peau
+    - Choisir un thème pour découvrir une pensée intemporelle
+    - Generer un poeme avec un element de la nature
+    - Voir les dernieres Images postées sur le site de la nasa

@@ -12,6 +12,7 @@
         "ko": "Korean"
     },
     "nav": {
+        "home": "Home",
         "stack": "Stack",
         "education": "Education",
         "cv": "CV",
@@ -157,5 +158,157 @@
     },
     "footer": {
         "copyright": "© 2025 Soraya Codo – Personal Portfolio"
+    },
+    "side_quests": {
+        "title": "Side Quests",
+        "subtitle": "Explore experimental tools mixing AI, creativity, and well-being.",
+        "simulation": "(Interactive Simulation)",
+        "loading": "AI is thinking...",
+        "messages": {
+            "error_skin_type": "Please select your skin type.",
+            "error_rhyme_input": "Please enter a theme or an element.",
+            "rhyme_title_prefix": "The Spirit of:"
+        },
+        "beauty": {
+            "title": "Beauty & Care",
+            "radiant": {
+                "title": "Radiant Skincare",
+                "desc": "Get a custom routine based on your skin type.",
+                "skin_type_label": "Skin Type",
+                "concerns_label": "Concerns (Optional)",
+                "concerns_placeholder": "Ex: Acne, Spots, Wrinkles, Dullness...",
+                "button": "Generate my Routine",
+                "options": {
+                    "oily": "Oily",
+                    "dry": "Dry",
+                    "combo": "Combination",
+                    "sensitive": "Sensitive"
+                },
+                "results": {
+                    "see_more": "See more",
+                    "usage_title": "Usage Tips",
+                    "usage": {
+                        "oily": "Morning: Gentle cleanser, Purifying serum, Light moisturizer. Evening: Double cleanse, Active (AHA/BHA), Moisturizer.",
+                        "dry": "Morning: Floral water or milk, Hydrating serum, Rich cream. Evening: Oil makeup remover, Nourishing cream, Face oil.",
+                        "combo": "Morning: Gel cleanser, Balancing serum, Fluid. Evening: Gentle cleanse, Retinol (optional), Moisturizer.",
+                        "sensitive": "Morning: Thermal water, Soothing serum, Barrier cream. Evening: Cleansing oil, Repair care. Avoid rubbing.",
+                        "default": "Morning: Cleanse, Hydrate, Protect. Evening: Cleanse, Treat, Hydrate."
+                    },
+                    "title": "Your Personalized Routine",
+                    "pro_tip": "Pro Tip:",
+                    "routines": {
+                        "oily": "Purifying Foaming Cleanser + Niacinamide Serum + Mattifying Gel Moisturizer",
+                        "dry": "Gentle Cleansing Milk + Hyaluronic Acid Serum + Rich Ceramide Cream",
+                        "combo": "Gentle Cleansing Gel + Balancing Serum + Light Fluid",
+                        "sensitive": "Soothing Micellar Water + Centella Asiatica Serum + Barrier Repair Balm",
+                        "default": "Gentle Cleanser + Light Moisturizer + Sun Protection"
+                    },
+                    "advice": {
+                        "oily": "Use salicylic acid twice a week.",
+                        "dry": "Avoid hot water and alcohol-based products.",
+                        "combo": "Hydrate cheeks well and treat the T-zone locally.",
+                        "sensitive": "Less is more. Prioritize fragrance-free products."
+                    },
+                    "bonus_text": "Bonus for \"{0}\": Add a targeted active in the evening (e.g., Retinol for aging, Vitamin C for radiance)."
+                }
+            }
+        },
+        "literature": {
+            "title": "Literature & Nature",
+            "quote": {
+                "title": "Famous Quote",
+                "desc": "Choose a theme to discover a timeless thought.",
+                "themes": {
+                    "love": "Love",
+                    "courage": "Courage",
+                    "time": "Time",
+                    "success": "Success",
+                    "wisdom": "Wisdom",
+                    "nature": "Nature",
+                    "happiness": "Happiness",
+                    "peace": "Peace"
+                },
+                "database": {
+                    "love": [
+                        { "text": "Love does not consist in gazing at each other, but in looking outward together in the same direction.", "author": "Antoine de Saint-Exupéry" },
+                        { "text": "The only true language in the world is a kiss.", "author": "Alfred de Musset" }
+                    ],
+                    "courage": [
+                        { "text": "Courage is not the absence of fear, but the triumph over it.", "author": "Nelson Mandela" },
+                        { "text": "It takes courage to grow up and become who you really are.", "author": "E.E. Cummings" }
+                    ],
+                    "time": [
+                        { "text": "Make haste slowly.", "author": "Boileau" },
+                        { "text": "Time is a great teacher, but unfortunately it kills all its pupils.", "author": "Hector Berlioz" }
+                    ],
+                    "success": [
+                        { "text": "Success is stumbling from failure to failure with no loss of enthusiasm.", "author": "Winston Churchill" },
+                        { "text": "The only way to do great work is to love what you do.", "author": "Steve Jobs" }
+                    ],
+                    "wisdom": [
+                        { "text": "Know thyself.", "author": "Socrates" },
+                        { "text": "The only true wisdom is in knowing you know nothing.", "author": "Socrates" }
+                    ],
+                    "nature": [
+                        { "text": "Nature does nothing in vain.", "author": "Aristotle" },
+                        { "text": "Look deep into nature, and then you will understand everything better.", "author": "Albert Einstein" }
+                    ],
+                    "happiness": [
+                        { "text": "Happiness is sometimes hidden in the unknown.", "author": "Victor Hugo" },
+                        { "text": "Happiness is not something ready made. It comes from your own actions.", "author": "Dalai Lama" }
+                    ],
+                    "peace": [
+                        { "text": "Peace begins with a smile.", "author": "Mother Teresa" },
+                        { "text": "There was never a good war, or a bad peace.", "author": "Benjamin Franklin" }
+                    ]
+                }
+            },
+            "rhyme": {
+                "title": "Rhyme-Me Green",
+                "desc": "Enter a nature element or theme (e.g., Ocean, Forest, Love) and read.",
+                "placeholder": "Ex: Old Oak, Storm, Silence...",
+                "button": "Read",
+                "responses": {
+                    "forest": "I am the earth's lungs, my roots embrace the world's history. Listen to the whisper of my leaves, carrying the wisdom of centuries.",
+                    "ocean": "Vast and deep, I keep the secrets of the abyss. My surface reflects the sky, but my heart beats to the rhythm of eternal tides.",
+                    "sun": "I burn endlessly to offer life. My light chases shadows, warming every soul, every stone, every hope.",
+                    "moon": "Queen of the night, I watch over your dreams. In my silver silence, I guide lost travelers and lonely poets.",
+                    "wind": "Invisible and powerful, I am the breath of change. I caress faces and uproot doubts, a traveler with no ties.",
+                    "mountain": "Still and proud, I touch the clouds. My peaks are challenges, my valleys refuges. I am patience turned to stone.",
+                    "flower": "Ephemeral beauty, I open to the world with grace. Every petal is a promise of color, a smile offered to the light.",
+                    "default": [
+                        "In the silence of {0},<br>The wind whispers an ancient secret,<br>Leaves dance, the spirit calms,<br>Nature reclaims its rights, serene.",
+                        "The echo of {0} resounds afar,<br>Like a morning caress,<br>Everything awakens, everything is light,<br>In this world, a prayer.",
+                        "Under the sky, {0} stands tall,<br>Witness of time, without weakness,<br>Deep roots, vibrant heart,<br>Hymn to life, eternally."
+                    ]
+                }
+            }
+        },
+        "science": {
+            "title": "Science",
+            "gallery": {
+                "title": "NASA Gallery",
+                "desc": "Exploration of the last 20 wonders from the NASA Image and Video Library.",
+                "loading": "Loading library...",
+                "source": "Source: NASA Image and Video Library",
+                "refresh": "Refresh Gallery",
+                "no_images": "No images found for this year.",
+                "error": "Unable to load gallery.",
+                "error_detail": "(Network error or API unavailable)",
+                "untitled": "Untitled",
+                "no_desc": "No description available.",
+                "lang_note": "",
+                "date_label": "Unknown Date"
+            },
+            "chatgpt": {
+                "title": "ChatGPT",
+                "desc": "Quick access to your favorite AI assistant for all your questions.",
+                "button": "Open ChatGPT"
+            }
+        },
+        "footer": {
+            "back": "Back to Portfolio",
+            "copyright": "© 2025 Soraya Codo – Side Quests"
+        }
     }
 }

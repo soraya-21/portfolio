@@ -1,295 +1,474 @@
-// Mock AI Logic for Side Quests
+// Global Translations State
+let currentTranslations = window.translations || {};
+let currentLanguage = document.documentElement.lang || 'fr';
 
-// 1. Landscape Translator
-function generateLandscape() {
-    const input = document.getElementById('landscape-input').value.toLowerCase();
-    const resultDiv = document.getElementById('landscape-result');
+// Listen for translation updates
+window.addEventListener('translationsLoaded', (e) => {
+    console.log('Translations loaded in side-quests.js:', e.detail.language);
+    currentTranslations = e.detail.translations;
+    currentLanguage = e.detail.language;
     
-    if (!input) return;
-
-    // Construct a prompt for the AI image generator based on keywords
-    let prompt = "abstract artistic landscape, dreamlike, 8k";
-    
-    if (input.includes('fatigué') || input.includes('calme') || input.includes('triste') || input.includes('seul')) {
-        prompt = "misty mountain at twilight, blue and violet tones, peaceful, cinematic lighting, hyperrealistic, 4k, serenity";
-    } else if (input.includes('déterminé') || input.includes('énergie') || input.includes('joie') || input.includes('heureux')) {
-        prompt = "bright sunrise over a green valley, golden light piercing clouds, vibrant colors, hopeful, 8k, unreal engine, masterpiece";
-    } else if (input.includes('colère') || input.includes('stress') || input.includes('énervé')) {
-        prompt = "stormy ocean, dark clouds, dramatic waves, single ray of light breaking through, epic, matte painting, intense atmosphere";
-    } else if (input.includes('amour') || input.includes('passion')) {
-        prompt = "warm sunset over a flower field, pink and orange sky, romantic atmosphere, soft lighting, watercolor style";
-    } else {
-        // Fallback: use the input itself translated loosely or as abstract concept
-        prompt = `surreal landscape representing ${input}, artistic, fantasy style, intricate details`;
+    // Refresh Gallery if visible (to update static texts and language note)
+    if (document.getElementById('nasa-gallery-container') && localStorage.getItem('nasa_gallery_cache_v2')) {
+        fetchNASAGallery(false);
     }
+});
 
-    // Encode the prompt for the URL
-    const encodedPrompt = encodeURIComponent(prompt);
-    // Use the reliable image.pollinations.ai endpoint directly
-    const randomSeed = Math.floor(Math.random() * 10000);
-    const imageSrc = `https://image.pollinations.ai/prompt/${encodedPrompt}?width=800&height=600&seed=${randomSeed}&nologo=true`;
-
-    simulateLoading(resultDiv, () => {
-        resultDiv.innerHTML = `
-            <strong>Vision générée :</strong><br>
-            <div style="margin-top: 15px; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
-                <img src="${imageSrc}" alt="Paysage généré par IA" style="width: 100%; height: auto; display: block; min-height: 200px; background: #eee;" loading="lazy">
-            </div>
-            <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.7;">Prompt: ${prompt}</p>
-        `;
-    });
-}
-
-// 2. Sylvothérapie
-function generateTree() {
-    const input = document.getElementById('tree-input').value.toLowerCase();
-    const resultDiv = document.getElementById('tree-result');
+// Helper: Get translation safely
+function getTranslation(key, fallback) {
+    if (!currentTranslations) return fallback;
     
-    if (!input) return;
-
-    let tree = "Le Pin Sylvestre";
-    let reason = "pour la résilience.";
-    let exercise = "Inspirez profondément en levant les bras, expirez en les baissant.";
-
-    if (input.includes('stress') || input.includes('angoisse')) {
-        tree = "Le Bouleau Blanc";
-        reason = "symbole de renouveau et de purification.";
-        exercise = "Exercice : 'La Respiration Purifiante' – Inspirez par le nez en 4 temps, bloquez 2 temps, expirez par la bouche comme si vous souffliez dans une paille en 6 temps.";
-    } else if (input.includes('fatigue') || input.includes('épuisé')) {
-        tree = "Le Chêne Robuste";
-        reason = "pour sa force tranquille et son ancrage.";
-        exercise = "Exercice : 'L'Ancrage' – Pieds nus (si possible), imaginez des racines partant de vos talons jusqu'au centre de la terre.";
-    } else if (input.includes('colère') || input.includes('énervé')) {
-        tree = "Le Saule Pleureur";
-        reason = "pour accepter les émotions et laisser couler.";
-        exercise = "Exercice : 'Le Relâchement' – Secouez doucement vos mains et vos épaules en expirant bruyamment.";
-    }
-
-    simulateLoading(resultDiv, () => {
-        resultDiv.innerHTML = `<strong>Votre Allié : ${tree}</strong><br>Pourquoi : ${reason}<br><br><em>${exercise}</em>`;
-    });
-}
-
-// 3. Playlist Generator
-function generatePlaylist() {
-    const input = document.getElementById('playlist-input').value.toLowerCase();
-    const resultDiv = document.getElementById('playlist-result');
+    const keys = key.split('.');
+    let value = currentTranslations;
     
-    if (!input) return;
-
-    let structure = [
-        "0-5 min : Intro Lo-Fi pour se mettre dans l'ambiance",
-        "5-15 min : Rythme modéré (100 BPM) pour activer",
-        "15-30 min : Flow continu (Deep House ou Jazz)",
-        "30+ min : Redescente acoustique"
-    ];
-
-    if (input.includes('sport') || input.includes('énergie')) {
-        structure = [
-            "0-5 min : Échauffement Tribal (Percussions)",
-            "5-20 min : Montée en puissance (High Tempo / Rock)",
-            "20-40 min : Peak Performance (Drum & Bass)",
-            "40+ min : Cool down (Ambient)"
-        ];
-    } else if (input.includes('dormir') || input.includes('nuit')) {
-        structure = [
-            "0-10 min : Piano minimaliste",
-            "10-20 min : Sons de pluie et nappes synthétiques",
-            "20+ min : Silence progressif (Bruit blanc)"
-        ];
-    }
-
-    simulateLoading(resultDiv, () => {
-        resultDiv.innerHTML = `<strong>Structure de Session :</strong><ul style='margin-top:10px; padding-left:20px;'>${structure.map(s => `<li>${s}</li>`).join('')}</ul>`;
-    });
-}
-
-// 4. Lyrics Generator
-let currentStyle = 'Rap';
-function setLyricStyle(btn, style) {
-    document.querySelectorAll('.quest-option-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    currentStyle = style;
-}
-
-function generateLyrics() {
-    const input = document.getElementById('lyrics-input').value;
-    const resultDiv = document.getElementById('lyrics-result');
-    
-    if (!input) return;
-
-    let lyrics = "";
-    
-    if (currentStyle === 'Rap') {
-        lyrics = `Yo, écoute ça...\n\n"${input}", c'est le message,\nDirect, pas de mirage.\nOn avance, on trace la route,\nSans jamais avoir de doute.\n\nYeah.`;
-    } else if (currentStyle === 'Jazz') {
-        lyrics = `(Piano doux...)\n\nOh, "${input}"...\nC'est comme une note bleue dans la nuit,\nUne mélodie qui s'enfuit.\nDoucement, le temps s'arrête,\nJuste pour nous, c'est la fête...`;
-    } else {
-        lyrics = `C'est une chanson pour toi,\nPour dire "${input}" tout bas.\nLa la la, la vie est belle,\nComme une hirondelle...`;
-    }
-
-    simulateLoading(resultDiv, () => {
-        resultDiv.textContent = lyrics;
-    });
-}
-
-// 4.5 Radiant Skincare Logic
-let currentSkinType = 'Mixte'; // Default
-function selectSkinType(btn, type) {
-    // Reset buttons in the same container
-    const container = btn.parentElement;
-    container.querySelectorAll('.quest-option-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    currentSkinType = type;
-}
-
-function generateSkincare() {
-    const concernsInput = document.getElementById('skin-concern').value.toLowerCase();
-    const resultDiv = document.getElementById('skincare-result');
-    
-    // Logic Database
-    const routines = {
-        'Grasse': {
-            cleanser: { type: "Gel nettoyant purifiant", product: "CeraVe Gel Moussant", usage: "Matin et soir. Faire mousser une noisette sur visage humide, insister sur la zone T, rincer." },
-            toner: { type: "Tonique exfoliant BHA", product: "Paula's Choice 2% BHA", usage: "Le soir, 2-3 fois par semaine. Appliquer avec un coton ou les doigts sur peau sèche." },
-            serum: { type: "Niacinamide 10% + Zinc", product: "The Ordinary Niacinamide 10% + Zinc 1%", usage: "Matin et soir avant la crème. Quelques gouttes sur tout le visage." },
-            moisturizer: { type: "Gel-crème matifiant", product: "La Roche-Posay Effaclar Mat", usage: "Matin et soir. Appliquer sur l'ensemble du visage." },
-            sunscreen: { type: "Fluide matifiant SPF 50", product: "La Roche-Posay Anthelios Oil Correct", usage: "Tous les matins, dernière étape. Renouveler si exposition prolongée." }
-        },
-        'Sèche': {
-            cleanser: { type: "Lait ou Huile lavante", product: "CeraVe Crème Lavante Hydratante", usage: "Matin et soir. Masser doucement sur peau humide, rincer." },
-            toner: { type: "Lotion hydratante", product: "Klairs Supple Preparation Facial Toner", usage: "Matin et soir. Tapoter sur le visage avec les mains." },
-            serum: { type: "Acide Hyaluronique + B5", product: "The Ordinary Hyaluronic Acid 2% + B5", usage: "Matin et soir sur peau légèrement humide pour sceller l'hydratation." },
-            moisturizer: { type: "Crème riche céramides", product: "CeraVe Baume Hydratant", usage: "Matin et soir. Appliquer généreusement." },
-            sunscreen: { type: "Crème solaire hydratante", product: "Beauty of Joseon Relief Sun : Rice + Probiotics", usage: "Tous les matins. Ne pas oublier le cou." }
-        },
-        'Mixte': {
-            cleanser: { type: "Mousse nettoyante douce", product: "Bioderma Créaline Gel Moussant", usage: "Matin et soir. Nettoyer en douceur sans agresser." },
-            toner: { type: "Tonique équilibrant", product: "Thayers Witch Hazel Toner", usage: "Matin et soir. Appliquer avec un coton." },
-            serum: { type: "Vitamine C (Matin)", product: "Garnier Sérum Vitamine C", usage: "Le matin pour l'éclat. Le soir, privilégier l'hydratation." },
-            moisturizer: { type: "Émulsion légère", product: "La Roche-Posay Toleriane Sensitive Fluide", usage: "Matin et soir. Une petite quantité suffit." },
-            sunscreen: { type: "Fluide invisible SPF 50", product: "La Roche-Posay Anthelios UVMune 400", usage: "Tous les matins. Texture fluide idéale sous le maquillage." }
-        },
-        'Sensible': {
-            cleanser: { type: "Nettoyant sans savon", product: "La Roche-Posay Toleriane Dermo-Nettoyant", usage: "Matin et soir. Masser du bout des doigts, essuyer avec un coton ou rincer." },
-            toner: { type: "Eau thermale", product: "Avène Eau Thermale Spray", usage: "Vaporiser à tout moment pour apaiser. Ne pas laisser sécher à l'air libre." },
-            serum: { type: "Sérum apaisant", product: "La Roche-Posay Toleriane Ultra Dermallergo", usage: "Matin et soir quand la peau tiraille ou rougit." },
-            moisturizer: { type: "Crème tolérance extrême", product: "Avène Tolérance Control Crème", usage: "Matin et soir. Formule minimaliste pour éviter les réactions." },
-            sunscreen: { type: "Écran minéral SPF 50", product: "Avène Fluide Minéral 50+", usage: "Tous les matins. Les filtres minéraux sont souvent mieux tolérés." }
+    for (const k of keys) {
+        if (value && value[k] !== undefined) {
+            value = value[k];
+        } else {
+            return fallback;
         }
-    };
-
-    let baseRoutine = routines[currentSkinType] || routines['Mixte'];
-    let boosters = [];
-
-    // Add boosters based on concerns
-    if (concernsInput.includes('acné') || concernsInput.includes('bouton')) boosters.push({type: "Traitement local", product: "La Roche-Posay Effaclar Duo+", usage: "Le soir sur les imperfections."});
-    if (concernsInput.includes('rides') || concernsInput.includes('age') || concernsInput.includes('âge')) boosters.push({type: "Rétinol", product: "CeraVe Sérum Rétinol Anti-Marques", usage: "Le soir uniquement. Commencer 2 fois par semaine."});
-    if (concernsInput.includes('tache') || concernsInput.includes('terne') || concernsInput.includes('éclat')) boosters.push({type: "Vitamine C Puissante", product: "La Roche-Posay Pure Vitamin C10", usage: "Le matin sous la crème solaire."});
-    if (concernsInput.includes('yeux') || concernsInput.includes('cerne')) boosters.push({type: "Contour des Yeux", product: "The Ordinary Caffeine Solution 5%", usage: "Matin et soir, masser le contour de l'œil."});
-
-    let htmlContent = `
-        <h4 style="color:var(--accent); margin-bottom:15px; text-align:center;">Votre Routine Radiant (Peau ${currentSkinType})</h4>
-        <ul style="list-style:none; padding:0; line-height:1.6;">
-            <li style="margin-bottom:10px;">🧼 <strong>Nettoyant :</strong> ${baseRoutine.cleanser.type}<br><span style="font-size:0.9em; opacity:0.8;">Ex: ${baseRoutine.cleanser.product}</span></li>
-            <li style="margin-bottom:10px;">💧 <strong>Tonique :</strong> ${baseRoutine.toner.type}<br><span style="font-size:0.9em; opacity:0.8;">Ex: ${baseRoutine.toner.product}</span></li>
-            <li style="margin-bottom:10px;">🧪 <strong>Sérum :</strong> ${baseRoutine.serum.type}<br><span style="font-size:0.9em; opacity:0.8;">Ex: ${baseRoutine.serum.product}</span></li>
-            <li style="margin-bottom:10px;">🧴 <strong>Hydratant :</strong> ${baseRoutine.moisturizer.type}<br><span style="font-size:0.9em; opacity:0.8;">Ex: ${baseRoutine.moisturizer.product}</span></li>
-            <li style="margin-bottom:10px;">☀️ <strong>Protection :</strong> ${baseRoutine.sunscreen.type}<br><span style="font-size:0.9em; opacity:0.8;">Ex: ${baseRoutine.sunscreen.product}</span></li>
-        </ul>
-    `;
-
-    if (boosters.length > 0) {
-        htmlContent += `
-            <div style="margin-top:15px; padding-top:15px; border-top:1px dashed rgba(255,255,255,0.2);">
-                <strong>🚀 Boosters Ciblés :</strong>
-                <ul style="margin-top:5px; padding-left:20px;">
-                    ${boosters.map(b => `<li>${b.type} (${b.product})</li>`).join('')}
-                </ul>
-            </div>
-        `;
     }
-
-    // Add "Voir plus" button and hidden usage details
-    htmlContent += `
-        <div style="margin-top:20px; text-align:center;">
-            <button onclick="document.getElementById('usage-details').style.display = document.getElementById('usage-details').style.display === 'none' ? 'block' : 'none'" style="background:transparent; border:1px solid var(--accent); color:var(--accent); padding:5px 15px; border-radius:20px; cursor:pointer; font-size:0.9rem;">Voir Conseils d'Utilisation</button>
-        </div>
-        <div id="usage-details" style="display:none; margin-top:15px; background:rgba(255,255,255,0.05); padding:15px; border-radius:10px; font-size:0.9rem;">
-            <h5 style="color:var(--accent); margin-bottom:10px;">Mode d'Emploi :</h5>
-            <ul style="list-style:none; padding:0;">
-                <li style="margin-bottom:8px;"><strong>1. Nettoyant :</strong> ${baseRoutine.cleanser.usage}</li>
-                <li style="margin-bottom:8px;"><strong>2. Tonique :</strong> ${baseRoutine.toner.usage}</li>
-                <li style="margin-bottom:8px;"><strong>3. Sérum :</strong> ${baseRoutine.serum.usage}</li>
-                <li style="margin-bottom:8px;"><strong>4. Hydratant :</strong> ${baseRoutine.moisturizer.usage}</li>
-                <li style="margin-bottom:8px;"><strong>5. Protection :</strong> ${baseRoutine.sunscreen.usage}</li>
-                ${boosters.map(b => `<li style="margin-bottom:8px; color:var(--accent);"><strong>+ Booster (${b.type}) :</strong> ${b.usage}</li>`).join('')}
-            </ul>
-        </div>
-    `;
-
-    simulateLoading(resultDiv, () => {
-        resultDiv.innerHTML = htmlContent;
-    });
-}
-
-// 5. Reframing
-function reframeThought() {
-    const input = document.getElementById('reframe-input').value;
-    const resultDiv = document.getElementById('reframe-result');
     
-    if (!input) return;
-
-    const reframes = [
-        "Ce n'est pas un échec, c'est une donnée pour l'apprentissage futur.",
-        "Cette situation ne définit pas ma valeur, c'est juste un moment ponctuel.",
-        "Qu'est-ce que je conseillerais à mon meilleur ami dans la même situation ?"
-    ];
-
-    simulateLoading(resultDiv, () => {
-        resultDiv.innerHTML = `<strong>Nouvelles Perspectives :</strong><ul style='margin-top:10px; padding-left:20px;'>${reframes.map(r => `<li>${r}</li>`).join('')}</ul>`;
-    });
-}
-
-// 6. Archetype
-function selectArchetype(choice) {
-    const resultDiv = document.getElementById('archetype-result');
-    
-    let archetype = "";
-    if (choice === 'Mer') archetype = "L'Explorateur Intuitif – Vous suivez le courant mais connaissez les profondeurs.";
-    if (choice === 'Montagne') archetype = "Le Sage Résilient – Vous visez haut et restez stable face aux vents.";
-    if (choice === 'Forêt') archetype = "Le Gardien Connecté – Vous cherchez la croissance et l'harmonie collective.";
-
-    resultDiv.innerHTML = `<strong>Votre Archétype :</strong><br>${archetype}`;
-    resultDiv.classList.add('visible');
-    resultDiv.style.display = 'block';
-}
-
-// 7. Orchestrator
-function orchestrate() {
-    const input = document.getElementById('orchestrator-input').value.toLowerCase();
-    const resultDiv = document.getElementById('orchestrator-result');
-    
-    if (!input) return;
-
-    let mix = "Vent dans les feuilles + Guitare Acoustique";
-    if (input.includes('calme') || input.includes('paix')) mix = "Pluie légère + Piano Jazz";
-    if (input.includes('énergie') || input.includes('sport')) mix = "Orage lointain + Battements Lo-Fi";
-    if (input.includes('focus') || input.includes('travail')) mix = "Rivière qui coule + Ondes Alpha";
-
-    simulateLoading(resultDiv, () => {
-        resultDiv.innerHTML = `Mix Idéal : <span style="color:var(--accent)">${mix}</span>`;
-    });
+    return value;
 }
 
 // Helper: Simulate "Thinking" time
 function simulateLoading(element, callback) {
+    const loadingText = getTranslation('side_quests.loading', "L'IA réfléchit...");
+    
     element.style.display = 'block';
-    element.innerHTML = "<em>L'IA réfléchit...</em>";
+    element.innerHTML = `<div style="display:flex; justify-content:center; align-items:center; gap:10px;"><span>${loadingText}</span><div class="spinner" style="width:15px; height:15px; border:2px solid var(--accent); border-top-color:transparent; border-radius:50%; animation:spin 1s linear infinite;"></div></div>`;
     element.classList.remove('visible');
+    
+    // Add spinner animation style if not exists
+    if (!document.getElementById('spinner-style')) {
+        const style = document.createElement('style');
+        style.id = 'spinner-style';
+        style.textContent = '@keyframes spin { to { transform: rotate(360deg); } }';
+        document.head.appendChild(style);
+    }
     
     setTimeout(() => {
         callback();
         element.classList.add('visible');
     }, 1000); // 1 second fake delay
 }
+
+// 1. Citation Célèbre Logic
+// Default Fallback Database
+const defaultQuotesDatabase = {
+    'love': [
+        { text: "Aimer, ce n'est pas se regarder l'un l'autre, c'est regarder ensemble dans la même direction.", author: "Antoine de Saint-Exupéry" },
+        { text: "Le seul vrai langage au monde est un baiser.", author: "Alfred de Musset" }
+    ],
+    'courage': [
+        { text: "Le courage n'est pas l'absence de peur, mais la capacité de la vaincre.", author: "Nelson Mandela" },
+        { text: "Il faut du courage pour grandir et devenir qui l'on est vraiment.", author: "E.E. Cummings" }
+    ],
+    'time': [
+        { text: "Hâte-toi lentement.", author: "Boileau" },
+        { text: "Le temps est un grand maître, dit-on. Le malheur est qu'il tue ses élèves.", author: "Hector Berlioz" }
+    ],
+    'success': [
+        { text: "Le succès, c'est d'aller d'échec en échec sans perdre son enthousiasme.", author: "Winston Churchill" },
+        { text: "La seule façon de faire du bon travail est d'aimer ce que vous faites.", author: "Steve Jobs" }
+    ],
+    'wisdom': [
+        { text: "Connais-toi toi-même.", author: "Socrate" },
+        { text: "La vraie sagesse est de ne pas sembler sage.", author: "Eschyle" }
+    ],
+    'nature': [
+        { text: "La nature ne fait rien en vain.", author: "Aristote" },
+        { text: "Regardez profondément dans la nature, et alors vous comprendrez tout mieux.", author: "Albert Einstein" }
+    ],
+    'happiness': [
+        { text: "Le bonheur est parfois caché dans l'inconnu.", author: "Victor Hugo" },
+        { text: "Le bonheur n'est pas chose aisée. Il est très difficile de le trouver en nous, et impossible de le trouver ailleurs.", author: "Chamfort" }
+    ],
+    'peace': [
+        { text: "La paix commence par un sourire.", author: "Mère Teresa" },
+        { text: "Il n'y a jamais eu de bonne guerre ni de mauvaise paix.", author: "Benjamin Franklin" }
+    ]
+};
+
+function generateQuote(theme) {
+    const resultDiv = document.getElementById('quote-result');
+    
+    // Try to get quotes from translations, fallback to default
+    let quotes = getTranslation(`side_quests.literature.quote.database.${theme}`, defaultQuotesDatabase[theme]);
+    
+    if (!quotes || quotes.length === 0) return;
+
+    simulateLoading(resultDiv, () => {
+        const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        resultDiv.innerHTML = `
+            <div style="font-family: 'Georgia', serif; font-style: italic; font-size: 1.1rem; line-height: 1.6;">
+                "${randomQuote.text}"
+            </div>
+            <div style="margin-top: 10px; font-weight: bold; color: var(--accent); font-size: 0.9rem;">
+                — ${randomQuote.author}
+            </div>
+        `;
+    });
+}
+
+// 2. Rime-Moi Vert Logic
+function generateNaturePoem() {
+    const input = document.getElementById('nature-input').value.trim().toLowerCase();
+    const originalInput = document.getElementById('nature-input').value.trim();
+    const resultDiv = document.getElementById('nature-poem-result');
+    
+    const errorMsg = getTranslation('side_quests.messages.error_rhyme_input', "Veuillez entrer un thème ou un élément.");
+    
+    if (!input) {
+        resultDiv.innerHTML = `<p style="color: #ff6b6b; text-align: center;">${errorMsg}</p>`;
+        resultDiv.style.display = 'block';
+        return;
+    }
+
+    simulateLoading(resultDiv, () => {
+        // Keyword Analysis Map
+        const keywordsMap = {
+            'forest': ['forêt', 'arbre', 'bois', 'racine', 'feuille', 'forest', 'tree', 'wood', 'root', 'leaf', 'igbó', 'igi'],
+            'ocean': ['océan', 'mer', 'vague', 'eau', 'rivière', 'lac', 'ocean', 'sea', 'wave', 'water', 'river', 'lake', 'okun', 'omi'],
+            'sun': ['soleil', 'lumière', 'feu', 'chaleur', 'été', 'sun', 'light', 'fire', 'heat', 'summer', 'oorun'],
+            'moon': ['lune', 'nuit', 'étoile', 'ciel', 'sombre', 'moon', 'night', 'star', 'sky', 'dark', 'osupa'],
+            'wind': ['vent', 'souffle', 'air', 'tempête', 'wind', 'breath', 'storm', 'afẹfẹ'],
+            'mountain': ['montagne', 'sommet', 'pierre', 'rocher', 'mountain', 'peak', 'stone', 'rock', 'oke'],
+            'flower': ['fleur', 'jardin', 'pétale', 'rose', 'flower', 'garden', 'petal', 'odoodo']
+        };
+
+        let detectedTheme = 'default';
+        
+        // Simple keyword matching
+        for (const [theme, keywords] of Object.entries(keywordsMap)) {
+            if (keywords.some(k => input.includes(k))) {
+                detectedTheme = theme;
+                break;
+            }
+        }
+
+        let poem = "";
+        
+        if (detectedTheme !== 'default') {
+            // Specific response for detected theme
+            poem = getTranslation(`side_quests.literature.rhyme.responses.${detectedTheme}`, "");
+            
+            // Fallback if specific translation missing, use default logic
+            if (!poem) detectedTheme = 'default';
+        }
+        
+        if (detectedTheme === 'default') {
+            const defaultPoems = [
+                `Dans le silence de {0},<br>Le vent murmure un secret ancien,<br>Les feuilles dansent, l'esprit s'apaise,<br>La nature reprend ses droits, sereine.`,
+                `L'écho de {0} résonne au loin,<br>Comme une caresse du matin,<br>Tout s'éveille, tout est lumière,<br>Dans ce monde, une prière.`,
+                `Sous le ciel, {0} se dresse,<br>Témoin du temps, sans faiblesse,<br>Racines profondes, cœur vibrant,<br>Hymne à la vie, éternellement.`
+            ];
+            const poems = getTranslation('side_quests.literature.rhyme.responses.default', defaultPoems);
+            poem = poems[Math.floor(Math.random() * poems.length)];
+            poem = poem.replace('{0}', originalInput);
+        }
+
+        const titlePrefix = getTranslation('side_quests.messages.rhyme_title_prefix', "L'Esprit de :");
+        
+        resultDiv.innerHTML = `
+            <h4 style="color: var(--accent); margin-bottom: 15px;">${titlePrefix} ${originalInput}</h4>
+            <p style="font-family: 'Georgia', serif; font-style: italic; line-height: 1.8; font-size: 1.1rem;">
+                "${poem}"
+            </p>
+        `;
+    });
+}
+
+// 5. Radiant Skincare Logic (Restored Version)
+let selectedSkinType = '';
+
+function selectSkinType(btn, type) {
+    // Reset buttons
+    const buttons = document.querySelectorAll('.quest-option-btn');
+    buttons.forEach(b => b.classList.remove('active'));
+    
+    // Set active
+    btn.classList.add('active');
+    selectedSkinType = type;
+}
+
+function generateSkincare() {
+    const resultDiv = document.getElementById('skincare-result');
+    const concernInput = document.getElementById('skin-concern').value.trim();
+
+    const errorMsg = getTranslation('side_quests.messages.error_skin_type', "Veuillez sélectionner votre type de peau.");
+
+    if (!selectedSkinType) {
+        resultDiv.innerHTML = `<p style="color: #ff6b6b;">${errorMsg}</p>`;
+        resultDiv.style.display = 'block';
+        return;
+    }
+
+    simulateLoading(resultDiv, () => {
+        let routine = '';
+        let advice = '';
+        
+        // Get translated content
+        const routines = getTranslation('side_quests.beauty.radiant.results.routines', {});
+        const advices = getTranslation('side_quests.beauty.radiant.results.advice', {});
+        
+        routine = routines[selectedSkinType] || routines['default'] || 'Nettoyant doux + Hydratant léger + Protection solaire';
+        advice = advices[selectedSkinType] || 'Hydratez-vous bien.';
+
+        // Add Concern logic
+        if (concernInput) {
+            const bonusTemplate = getTranslation('side_quests.beauty.radiant.results.bonus_text', 'Bonus pour "{0}" : Ajoutez un actif ciblé le soir.');
+            const bonusText = bonusTemplate.replace('{0}', concernInput);
+            routine += `<br><br><strong>${bonusText}</strong>`;
+        }
+
+        const titleText = getTranslation('side_quests.beauty.radiant.results.title', 'Votre Routine Personnalisée');
+        const proTipLabel = getTranslation('side_quests.beauty.radiant.results.pro_tip', 'Conseil Pro :');
+        
+        // Translate Skin Type Label (Optional, but good for display)
+        const skinTypeLabel = getTranslation(`side_quests.beauty.radiant.options.${selectedSkinType}`, selectedSkinType);
+
+        // Usage Tips Logic
+        const seeMoreText = getTranslation('side_quests.beauty.radiant.results.see_more', "Voir plus");
+        const usageTitle = getTranslation('side_quests.beauty.radiant.results.usage_title', "Conseils d'utilisation");
+        const usageTips = getTranslation('side_quests.beauty.radiant.results.usage', {});
+        const currentUsage = usageTips[selectedSkinType] || usageTips['default'] || "Nettoyer, Hydrater, Protéger.";
+
+        resultDiv.innerHTML = `
+            <h4 style="color: var(--accent); margin-top: 0;">${titleText} (${skinTypeLabel})</h4>
+            <p style="font-size: 1.1rem; line-height: 1.6;">${routine}</p>
+            
+            <!-- Usage Tips Section -->
+            <div style="margin-top: 15px;">
+                <button onclick="document.getElementById('usage-content').style.display = document.getElementById('usage-content').style.display === 'none' ? 'block' : 'none'" 
+                        style="background: transparent; border: 1px solid var(--accent); color: var(--accent); padding: 5px 15px; border-radius: 20px; cursor: pointer; font-size: 0.8rem; margin-bottom: 10px;">
+                    ${seeMoreText}
+                </button>
+                <div id="usage-content" style="display: none; background: rgba(0,0,0,0.1); padding: 15px; border-radius: 10px; border-left: 3px solid var(--accent);">
+                    <strong style="color: var(--text-light); display: block; margin-bottom: 5px;">${usageTitle}</strong>
+                    <p style="font-size: 0.9rem; margin: 0; line-height: 1.5;">${currentUsage}</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 15px; font-size: 0.9rem; color: #aaa; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">
+                💡 <strong>${proTipLabel}</strong> ${advice}
+            </div>
+        `;
+    });
+}
+
+let currentGalleryItems = []; // Store items globally for translation
+
+// 4. NASA Image and Video Library Gallery Logic
+async function fetchNASAGallery(forceRefresh = false) {
+    const container = document.getElementById('nasa-gallery-container');
+    const CACHE_KEY = 'nasa_gallery_cache_v2';
+    const CACHE_DURATION = 5 * 24 * 60 * 60 * 1000; // 5 days in milliseconds
+    
+    const loadingText = getTranslation('side_quests.science.gallery.loading', 'Chargement de la librairie...');
+    const noImagesText = getTranslation('side_quests.science.gallery.no_images', 'Aucune image trouvée pour cette année.');
+    const errorText = getTranslation('side_quests.science.gallery.error', 'Impossible de charger la galerie.');
+    const errorDetailText = getTranslation('side_quests.science.gallery.error_detail', '(Erreur réseau ou API indisponible)');
+
+    // 1. Check Cache
+    if (!forceRefresh) {
+        const cachedData = localStorage.getItem(CACHE_KEY);
+        if (cachedData) {
+            const { timestamp, items } = JSON.parse(cachedData);
+            if (Date.now() - timestamp < CACHE_DURATION) {
+                console.log("Loading NASA Gallery from Cache");
+                currentGalleryItems = items;
+                renderGallery(items);
+                return;
+            }
+        }
+    }
+
+    container.innerHTML = `<div style="min-width: 300px; height: 400px; display: flex; align-items: center; justify-content: center; color: var(--text-light);">${loadingText}</div>`;
+
+    // 2. Fetch New Data
+    const currentYear = new Date().getFullYear();
+    // Search for space images, recent (start from previous year to ensure content)
+    // We use currentYear - 1 to get a wider range of recent images
+    const searchYear = currentYear - 1;
+    const url = `https://images-api.nasa.gov/search?q=space&media_type=image&year_start=${searchYear}`;
+
+    try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error('Erreur réseau');
+        
+        const data = await response.json();
+        let items = data.collection.items;
+        
+        // Filter out future dates (NASA metadata errors)
+        const now = new Date();
+        items = items.filter(item => {
+            const dateStr = item.data[0].date_created;
+            if (!dateStr) return false;
+            return new Date(dateStr) <= now;
+        });
+        
+        // Sort by date created descending
+        items.sort((a, b) => {
+            return new Date(b.data[0].date_created) - new Date(a.data[0].date_created);
+        });
+
+        items = items.slice(0, 20); // Limit to 20 items
+
+        if (items.length === 0) {
+            container.innerHTML = `<div style="padding: 20px;">${noImagesText}</div>`;
+            return;
+        }
+
+        // 3. Save to Cache
+        const cachePayload = {
+            timestamp: Date.now(),
+            items: items
+        };
+        localStorage.setItem(CACHE_KEY, JSON.stringify(cachePayload));
+
+        currentGalleryItems = items;
+        renderGallery(items);
+
+    } catch (error) {
+        console.error('NASA Library Error:', error);
+        container.innerHTML = `
+            <div style="padding: 20px; text-align: center; color: #ff6b6b; min-width: 100%;">
+                ${errorText}<br>
+                <span style="font-size: 0.8rem;">${errorDetailText}</span>
+            </div>
+        `;
+    }
+}
+
+function renderGallery(items) {
+    const container = document.getElementById('nasa-gallery-container');
+    container.innerHTML = ''; // Clear loading message
+    
+    const untitledText = getTranslation('side_quests.science.gallery.untitled', "Sans titre");
+    const noDescText = getTranslation('side_quests.science.gallery.no_desc', "Aucune description disponible.");
+    const dateUnknownText = getTranslation('side_quests.science.gallery.date_label', "Date inconnue");
+    const langNote = getTranslation('side_quests.science.gallery.lang_note', '');
+
+    items.forEach((item, index) => {
+        const dataInfo = item.data[0];
+        const linkInfo = item.links ? item.links[0] : null;
+
+        if (!linkInfo) return; // Skip if no image link
+
+        const title = dataInfo.title || untitledText;
+        const description = dataInfo.description || noDescText;
+        
+        // Check if translation is needed
+        const needsTranslation = currentLanguage !== 'en' && description !== noDescText;
+        const translateBtn = needsTranslation 
+            ? `<button onclick="handleTranslate(this, ${index})" class="translate-btn" style="background:transparent; border:1px solid var(--accent); color:var(--accent); font-size:0.75rem; padding:4px 8px; border-radius:12px; cursor:pointer; margin-top:8px; opacity:0.8; transition:0.3s;">
+                🌐 Traduire (${currentLanguage.toUpperCase()})
+               </button>`
+            : (needsTranslation && langNote ? `<br><br><em style="font-size: 0.9em; opacity: 0.8;">${langNote}</em>` : '');
+
+        // Use slice to get YYYY-MM-DD from ISO string to avoid timezone shifts
+        const date = dataInfo.date_created ? dataInfo.date_created.slice(0, 10) : dateUnknownText;
+        const center = dataInfo.center || "NASA";
+        const photographer = dataInfo.photographer || dataInfo.secondary_creator || "";
+        const imageUrl = linkInfo.href;
+
+        // Build Reference String
+        let reference = `🏢 ${center}`;
+        if (photographer) reference += ` | 📸 ${photographer}`;
+
+        // Create Card Element
+        const card = document.createElement('div');
+        card.style.minWidth = '320px';
+        card.style.maxWidth = '320px';
+        card.style.background = 'rgba(0,0,0,0.3)';
+        card.style.borderRadius = '15px';
+        card.style.overflow = 'hidden';
+        card.style.display = 'flex';
+        card.style.flexDirection = 'column';
+        card.style.border = '1px solid rgba(255,255,255,0.1)';
+        card.style.flexShrink = '0'; // Prevent shrinking in flex container
+
+        card.innerHTML = `
+            <div style="height: 200px; overflow: hidden;">
+                <img src="${imageUrl}" alt="${title}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'" loading="lazy">
+            </div>
+            <div style="padding: 20px; flex: 1; display: flex; flex-direction: column;">
+                <h4 id="title-${index}" style="margin: 0 0 10px 0; color: var(--accent); font-size: 1.1rem; line-height: 1.3;">${title}</h4>
+                <div style="font-size: 0.75rem; color: var(--text-light); margin-bottom: 10px; display: flex; flex-direction: column; gap: 4px;">
+                    <span>📅 ${date}</span>
+                    <span>${reference}</span>
+                </div>
+                <div id="desc-${index}" style="font-size: 0.85rem; color: #ddd; line-height: 1.5; overflow-y: auto; max-height: 120px; padding-right: 5px; margin-bottom: 10px; flex: 1; scrollbar-width: thin;">
+                    ${description}
+                </div>
+                <div style="min-height:30px;">
+                    ${translateBtn}
+                </div>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+}
+
+// 5. Translation Helper
+async function translateText(text, targetLang) {
+    if (!text) return '';
+    try {
+        // Using MyMemory API (Free usage)
+        const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en|${targetLang}`;
+        const res = await fetch(url);
+        const data = await res.json();
+        if (data.responseStatus === 200) {
+            return data.responseData.translatedText;
+        } else {
+            console.warn('Translation API Limit or Error:', data.responseDetails);
+            return null;
+        }
+    } catch (e) {
+        console.error("Translation failed", e);
+        return null;
+    }
+}
+
+window.handleTranslate = async function(btn, index) {
+    if (!currentGalleryItems[index]) return;
+    
+    const item = currentGalleryItems[index];
+    const titleEl = document.getElementById(`title-${index}`);
+    const descEl = document.getElementById(`desc-${index}`);
+    const targetLang = currentLanguage;
+
+    btn.disabled = true;
+    btn.innerHTML = '⏳ Traduction...';
+    btn.style.opacity = '0.5';
+
+    // Translate Title
+    const title = item.data[0].title;
+    const desc = item.data[0].description;
+
+    const [transTitle, transDesc] = await Promise.all([
+        translateText(title, targetLang),
+        translateText(desc, targetLang)
+    ]);
+
+    if (transTitle) titleEl.innerHTML = transTitle;
+    if (transDesc) descEl.innerHTML = transDesc;
+
+    if (transTitle || transDesc) {
+        btn.innerHTML = '✅ Traduit';
+        setTimeout(() => btn.remove(), 2000);
+    } else {
+        btn.innerHTML = '❌ Erreur (Quota/Réseau)';
+        btn.disabled = false;
+        btn.style.opacity = '1';
+    }
+};
+
+// Auto-load Gallery on page load if element exists
+document.addEventListener('DOMContentLoaded', () => {
+    if(document.getElementById('nasa-gallery-container')) {
+        fetchNASAGallery();
+    }
+});
