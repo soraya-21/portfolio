@@ -235,6 +235,11 @@ function generateSkincare() {
         const usageTips = getTranslation('side_quests.beauty.radiant.results.usage', {});
         const currentUsage = usageTips[selectedSkinType] || usageTips['default'] || "Nettoyer, Hydrater, Protéger.";
 
+        // Hands & Feet Logic
+        const handsFeetTitle = getTranslation('side_quests.beauty.radiant.results.hands_feet.title', 'Soins Mains & Pieds');
+        const handsFeetData = getTranslation('side_quests.beauty.radiant.results.hands_feet', {});
+        const handsFeetAdvice = handsFeetData[selectedSkinType] || handsFeetData['default'] || 'Hydratez vos mains et pieds régulièrement.';
+
         resultDiv.innerHTML = `
             <h4 style="color: var(--accent); margin-top: 0;">${titleText} (${skinTypeLabel})</h4>
             <p style="font-size: 1.1rem; line-height: 1.6;">${routine}</p>
@@ -249,6 +254,12 @@ function generateSkincare() {
                     <strong style="color: var(--text-light); display: block; margin-bottom: 5px;">${usageTitle}</strong>
                     <p style="font-size: 0.9rem; margin: 0; line-height: 1.5;">${currentUsage}</p>
                 </div>
+            </div>
+
+            <!-- Hands & Feet Section -->
+            <div style="margin-top: 15px; background: rgba(255, 255, 255, 0.05); padding: 10px; border-radius: 8px;">
+                <strong style="color: var(--accent); display: block; margin-bottom: 5px;">💅 ${handsFeetTitle}</strong>
+                <p style="font-size: 0.9rem; margin: 0;">${handsFeetAdvice}</p>
             </div>
 
             <div style="margin-top: 15px; font-size: 0.9rem; color: #aaa; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">

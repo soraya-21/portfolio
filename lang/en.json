@@ -197,11 +197,19 @@
                     "title": "Your Personalized Routine",
                     "pro_tip": "Pro Tip:",
                     "routines": {
-                        "oily": "Purifying Foaming Cleanser + Niacinamide Serum + Mattifying Gel Moisturizer",
-                        "dry": "Gentle Cleansing Milk + Hyaluronic Acid Serum + Rich Ceramide Cream",
-                        "combo": "Gentle Cleansing Gel + Balancing Serum + Light Fluid",
-                        "sensitive": "Soothing Micellar Water + Centella Asiatica Serum + Barrier Repair Balm",
+                        "oily": "Cleanser (e.g., CeraVe Foaming, Effaclar Gel) + Serum (e.g., The Ordinary Niacinamide, Paula's Choice Pore) + Gel (e.g., Neutrogena Hydro Boost, Clinique Dramatically Different Gel)",
+                        "dry": "Milk/Oil (e.g., La Roche-Posay Toleriane, DHC Oil) + Serum (e.g., Hyalu B5, Vichy Minéral 89) + Cream (e.g., CeraVe Cream, First Aid Beauty Ultra Repair)",
+                        "combo": "Gentle Gel (e.g., Bioderma Sensibio, Fresh Soy) + Serum (e.g., The Ordinary Buffet, Caudalie Vinoperfect) + Fluid (e.g., La Roche-Posay Effaclar Duo, Kiehl's Ultra Facial)",
+                        "sensitive": "Micellar/Milk (e.g., Bioderma Sensibio, Aveeno Calm) + Serum (e.g., La Roche-Posay Toleriane, Dr. Jart+ Cicapair) + Balm (e.g., Cicaplast B5, Avene Cicalfate)",
                         "default": "Gentle Cleanser + Light Moisturizer + Sun Protection"
+                    },
+                    "hands_feet": {
+                        "title": "Hands & Feet Care",
+                        "oily": "Hands: Light Cream (e.g., Neutrogena Hydro Boost, L'Occitane Verbena). Feet: Scrub (e.g., The Body Shop Peppermint) + Gel (e.g., Scholl Fresh).",
+                        "dry": "Hands: Repair Cream (e.g., CeraVe Hand, O'Keeffe's Working Hands). Feet: Urea (e.g., Eucerin 10% Urea, CeraVe SA Renewing).",
+                        "combo": "Hands: Daily Moisture (e.g., Nivea Soft, Vaseline). Feet: Nourishing (e.g., Burt's Bees Coconut Foot Cream).",
+                        "sensitive": "Hands: Fragrance-Free (e.g., Aveeno Relief, Eucerin Advanced). Feet: Soothing (e.g., La Roche-Posay Lipikar).",
+                        "default": "Moisturize your hands after every wash. Care for your feet at night."
                     },
                     "advice": {
                         "oily": "Use salicylic acid twice a week.",

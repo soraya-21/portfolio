@@ -196,11 +196,19 @@
                     "title": "Ilana Ti Ara Ẹni Rẹ",
                     "pro_tip": "Imọran Pro:",
                     "routines": {
-                        "oily": "Purifying Foaming Cleanser + Niacinamide Serum + Mattifying Gel Moisturizer",
-                        "dry": "Gentle Cleansing Milk + Hyaluronic Acid Serum + Rich Ceramide Cream",
-                        "combo": "Gentle Cleansing Gel + Balancing Serum + Light Fluid",
-                        "sensitive": "Soothing Micellar Water + Centella Asiatica Serum + Barrier Repair Balm",
+                        "oily": "Cleanser (fun apẹẹrẹ, CeraVe Foaming, Effaclar Gel) + Serum (fun apẹẹrẹ, The Ordinary Niacinamide, SVR Sebiaclear) + Gel (fun apẹẹrẹ, Neutrogena Hydro Boost, Bioderma Sébium Mat)",
+                        "dry": "Milk/Oil (fun apẹẹrẹ, La Roche-Posay Toleriane, DHC Oil) + Serum (fun apẹẹrẹ, Hyalu B5, Vichy Minéral 89) + Cream (fun apẹẹrẹ, CeraVe Cream, Avene XeraCalm)",
+                        "combo": "Gentle Gel (fun apẹẹrẹ, Bioderma Sensibio, Fresh Soy) + Serum (fun apẹẹrẹ, The Ordinary Buffet, Caudalie Vinoperfect) + Fluid (fun apẹẹrẹ, La Roche-Posay Effaclar Duo, Clinique Dramatically Different Gel)",
+                        "sensitive": "Micellar/Milk (fun apẹẹrẹ, Bioderma Sensibio, Avene Milk) + Serum (fun apẹẹrẹ, La Roche-Posay Toleriane, Dr. Jart+ Cicapair) + Balm (fun apẹẹrẹ, Cicaplast B5, Avene Cicalfate)",
                         "default": "Gentle Cleanser + Light Moisturizer + Sun Protection"
+                    },
+                    "hands_feet": {
+                        "title": "Itọju Ọwọ & Ẹsẹ",
+                        "oily": "Ọwọ: Ipara fẹlẹfẹlẹ (fun apẹẹrẹ, Neutrogena Hydro Boost, L'Occitane Verbena). Ẹsẹ: Scrub (fun apẹẹrẹ, Scholl) + Gel (fun apẹẹrẹ, Akileïne Gel Frais).",
+                        "dry": "Ọwọ: Ipara atunṣe (fun apẹẹrẹ, CeraVe Hand, Cicaplast Mains). Ẹsẹ: Urea (fun apẹẹrẹ, Eucerin 10% Urea, CeraVe SA Feet).",
+                        "combo": "Ọwọ: Moisturizing (fun apẹẹrẹ, Nivea Soft, Mixa). Ẹsẹ: Nourishing (fun apẹẹrẹ, Neutrogena Foot Cream).",
+                        "sensitive": "Ọwọ: Laisi oorun (fun apẹẹrẹ, Bioderma Atoderm, Aveeno). Ẹsẹ: Apaisant (fun apẹẹrẹ, La Roche-Posay Lipikar Podologics).",
+                        "default": "Mu ọwọ rẹ mu omi lẹhin gbogbo fifọ. Tọju ẹsẹ rẹ ni alẹ."
                     },
                     "advice": {
                         "oily": "Lo salicylic acid lẹmeji ni ọsẹ kan.",

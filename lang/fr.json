@@ -197,11 +197,19 @@
                     "title": "Votre Routine Personnalisée",
                     "pro_tip": "Conseil Pro :",
                     "routines": {
-                        "oily": "Nettoyant moussant purifiant + Sérum Niacinamide + Gel hydratant matifiant",
-                        "dry": "Lait nettoyant doux + Sérum Acide Hyaluronique + Crème riche aux céramides",
-                        "combo": "Gel nettoyant doux + Sérum Équilibrant + Fluide léger",
-                        "sensitive": "Eau micellaire apaisante + Sérum Centella Asiatica + Baume barrière cutanée",
+                        "oily": "Nettoyant (ex: CeraVe Moussant, Effaclar Gel) + Sérum (ex: The Ordinary Niacinamide, SVR Sebiaclear) + Gel (ex: Neutrogena Hydro Boost, Bioderma Sébium Mat)",
+                        "dry": "Lait/Huile (ex: La Roche-Posay Toleriane, DHC Huile) + Sérum (ex: La Roche-Posay Hyalu B5, Vichy Minéral 89) + Crème (ex: CeraVe Pot, Avene XeraCalm)",
+                        "combo": "Gel Doux (ex: Bioderma Sensibio, Fresh Soy) + Sérum (ex: The Ordinary Buffet, Caudalie Vinoperfect) + Fluide (ex: La Roche-Posay Effaclar Duo, Clinique Dramatically Different Gel)",
+                        "sensitive": "Eau Micellaire/Lait (ex: Bioderma Créaline, Avene Lait) + Sérum (ex: La Roche-Posay Toleriane Ultra, Dr. Jart+ Cicapair) + Baume (ex: Cicaplast B5, Avene Cicalfate)",
                         "default": "Nettoyant doux + Hydratant léger + Protection solaire"
+                    },
+                    "hands_feet": {
+                        "title": "Soins Mains & Pieds",
+                        "oily": "Mains : Crème légère (ex: Neutrogena Hydro Boost, L'Occitane Verveine). Pieds : Exfoliant (ex: Scholl) + Gel (ex: Akileïne Gel Frais).",
+                        "dry": "Mains : Crème Riche (ex: CeraVe Mains, Cicaplast Mains). Pieds : Urée (ex: Eucerin 10% Urea, CeraVe SA Pieds).",
+                        "combo": "Mains : Hydratation (ex: Nivea Mains, Mixa). Pieds : Nourrissant (ex: Neutrogena Pieds Très Secs).",
+                        "sensitive": "Mains : Sans parfum (ex: Bioderma Atoderm, Aveeno). Pieds : Apaisant (ex: La Roche-Posay Lipikar Podologics).",
+                        "default": "Hydratez vos mains après chaque lavage. Prenez soin de vos pieds le soir."
                     },
                     "advice": {
                         "oily": "Utilisez de l'acide salicylique 2x par semaine.",
