@@ -288,6 +288,7 @@ nav a { color: var(--text-light); text-decoration: none; font-weight: 500; lette
 nav a::after { content: ''; position: absolute; width: 0; height: 1px; bottom: -5px; left: 50%; background: var(--accent); transition: 0.4s; }
 nav a:hover { color: var(--accent); }
 nav a:hover::after { width: 100%; left: 0; }
+nav a.nav-highlight { color: var(--accent); font-weight: 600; }
 
 .avatar {
     width: 170px;

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Side Quests – Soraya Codo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .quest-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
+        
+        .quest-card { 
+            background: var(--card); 
+            border-radius: 30px; 
+            padding: 40px 30px; 
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            position: relative; 
+            overflow: visible; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Soft Holographic border effect */
+        .quest-card::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 32px;
+            background: linear-gradient(45deg, #a18cd1, #fbc2eb, #8fd3f4, #a18cd1);
+            background-size: 200% 200%;
+            z-index: -1;
+            filter: blur(10px);
+            opacity: 0;
+            transition: opacity 0.4s;
+            animation: borderRotate 3s linear infinite;
+        }
+
+        .quest-card:hover { transform: translateY(-10px) scale(1.02); }
+        .quest-card:hover::after { opacity: 0.8; }
+        
+        @keyframes borderRotate {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .quest-header { text-align: center; margin-bottom: 20px; display: flex; flex-direction: column; align-items: center; }
+        /* Icons removed */
+        
+        .quest-title { 
+            font-size: 1.8rem; 
+            font-weight: 800; 
+            background: linear-gradient(135deg, var(--accent) 0%, #ff00cc 100%); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            margin: 0;
+        }
+        
+        .quest-desc { font-size: 1rem; color: var(--text-light); margin-bottom: 30px; line-height: 1.6; text-align: center; }
+        
+        .quest-input-area { background: rgba(255,255,255,0.03); padding: 25px; border-radius: 20px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1); }
+        [data-theme="light"] .quest-input-area { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.05); }
+        
+        .quest-input { 
+            width: 100%; 
+            background: rgba(255,255,255,0.05); 
+            border: 2px solid transparent; 
+            border-radius: 15px;
+            padding: 15px; 
+            color: var(--text); 
+            font-family: 'Poppins', sans-serif; 
+            font-size: 1rem; 
+            margin-bottom: 20px; 
+            outline: none; 
+            transition: 0.3s;
+        }
+        [data-theme="light"] .quest-input { background: rgba(0,0,0,0.05); }
+        .quest-input:focus { border-color: var(--accent); background: transparent; transform: scale(1.02); }
+        
+        .quest-btn { 
+            background: linear-gradient(90deg, var(--accent), #ff00cc); 
+            color: white; 
+            border: none; 
+            padding: 15px 30px; 
+            border-radius: 50px; 
+            cursor: pointer; 
+            font-weight: 700; 
+            transition: 0.3s; 
+            width: 100%; 
+            font-size: 1rem;
+            box-shadow: 0 5px 20px rgba(var(--accent-rgb), 0.4);
+        }
+        .quest-btn:hover { transform: scale(1.05) rotate(-1deg); box-shadow: 0 10px 25px rgba(var(--accent-rgb), 0.6); filter: brightness(1.1); }
+        
+        .quest-result { min-height: 60px; margin-top: 25px; padding: 20px; border-radius: 15px; background: rgba(var(--accent-rgb), 0.1); font-size: 1rem; color: var(--text); display: none; text-align: center; border: 1px dashed var(--accent); }
+        .quest-result.visible { display: block; animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+        
+        .quest-options { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; justify-content: center; }
+        .quest-option-btn { background: transparent; border: 2px solid var(--accent-secondary); color: var(--text-light); padding: 10px 20px; border-radius: 50px; cursor: pointer; transition: 0.3s; font-size: 0.9rem; font-weight: 600; }
+        .quest-option-btn:hover, .quest-option-btn.active { background: var(--accent); color: white; border-color: var(--accent); transform: scale(1.1); }
+
+        @keyframes popIn { 0% { opacity: 0; transform: scale(0.5); } 100% { opacity: 1; transform: scale(1); } }
+    </style>
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="#nature">Nature</a></li>
+        <li><a href="#music">Musique</a></li>
+        <li><a href="#beauty">Beauté</a></li>
+        <li><a href="#psycho">Psychologie</a></li>
+    </ul>
+</nav>
+
+<main style="padding-top: 50px;">
+    <section>
+        <h1 style="text-align: center; margin-bottom: 20px;">Side Quests</h1>
+        <p style="text-align: center; color: var(--text-light); margin-bottom: 60px; max-width: 700px; margin-left: auto; margin-right: auto;">
+            Explorez des outils expérimentaux mêlant IA, créativité et bien-être. <br>
+            <em style="font-size: 0.9rem;">(Simulation interactive)</em>
+        </p>
+
+        <!-- Nature & Ecology -->
+        <h3 id="nature">Nature & Écologie</h3>
+        <div class="quest-grid">
+            <!-- Tool 1: Traducteur de Pensées en Paysage -->
+            <div class="quest-card">
+                <div class="quest-header">
+                    <div class="quest-title">Traducteur de Paysage</div>
+                </div>
+                <p class="quest-desc">Écrivez votre état émotionnel actuel, et l'IA générera une <strong>image unique</strong> d'un paysage correspondant.</p>
+                <div class="quest-input-area">
+                    <input type="text" id="landscape-input" class="quest-input" placeholder="Ex: Je me sens fatigué mais déterminé...">
+                    <button class="quest-btn" onclick="generateLandscape()">Générer l'Image</button>
+                </div>
+                <div id="landscape-result" class="quest-result"></div>
+            </div>
+
+            <!-- Tool 2: Sylvothérapie Virtuelle -->
+            <div class="quest-card">
+                <div class="quest-header">
+                    <div class="quest-title">Guide Sylvothérapie</div>
+                </div>
+                <p class="quest-desc">Décrivez votre stress ou besoin actuel. L'IA vous conseillera une essence d'arbre et un exercice de respiration.</p>
+                <div class="quest-input-area">
+                    <input type="text" id="tree-input" class="quest-input" placeholder="Ex: Je suis stressé par le travail...">
+                    <button class="quest-btn" onclick="generateTree()">Trouver mon Arbre</button>
+                </div>
+                <div id="tree-result" class="quest-result"></div>
+            </div>
+        </div>
+
+        <!-- Music & Rhythm -->
+        <h3 id="music" style="margin-top: 80px;">Musique & Rythme</h3>
+        <div class="quest-grid">
+            <!-- Tool 3: Playlist de Vie -->
+            <div class="quest-card">
+                <div class="quest-header">
+                    <div class="quest-title">Playlist de Vie</div>
+                </div>
+                <p class="quest-desc">Entrez une situation précise pour obtenir une structure de session musicale basée sur la psychologie du rythme.</p>
+                <div class="quest-input-area">
+                    <input type="text" id="playlist-input" class="quest-input" placeholder="Ex: Je cuisine un dimanche soir...">
+                    <button class="quest-btn" onclick="generatePlaylist()">Structurer la Session</button>
+                </div>
+                <div id="playlist-result" class="quest-result"></div>
+            </div>
+
+            <!-- Tool 4: Parolier de l'Instant -->
+            <div class="quest-card">
+                <div class="quest-header">
+                    <div class="quest-title">Parolier de l'Instant</div>
+                </div>
+                <p class="quest-desc">Transformez un message banal en paroles de chanson.</p>
+                <div class="quest-input-area">
+                    <div class="quest-options">
+                        <button class="quest-option-btn active" onclick="setLyricStyle(this, 'Rap')">Rap</button>
+                        <button class="quest-option-btn" onclick="setLyricStyle(this, 'Jazz')">Jazz</button>
+                        <button class="quest-option-btn" onclick="setLyricStyle(this, 'Variété')">Variété</button>
+                    </div>
+                    <input type="text" id="lyrics-input" class="quest-input" placeholder="Ex: Merci pour l'invitation...">
+                    <button class="quest-btn" onclick="generateLyrics()">Écrire les Paroles</button>
+                </div>
+                <div id="lyrics-result" class="quest-result" style="white-space: pre-line;"></div>
+            </div>
+        </div>
+
+        <!-- Beauty & Care -->
+        <h3 id="beauty" style="margin-top: 80px;">Beauté & Soin</h3>
+        <div class="quest-grid">
+            <!-- Tool 7: Radiant Skincare Advisor -->
+            <div class="quest-card">
+                <div class="quest-header">
+                    <div class="quest-title">Radiant Skincare</div>
+                </div>
+                <p class="quest-desc">L'expertise dermo-cosmétique par IA. Obtenez une routine sur-mesure basée sur votre type de peau.</p>
+                <div class="quest-input-area">
+                    <p style="margin-bottom: 10px; font-size: 0.9rem; color: var(--text-light);">Type de Peau</p>
+                    <div class="quest-options" style="justify-content: flex-start;">
+                        <button class="quest-option-btn" onclick="selectSkinType(this, 'Grasse')">Grasse</button>
+                        <button class="quest-option-btn" onclick="selectSkinType(this, 'Sèche')">Sèche</button>
+                        <button class="quest-option-btn" onclick="selectSkinType(this, 'Mixte')">Mixte</button>
+                        <button class="quest-option-btn" onclick="selectSkinType(this, 'Sensible')">Sensible</button>
+                    </div>
+                    
+                    <p style="margin-bottom: 10px; font-size: 0.9rem; color: var(--text-light); margin-top: 15px;">Préoccupations (Optionnel)</p>
+                    <input type="text" id="skin-concern" class="quest-input" placeholder="Ex: Acné, Taches, Rides, Teint terne...">
+                    
+                    <button class="quest-btn" onclick="generateSkincare()">Générer ma Routine</button>
+                </div>
+                <div id="skincare-result" class="quest-result" style="text-align: left;"></div>
+            </div>
+        </div>
+
+        <!-- Psychology & Well-being -->
+        <h3 id="psycho" style="margin-top: 80px;">Psychologie & Bien-être</h3>
+        <div class="quest-grid">
+            <!-- Tool 5: Recadreur d'Humeur -->
+            <div class="quest-card">
+                <div class="quest-header">
+                    <div class="quest-title">Recadreur d'Humeur</div>
+                </div>
+                <p class="quest-desc">Transformez une pensée négative en perspectives constructives grâce à la psychologie cognitive.</p>
+                <div class="quest-input-area">
+                    <input type="text" id="reframe-input" class="quest-input" placeholder="Ex: J'ai raté ma présentation...">
+                    <button class="quest-btn" onclick="reframeThought()">Recadrer</button>
+                </div>
+                <div id="reframe-result" class="quest-result"></div>
+            </div>
+
+            <!-- Tool 6: Test de Personnalité Express -->
+            <div class="quest-card">
+                <div class="quest-header">
+                    <div class="quest-title">Archétype du Moment</div>
+                </div>
+                <p class="quest-desc">Choisissez ce qui vous attire le plus maintenant.</p>
+                <div class="quest-input-area">
+                    <p style="margin-bottom: 10px; font-size: 0.9rem; color: var(--text-light);">Je préfère...</p>
+                    <div class="quest-options">
+                        <button class="quest-option-btn" onclick="selectArchetype('Mer')">L'Océan</button>
+                        <button class="quest-option-btn" onclick="selectArchetype('Montagne')">La Montagne</button>
+                        <button class="quest-option-btn" onclick="selectArchetype('Forêt')">La Forêt</button>
+                    </div>
+                </div>
+                <div id="archetype-result" class="quest-result"></div>
+            </div>
+        </div>
+
+        <!-- Combo -->
+        <h3 style="margin-top: 80px;">Combo Ultime</h3>
+        <div class="quest-grid">
+            <div class="quest-card" style="grid-column: 1 / -1;">
+                <div class="quest-header">
+                    <div class="quest-title">Orchestrateur de Nature</div>
+                </div>
+                <p class="quest-desc">L'ambiance sonore parfaite pour votre état d'esprit.</p>
+                <div class="quest-input-area" style="max-width: 600px; margin: 0 auto;">
+                    <input type="text" id="orchestrator-input" class="quest-input" placeholder="Comment voulez-vous vous sentir ? (ex: Calme, Inspiré...)">
+                    <button class="quest-btn" onclick="orchestrate()">Créer le Mix</button>
+                </div>
+                <div id="orchestrator-result" class="quest-result" style="text-align: center; font-size: 1.2rem; font-weight: 600;"></div>
+            </div>
+        </div>
+
+    </section>
+</main>
+
+<footer>
+    <p>
+        <a href="index.html">Retour au Portfolio</a>
+    </p>
+    <p class="copyright">© 2025 Soraya Codo – Side Quests</p>
+</footer>
+
+<script src="js/side-quests.js"></script>
+<script>
+    // Particle Logic (Simplified for this page)
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    
+    let particles = [];
+    const num = 60; // Fewer particles for cleaner look
+    
+    // Check theme for color
+    const theme = localStorage.getItem('theme') || 'dark';
+    if(theme === 'light') document.body.setAttribute('data-theme', 'light');
+
+    const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96C93D', '#E056FD', '#FDCB6E'];
+
+    class Particle {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.size = Math.random() * 4 + 1; // Bigger, funner
+            this.speedX = Math.random() * 1 - 0.5; // Faster
+            this.speedY = Math.random() * 1 - 0.5;
+            this.color = colors[Math.floor(Math.random() * colors.length)];
+            this.alpha = Math.random() * 0.5 + 0.2;
+        }
+        update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+            if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+            if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+        }
+        draw() {
+            ctx.fillStyle = this.color;
+            ctx.globalAlpha = this.alpha;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.globalAlpha = 1;
+        }
+    }
+    
+    function init() { particles = []; for (let i=0; i<num; i++) particles.push(new Particle()); }
+    init();
+    
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => { p.update(); p.draw(); });
+        requestAnimationFrame(animate);
+    }
+    animate();
+    window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; init(); });
+</script>
+</body>
+</html>
