@@ -58,6 +58,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Scroll Animations
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in-up').forEach(section => {
+        observer.observe(section);
+    });
+
     // Close on click outside
     window.addEventListener('click', (e) => {
         if (customSelectWrapper && !customSelectWrapper.contains(e.target)) {

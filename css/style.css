@@ -17,6 +17,7 @@ html, body {
     color: var(--text);
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 body { min-height: 100vh; display: flex; flex-direction: column; position: relative; }
 
@@ -30,6 +31,29 @@ canvas#particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
 .blob2 { width: 800px; height: 800px; bottom: -300px; right: -250px; animation-delay: 10s; }
 
 @keyframes float { 0%,100%{transform:translate(0,0) rotate(0deg)} 50%{transform:translate(100px,-100px) rotate(180deg)} }
+
+/* --- Animation Classes --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    opacity: 0;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
 
 /* Language Selector */
 .lang-selector {
@@ -173,10 +197,7 @@ canvas#particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
 header {
     text-align: center; padding: 120px 20px 60px; position: relative; z-index: 2;
 }
-header img {
-    width: 170px; height: 170px; border-radius: 50%; border: 5px solid var(--accent);
-    box-shadow: 0 0 60px rgba(59,130,246,0.5); margin-bottom: 25px; object-fit: cover;
-}
+
 h1 {
     font-size: 4.2rem; font-weight: 700;
     background: linear-gradient(90deg, #60a5fa, #93c5fd, #60a5fa);
@@ -205,11 +226,22 @@ nav a:hover { color: var(--accent); }
 nav a:hover::after { width: 100%; left: 0; }
 
 .avatar {
-    width: 180px;
+    width: 170px;
+    height: 170px;
     border-radius: 50%;
+    border: 5px solid var(--accent);
+    box-shadow: 0 0 60px rgba(59,130,246,0.5);
+    margin-bottom: 25px;
+    object-fit: cover;
     opacity: 0;
     transition: opacity 0.6s ease-in-out;
 }
+
+.select-content {
+    display: flex;
+    align-items: center;
+}
+
 .avatar.loaded { opacity: 1; }
 
 main { flex: 1; }
@@ -287,7 +319,11 @@ h3 { text-align: center; font-size: 2.5rem; margin-bottom: 70px; color: var(--ac
 
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; }
 .project-card { background: var(--card); border-radius: 24px; overflow: hidden; cursor: pointer; border: 1px solid rgba(59,130,246,0.2); transition: all 0.5s ease; position: relative; padding: 30px 30px 70px 30px; }
-.project-card:hover { transform: translateY(-15px); border-color: var(--accent); box-shadow: 0 25px 50px rgba(59,130,246,0.25); }
+.project-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    border-color: var(--accent);
+    box-shadow: 0 25px 50px rgba(59,130,246,0.25);
+}
 .project-card h4 { font-size: 1.45rem; color: var(--box-name); margin-bottom: 12px; }
 .project-card p { color: var(--text-light); font-size: 0.98rem; margin-bottom: 20px; }
 /* CSS Modification for data-after attribute on project card */

@@ -26,8 +26,10 @@
         <div class="custom-select-wrapper">
             <div class="custom-select">
                 <div class="custom-select-trigger">
-                    <img id="selected-flag" src="" alt="flag" class="flag-icon">
-                    <span id="selected-lang-text"></span>
+                    <div class="select-content">
+                        <img id="selected-flag" src="" alt="flag" class="flag-icon">
+                        <span id="selected-lang-text"></span>
+                    </div>
                     <div class="arrow"></div>
                 </div>
                 <div class="custom-options">
@@ -59,7 +61,7 @@
 </nav>
 
 <main>
-    <section class="about" style="padding-top: 50px;">
+    <section class="about fade-in-up" style="padding-top: 50px;">
         <div class="about-content">
             <span data-i18n="about.text1">Curieuse, rigoureuse et avide d'apprendre... :)</span><br><br>
             <span data-i18n="about.text2">Ce qui me motive : contribuer à des projets à fort impact, où la technologie peut réellement améliorer les choses… et éviter de créer un énième bug</span><br><br>
@@ -68,7 +70,7 @@
     </section>
 
     <!--SECTION CV -->
-    <section id="cv">
+    <section id="cv" class="fade-in-up">
         <h3 data-i18n="cv.title">Mon CV</h3>
         <div class="cv-buttons">
             <a href="#" id="open-cv" class="btn btn-preview">
@@ -82,7 +84,7 @@
         </div>
     </section>
 
-    <section id="skills">
+    <section id="skills" class="fade-in-up">
         <h3 data-i18n="skills.title">Stack Technologique</h3>
         <div class="grid">
             <div class="card">
@@ -172,7 +174,7 @@
         </div>
     </section>
 
-    <section id="education">
+    <section id="education" class="fade-in-up">
         <h3 data-i18n="education.title">Parcours académique</h3>
         <div class="timeline">
             <div class="timeline-item">
@@ -193,12 +195,12 @@
         </div>
     </section>
 
-    <section id="projects">
+    <section id="projects" class="fade-in-up">
         <h3 data-i18n="projects.title">Quelques projets réalisés</h3>
         <div class="projects-grid" id="projects-container"></div>
     </section>
 
-    <section id="interests">
+    <section id="interests" class="fade-in-up">
         <h3 data-i18n="interests.title">Centres d’intérêt</h3>
         <div class="interests">
             <div class="interest-card">
@@ -225,7 +227,7 @@
     </section>
 </main>
 
-<footer id="contact">
+<footer id="contact" class="fade-in-up">
     <p>
         <a href="https://www.linkedin.com/in/soraya-codo-537b7b195" target="_blank">LinkedIn</a> •
         <a href="https://github.com/soraya-21" target="_blank">GitHub</a> •
