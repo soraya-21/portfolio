@@ -198,7 +198,7 @@ if (canvas) {
             if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
         }
         draw() {
-            ctx.fillStyle = 'rgba(59, 130, 246, 0.8)';
+            ctx.fillStyle = 'rgba(74, 144, 226, 0.8)'; // Cerulean Blue
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
             ctx.fill();
@@ -213,7 +213,26 @@ if (canvas) {
     
     function animate() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        particles.forEach(p => { p.update(); p.draw(); });
+        
+        for (let i = 0; i < particles.length; i++) {
+            particles[i].update();
+            particles[i].draw();
+            
+            for (let j = i + 1; j < particles.length; j++) {
+                const dx = particles[i].x - particles[j].x;
+                const dy = particles[i].y - particles[j].y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < 120) {
+                    ctx.beginPath();
+                    ctx.strokeStyle = `rgba(74, 144, 226, ${0.3 * (1 - distance/120)})`;
+                    ctx.lineWidth = 0.5;
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.stroke();
+                }
+            }
+        }
         requestAnimationFrame(animate);
     }
     animate();
