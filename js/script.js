@@ -2,6 +2,39 @@
 let currentLang = localStorage.getItem('lang') || 'fr';
 let translations = {};
 
+// Theme Logic
+const themeBtn = document.getElementById('theme-toggle');
+const htmlElement = document.documentElement;
+let currentTheme = localStorage.getItem('theme') || 'dark';
+let particleColor = 'rgba(74, 144, 226, 0.8)';
+let particleLineColor = '74, 144, 226';
+
+function updateParticleColor(theme) {
+    if (theme === 'light') {
+        particleColor = 'rgba(37, 99, 235, 0.6)';
+        particleLineColor = '37, 99, 235';
+    } else {
+        particleColor = 'rgba(74, 144, 226, 0.8)';
+        particleLineColor = '74, 144, 226';
+    }
+}
+
+function applyTheme(theme) {
+    htmlElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    updateParticleColor(theme);
+}
+
+if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+        currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        applyTheme(currentTheme);
+    });
+}
+
+// Initialize theme
+applyTheme(currentTheme);
+
 const flags = {
     fr: "assets/flags/fr.png",
     en: "assets/flags/us.png",
@@ -198,7 +231,7 @@ if (canvas) {
             if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
         }
         draw() {
-            ctx.fillStyle = 'rgba(74, 144, 226, 0.8)'; // Cerulean Blue
+            ctx.fillStyle = particleColor;
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
             ctx.fill();
@@ -225,7 +258,7 @@ if (canvas) {
                 
                 if (distance < 120) {
                     ctx.beginPath();
-                    ctx.strokeStyle = `rgba(74, 144, 226, ${0.3 * (1 - distance/120)})`;
+                    ctx.strokeStyle = `rgba(${particleLineColor}, ${0.3 * (1 - distance/120)})`;
                     ctx.lineWidth = 0.5;
                     ctx.moveTo(particles[i].x, particles[i].y);
                     ctx.lineTo(particles[j].x, particles[j].y);
