@@ -197,18 +197,18 @@
                     "title": "Your Personalized Routine",
                     "pro_tip": "Pro Tip:",
                     "routines": {
-                        "oily": "Cleanser (e.g., CeraVe Foaming, Effaclar Gel) + Serum (e.g., The Ordinary Niacinamide, Paula's Choice Pore) + Gel (e.g., Neutrogena Hydro Boost, Clinique Dramatically Different Gel)",
-                        "dry": "Milk/Oil (e.g., La Roche-Posay Toleriane, DHC Oil) + Serum (e.g., Hyalu B5, Vichy Minéral 89) + Cream (e.g., CeraVe Cream, First Aid Beauty Ultra Repair)",
-                        "combo": "Gentle Gel (e.g., Bioderma Sensibio, Fresh Soy) + Serum (e.g., The Ordinary Buffet, Caudalie Vinoperfect) + Fluid (e.g., La Roche-Posay Effaclar Duo, Kiehl's Ultra Facial)",
-                        "sensitive": "Micellar/Milk (e.g., Bioderma Sensibio, Aveeno Calm) + Serum (e.g., La Roche-Posay Toleriane, Dr. Jart+ Cicapair) + Balm (e.g., Cicaplast B5, Avene Cicalfate)",
+                        "oily": "Cleanser (e.g., CeraVe Foaming, La Roche-Posay Effaclar, Bioderma Sebium) + Serum (e.g., The Ordinary Niacinamide, Paula's Choice Pore, Inkey List Niacinamide) + Gel (e.g., Neutrogena Hydro Boost, Clinique Dramatically Different Gel, Versed Dew Point)",
+                        "dry": "Milk/Oil (e.g., La Roche-Posay Toleriane, DHC Oil, Aveeno Calm+Restore) + Serum (e.g., Hyalu B5, Vichy Minéral 89, The Ordinary HA) + Cream (e.g., CeraVe Cream, First Aid Beauty Ultra Repair, Vanicream)",
+                        "combo": "Gentle Gel (e.g., Bioderma Sensibio, Fresh Soy, Youth to the People) + Serum (e.g., The Ordinary Buffet, Caudalie Vinoperfect, Estée Lauder ANR) + Fluid (e.g., La Roche-Posay Effaclar Duo, Kiehl's Ultra Facial, Clinique Moisture Surge)",
+                        "sensitive": "Micellar/Milk (e.g., Bioderma Sensibio, Aveeno Calm, Cetaphil Gentle) + Serum (e.g., La Roche-Posay Toleriane, Dr. Jart+ Cicapair, Aveeno Triple Oat) + Balm (e.g., Cicaplast B5, Avene Cicalfate, La Roche-Posay Lipikar)",
                         "default": "Gentle Cleanser + Light Moisturizer + Sun Protection"
                     },
                     "hands_feet": {
                         "title": "Hands & Feet Care",
-                        "oily": "Hands: Light Cream (e.g., Neutrogena Hydro Boost, L'Occitane Verbena). Feet: Scrub (e.g., The Body Shop Peppermint) + Gel (e.g., Scholl Fresh).",
-                        "dry": "Hands: Repair Cream (e.g., CeraVe Hand, O'Keeffe's Working Hands). Feet: Urea (e.g., Eucerin 10% Urea, CeraVe SA Renewing).",
-                        "combo": "Hands: Daily Moisture (e.g., Nivea Soft, Vaseline). Feet: Nourishing (e.g., Burt's Bees Coconut Foot Cream).",
-                        "sensitive": "Hands: Fragrance-Free (e.g., Aveeno Relief, Eucerin Advanced). Feet: Soothing (e.g., La Roche-Posay Lipikar).",
+                        "oily": "Hands: Light Cream (e.g., Neutrogena Hydro Boost, L'Occitane Verbena, Aesop Resurrection). Feet: Scrub (e.g., The Body Shop Peppermint, Lush Pumice) + Gel (e.g., Scholl Fresh, L'Occitane Shea).",
+                        "dry": "Hands: Repair Cream (e.g., CeraVe Hand, O'Keeffe's Working Hands, Neutrogena Norwegian). Feet: Urea (e.g., Eucerin 10% Urea, CeraVe SA Renewing, Gold Bond).",
+                        "combo": "Hands: Daily Moisture (e.g., Nivea Soft, Vaseline, Aveeno Daily). Feet: Nourishing (e.g., Burt's Bees Coconut, Palmer's Cocoa Butter, Sol de Janeiro).",
+                        "sensitive": "Hands: Fragrance-Free (e.g., Aveeno Relief, Eucerin Advanced, CeraVe Therapeutic). Feet: Soothing (e.g., La Roche-Posay Lipikar, Aveeno CICA, Cetaphil).",
                         "default": "Moisturize your hands after every wash. Care for your feet at night."
                     },
                     "advice": {

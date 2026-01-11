@@ -196,18 +196,18 @@
                     "title": "Ilana Ti Ara Ẹni Rẹ",
                     "pro_tip": "Imọran Pro:",
                     "routines": {
-                        "oily": "Cleanser (fun apẹẹrẹ, CeraVe Foaming, Effaclar Gel) + Serum (fun apẹẹrẹ, The Ordinary Niacinamide, SVR Sebiaclear) + Gel (fun apẹẹrẹ, Neutrogena Hydro Boost, Bioderma Sébium Mat)",
-                        "dry": "Milk/Oil (fun apẹẹrẹ, La Roche-Posay Toleriane, DHC Oil) + Serum (fun apẹẹrẹ, Hyalu B5, Vichy Minéral 89) + Cream (fun apẹẹrẹ, CeraVe Cream, Avene XeraCalm)",
-                        "combo": "Gentle Gel (fun apẹẹrẹ, Bioderma Sensibio, Fresh Soy) + Serum (fun apẹẹrẹ, The Ordinary Buffet, Caudalie Vinoperfect) + Fluid (fun apẹẹrẹ, La Roche-Posay Effaclar Duo, Clinique Dramatically Different Gel)",
-                        "sensitive": "Micellar/Milk (fun apẹẹrẹ, Bioderma Sensibio, Avene Milk) + Serum (fun apẹẹrẹ, La Roche-Posay Toleriane, Dr. Jart+ Cicapair) + Balm (fun apẹẹrẹ, Cicaplast B5, Avene Cicalfate)",
+                        "oily": "Cleanser (fun apẹẹrẹ, CeraVe Foaming, La Roche-Posay Effaclar, Bioderma Sebium) + Serum (fun apẹẹrẹ, The Ordinary Niacinamide, Paula's Choice Pore, Inkey List Niacinamide) + Gel (fun apẹẹrẹ, Neutrogena Hydro Boost, Clinique Dramatically Different Gel, Versed Dew Point)",
+                        "dry": "Milk/Oil (fun apẹẹrẹ, La Roche-Posay Toleriane, DHC Oil, Aveeno Calm+Restore) + Serum (fun apẹẹrẹ, Hyalu B5, Vichy Minéral 89, The Ordinary HA) + Cream (fun apẹẹrẹ, CeraVe Cream, First Aid Beauty Ultra Repair, Vanicream)",
+                        "combo": "Gentle Gel (fun apẹẹrẹ, Bioderma Sensibio, Fresh Soy, Youth to the People) + Serum (fun apẹẹrẹ, The Ordinary Buffet, Caudalie Vinoperfect, Estée Lauder ANR) + Fluid (fun apẹẹrẹ, La Roche-Posay Effaclar Duo, Kiehl's Ultra Facial, Clinique Moisture Surge)",
+                        "sensitive": "Micellar/Milk (fun apẹẹrẹ, Bioderma Sensibio, Aveeno Calm, Cetaphil Gentle) + Serum (fun apẹẹrẹ, La Roche-Posay Toleriane, Dr. Jart+ Cicapair, Aveeno Triple Oat) + Balm (fun apẹẹrẹ, Cicaplast B5, Avene Cicalfate, La Roche-Posay Lipikar)",
                         "default": "Gentle Cleanser + Light Moisturizer + Sun Protection"
                     },
                     "hands_feet": {
                         "title": "Itọju Ọwọ & Ẹsẹ",
-                        "oily": "Ọwọ: Ipara fẹlẹfẹlẹ (fun apẹẹrẹ, Neutrogena Hydro Boost, L'Occitane Verbena). Ẹsẹ: Scrub (fun apẹẹrẹ, Scholl) + Gel (fun apẹẹrẹ, Akileïne Gel Frais).",
-                        "dry": "Ọwọ: Ipara atunṣe (fun apẹẹrẹ, CeraVe Hand, Cicaplast Mains). Ẹsẹ: Urea (fun apẹẹrẹ, Eucerin 10% Urea, CeraVe SA Feet).",
-                        "combo": "Ọwọ: Moisturizing (fun apẹẹrẹ, Nivea Soft, Mixa). Ẹsẹ: Nourishing (fun apẹẹrẹ, Neutrogena Foot Cream).",
-                        "sensitive": "Ọwọ: Laisi oorun (fun apẹẹrẹ, Bioderma Atoderm, Aveeno). Ẹsẹ: Apaisant (fun apẹẹrẹ, La Roche-Posay Lipikar Podologics).",
+                        "oily": "Ọwọ: Ipara fẹlẹfẹlẹ (fun apẹẹrẹ, Neutrogena Hydro Boost, L'Occitane Verbena, Aesop Resurrection). Ẹsẹ: Scrub (fun apẹẹrẹ, The Body Shop Peppermint, Lush Pumice) + Gel (fun apẹẹrẹ, Scholl Fresh, L'Occitane Shea).",
+                        "dry": "Ọwọ: Ipara atunṣe (fun apẹẹrẹ, CeraVe Hand, O'Keeffe's Working Hands, Neutrogena Norwegian). Ẹsẹ: Urea (fun apẹẹrẹ, Eucerin 10% Urea, CeraVe SA Renewing, Gold Bond).",
+                        "combo": "Ọwọ: Moisturizing (fun apẹẹrẹ, Nivea Soft, Vaseline, Aveeno Daily). Ẹsẹ: Nourishing (fun apẹẹrẹ, Burt's Bees Coconut, Palmer's Cocoa Butter, Sol de Janeiro).",
+                        "sensitive": "Ọwọ: Laisi oorun (fun apẹẹrẹ, Aveeno Relief, Eucerin Advanced, CeraVe Therapeutic). Ẹsẹ: Apaisant (fun apẹẹrẹ, La Roche-Posay Lipikar, Aveeno CICA, Cetaphil).",
                         "default": "Mu ọwọ rẹ mu omi lẹhin gbogbo fifọ. Tọju ẹsẹ rẹ ni alẹ."
                     },
                     "advice": {

@@ -157,5 +157,150 @@
     },
     "footer": {
         "copyright": "© 2025 Soraya Codo – 個人ポートフォリオ"
+    },
+    "side_quests": {
+        "title": "サイドクエスト",
+        "subtitle": "好奇心とAIや創造性を探求する喜びから生まれた実験。",
+        "simulation": "(インタラクティブシミュレーション)",
+        "loading": "AIが考え中...",
+        "messages": {
+            "error_skin_type": "肌タイプを選択してください。",
+            "error_rhyme_input": "テーマまたは要素を入力してください。",
+            "rhyme_title_prefix": "〜の精神："
+        },
+        "beauty": {
+            "title": "美容＆ケア",
+            "radiant": {
+                "title": "ラディアント・スキンケア",
+                "desc": "あなたの肌タイプに基づいたオーダーメイドのルーチンを取得します。",
+                "skin_type_label": "肌タイプ",
+                "concerns_label": "悩み（オプション）",
+                "concerns_placeholder": "例：ニキビ、シミ、シワ、くすみ...",
+                "button": "ルーチンを作成",
+                "options": {
+                    "oily": "脂性肌",
+                    "dry": "乾燥肌",
+                    "combo": "混合肌",
+                    "sensitive": "敏感肌"
+                },
+                "results": {
+                    "see_more": "もっと見る",
+                    "usage_title": "使用方法",
+                    "usage": {
+                        "oily": "朝：優しい洗顔、浄化セラム、軽い保湿。夜：ダブル洗顔、アクティブ（AHA/BHA）、保湿。",
+                        "dry": "朝：フローラルウォーターまたはミルク、保湿セラム、リッチクリーム。夜：オイルクレンジング、栄養クリーム、フェイスオイル。",
+                        "combo": "朝：ジェル洗顔、バランシングセラム、フルイド。夜：優しい洗顔、レチノール（オプション）、保湿。",
+                        "sensitive": "朝：温泉水、鎮静セラム、バリアクリーム。夜：オイルクレンジング、修復ケア。摩擦を避けてください。",
+                        "default": "朝：洗顔、保湿、保護。夜：洗顔、トリートメント、保湿。"
+                    },
+                    "title": "あなたのパーソナライズされたルーチン",
+                    "pro_tip": "プロのヒント：",
+                    "routines": {
+                        "oily": "洗顔 (例: CeraVe Foaming, La Roche-Posay Effaclar, Bioderma Sebium) + セラム (例: The Ordinary Niacinamide, Paula's Choice Pore, Inkey List Niacinamide) + ジェル (例: Neutrogena Hydro Boost, Clinique Dramatically Different Gel, Versed Dew Point)",
+                        "dry": "ミルク/オイル (例: La Roche-Posay Toleriane, DHC Oil, Avene Tolerance) + セラム (例: La Roche-Posay Hyalu B5, Vichy Mineral 89, The Ordinary Hyaluronic) + クリーム (例: CeraVe Pot, Avene XeraCalm, Embryolisse Lait-Crème)",
+                        "combo": "マイルドジェル (例: Bioderma Sensibio, Fresh Soy, Cetaphil Gentle) + セラム (例: The Ordinary Buffet, Caudalie Vinoperfect, Estée Lauder ANR) + フルイド (例: La Roche-Posay Effaclar Duo, Clinique Moisture Surge, Kiehl's Ultra Facial)",
+                        "sensitive": "ミセラー水/ミルク (例: Bioderma Crealine, Avene Lait, La Roche-Posay Dermo-Cleanser) + セラム (例: La Roche-Posay Toleriane Ultra, Dr. Jart+ Cicapair, Avene Hydrance) + バーム (例: Cicaplast B5, Avene Cicalfate, Uriage Bariederm)",
+                        "default": "優しい洗顔 + 軽い保湿 + 日焼け止め"
+                    },
+                    "hands_feet": {
+                        "title": "手と足のケア",
+                        "oily": "手：軽いクリーム (例: Neutrogena Hydro Boost, L'Occitane Verbena, Aesop Resurrection). 足：スクラブ (例: The Body Shop Peppermint, Lush Pumice) + ジェル (例: Scholl Fresh, L'Occitane Shea).",
+                        "dry": "手：リッチクリーム (例: CeraVe Hand, Cicaplast Mains, Neutrogena Norwegian). 足：尿素 (例: Eucerin 10% Urea, CeraVe SA Feet, SVR Xerial 30).",
+                        "combo": "手：保湿 (例: Nivea Hand, Mixa Intensif, Bioderma Atoderm). 足：栄養 (例: Neutrogena Very Dry Feet, Scholl Cream, Palmer's Cocoa Butter).",
+                        "sensitive": "手：無香料 (例: Bioderma Atoderm, Aveeno, Eucerin pH5). 足：鎮静 (例: La Roche-Posay Lipikar, Avene XeraCalm, Uriage Keratosane).",
+                        "default": "手洗い後は手を保湿してください。夜は足のケアを。"
+                    },
+                    "advice": {
+                        "oily": "週2回サリチル酸を使用してください。",
+                        "dry": "熱すぎるお湯やアルコールを含む製品は避けてください。",
+                        "combo": "頬をしっかり保湿し、Tゾーンは局所的にケアしてください。",
+                        "sensitive": "シンプルイズベスト。無香料の製品を選びましょう。"
+                    },
+                    "bonus_text": "「{0}」のためのボーナス：夜にターゲットアクティブを追加（例：年齢にはレチノール、輝きにはビタミンC）。"
+                }
+            }
+        },
+        "literature": {
+            "title": "文学＆自然",
+            "quote": {
+                "title": "名言",
+                "desc": "テーマを選んで、時代を超えた思想を発見してください。",
+                "themes": {
+                    "love": "愛",
+                    "courage": "勇気",
+                    "time": "時間",
+                    "success": "成功",
+                    "wisdom": "知恵",
+                    "nature": "自然",
+                    "happiness": "幸福",
+                    "peace": "平和"
+                },
+                "database": {
+                    "love": [
+                        { "text": "愛するとは、互いに見つめ合うことではなく、一緒に同じ方向を見つめることである。", "author": "アントワーヌ・ド・サン＝テグジュペリ" },
+                        { "text": "世界で唯一の真の言語はキスである。", "author": "アルフレッド・ド・ミュッセ" }
+                    ],
+                    "courage": [
+                        { "text": "勇気とは恐怖の欠如ではなく、それを克服する能力である。", "author": "ネルソン・マンデラ" },
+                        { "text": "自分自身になるためには勇気が必要だ。", "author": "E.E. カミングス" }
+                    ],
+                    "time": [
+                        { "text": "ゆっくり急げ。", "author": "ボアロー" },
+                        { "text": "時は偉大な教師だが、生徒を殺してしまうのが残念だ。", "author": "エクトル・ベルリオーズ" }
+                    ],
+                    "success": [
+                        { "text": "成功とは、情熱を失わずに失敗から失敗へと進むことである。", "author": "ウィンストン・チャーチル" },
+                        { "text": "素晴らしい仕事をする唯一の方法は、自分のすることを愛することだ。", "author": "スティーブ・ジョブズ" }
+                    ],
+                    "wisdom": [
+                        { "text": "汝自身を知れ。", "author": "ソクラテス" },
+                        { "text": "真の知恵は、賢く見えないことにある。", "author": "アイスキュロス" }
+                    ],
+                    "nature": [
+                        { "text": "自然は無駄なことをしない。", "author": "アリストテレス" },
+                        { "text": "自然を深く見つめれば、すべてをよりよく理解できるだろう。", "author": "アルバート・アインシュタイン" }
+                    ],
+                    "happiness": [
+                        { "text": "幸福は時に未知の中に隠されている。", "author": "ヴィクトル・ユーゴー" },
+                        { "text": "幸福は容易なことではない。自分の中に見つけるのは非常に難しく、他で見つけるのは不可能だ。", "author": "シャンフォール" }
+                    ],
+                    "peace": [
+                        { "text": "平和は微笑みから始まる。", "author": "マザー・テレサ" },
+                        { "text": "良い戦争も悪い平和も存在しない。", "author": "ベンジャミン・フランクリン" }
+                    ]
+                }
+            },
+            "rhyme": {
+                "title": "ライム・ミー・グリーン",
+                "desc": "自然の要素やテーマ（例：海、森、愛）を入力して読んでください。",
+                "placeholder": "例：古い樫の木、嵐、静寂...",
+                "button": "読む",
+                "responses": {
+                    "forest": "私は地球の肺、私の根は世界の歴史を抱擁する。葉のささやきを聞け、それは何世紀もの知恵を運ぶ。",
+                    "ocean": "広大で深い、私は深淵の秘密を守る。私の表面は空を映すが、心は永遠の潮のリズムで鼓動する。",
+                    "sun": "私は命を与えるために果てしなく燃える。私の光は影を追い払い、すべての魂、すべての石、すべての希望を温める。",
+                    "moon": "夜の女王、私はあなたの夢を見守る。銀の静寂の中で、私は迷える旅人と孤独な詩人を導く。",
+                    "wind": "目に見えず強力、私は変化の息吹。顔を撫で、疑いを根こそぎにする、縛られない旅人。",
+                    "mountain": "不動で誇り高く、私は雲に触れる。私の頂は挑戦、谷は避難所。私は石となった忍耐。",
+                    "flower": "儚い美しさ、私は優雅に世界に開く。すべての花びらは色の約束、光への微笑み。",
+                    "default": [
+                        "{0}の静寂の中で、<br>風は古代の秘密をささやく、<br>葉は踊り、心は安らぐ、<br>自然は権利を取り戻し、穏やかに。",
+                        "{0}の反響が遠くに響く、<br>朝の愛撫のように、<br>すべてが目覚め、すべてが光、<br>この世界で、祈りを。",
+                        "空の下、{0}が立つ、<br>時の証人、弱さを見せず、<br>根は深く、心は震える、<br>命への賛歌、永遠に。"
+                    ]
+                }
+            }
+        },
+        "science": {
+            "title": "科学",
+            "gallery": {
+                "title": "NASAギャラリー",
+                "desc": "NASA画像・動画ライブラリからの最新20の驚異を探索。",
+                "loading": "NASAからの画像を読み込み中...",
+                "error": "画像の読み込みに失敗しました。後でもう一度お試しください。",
+                "date": "日付: ",
+                "explanation": "説明を表示"
+            }
+        }
     }
 }

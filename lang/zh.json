@@ -157,5 +157,150 @@
     },
     "footer": {
         "copyright": "© 2025 Soraya Codo – 个人作品集"
+    },
+    "side_quests": {
+        "title": "Side Quests",
+        "subtitle": "出于好奇和探索 AI 与创造力的乐趣而诞生的实验。",
+        "simulation": "(交互式模拟)",
+        "loading": "AI 正在思考...",
+        "messages": {
+            "error_skin_type": "请选择您的肤质。",
+            "error_rhyme_input": "请输入主题或元素。",
+            "rhyme_title_prefix": "精神："
+        },
+        "beauty": {
+            "title": "美容 & 护理",
+            "radiant": {
+                "title": "光彩护肤",
+                "desc": "获取根据您的肤质定制的护肤流程。",
+                "skin_type_label": "肤质",
+                "concerns_label": "关注点（可选）",
+                "concerns_placeholder": "例如：痤疮、斑点、皱纹、暗沉...",
+                "button": "生成我的流程",
+                "options": {
+                    "oily": "油性",
+                    "dry": "干性",
+                    "combo": "混合性",
+                    "sensitive": "敏感性"
+                },
+                "results": {
+                    "see_more": "查看更多",
+                    "usage_title": "使用建议",
+                    "usage": {
+                        "oily": "早晨：温和洁面，净化精华，轻盈保湿。晚上：双重洁面，活性成分（AHA/BHA），保湿。",
+                        "dry": "早晨：花水或乳液，保湿精华，滋润霜。晚上：卸妆油，营养霜，面部精油。",
+                        "combo": "早晨：洁面凝胶，平衡精华，乳液。晚上：温和洁面，视黄醇（可选），保湿。",
+                        "sensitive": "早晨：温泉水，舒缓精华，屏障霜。晚上：卸妆油，修护护理。避免摩擦。",
+                        "default": "早晨：清洁，保湿，保护。晚上：清洁，治疗，保湿。"
+                    },
+                    "title": "您的个性化流程",
+                    "pro_tip": "专业提示：",
+                    "routines": {
+                        "oily": "洁面 (例: CeraVe Foaming, La Roche-Posay Effaclar, Bioderma Sebium) + 精华 (例: The Ordinary Niacinamide, Paula's Choice Pore, Inkey List Niacinamide) + 凝胶 (例: Neutrogena Hydro Boost, Clinique Dramatically Different Gel, Versed Dew Point)",
+                        "dry": "乳/油 (例: La Roche-Posay Toleriane, DHC Oil, Avene Tolerance) + 精华 (例: La Roche-Posay Hyalu B5, Vichy Mineral 89, The Ordinary Hyaluronic) + 面霜 (例: CeraVe Pot, Avene XeraCalm, Embryolisse Lait-Crème)",
+                        "combo": "温和凝胶 (例: Bioderma Sensibio, Fresh Soy, Cetaphil Gentle) + 精华 (例: The Ordinary Buffet, Caudalie Vinoperfect, Estée Lauder ANR) + 乳液 (例: La Roche-Posay Effaclar Duo, Clinique Moisture Surge, Kiehl's Ultra Facial)",
+                        "sensitive": "胶束水/乳 (例: Bioderma Crealine, Avene Lait, La Roche-Posay Dermo-Cleanser) + 精华 (例: La Roche-Posay Toleriane Ultra, Dr. Jart+ Cicapair, Avene Hydrance) + 润肤霜 (例: Cicaplast B5, Avene Cicalfate, Uriage Bariederm)",
+                        "default": "温和洁面 + 轻盈保湿 + 防晒"
+                    },
+                    "hands_feet": {
+                        "title": "手部 & 足部护理",
+                        "oily": "手部：轻盈霜 (例: Neutrogena Hydro Boost, L'Occitane Verbena, Aesop Resurrection). 足部：磨砂 (例: The Body Shop Peppermint, Lush Pumice) + 凝胶 (例: Scholl Fresh, L'Occitane Shea).",
+                        "dry": "手部：滋润霜 (例: CeraVe Hand, Cicaplast Mains, Neutrogena Norwegian). 足部：尿素 (例: Eucerin 10% Urea, CeraVe SA Feet, SVR Xerial 30).",
+                        "combo": "手部：保湿 (例: Nivea Hand, Mixa Intensif, Bioderma Atoderm). 足部：滋养 (例: Neutrogena Very Dry Feet, Scholl Cream, Palmer's Cocoa Butter).",
+                        "sensitive": "手部：无香 (例: Bioderma Atoderm, Aveeno, Eucerin pH5). 足部：舒缓 (例: La Roche-Posay Lipikar, Avene XeraCalm, Uriage Keratosane).",
+                        "default": "洗手后保湿。晚上护理足部。"
+                    },
+                    "advice": {
+                        "oily": "每周使用2次水杨酸。",
+                        "dry": "避免水温过高和含酒精的产品。",
+                        "combo": "充分保湿脸颊，局部护理T区。",
+                        "sensitive": "少即是多。优先选择无香产品。"
+                    },
+                    "bonus_text": "“{0}”的额外建议：晚上添加针对性活性成分（例如：视黄醇抗衰老，维生素C提亮）。"
+                }
+            }
+        },
+        "literature": {
+            "title": "文学 & 自然",
+            "quote": {
+                "title": "名言",
+                "desc": "选择一个主题，发现永恒的思想。",
+                "themes": {
+                    "love": "爱",
+                    "courage": "勇气",
+                    "time": "时间",
+                    "success": "成功",
+                    "wisdom": "智慧",
+                    "nature": "自然",
+                    "happiness": "幸福",
+                    "peace": "和平"
+                },
+                "database": {
+                    "love": [
+                        { "text": "爱不是彼此凝视，而是注视同一个方向。", "author": "安托万·德·圣埃克苏佩里" },
+                        { "text": "世界上唯一真正的语言是吻。", "author": "阿尔弗雷德·德·穆塞" }
+                    ],
+                    "courage": [
+                        { "text": "勇气不是没有恐惧，而是战胜恐惧的能力。", "author": "纳尔逊·曼德ラ" },
+                        { "text": "成为真正的自己需要勇气。", "author": "E.E. 卡明斯" }
+                    ],
+                    "time": [
+                        { "text": "欲速则不达。", "author": "布瓦洛" },
+                        { "text": "时间是伟大的老师，可惜它杀死了它的学生。", "author": "赫克托·柏辽兹" }
+                    ],
+                    "success": [
+                        { "text": "成功就是从失败走向失败，而不失去热情。", "author": "温斯顿·丘吉尔" },
+                        { "text": "做伟大工作的唯一方法是热爱你所做的事。", "author": "史蒂夫·乔布斯" }
+                    ],
+                    "wisdom": [
+                        { "text": "认识你自己。", "author": "苏格拉底" },
+                        { "text": "真正的智慧在于不显露智慧。", "author": "埃斯库罗斯" }
+                    ],
+                    "nature": [
+                        { "text": "大自然从不做徒劳之事。", "author": "亚里士多德" },
+                        { "text": "深入观察大自然，你将更好地理解一切。", "author": "阿尔伯特·爱因斯坦" }
+                    ],
+                    "happiness": [
+                        { "text": "幸福有时隐藏在未知之中。", "author": "维克多·雨果" },
+                        { "text": "幸福并非易事。在自己身上很难找到，在别处则不可能找到。", "author": "尚福尔" }
+                    ],
+                    "peace": [
+                        { "text": "和平始于微笑。", "author": "特蕾莎修女" },
+                        { "text": "从来没有好的战争，也没有坏的和平。", "author": "本杰明·富兰克林" }
+                    ]
+                }
+            },
+            "rhyme": {
+                "title": "韵律与自然",
+                "desc": "输入自然元素或主题（例如：海洋、森林、爱）并阅读。",
+                "placeholder": "例如：老橡树、风暴、寂静...",
+                "button": "阅读",
+                "responses": {
+                    "forest": "我是地球的肺，我的根拥抱世界的历史。倾听我叶子的低语，它承载着世纪的智慧。",
+                    "ocean": "浩瀚而深邃，我守护着深渊的秘密。我的表面倒映着天空，但我的心随着永恒潮汐的节奏跳动。",
+                    "sun": "我无尽地燃烧以赋予生命。我的光驱散阴影，温暖每一个灵魂，每一块石头，每一个希望。",
+                    "moon": "夜之女王，我守护你的梦。在银色的寂静中，我指引迷途的旅人和孤独的诗人。",
+                    "wind": "无形而强大，我是变化的呼吸。抚摸脸庞，连根拔起怀疑，无拘无束的旅行者。",
+                    "mountain": "不动且骄傲，我触摸云端。我的顶峰是挑战，我的山谷是避难所。我是化作石头的耐心。",
+                    "flower": "短暂的美丽，我优雅地向世界绽放。每一片花瓣都是色彩的承诺，是对光的微笑。",
+                    "default": [
+                        "在{0}的寂静中，<br>风低语着古老的秘密，<br>叶子在舞动，心灵平静，<br>大自然收回它的权利，安详。",
+                        "{0}的回声在远方回荡，<br>如同清晨的爱抚，<br>万物苏醒，万物皆光，<br>在这个世界上，祈祷。",
+                        "在天空下，{0}伫立，<br>时间的见证，没有软弱，<br>根深蒂固，心在跳动，<br>生命的赞歌，直到永远。"
+                    ]
+                }
+            }
+        },
+        "science": {
+            "title": "科学",
+            "gallery": {
+                "title": "NASA 画廊",
+                "desc": "探索 NASA 图像和视频库中的最新 20 个奇观。",
+                "loading": "正在从 NASA 加载图像...",
+                "error": "加载图像失败。请稍后再试。",
+                "date": "日期：",
+                "explanation": "查看说明"
+            }
+        }
     }
 }

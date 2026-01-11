@@ -157,5 +157,150 @@
     },
     "footer": {
         "copyright": "© 2025 Soraya Codo – 개인 포트폴리오"
+    },
+    "side_quests": {
+        "title": "사이드 퀘스트",
+        "subtitle": "호기심과 AI 및 창의성을 탐구하는 즐거움에서 탄생한 실험들.",
+        "simulation": "(인터랙티브 시뮬레이션)",
+        "loading": "AI가 생각 중...",
+        "messages": {
+            "error_skin_type": "피부 타입을 선택해주세요.",
+            "error_rhyme_input": "주제나 요소를 입력해주세요.",
+            "rhyme_title_prefix": "정신:"
+        },
+        "beauty": {
+            "title": "뷰티 & 케어",
+            "radiant": {
+                "title": "라디언트 스킨케어",
+                "desc": "피부 타입에 맞는 맞춤형 루틴을 받아보세요.",
+                "skin_type_label": "피부 타입",
+                "concerns_label": "고민 (선택 사항)",
+                "concerns_placeholder": "예: 여드름, 잡티, 주름, 칙칙함...",
+                "button": "루틴 생성",
+                "options": {
+                    "oily": "지성",
+                    "dry": "건성",
+                    "combo": "복합성",
+                    "sensitive": "민감성"
+                },
+                "results": {
+                    "see_more": "더 보기",
+                    "usage_title": "사용 팁",
+                    "usage": {
+                        "oily": "아침: 약산성 클렌저, 정화 세럼, 가벼운 수분 크림. 저녁: 이중 세안, 활성 성분(AHA/BHA), 수분 크림.",
+                        "dry": "아침: 플로럴 워터 또는 밀크, 수분 세럼, 리치 크림. 저녁: 오일 클렌징, 영양 크림, 페이스 오일.",
+                        "combo": "아침: 젤 클렌저, 밸런싱 세럼, 플루이드. 저녁: 부드러운 세안, 레티놀(선택), 수분 크림.",
+                        "sensitive": "아침: 온천수, 진정 세럼, 장벽 크림. 저녁: 오일 클렌징, 재생 케어. 마찰을 피하세요.",
+                        "default": "아침: 세안, 보습, 보호. 저녁: 세안, 관리, 보습."
+                    },
+                    "title": "당신의 맞춤형 루틴",
+                    "pro_tip": "프로 팁:",
+                    "routines": {
+                        "oily": "클렌저 (예: CeraVe Foaming, La Roche-Posay Effaclar, Bioderma Sebium) + 세럼 (예: The Ordinary Niacinamide, Paula's Choice Pore, Inkey List Niacinamide) + 젤 (예: Neutrogena Hydro Boost, Clinique Dramatically Different Gel, Versed Dew Point)",
+                        "dry": "밀크/오일 (예: La Roche-Posay Toleriane, DHC Oil, Avene Tolerance) + 세럼 (예: La Roche-Posay Hyalu B5, Vichy Mineral 89, The Ordinary Hyaluronic) + 크림 (예: CeraVe Pot, Avene XeraCalm, Embryolisse Lait-Crème)",
+                        "combo": "마일드 젤 (예: Bioderma Sensibio, Fresh Soy, Cetaphil Gentle) + 세럼 (예: The Ordinary Buffet, Caudalie Vinoperfect, Estée Lauder ANR) + 플루이드 (예: La Roche-Posay Effaclar Duo, Clinique Moisture Surge, Kiehl's Ultra Facial)",
+                        "sensitive": "미셀라 워터/밀크 (예: Bioderma Crealine, Avene Lait, La Roche-Posay Dermo-Cleanser) + 세럼 (예: La Roche-Posay Toleriane Ultra, Dr. Jart+ Cicapair, Avene Hydrance) + 밤 (예: Cicaplast B5, Avene Cicalfate, Uriage Bariederm)",
+                        "default": "약산성 클렌저 + 가벼운 수분 크림 + 자외선 차단제"
+                    },
+                    "hands_feet": {
+                        "title": "손 & 발 케어",
+                        "oily": "손: 가벼운 크림 (예: Neutrogena Hydro Boost, L'Occitane Verbena, Aesop Resurrection). 발: 스크럽 (예: The Body Shop Peppermint, Lush Pumice) + 젤 (예: Scholl Fresh, L'Occitane Shea).",
+                        "dry": "손: 리치 크림 (예: CeraVe Hand, Cicaplast Mains, Neutrogena Norwegian). 발: 우레아 (예: Eucerin 10% Urea, CeraVe SA Feet, SVR Xerial 30).",
+                        "combo": "손: 보습 (예: Nivea Hand, Mixa Intensif, Bioderma Atoderm). 발: 영양 (예: Neutrogena Very Dry Feet, Scholl Cream, Palmer's Cocoa Butter).",
+                        "sensitive": "손: 무향 (예: Bioderma Atoderm, Aveeno, Eucerin pH5). 발: 진정 (예: La Roche-Posay Lipikar, Avene XeraCalm, Uriage Keratosane).",
+                        "default": "손을 씻은 후 보습하세요. 저녁에는 발을 관리하세요."
+                    },
+                    "advice": {
+                        "oily": "주 2회 살리실산을 사용하세요.",
+                        "dry": "너무 뜨거운 물과 알코올 함유 제품을 피하세요.",
+                        "combo": "볼은 충분히 보습하고 T존은 국소적으로 관리하세요.",
+                        "sensitive": "적을수록 좋습니다. 무향 제품을 선택하세요."
+                    },
+                    "bonus_text": "\"{0}\"을 위한 보너스: 저녁에 타겟 활성 성분을 추가하세요 (예: 노화에는 레티놀, 광채에는 비타민 C)."
+                }
+            }
+        },
+        "literature": {
+            "title": "문학 & 자연",
+            "quote": {
+                "title": "명언",
+                "desc": "주제를 선택하여 시대를 초월한 생각을 발견하세요.",
+                "themes": {
+                    "love": "사랑",
+                    "courage": "용기",
+                    "time": "시간",
+                    "success": "성공",
+                    "wisdom": "지혜",
+                    "nature": "자연",
+                    "happiness": "행복",
+                    "peace": "평화"
+                },
+                "database": {
+                    "love": [
+                        { "text": "사랑한다는 것은 서로 마주 보는 것이 아니라, 함께 같은 방향을 바라보는 것이다.", "author": "앙투안 드 생텍쥐페리" },
+                        { "text": "세상에서 유일한 진정한 언어는 키스다.", "author": "알프레드 드 뮈세" }
+                    ],
+                    "courage": [
+                        { "text": "용기는 두려움이 없는 것이 아니라, 두려움을 이겨내는 능력이다.", "author": "넬슨 만델라" },
+                        { "text": "자신이 되기 위해서는 용기가 필요하다.", "author": "E.E. 커밍스" }
+                    ],
+                    "time": [
+                        { "text": "천천히 서둘러라.", "author": "부알로" },
+                        { "text": "시간은 위대한 스승이지만, 불행히도 제자를 죽인다.", "author": "엑토르 베를리오즈" }
+                    ],
+                    "success": [
+                        { "text": "성공이란 열정을 잃지 않고 실패를 거듭하는 것이다.", "author": "윈스턴 처칠" },
+                        { "text": "위대한 일을 하는 유일한 방법은 당신이 하는 일을 사랑하는 것이다.", "author": "스티브 잡스" }
+                    ],
+                    "wisdom": [
+                        { "text": "너 자신을 알라.", "author": "소크라테스" },
+                        { "text": "진정한 지혜는 현명해 보이지 않는 것이다.", "author": "아이스킬로스" }
+                    ],
+                    "nature": [
+                        { "text": "자연은 헛된 일을 하지 않는다.", "author": "아리스토텔레스" },
+                        { "text": "자연을 깊이 들여다보면 모든 것을 더 잘 이해할 수 있을 것이다.", "author": "알베르트 아인슈타인" }
+                    ],
+                    "happiness": [
+                        { "text": "행복은 때때로 미지의 곳에 숨겨져 있다.", "author": "빅토르 위고" },
+                        { "text": "행복은 쉬운 일이 아니다. 우리 안에서 찾기는 매우 어렵고, 다른 곳에서 찾기는 불가능하다.", "author": "샹포르" }
+                    ],
+                    "peace": [
+                        { "text": "평화는 미소에서 시작된다.", "author": "마더 테레사" },
+                        { "text": "좋은 전쟁도 나쁜 평화도 없다.", "author": "벤자민 프랭클린" }
+                    ]
+                }
+            },
+            "rhyme": {
+                "title": "라임 미 그린",
+                "desc": "자연의 요소나 주제(예: 바다, 숲, 사랑)를 입력하고 읽어보세요.",
+                "placeholder": "예: 오래된 참나무, 폭풍, 침묵...",
+                "button": "읽기",
+                "responses": {
+                    "forest": "나는 지구의 폐, 내 뿌리는 세계의 역사를 끌어안는다. 내 잎사귀의 속삭임을 들어라, 그것은 수세기의 지혜를 담고 있다.",
+                    "ocean": "광활하고 깊은 나는 심연의 비밀을 지킨다. 내 표면은 하늘을 비추지만, 내 심장은 영원한 조수의 리듬으로 뛴다.",
+                    "sun": "나는 생명을 주기 위해 끝없이 타오른다. 내 빛은 그림자를 쫓아내고, 모든 영혼, 모든 돌, 모든 희망을 따뜻하게 한다.",
+                    "moon": "밤의 여왕, 나는 너의 꿈을 지킨다. 은빛 침묵 속에서 나는 길 잃은 여행자와 고독한 시인을 인도한다.",
+                    "wind": "보이지 않지만 강력한, 나는 변화의 숨결이다. 얼굴을 어루만지고 의심을 뿌리째 뽑는, 얽매이지 않는 여행자.",
+                    "mountain": "움직이지 않고 자랑스럽게, 나는 구름에 닿는다. 내 정상은 도전이고, 내 계곡은 피난처이다. 나는 돌이 된 인내이다.",
+                    "flower": "덧없는 아름다움, 나는 우아하게 세상에 열린다. 모든 꽃잎은 색의 약속, 빛을 향한 미소이다.",
+                    "default": [
+                        "{0}의 침묵 속에서,<br>바람은 고대의 비밀을 속삭인다,<br>잎사귀는 춤추고, 마음은 평온해진다,<br>자연은 권리를 되찾고, 고요하다.",
+                        "{0}의 메아리가 멀리 울려 퍼진다,<br>아침의 어루만짐처럼,<br>모든 것이 깨어나고, 모든 것이 빛이다,<br>이 세상에서, 기도를.",
+                        "하늘 아래, {0}이 서 있다,<br>시간의 증인, 약함 없이,<br>뿌리는 깊고, 심장은 뛴다,<br>생명에 대한 찬가, 영원히."
+                    ]
+                }
+            }
+        },
+        "science": {
+            "title": "과학",
+            "gallery": {
+                "title": "NASA 갤러리",
+                "desc": "NASA 이미지 및 비디오 라이브러리의 최신 20가지 경이로움을 탐험하세요.",
+                "loading": "NASA에서 이미지를 불러오는 중...",
+                "error": "이미지를 불러오는 데 실패했습니다. 나중에 다시 시도해주세요.",
+                "date": "날짜: ",
+                "explanation": "설명 보기"
+            }
+        }
     }
 }

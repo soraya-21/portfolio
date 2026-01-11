@@ -197,18 +197,18 @@
                     "title": "Votre Routine Personnalisée",
                     "pro_tip": "Conseil Pro :",
                     "routines": {
-                        "oily": "Nettoyant (ex: CeraVe Moussant, Effaclar Gel) + Sérum (ex: The Ordinary Niacinamide, SVR Sebiaclear) + Gel (ex: Neutrogena Hydro Boost, Bioderma Sébium Mat)",
-                        "dry": "Lait/Huile (ex: La Roche-Posay Toleriane, DHC Huile) + Sérum (ex: La Roche-Posay Hyalu B5, Vichy Minéral 89) + Crème (ex: CeraVe Pot, Avene XeraCalm)",
-                        "combo": "Gel Doux (ex: Bioderma Sensibio, Fresh Soy) + Sérum (ex: The Ordinary Buffet, Caudalie Vinoperfect) + Fluide (ex: La Roche-Posay Effaclar Duo, Clinique Dramatically Different Gel)",
-                        "sensitive": "Eau Micellaire/Lait (ex: Bioderma Créaline, Avene Lait) + Sérum (ex: La Roche-Posay Toleriane Ultra, Dr. Jart+ Cicapair) + Baume (ex: Cicaplast B5, Avene Cicalfate)",
+                        "oily": "Nettoyant (ex: CeraVe Moussant, La Roche-Posay Effaclar, Bioderma Sébium) + Sérum (ex: The Ordinary Niacinamide, SVR Sebiaclear, Paula's Choice Niacinamide) + Gel (ex: Neutrogena Hydro Boost, Clinique Dramatically Different Gel, Bioderma Sébium Mat)",
+                        "dry": "Lait/Huile (ex: La Roche-Posay Toleriane, DHC Huile, Avène Tolérance) + Sérum (ex: La Roche-Posay Hyalu B5, Vichy Minéral 89, The Ordinary Hyaluronic) + Crème (ex: CeraVe Pot, Avene XeraCalm, Embryolisse Lait-Crème)",
+                        "combo": "Gel Doux (ex: Bioderma Sensibio, Fresh Soy, Cetaphil Gentle) + Sérum (ex: The Ordinary Buffet, Caudalie Vinoperfect, Estée Lauder ANR) + Fluide (ex: La Roche-Posay Effaclar Duo, Clinique Moisture Surge, Kiehl's Ultra Facial)",
+                        "sensitive": "Eau Micellaire/Lait (ex: Bioderma Créaline, Avene Lait, La Roche-Posay Dermo-Nettoyant) + Sérum (ex: La Roche-Posay Toleriane Ultra, Dr. Jart+ Cicapair, Avene Hydrance) + Baume (ex: Cicaplast B5, Avene Cicalfate, Uriage Bariéderm)",
                         "default": "Nettoyant doux + Hydratant léger + Protection solaire"
                     },
                     "hands_feet": {
                         "title": "Soins Mains & Pieds",
-                        "oily": "Mains : Crème légère (ex: Neutrogena Hydro Boost, L'Occitane Verveine). Pieds : Exfoliant (ex: Scholl) + Gel (ex: Akileïne Gel Frais).",
-                        "dry": "Mains : Crème Riche (ex: CeraVe Mains, Cicaplast Mains). Pieds : Urée (ex: Eucerin 10% Urea, CeraVe SA Pieds).",
-                        "combo": "Mains : Hydratation (ex: Nivea Mains, Mixa). Pieds : Nourrissant (ex: Neutrogena Pieds Très Secs).",
-                        "sensitive": "Mains : Sans parfum (ex: Bioderma Atoderm, Aveeno). Pieds : Apaisant (ex: La Roche-Posay Lipikar Podologics).",
+                        "oily": "Mains : Crème légère (ex: Neutrogena Hydro Boost, L'Occitane Verveine, Caudalie Gelée). Pieds : Exfoliant (ex: Scholl, The Body Shop Menthe, Mercurochrome) + Gel (ex: Akileïne Gel Frais, Yves Rocher Lavande, Scholl Gel).",
+                        "dry": "Mains : Crème Riche (ex: CeraVe Mains, Cicaplast Mains, Neutrogena Norvégienne). Pieds : Urée (ex: Eucerin 10% Urea, CeraVe SA Pieds, SVR Xérial 30).",
+                        "combo": "Mains : Hydratation (ex: Nivea Mains, Mixa Intensif, Bioderma Atoderm). Pieds : Nourrissant (ex: Neutrogena Pieds Très Secs, Scholl Crème, Palmer's Cocoa Butter).",
+                        "sensitive": "Mains : Sans parfum (ex: Bioderma Atoderm, Aveeno, Eucerin pH5). Pieds : Apaisant (ex: La Roche-Posay Lipikar, Avene XeraCalm, Uriage Kératosane).",
                         "default": "Hydratez vos mains après chaque lavage. Prenez soin de vos pieds le soir."
                     },
                     "advice": {
