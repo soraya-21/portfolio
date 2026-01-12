@@ -11,10 +11,10 @@ let particleLineColor = '74, 144, 226';
 
 function updateParticleColor(theme) {
     if (theme === 'light') {
-        particleColor = 'rgba(37, 99, 235, 0.6)';
+        particleColor = 'rgba(121, 145, 197, 0.6)';
         particleLineColor = '37, 99, 235';
     } else {
-        particleColor = 'rgba(74, 144, 226, 0.8)';
+        particleColor = 'rgba(19, 48, 77, 0.8)';
         particleLineColor = '74, 144, 226';
     }
 }
