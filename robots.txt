@@ -1,0 +1,10 @@
+# Autoriser tous les robots à indexer le site
+User-agent: *
+Allow: /
+
+# Indiquer l'emplacement du sitemap pour aider les robots à tout trouver
+Sitemap: https://sorayaportfolio.netlify.app/sitemap.xml
+
+# Optionnel : Empêcher l'indexation de fichiers sensibles ou de dossiers de config
+Disallow: /private/
+Disallow: /config/
