@@ -43,7 +43,7 @@ canvas#particles {
     top: 0; 
     left: 0; 
     width: 100%; 
-    height: 100%; 
+    /* height: 100%;  */
     z-index: -1; 
     background: radial-gradient(circle at top center, var(--marine-light) 0%, var(--marine) 80%);
     transition: background 0.3s ease;
