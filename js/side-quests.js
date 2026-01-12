@@ -468,10 +468,10 @@ window.handleTranslate = async function(btn, index) {
     if (transDesc) descEl.innerHTML = transDesc;
 
     if (transTitle || transDesc) {
-        btn.innerHTML = '✅ Traduit';
+        btn.innerHTML = 'Traduit';
         setTimeout(() => btn.remove(), 2000);
     } else {
-        btn.innerHTML = '❌ Erreur (Quota/Réseau)';
+        btn.innerHTML = 'Erreur (Quota/Réseau)';
         btn.disabled = false;
         btn.style.opacity = '1';
     }
