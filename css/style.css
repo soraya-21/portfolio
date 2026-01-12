@@ -430,4 +430,5 @@ footer .copyright { margin-top: 30px; font-size: 0.95rem; color: var(--text-ligh
     .project-card::after { font-size: 0.85rem; }
     .project-card::before { width: 9px; height: 9px; left: calc(50% + 70px); }
     .cv-buttons { flex-direction: column; align-items: center; }
+    html {background-color: #0f172a; z-index: -1;}
 }
