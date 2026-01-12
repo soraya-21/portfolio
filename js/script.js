@@ -316,10 +316,7 @@ function updateProjects() {
     projectsList.forEach(proj => {
         const card = document.createElement('div');
         card.className = 'project-card';
-        // Add style for pseudo-element content using CSS variable or specific class logic if needed
-        // For simplicity, we'll just update the text inside the card and keep the ::after in CSS static or update it via style
-        // Since ::after content cannot be easily changed via inline style, we can rely on a data attribute and CSS
-        
+                
         card.setAttribute('data-after', clickDetailsText);
         card.innerHTML = `<h4>${proj.title}</h4><p>${proj.short}</p>`;
         container.appendChild(card);
