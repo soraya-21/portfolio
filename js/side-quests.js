@@ -12,6 +12,16 @@ window.addEventListener('translationsLoaded', (e) => {
     if (document.getElementById('nasa-gallery-container') && localStorage.getItem('nasa_gallery_cache_v2')) {
         fetchNASAGallery(false);
     }
+    
+    // Update Hint Button explicitly when translations load
+    if (document.getElementById('ws-hint-btn')) {
+        updateHintButton();
+    }
+    
+    // Refresh Philosophy themes
+    if(document.getElementById('philosophy-themes')) {
+        renderPhilosophyThemes();
+    }
 });
 
 // Helper: Get translation safely
@@ -589,8 +599,16 @@ function updateHintButton() {
     const hintText = getTranslation('side_quests.literature.word_search.hint', "Indice ({0})");
     const noHintText = getTranslation('side_quests.literature.word_search.no_hints', "Plus d'indices !");
     
+    // Force replace if present, otherwise append
+    let finalText = hintText.replace('{0}', wsHintsRemaining);
+    
+    // Double check: if translation hasn't loaded yet, it might return the key itself or empty
+    if (!hintText || hintText === 'side_quests.literature.word_search.hint') {
+         finalText = `Indice (${wsHintsRemaining})`;
+    }
+
     if (wsHintsRemaining > 0) {
-        btn.innerText = hintText.replace('{0}', wsHintsRemaining);
+        btn.innerText = finalText;
         btn.disabled = false;
         btn.style.opacity = '1';
     } else {
@@ -831,7 +849,14 @@ function useHint() {
         
         setTimeout(() => {
             document.querySelectorAll('.hint-highlight').forEach(el => el.classList.remove('hint-highlight'));
-        }, 1500); // 1.5s highlight
+        }, 3000); // 3s highlight (increased visibility time)
+    } else {
+        // Fallback if hint generation fails (rare but possible)
+        wsHintsRemaining++; // Refund hint
+        updateHintButton();
+        const msgEl = document.getElementById('ws-message');
+        msgEl.innerHTML = `<span style="color: #ff3b30; font-size: 0.8rem;">Erreur indice: mot introuvable (bug)</span>`;
+        setTimeout(() => msgEl.innerHTML = "", 2000);
     }
 }
 

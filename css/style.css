@@ -449,6 +449,7 @@ footer .copyright { margin-top: 30px; font-size: 0.95rem; color: var(--text-ligh
     cursor: pointer;
     user-select: none;
     transition: background 0.2s;
+    position: relative; /* Crucial for z-index to work reliably in all contexts */
 }
 .ws-cell:hover {
     background: #e0f7fa;
