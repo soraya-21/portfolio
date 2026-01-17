@@ -148,7 +148,13 @@ function updateText() {
             if (element.getAttribute('data-i18n-html') === 'true') {
                 element.innerHTML = value;
             } else {
-                element.textContent = value;
+                // If value contains HTML tags but attribute is not set, we might want to allow it or force set it
+                // For now, let's auto-detect simple tags like <br>
+                if (value.includes('<br>') || value.includes('<strong>')) {
+                     element.innerHTML = value;
+                } else {
+                     element.textContent = value;
+                }
             }
         }
     });

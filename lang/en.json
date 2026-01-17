@@ -293,7 +293,7 @@
             },
             "word_search": {
                 "title": "Word Search",
-                "desc": "Drag from the start to the end of a word to select it.",
+                "desc": "Drag from the start to the end of a word to select it.<br>Try to beat your record ;) !",
                 "theme1": "Nature",
                 "theme2": "Animals",
                 "theme3": "Tech",

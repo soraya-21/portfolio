@@ -293,7 +293,7 @@
             },
             "word_search": {
                 "title": "Mots Mêlés",
-                "desc": "Glissez du début à la fin d'un mot pour le sélectionner.",
+                "desc": "Glissez du début à la fin d'un mot pour le sélectionner.<br>Essayez de battre votre record ;) !",
                 "theme1": "Nature",
                 "theme2": "Animaux",
                 "theme3": "Techno",
