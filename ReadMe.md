@@ -16,7 +16,4 @@ Les fonctionnalités suivqntes ont été ajoutées:
     - Generer des conseils de soin de peau
     - Choisir un thème pour découvrir une pensée intemporelle
     - Generer un poeme avec un element de la nature
-    - Faire un mot croisé
-    - Decouvrir des courants de pensées philosophiques avec Wikipedia 
     - Voir les dernieres Images postées sur le site de la nasa
-    
