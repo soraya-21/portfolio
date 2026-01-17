@@ -433,3 +433,40 @@ footer .copyright { margin-top: 30px; font-size: 0.95rem; color: var(--text-ligh
     .cv-buttons { flex-direction: column; align-items: center; }
     html {background-color: var(--marine); z-index: -1;}
 }
+
+/* Word Search Styles */
+.ws-cell {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #444;
+    background: white;
+    text-align: center;
+    line-height: 28px; /* Vertical align */
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: black;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s;
+}
+.ws-cell:hover {
+    background: #e0f7fa;
+}
+.ws-cell.selected {
+    background: var(--accent);
+    color: white;
+}
+.ws-cell.found {
+    background: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+.ws-cell.hint-highlight {
+    background: #ffeb3b !important; /* Strong Yellow */
+    color: black !important;
+    box-shadow: 0 0 15px #ffeb3b;
+    transform: scale(1.1);
+    z-index: 10;
+    transition: all 0.3s ease;
+}

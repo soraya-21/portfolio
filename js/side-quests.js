@@ -477,9 +477,699 @@ window.handleTranslate = async function(btn, index) {
     }
 };
 
+// 6. Word Search Logic
+const wordSearchThemes = {
+    'fr': [
+        { name: "Nature", words: ["ARBRE", "FLEUR", "SOLEIL", "LUNE", "RIVIERE", "FORET", "MONTAGNE", "OCEAN", "PLUIE", "NUAGE", "HERBE", "TERRE", "ETOILE", "CIEL", "VENT", "ORAGE", "NEIGE", "DESERT", "VOLCAN", "LAGON"] },
+        { name: "Animaux", words: ["LION", "TIGRE", "OURS", "AIGLE", "REQUIN", "LOUP", "RENARD", "PANDA", "CHIEN", "CHAT", "CHEVAL", "ELEPHANT", "GIRAFE", "SINGE", "SERPENT", "OISEAU", "DAUPHIN", "BALEINE", "PAPILLON", "TORTUE"] },
+        { name: "Techno", words: ["CODE", "ROBOT", "DATA", "WIFI", "PIXEL", "CYBER", "ECRAN", "SOURIS", "CLAVIER", "RESEAU", "PUCE", "SERVER", "CLOUD", "APP", "JAVA", "PYTHON", "LINUX", "GAMING", "VIRUS", "HACKER"] }
+    ],
+    'en': [
+        { name: "Nature", words: ["TREE", "FLOWER", "SUN", "MOON", "RIVER", "FOREST", "MOUNTAIN", "OCEAN", "RAIN", "CLOUD", "GRASS", "EARTH", "STAR", "SKY", "WIND", "STORM", "SNOW", "DESERT", "VOLCANO", "LAGOON"] },
+        { name: "Animals", words: ["LION", "TIGER", "BEAR", "EAGLE", "SHARK", "WOLF", "FOX", "PANDA", "DOG", "CAT", "HORSE", "ELEPHANT", "GIRAFFE", "MONKEY", "SNAKE", "BIRD", "DOLPHIN", "WHALE", "BUTTERFLY", "TURTLE"] },
+        { name: "Tech", words: ["CODE", "ROBOT", "DATA", "WIFI", "PIXEL", "CYBER", "SCREEN", "MOUSE", "KEYBOARD", "NETWORK", "CHIP", "SERVER", "CLOUD", "APP", "JAVA", "PYTHON", "LINUX", "GAMING", "VIRUS", "HACKER"] }
+    ],
+    'yo': [
+        { name: "Iseda", words: ["IGI", "ODOODO", "OORUN", "OSUPA", "ODO", "IGBO", "OKE", "OKUN", "OJO", "IKUUKU", "EWE", "ILE", "IRAWO", "OFURUFU", "AFEFE", "IJI", "YO", "IYEPURU", "INA", "OMI"] },
+        { name: "Eranko", words: ["KINNIUN", "EKUN", "BEARI", "IDIPU", "SHARK", "IKOKO", "KOLOKOLO", "PANDA", "AJA", "OLOGBO", "ESIN", "ERIN", "AGUNTAN", "OBO", "EJO", "EYE", "EJA", "LABALABA", "IJAPA", "PEPEYE"] },
+        { name: "Imọ-ẹrọ", words: ["CODE", "ROBOT", "DATA", "WIFI", "PIXEL", "CYBER", "SCREEN", "MOUSE", "KEYBOARD", "NETWORK", "CHIP", "SERVER", "CLOUD", "APP", "JAVA", "PYTHON", "LINUX", "GAMING", "VIRUS", "HACKER"] }
+    ],
+    // Fallbacks for other languages can be added here or use EN/FR
+    'default': [
+        { name: "Theme 1", words: ["HELLO", "WORLD", "GAME", "PLAY", "FUN", "CODE", "MUSIC", "ART", "BOOK", "PEN", "PAPER", "INK", "DESK", "CHAIR", "LAMP", "ROOM"] },
+        { name: "Theme 2", words: ["APPLE", "BANANA", "CHERRY", "DATE", "ELDER", "FIG", "GRAPE", "HONEY", "ICE", "JAM", "KIWI", "LEMON", "MANGO", "NUT", "OLIVE", "PEAR"] },
+        { name: "Theme 3", words: ["RED", "GREEN", "BLUE", "YELLOW", "PINK", "BLACK", "WHITE", "GRAY", "ORANGE", "PURPLE", "BROWN", "GOLD", "SILVER", "TEAL", "NAVY", "CYAN"] }
+    ]
+};
+
+let wsCurrentThemeIndex = 0;
+let wsGridSize = 10;
+let wsGrid = [];
+let wsWords = [];
+let wsFoundWords = [];
+let wsTimerInterval;
+let wsSeconds = 0;
+let isWsRunning = false;
+let wsHintsRemaining = 3;
+
+// Selection Variables
+let isSelecting = false;
+let selectionStartCell = null;
+let currentSelectionPath = [];
+
+function selectWordSearchTheme(index) {
+    wsCurrentThemeIndex = index;
+    updateActiveButton('.quest-options:not([style*="scale"]) .quest-option-btn', index);
+    startWordSearchGame();
+}
+
+function selectWordSearchSize(size) {
+    wsGridSize = size;
+    // Map size to index for button activation logic (8->0, 10->1, 12->2)
+    const index = size === 8 ? 0 : size === 10 ? 1 : 2;
+    updateActiveButton('.size-btn', index);
+    startWordSearchGame();
+}
+
+function updateActiveButton(selector, index) {
+    // Find container within the specific card to avoid conflicts? 
+    // Ideally we should scope this better, but for now:
+    const card = document.getElementById('ws-grid').closest('.quest-card');
+    if (card) {
+        const buttons = card.querySelectorAll(selector);
+        buttons.forEach((b, i) => {
+            if (i === index) b.classList.add('active');
+            else b.classList.remove('active');
+        });
+    }
+}
+
+function getWordsForCurrentLanguage() {
+    const lang = currentLanguage || 'en';
+    let themes = wordSearchThemes[lang];
+    if (!themes) {
+        const shortLang = lang.split('-')[0];
+        themes = wordSearchThemes[shortLang] || wordSearchThemes['en'] || wordSearchThemes['default'];
+    }
+    return themes[wsCurrentThemeIndex] || themes[0];
+}
+
+function startWordSearchGame() {
+    resetTimer();
+    wsFoundWords = [];
+    wsHintsRemaining = 3;
+    isSelecting = false;
+    selectionStartCell = null;
+    currentSelectionPath = [];
+    
+    document.getElementById('ws-message').innerHTML = "";
+    updateHintButton();
+    
+    const themeData = getWordsForCurrentLanguage();
+    // Select subset of words based on size to avoid overcrowding small grids?
+    // Or just use all words. 8x8 might be tight for 8 words.
+    // Let's pick random N words based on size.
+    const maxWords = wsGridSize === 8 ? 8 : wsGridSize === 10 ? 12 : 15;
+    
+    // Shuffle and slice
+    let pool = [...themeData.words];
+    pool.sort(() => 0.5 - Math.random());
+    wsWords = pool.slice(0, maxWords).map(w => w.toUpperCase());
+    
+    generateGrid(wsWords);
+    renderGrid();
+    renderWordList();
+    loadWsBestScore();
+}
+
+function updateHintButton() {
+    const btn = document.getElementById('ws-hint-btn');
+    if (!btn) return;
+    
+    const hintText = getTranslation('side_quests.literature.word_search.hint', "Indice ({0})");
+    const noHintText = getTranslation('side_quests.literature.word_search.no_hints', "Plus d'indices !");
+    
+    if (wsHintsRemaining > 0) {
+        btn.innerText = hintText.replace('{0}', wsHintsRemaining);
+        btn.disabled = false;
+        btn.style.opacity = '1';
+    } else {
+        btn.innerText = noHintText;
+        btn.disabled = true;
+        btn.style.opacity = '0.5';
+    }
+}
+
+function generateGrid(words) {
+    wsGrid = Array(wsGridSize).fill(null).map(() => Array(wsGridSize).fill(''));
+    
+    // Place words
+    const placedWords = [];
+    for (const word of words) {
+        let placed = false;
+        let attempts = 0;
+        while (!placed && attempts < 100) {
+            const dir = Math.floor(Math.random() * 3); // 0: H, 1: V, 2: Diag
+            const r = Math.floor(Math.random() * wsGridSize);
+            const c = Math.floor(Math.random() * wsGridSize);
+            
+            if (canPlaceWord(word, r, c, dir)) {
+                placeWord(word, r, c, dir);
+                placed = true;
+                placedWords.push(word);
+            }
+            attempts++;
+        }
+    }
+    
+    // Update global words list to only include actually placed words
+    // This prevents "ghost words" in the list that couldn't be placed
+    wsWords = placedWords;
+    
+    // Fill empty
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    for (let r = 0; r < wsGridSize; r++) {
+        for (let c = 0; c < wsGridSize; c++) {
+            if (wsGrid[r][c] === '') {
+                wsGrid[r][c] = letters[Math.floor(Math.random() * letters.length)];
+            }
+        }
+    }
+}
+
+function canPlaceWord(word, r, c, dir) {
+    if (dir === 0) { // Horizontal
+        if (c + word.length > wsGridSize) return false;
+        for (let i = 0; i < word.length; i++) {
+            if (wsGrid[r][c + i] !== '' && wsGrid[r][c + i] !== word[i]) return false;
+        }
+    } else if (dir === 1) { // Vertical
+        if (r + word.length > wsGridSize) return false;
+        for (let i = 0; i < word.length; i++) {
+            if (wsGrid[r + i][c] !== '' && wsGrid[r + i][c] !== word[i]) return false;
+        }
+    } else { // Diagonal
+        if (r + word.length > wsGridSize || c + word.length > wsGridSize) return false;
+        for (let i = 0; i < word.length; i++) {
+            if (wsGrid[r + i][c + i] !== '' && wsGrid[r + i][c + i] !== word[i]) return false;
+        }
+    }
+    return true;
+}
+
+function placeWord(word, r, c, dir) {
+    for (let i = 0; i < word.length; i++) {
+        if (dir === 0) wsGrid[r][c + i] = word[i];
+        else if (dir === 1) wsGrid[r + i][c] = word[i];
+        else wsGrid[r + i][c + i] = word[i];
+    }
+}
+
+function renderGrid() {
+    const container = document.getElementById('ws-grid');
+    container.style.gridTemplateColumns = `repeat(${wsGridSize}, 30px)`;
+    container.innerHTML = '';
+    
+    wsGrid.forEach((row, r) => {
+        row.forEach((letter, c) => {
+            const cell = document.createElement('div');
+            cell.className = 'ws-cell';
+            cell.innerText = letter;
+            cell.dataset.r = r;
+            cell.dataset.c = c;
+            
+            // Mouse Events
+            cell.addEventListener('mousedown', (e) => handleStart(e, r, c));
+            cell.addEventListener('mouseenter', (e) => handleMove(e, r, c));
+            cell.addEventListener('mouseup', handleEnd);
+            
+            // Touch Events
+            cell.addEventListener('touchstart', (e) => handleStart(e, r, c));
+            cell.addEventListener('touchmove', handleTouchMove);
+            cell.addEventListener('touchend', handleEnd);
+
+            container.appendChild(cell);
+        });
+    });
+    
+    // Global mouseup to catch releases outside grid
+    document.addEventListener('mouseup', () => {
+        if(isSelecting) handleEnd();
+    });
+}
+
+function handleStart(e, r, c) {
+    e.preventDefault(); // Prevent text selection
+    if (!isWsRunning && wsFoundWords.length < wsWords.length) startWsTimer();
+    if (wsFoundWords.length === wsWords.length) return;
+
+    isSelecting = true;
+    selectionStartCell = { r, c };
+    highlightCell(r, c, true); // Start highlight
+}
+
+function handleMove(e, r, c) {
+    if (!isSelecting) return;
+    updateSelection(r, c);
+}
+
+function handleTouchMove(e) {
+    if (!isSelecting) return;
+    e.preventDefault();
+    const touch = e.touches[0];
+    const element = document.elementFromPoint(touch.clientX, touch.clientY);
+    
+    if (element && element.classList.contains('ws-cell')) {
+        const r = parseInt(element.dataset.r);
+        const c = parseInt(element.dataset.c);
+        updateSelection(r, c);
+    }
+}
+
+function updateSelection(endR, endC) {
+    clearSelectionVisuals();
+    
+    const startR = selectionStartCell.r;
+    const startC = selectionStartCell.c;
+    
+    // Determine valid straight line (Horizontal, Vertical, Diagonal)
+    let dr = 0, dc = 0;
+    
+    if (startR === endR) { // Horizontal
+        dc = endC > startC ? 1 : -1;
+    } else if (startC === endC) { // Vertical
+        dr = endR > startR ? 1 : -1;
+    } else if (Math.abs(endR - startR) === Math.abs(endC - startC)) { // Diagonal
+        dr = endR > startR ? 1 : -1;
+        dc = endC > startC ? 1 : -1;
+    } else {
+        // Not a valid straight line, just highlight start
+        highlightCell(startR, startC, true);
+        return;
+    }
+    
+    // Calculate path
+    const len = Math.max(Math.abs(endR - startR), Math.abs(endC - startC)) + 1;
+    currentSelectionPath = [];
+    
+    for (let i = 0; i < len; i++) {
+        const r = startR + i * dr;
+        const c = startC + i * dc;
+        currentSelectionPath.push({r, c});
+        highlightCell(r, c, true);
+    }
+}
+
+function handleEnd() {
+    if (!isSelecting) return;
+    isSelecting = false;
+    
+    checkSelectionPath();
+    clearSelectionVisuals(); // Clear temporary 'selected' class
+}
+
+function highlightCell(r, c, add) {
+    const cell = document.querySelector(`.ws-cell[data-r="${r}"][data-c="${c}"]`);
+    if (cell) {
+        if (add) cell.classList.add('selected');
+        else cell.classList.remove('selected');
+    }
+}
+
+function clearSelectionVisuals() {
+    document.querySelectorAll('.ws-cell.selected').forEach(el => el.classList.remove('selected'));
+}
+
+function checkSelectionPath() {
+    if (currentSelectionPath.length === 0) return;
+    
+    let word = "";
+    currentSelectionPath.forEach(pos => {
+        word += wsGrid[pos.r][pos.c];
+    });
+    
+    // Check match
+    if (wsWords.includes(word) && !wsFoundWords.includes(word)) {
+        wsFoundWords.push(word);
+        markFound(currentSelectionPath);
+        renderWordList();
+        checkWin();
+    } else {
+        // Reverse check
+        const revWord = word.split('').reverse().join('');
+        if (wsWords.includes(revWord) && !wsFoundWords.includes(revWord)) {
+            wsFoundWords.push(revWord);
+            markFound(currentSelectionPath);
+            renderWordList();
+            checkWin();
+        }
+    }
+}
+
+function useHint() {
+    if (wsHintsRemaining <= 0 || wsFoundWords.length === wsWords.length) return;
+    
+    wsHintsRemaining--;
+    updateHintButton();
+    
+    // Find a word not yet found
+    const availableWords = wsWords.filter(w => !wsFoundWords.includes(w));
+    if (availableWords.length === 0) return;
+    
+    const wordToHint = availableWords[Math.floor(Math.random() * availableWords.length)];
+    
+    // Find its position in grid (Brute force search matching the logic of placement)
+    // Since we didn't store positions, we search.
+    let path = findWordInGrid(wordToHint);
+    
+    if (path) {
+        // Highlight temporarily
+        path.forEach(pos => {
+            const cell = document.querySelector(`.ws-cell[data-r="${pos.r}"][data-c="${pos.c}"]`);
+            if (cell) cell.classList.add('hint-highlight');
+        });
+        
+        setTimeout(() => {
+            document.querySelectorAll('.hint-highlight').forEach(el => el.classList.remove('hint-highlight'));
+        }, 1500); // 1.5s highlight
+    }
+}
+
+function findWordInGrid(word) {
+    // Search for the word in 3 directions
+    const len = word.length;
+    
+    // Helper to check at r,c with dr,dc
+    const check = (r, c, dr, dc) => {
+        if (r + (len-1)*dr >= wsGridSize || r + (len-1)*dr < 0) return null;
+        if (c + (len-1)*dc >= wsGridSize || c + (len-1)*dc < 0) return null;
+        
+        let path = [];
+        for(let i=0; i<len; i++) {
+            if (wsGrid[r + i*dr][c + i*dc] !== word[i]) return null;
+            path.push({r: r + i*dr, c: c + i*dc});
+        }
+        return path;
+    };
+
+    for (let r = 0; r < wsGridSize; r++) {
+        for (let c = 0; c < wsGridSize; c++) {
+            if (wsGrid[r][c] === word[0]) {
+                // Try H, V, Diag
+                let p = check(r, c, 0, 1); // H
+                if (p) return p;
+                p = check(r, c, 1, 0); // V
+                if (p) return p;
+                p = check(r, c, 1, 1); // Diag
+                if (p) return p;
+            }
+        }
+    }
+    return null;
+}
+
+function renderWordList() {
+    const list = document.getElementById('ws-word-list');
+    list.innerHTML = '';
+    wsWords.forEach(word => {
+        const li = document.createElement('li');
+        li.innerText = word;
+        li.id = `word-${word}`;
+        if (wsFoundWords.includes(word)) {
+            li.style.textDecoration = "line-through";
+            li.style.color = "var(--accent)"; // Greenish or Accent
+            li.style.opacity = "0.5";
+        }
+        list.appendChild(li);
+    });
+}
+
+function markFound(path) {
+    path.forEach(pos => {
+        const cell = document.querySelector(`.ws-cell[data-r="${pos.r}"][data-c="${pos.c}"]`);
+        if (cell) cell.classList.add('found');
+    });
+}
+
+function startWsTimer() {
+    if (isWsRunning) return;
+    isWsRunning = true;
+    wsSeconds = 0;
+    document.getElementById('ws-timer').innerText = "00:00";
+    
+    clearInterval(wsTimerInterval);
+    wsTimerInterval = setInterval(() => {
+        wsSeconds++;
+        const m = Math.floor(wsSeconds / 60).toString().padStart(2, '0');
+        const s = (wsSeconds % 60).toString().padStart(2, '0');
+        document.getElementById('ws-timer').innerText = `${m}:${s}`;
+    }, 1000);
+}
+
+function stopWsTimer() {
+    isWsRunning = false;
+    clearInterval(wsTimerInterval);
+}
+
+function resetTimer() {
+    stopWsTimer();
+    wsSeconds = 0;
+    const timerEl = document.getElementById('ws-timer');
+    if(timerEl) timerEl.innerText = "00:00";
+}
+
+function resetWordSearch() {
+    startWordSearchGame(); // Re-generates grid and resets everything
+}
+
+function checkWin() {
+    if (wsFoundWords.length === wsWords.length) {
+        stopWsTimer();
+        const successText = getTranslation('side_quests.literature.word_search.success', "Bravo ! Tout trouvé !");
+        document.getElementById('ws-message').innerHTML = `<span style="color: #4cd964;">${successText}</span>`;
+        saveWsBestScore();
+    }
+}
+
+function saveWsBestScore() {
+    const key = `ws_top3_${wsCurrentThemeIndex}_${wsGridSize}_${currentLanguage}`; // Score per theme AND size AND language
+    let scores = JSON.parse(localStorage.getItem(key) || '[]');
+    
+    scores.push(wsSeconds);
+    scores.sort((a, b) => a - b);
+    scores = scores.slice(0, 3);
+    
+    localStorage.setItem(key, JSON.stringify(scores));
+    loadWsBestScore();
+    
+    if (scores.length > 0 && scores[0] === wsSeconds) {
+        const newRecordText = getTranslation('side_quests.literature.word_search.new_record', "Nouveau Record !");
+        document.getElementById('ws-message').innerHTML += ` <br>🏆 ${newRecordText}`;
+    }
+}
+
+function loadWsBestScore() {
+    const key = `ws_top3_${wsCurrentThemeIndex}_${wsGridSize}_${currentLanguage}`;
+    const scores = JSON.parse(localStorage.getItem(key) || '[]');
+    const el = document.getElementById('ws-best-score');
+    if(!el) return;
+
+    if (scores.length > 0) {
+        const formatTime = (s) => {
+             const m = Math.floor(s / 60).toString().padStart(2, '0');
+             const sec = (s % 60).toString().padStart(2, '0');
+             return `${m}:${sec}`;
+        };
+        
+        const top3Str = scores.map(formatTime).join(' | ');
+        el.innerHTML = `Top 3:<br>${top3Str}`;
+        el.style.fontSize = '0.75rem';
+        el.style.textAlign = 'right';
+    } else {
+        el.innerText = `Top 3: --:--`;
+    }
+}
+
+// 7. Philosophy Wiki Logic
+const philosophyConcepts = {
+    'fr': [
+        { label: "Stoïcisme", query: "Stoïcisme" },
+        { label: "Existentialisme", query: "Existentialisme" },
+        { label: "Nihilisme", query: "Nihilisme" },
+        { label: "Utilitarisme", query: "Utilitarisme" },
+        { label: "Hédonisme", query: "Hédonisme" },
+        { label: "Épicurisme", query: "Épicurisme" },
+        { label: "Solipsisme", query: "Solipsisme" },
+        { label: "Absurdisme", query: "Absurde_(philosophie)" },
+        { label: "Empirisme", query: "Empirisme" },
+        { label: "Rationalisme", query: "Rationalisme" },
+        { label: "Déterminisme", query: "Déterminisme" },
+        { label: "Relativisme", query: "Relativisme" },
+        { label: "Scepticisme", query: "Scepticisme" },
+        { label: "Cynisme", query: "Cynisme" },
+        { label: "Idéalisme", query: "Idéalisme_(philosophie)" },
+        { label: "Humanisme", query: "Humanisme" }
+    ],
+    'en': [
+        { label: "Stoicism", query: "Stoicism" },
+        { label: "Existentialism", query: "Existentialism" },
+        { label: "Nihilism", query: "Nihilism" },
+        { label: "Utilitarianism", query: "Utilitarianism" },
+        { label: "Hedonism", query: "Hedonism" },
+        { label: "Epicureanism", query: "Epicureanism" },
+        { label: "Solipsism", query: "Solipsism" },
+        { label: "Absurdism", query: "Absurdism" },
+        { label: "Empiricism", query: "Empiricism" },
+        { label: "Rationalism", query: "Rationalism" },
+        { label: "Determinism", query: "Determinism" },
+        { label: "Relativism", query: "Relativism" },
+        { label: "Skepticism", query: "Skepticism" },
+        { label: "Cynicism", query: "Cynicism_(philosophy)" },
+        { label: "Idealism", query: "Idealism" },
+        { label: "Humanism", query: "Humanism" }
+    ],
+    'yo': [
+        { label: "Imọ̀-ọgbọ́n (Philosophy)", query: "Imọ̀-ọgbọ́n" },
+        { label: "Lọ́jìkì (Logic)", query: "Lọ́jìkì" },
+        { label: "Ètò ìwà (Ethics)", query: "Ètò_ìwà" }
+    ],
+    'zh': [
+        { label: "斯多葛主义", query: "斯多葛主义" },
+        { label: "存在主义", query: "存在主义" },
+        { label: "虚无主义", query: "虚无主义" },
+        { label: "功利主义", query: "功利主义" },
+        { label: "享乐主义", query: "享乐主义" },
+        { label: "唯我论", query: "唯我论" },
+        { label: "荒谬主义", query: "荒谬主义" },
+        { label: "经验主义", query: "经验主义" },
+        { label: "理性主义", query: "理性主义" },
+        { label: "决定论", query: "决定论" },
+        { label: "相对主义", query: "相对主义" },
+        { label: "怀疑论", query: "怀疑论" },
+        { label: "犬儒主义", query: "犬儒主义" },
+        { label: "唯心主义", query: "唯心主义" },
+        { label: "人文主义", query: "人文主义" }
+    ],
+    'ja': [
+        { label: "ストア派", query: "ストア派" },
+        { label: "実存主義", query: "実存主義" },
+        { label: "虚無主義", query: "虚無主義" },
+        { label: "功利主義", query: "功利主義" },
+        { label: "快楽主義", query: "快楽主義" },
+        { label: "独我論", query: "独我論" },
+        { label: "不条理", query: "不条理" },
+        { label: "経験論", query: "経験論" },
+        { label: "合理主義", query: "合理主義" },
+        { label: "決定論", query: "決定論" },
+        { label: "相対主義", query: "相対主義" },
+        { label: "懐疑論", query: "懐疑論" },
+        { label: "キュニコス派", query: "キュニコス派" },
+        { label: "観念論", query: "観念論" },
+        { label: "ヒューマニズム", query: "ヒューマニズム" }
+    ],
+    'ko': [
+        { label: "스토아 학파", query: "스토아_학파" },
+        { label: "실존주의", query: "실존주의" },
+        { label: "허무주의", query: "허무주의" },
+        { label: "공리주의", query: "공리주의" },
+        { label: "쾌락주의", query: "쾌락주의" },
+        { label: "유아론", query: "유아론" },
+        { label: "부조리", query: "부조리" },
+        { label: "경험론", query: "경험론" },
+        { label: "합리주의", query: "합리주의" },
+        { label: "결정론", query: "결정론" },
+        { label: "상대주의", query: "상대주의" },
+        { label: "회의론", query: "회의론" },
+        { label: "견유학파", query: "견유학파" },
+        { label: "관념론", query: "관념론" },
+        { label: "인문주의", query: "인문주의" }
+    ],
+    'default': [
+        { label: "Philosophy", query: "Philosophy" },
+        { label: "Ethics", query: "Ethics" },
+        { label: "Logic", query: "Logic" }
+    ]
+};
+
+function renderPhilosophyThemes() {
+    const container = document.getElementById('philosophy-themes');
+    if (!container) return;
+    
+    container.innerHTML = '';
+    
+    // Get concepts for current language or fallback to EN
+    let lang = currentLanguage;
+    let concepts = philosophyConcepts[lang];
+    
+    // Fallback logic
+    if (!concepts) {
+         if (lang.startsWith('fr')) concepts = philosophyConcepts['fr'];
+         else if (lang.startsWith('en')) concepts = philosophyConcepts['en'];
+         else if (lang.startsWith('zh')) concepts = philosophyConcepts['zh']; // Add zh fallback
+         else if (lang.startsWith('ja')) concepts = philosophyConcepts['ja']; // Add ja fallback
+         else if (lang.startsWith('ko')) concepts = philosophyConcepts['ko']; // Add ko fallback
+         else concepts = philosophyConcepts['en']; // Default to English for others
+    }
+    
+    // Determine which Wiki Lang to use
+    // If we fell back to EN concepts because YO list is empty/missing, we should query EN wiki.
+    const wikiLang = (philosophyConcepts[lang]) ? lang : 'en';
+
+    concepts.forEach(item => {
+        const chip = document.createElement('span');
+        chip.className = 'theme-chip';
+        chip.innerText = item.label;
+        chip.onclick = () => fetchPhilosophyDefinition(item.query, wikiLang);
+        container.appendChild(chip);
+    });
+}
+
+async function fetchPhilosophyDefinition(query, lang) {
+    const resultDiv = document.getElementById('philosophy-result');
+    if (!resultDiv) return;
+    
+    simulateLoading(resultDiv, async () => {
+        try {
+            const url = `https://${lang}.wikipedia.org/api/rest_v1/page/summary/${query}`;
+            const response = await fetch(url);
+            
+            if (!response.ok) throw new Error("Wiki Error");
+            
+            const data = await response.json();
+            
+            const extract = data.extract_html || data.extract;
+            const link = data.content_urls.desktop.page;
+            const title = data.title;
+            const thumbnail = data.thumbnail ? data.thumbnail.source : null;
+            
+            const readMoreText = getTranslation('side_quests.literature.philosophy.read_more', "Lire la suite sur Wikipédia");
+            
+            let html = `
+                <h4 style="color: var(--accent); margin-top: 0; display: flex; align-items: center; gap: 10px;">
+                    ${title}
+                </h4>
+            `;
+            
+            if (thumbnail) {
+                html += `<img src="${thumbnail}" style="float: right; margin: 0 0 10px 10px; border-radius: 8px; max-width: 100px; border: 1px solid rgba(255,255,255,0.1);">`;
+            }
+            
+            html += `
+                <div style="font-size: 0.95rem; color: var(--text-light); margin-bottom: 15px;">
+                    ${extract}
+                </div>
+                <a href="${link}" target="_blank" style="display: inline-block; font-size: 0.85rem; color: var(--accent); text-decoration: none; border-bottom: 1px dashed var(--accent);">
+                    ${readMoreText} &rarr;
+                </a>
+            `;
+            
+            resultDiv.innerHTML = html;
+            
+        } catch (error) {
+            console.error(error);
+            const errorText = getTranslation('side_quests.messages.error_wiki', "Impossible de charger la définition.");
+            resultDiv.innerHTML = `<p style="color: #ff6b6b;">${errorText}</p>`;
+        }
+    });
+}
+
 // Auto-load Gallery on page load if element exists
 document.addEventListener('DOMContentLoaded', () => {
     if(document.getElementById('nasa-gallery-container')) {
         fetchNASAGallery();
+    }
+    if(document.getElementById('ws-grid')) {
+        selectWordSearchTheme(0); // Default theme 0, size 10 (default var)
+    }
+    if(document.getElementById('philosophy-themes')) {
+        renderPhilosophyThemes();
+    }
+});
+
+// Update render on lang change
+window.addEventListener('translationsLoaded', (e) => {
+    // ... existing logic ...
+    if(document.getElementById('philosophy-themes')) {
+        renderPhilosophyThemes();
     }
 });
