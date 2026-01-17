@@ -297,6 +297,7 @@
                 "theme1": "Nature",
                 "theme2": "Animaux",
                 "theme3": "Techno",
+                "choose_size": "Choisissez la taille de la grille :",
                 "size_small": "Petite",
                 "size_medium": "Moyenne",
                 "size_large": "Grande",

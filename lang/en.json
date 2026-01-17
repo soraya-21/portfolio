@@ -297,6 +297,7 @@
                 "theme1": "Nature",
                 "theme2": "Animals",
                 "theme3": "Tech",
+                "choose_size": "Choose grid size:",
                 "size_small": "Small",
                 "size_medium": "Medium",
                 "size_large": "Large",

@@ -296,6 +296,7 @@
                 "theme1": "自然",
                 "theme2": "動物",
                 "theme3": "技術",
+                "choose_size": "グリッドサイズを選択：",
                 "size_small": "小",
                 "size_medium": "中",
                 "size_large": "大",
