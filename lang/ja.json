@@ -1,0 +1,329 @@
+{
+    "header": {
+        "role": "フルスタックエンジニア バックエンド & AI志向",
+        "location": "モンペリエ、フランス"
+    },
+    "languages": {
+        "fr": "フランス語",
+        "en": "英語",
+        "yo": "ヨルバ語",
+        "zh": "中国語",
+        "ja": "日本語",
+        "ko": "韓国語"
+    },
+    "nav": {
+        "stack": "技術スタック",
+        "education": "学歴",
+        "cv": "履歴書",
+        "projects": "プロジェクト",
+        "interests": "趣味",
+        "contact": "お問い合わせ"
+    },
+    "about": {
+        "text1": "好奇心旺盛で几帳面、そして学ぶことに意欲的です... :)",
+        "text2": "私の原動力：テクノロジーが物事を真に良くすることができる、インパクトのあるプロジェクトに貢献すること... そして、新たなバグを生み出さないこと",
+        "text3": "私の目標：常に改善し、より効率的で有用なソリューションを常に模索する多才な開発者として進化すること... 最小限のカフェインとたくさんの楽しみと共に"
+    },
+    "cv": {
+        "title": "私の履歴書",
+        "view": "履歴書を表示",
+        "download": "📄 履歴書をダウンロード"
+    },
+    "skills": {
+        "title": "技術スタック",
+        "languages": "言語 & フレームワーク",
+        "databases": "データベース",
+        "data_ai": "データ • AI • 機械学習",
+        "web_automation": "Web • スクレイピング • 自動化",
+        "tools": "ツール • DevOps • BI",
+        "tests": "テストポリシー & CI/CD",
+        "collaboration": "コラボレーション",
+        "details": {
+            "lang_desc": "<ul><li><strong>C</strong> / <strong>C++</strong></li><li><strong>Python</strong> – バックエンド, AI, スクリプト, 自動化</li><li><strong>Django</strong> + <strong>Django REST Framework</strong></li><li><strong>JavaScript</strong> / <strong>Node.js</strong></li><li><strong>ReactJs</strong></li><li><strong>SQL & DAX (Power BI)</strong></li><li><strong>HTML</strong> / <strong>CSS</strong></li><li><strong>Docker</strong> – コンテナ化</li></ul>",
+            "db_desc": "<ul><li><strong>MongoDB</strong> (NoSQL)</li><li><strong>MySQL / PostgreSQL</strong></li><li><strong>Django</strong> 経由のリレーショナルデータベース</li><li>スキーマ設計 & マイグレーション</li></ul>",
+            "data_desc": "<ul><li>NumPy • pandas • scikit-learn</li><li>NLP (自然言語処理)</li><li>完全なパイプライン：スクレイピング → クリーニング → 分析 → 予測</li><li>Whisper + FFMPEG (音声/動画の書き起こし)</li></ul>",
+            "web_desc": "<ul><li>高度なスクレイピング (Selenium, requests)</li><li>反復タスクの自動化</li><li>REST APIs • Webhooks • サードパーティ統合</li><li>OAuth2 (Youtube, Google, Linkedin…)</li><li><strong>Celery</strong> + Redis (非同期タスク)</li></ul>",
+            "tools_desc": "<ul><li><strong>Power BI</strong></li><li><strong>Azure</strong> (基礎: VMs, Blob, Functions)</li><li><strong>Git</strong> & GitHub Actions (CI/CD)</li><li>Docker • Docker Compose</li><li>Postman • Swagger</li></ul>",
+            "tests_desc": "<ul><li><strong>単体テスト：</strong> クリティカルな関数、ビジネスロジック、サービス、ユーティリティのカバレッジ。</li><li><strong>機能テスト：</strong> ユーザーワークフローと API エンドポイントの完全な検証。</li><li><strong>統合テスト：</strong> サービス、データベース、外部 API 間の相互作用。</li><li><strong>モッキング & フィクスチャ：</strong> 依存関係の分離、シナリオの再現性。</li><li><strong>CI/CD：</strong> 自動テスト、リンティング、デプロイ (GitHub Actions / Docker)。</li></ul>",
+            "collab_desc": "<ul><li><strong>Git</strong> / <strong>GitLab</strong> / <strong>GitHub</strong></li><li><strong>Jira</strong></li><li><strong>Trello</strong></li><li><strong>Microsoft Teams</strong></li></ul>"
+        }
+    },
+    "education": {
+        "title": "学歴",
+        "master": "修士 — 人工知能 & データマネジメント",
+        "master_school": "IASchool / Nexa Digital School — リヨン",
+        "courses": "外部コース",
+        "courses_desc": "<p>ラヴァル大学 — ビジネス数学</p><p>Udemy — PowerBI</p>",
+        "bachelor": "学士 — コンピュータサイエンス",
+        "bachelor_desc": "Epitech Technology — プロジェクトベースの教育法<br>高度な開発 • 完全な自律性とプロジェクト管理"
+    },
+    "projects": {
+        "title": "制作プロジェクトの一部",
+        "click_details": "詳細をクリック →",
+        "tech_label": "使用技術：",
+        "list": [
+            { 
+                "title": "Champions League Stats", 
+                "short": "チーム、国、リーグごとの選手の統計分析と比較...", 
+                "desc": "チャンピオンズリーグにおける選手とチームのパフォーマンスの詳細な分析、高度な可視化と比較。", 
+                "tech": "Python, Pandas, NumPy, plotly, streamlit", 
+                "images": ["./assets/images/champions_league_4.png", "./assets/images/champions_league_2.png"] 
+            },
+            { 
+                "title": "PowerBI", 
+                "short": "Power BI ダッシュボード + DAX + SQL + Python。", 
+                "desc": "商業活動を監視するための Power BI ダッシュボード", 
+                "tech": "Power BI, Python, SQL, DAX", 
+                "images": ["./assets/images/powerBi_adventure_works_1.png", "./assets/images/powerBi_adventure_works_2.png"] 
+            },
+            { 
+                "title": "Real-Time Dashboard – NASA APOD + Weather", 
+                "short": "リアルタイムの天気と NASA の今日の画像を表示するインタラクティブなダッシュボード。", 
+                "desc": "リアルタイムの天気 (OpenWeatherMap API) と今日の天文画像 (NASA APOD) を表示する動的ダッシュボード。自動更新データ、リアクティブコンポーネント、ネットワークエラー処理。", 
+                "tech": "NodeJs, API NASA, OpenWeatherMap, docker"
+            },
+            { 
+                "title": "AREA – Automation & Interconnections", 
+                "short": "Node, React, Docker を使用した IFTTT のようなプラットフォーム。", 
+                "desc": "サービス間のアクション (API, 定期タスク, webhooks) を自動化できる IFTTT のようなプラットフォーム。", 
+                "tech": "Node, React, Docker, API, Webhooks, SMTP, OAUTH" 
+            },
+            { 
+                "title": "Radiant – Personalized Advice & Product Recommendations", 
+                "short": "AI ベースの Web インタラクション。", 
+                "desc": "ユーザー情報の収集と、在庫のある製品の推奨を含むパーソナライズされたアドバイスの生成。", 
+                "tech": "Python, OpenApi, ReactJs" 
+            },
+            { 
+                "title": "Bitcoin & Ethereum Analysis", 
+                "short": "完全なデータパイプラインと ML 分析。", 
+                "desc": "スクレイピング、クリーニング、統計分析、可視化。", 
+                "tech": "Python, Pandas, NumPy, plotly" 
+            },
+            { 
+                "title": "E-learning", 
+                "short": "Web 開発の基礎に関するオンライントレーニング。", 
+                "desc": "Web 開発の基礎を学ぶためのインタラクティブなプラットフォーム、演習と個別の追跡機能付き。", 
+                "tech": "Python, HTML/CSS/JS, SMTP" 
+            },
+            { 
+                "title": "Geo-Monitoring", 
+                "short": "監視対象製品のマッピングと地理的追跡。", 
+                "desc": "リアルタイムの地理的監視プラットフォームと、すべての監視ゾーンにおける各製品の詳細な追跡", 
+                "tech": "Python, Django, Celery" 
+            },
+            { 
+                "title": "Python + MongoDB Chatbot", 
+                "short": "コンテキストメモリを備えたインテリジェントなチャットボット。", 
+                "desc": "コンテキストメモリ、製品検索、意図の同義語、自動修正機能を備えたチャットボット。", 
+                "tech": "Python, MongoDB, NLP" 
+            },
+            { 
+                "title": "Scraping", 
+                "short": "さまざまなソースに基づく自動スクレイパー。", 
+                "desc": "自動情報検索。", 
+                "tech": "Python, Scraping" 
+            },
+            { 
+                "title": "ID Card PDF Export – Django", 
+                "short": "銀行形式のカードを PDF で自動生成。", 
+                "desc": "写真、QR コード、管理情報を含む PDF の自動生成。", 
+                "tech": "Python, Django, PDF, QR Code" 
+            }
+        ]
+    },
+    "interests": {
+        "title": "趣味",
+        "nature": {
+            "title": "自然",
+            "desc": "新しい風景の発見と人間への影響"
+        },
+        "psychology": {
+            "title": "心理学とメンタルヘルス",
+            "desc": "人間の行動を理解し、幸福を促進する"
+        },
+        "history": {
+            "title": "歴史",
+            "desc": "過去の文明と現在への影響"
+        },
+        "music": {
+            "title": "音楽",
+            "desc": "多様なジャンルを聴き、新しいジャンルを発見すること。ソウル、R&B、ラップなどが好きです..."
+        },
+        "reading": {
+            "title": "読書",
+            "desc": "さまざまな文学ジャンルの探求と自己啓発（これまでのところ、パウロ・コエーリョ、リズ・ブルボー、マーク・マンソンなどが大好きです...）"
+        }
+    },
+    "footer": {
+        "copyright": "© 2025 Soraya Codo – 個人ポートフォリオ"
+    },
+    "side_quests": {
+        "title": "サイドクエスト",
+        "subtitle": "好奇心とAIや創造性を探求する喜びから生まれた実験。",
+        "simulation": "(インタラクティブシミュレーション)",
+        "loading": "AIが考え中...",
+        "messages": {
+            "error_skin_type": "肌タイプを選択してください。",
+            "error_rhyme_input": "テーマまたは要素を入力してください。",
+            "rhyme_title_prefix": "〜の精神："
+        },
+        "beauty": {
+            "title": "美容＆ケア",
+            "radiant": {
+                "title": "ラディアント・スキンケア",
+                "desc": "あなたの肌タイプに基づいたオーダーメイドのルーチンを取得します。",
+                "skin_type_label": "肌タイプ",
+                "concerns_label": "悩み（オプション）",
+                "concerns_placeholder": "例：ニキビ、シミ、シワ、くすみ...",
+                "button": "ルーチンを作成",
+                "options": {
+                    "oily": "脂性肌",
+                    "dry": "乾燥肌",
+                    "combo": "混合肌",
+                    "sensitive": "敏感肌"
+                },
+                "results": {
+                    "see_more": "もっと見る",
+                    "usage_title": "使用方法",
+                    "usage": {
+                        "oily": "朝：優しい洗顔、浄化セラム、軽い保湿。夜：ダブル洗顔、アクティブ（AHA/BHA）、保湿。",
+                        "dry": "朝：フローラルウォーターまたはミルク、保湿セラム、リッチクリーム。夜：オイルクレンジング、栄養クリーム、フェイスオイル。",
+                        "combo": "朝：ジェル洗顔、バランシングセラム、フルイド。夜：優しい洗顔、レチノール（オプション）、保湿。",
+                        "sensitive": "朝：温泉水、鎮静セラム、バリアクリーム。夜：オイルクレンジング、修復ケア。摩擦を避けてください。",
+                        "default": "朝：洗顔、保湿、保護。夜：洗顔、トリートメント、保湿。"
+                    },
+                    "title": "あなたのパーソナライズされたルーチン",
+                    "pro_tip": "プロのヒント：",
+                    "routines": {
+                        "oily": "洗顔 (例: CeraVe Foaming, La Roche-Posay Effaclar, Bioderma Sebium) + セラム (例: The Ordinary Niacinamide, Paula's Choice Pore, Inkey List Niacinamide) + ジェル (例: Neutrogena Hydro Boost, Clinique Dramatically Different Gel, Versed Dew Point)",
+                        "dry": "ミルク/オイル (例: La Roche-Posay Toleriane, DHC Oil, Avene Tolerance) + セラム (例: La Roche-Posay Hyalu B5, Vichy Mineral 89, The Ordinary Hyaluronic) + クリーム (例: CeraVe Pot, Avene XeraCalm, Embryolisse Lait-Crème)",
+                        "combo": "マイルドジェル (例: Bioderma Sensibio, Fresh Soy, Cetaphil Gentle) + セラム (例: The Ordinary Buffet, Caudalie Vinoperfect, Estée Lauder ANR) + フルイド (例: La Roche-Posay Effaclar Duo, Clinique Moisture Surge, Kiehl's Ultra Facial)",
+                        "sensitive": "ミセラー水/ミルク (例: Bioderma Crealine, Avene Lait, La Roche-Posay Dermo-Cleanser) + セラム (例: La Roche-Posay Toleriane Ultra, Dr. Jart+ Cicapair, Avene Hydrance) + バーム (例: Cicaplast B5, Avene Cicalfate, Uriage Bariederm)",
+                        "default": "優しい洗顔 + 軽い保湿 + 日焼け止め"
+                    },
+                    "hands_feet": {
+                        "title": "手と足のケア",
+                        "oily": "手：軽いクリーム (例: Neutrogena Hydro Boost, L'Occitane Verbena, Aesop Resurrection). 足：スクラブ (例: The Body Shop Peppermint, Lush Pumice) + ジェル (例: Scholl Fresh, L'Occitane Shea).",
+                        "dry": "手：リッチクリーム (例: CeraVe Hand, Cicaplast Mains, Neutrogena Norwegian). 足：尿素 (例: Eucerin 10% Urea, CeraVe SA Feet, SVR Xerial 30).",
+                        "combo": "手：保湿 (例: Nivea Hand, Mixa Intensif, Bioderma Atoderm). 足：栄養 (例: Neutrogena Very Dry Feet, Scholl Cream, Palmer's Cocoa Butter).",
+                        "sensitive": "手：無香料 (例: Bioderma Atoderm, Aveeno, Eucerin pH5). 足：鎮静 (例: La Roche-Posay Lipikar, Avene XeraCalm, Uriage Keratosane).",
+                        "default": "手洗い後は手を保湿してください。夜は足のケアを。"
+                    },
+                    "advice": {
+                        "oily": "週2回サリチル酸を使用してください。",
+                        "dry": "熱すぎるお湯やアルコールを含む製品は避けてください。",
+                        "combo": "頬をしっかり保湿し、Tゾーンは局所的にケアしてください。",
+                        "sensitive": "シンプルイズベスト。無香料の製品を選びましょう。"
+                    },
+                    "bonus_text": "「{0}」のためのボーナス：夜にターゲットアクティブを追加（例：年齢にはレチノール、輝きにはビタミンC）。"
+                }
+            }
+        },
+        "literature": {
+            "title": "文学＆自然",
+            "quote": {
+                "title": "名言",
+                "desc": "テーマを選んで、時代を超えた思想を発見してください。",
+                "themes": {
+                    "love": "愛",
+                    "courage": "勇気",
+                    "time": "時間",
+                    "success": "成功",
+                    "wisdom": "知恵",
+                    "nature": "自然",
+                    "happiness": "幸福",
+                    "peace": "平和"
+                },
+                "database": {
+                    "love": [
+                        { "text": "愛するとは、互いに見つめ合うことではなく、一緒に同じ方向を見つめることである。", "author": "アントワーヌ・ド・サン＝テグジュペリ" },
+                        { "text": "世界で唯一の真の言語はキスである。", "author": "アルフレッド・ド・ミュッセ" }
+                    ],
+                    "courage": [
+                        { "text": "勇気とは恐怖の欠如ではなく、それを克服する能力である。", "author": "ネルソン・マンデラ" },
+                        { "text": "自分自身になるためには勇気が必要だ。", "author": "E.E. カミングス" }
+                    ],
+                    "time": [
+                        { "text": "ゆっくり急げ。", "author": "ボアロー" },
+                        { "text": "時は偉大な教師だが、生徒を殺してしまうのが残念だ。", "author": "エクトル・ベルリオーズ" }
+                    ],
+                    "success": [
+                        { "text": "成功とは、情熱を失わずに失敗から失敗へと進むことである。", "author": "ウィンストン・チャーチル" },
+                        { "text": "素晴らしい仕事をする唯一の方法は、自分のすることを愛することだ。", "author": "スティーブ・ジョブズ" }
+                    ],
+                    "wisdom": [
+                        { "text": "汝自身を知れ。", "author": "ソクラテス" },
+                        { "text": "真の知恵は、賢く見えないことにある。", "author": "アイスキュロス" }
+                    ],
+                    "nature": [
+                        { "text": "自然は無駄なことをしない。", "author": "アリストテレス" },
+                        { "text": "自然を深く見つめれば、すべてをよりよく理解できるだろう。", "author": "アルバート・アインシュタイン" }
+                    ],
+                    "happiness": [
+                        { "text": "幸福は時に未知の中に隠されている。", "author": "ヴィクトル・ユーゴー" },
+                        { "text": "幸福は容易なことではない。自分の中に見つけるのは非常に難しく、他で見つけるのは不可能だ。", "author": "シャンフォール" }
+                    ],
+                    "peace": [
+                        { "text": "平和は微笑みから始まる。", "author": "マザー・テレサ" },
+                        { "text": "良い戦争も悪い平和も存在しない。", "author": "ベンジャミン・フランクリン" }
+                    ]
+                }
+            },
+            "rhyme": {
+                "title": "ライム・ミー・グリーン",
+                "desc": "自然の要素やテーマ（例：海、森、愛）を入力して読んでください。",
+                "placeholder": "例：古い樫の木、嵐、静寂...",
+                "button": "読む",
+                "responses": {
+                    "forest": "私は地球の肺、私の根は世界の歴史を抱擁する。葉のささやきを聞け、それは何世紀もの知恵を運ぶ。",
+                    "ocean": "広大で深い、私は深淵の秘密を守る。私の表面は空を映すが、心は永遠の潮のリズムで鼓動する。",
+                    "sun": "私は命を与えるために果てしなく燃える。私の光は影を追い払い、すべての魂、すべての石、すべての希望を温める。",
+                    "moon": "夜の女王、私はあなたの夢を見守る。銀の静寂の中で、私は迷える旅人と孤独な詩人を導く。",
+                    "wind": "目に見えず強力、私は変化の息吹。顔を撫で、疑いを根こそぎにする、縛られない旅人。",
+                    "mountain": "不動で誇り高く、私は雲に触れる。私の頂は挑戦、谷は避難所。私は石となった忍耐。",
+                    "flower": "儚い美しさ、私は優雅に世界に開く。すべての花びらは色の約束、光への微笑み。",
+                    "default": [
+                        "{0}の静寂の中で、<br>風は古代の秘密をささやく、<br>葉は踊り、心は安らぐ、<br>自然は権利を取り戻し、穏やかに。",
+                        "{0}の反響が遠くに響く、<br>朝の愛撫のように、<br>すべてが目覚め、すべてが光、<br>この世界で、祈りを。",
+                        "空の下、{0}が立つ、<br>時の証人、弱さを見せず、<br>根は深く、心は震える、<br>命への賛歌、永遠に。"
+                    ]
+                }
+            },
+            "word_search": {
+                "title": "単語検索",
+                "desc": "単語の先頭から末尾までドラッグして選択します。",
+                "theme1": "自然",
+                "theme2": "動物",
+                "theme3": "技術",
+                "size_small": "小",
+                "size_medium": "中",
+                "size_large": "大",
+                "hint": "ヒント ({0})",
+                "no_hints": "ヒントはありません！",
+                "words_to_find": "見つける言葉：",
+                "reset": "再起動",
+                "time": "時間",
+                "best": "トップ3",
+                "success": "ブラボー！すべてが見つかりました！",
+                "new_record": "新記録！"
+            },
+            "philosophy": {
+                "title": "哲学的定義",
+                "desc": "本質を発見するために概念を選択してください。",
+                "read_more": "ウィキペディアで続きを読む"
+            }
+        },
+        "science": {
+            "title": "科学",
+            "gallery": {
+                "title": "NASAギャラリー",
+                "desc": "NASA画像・動画ライブラリからの最新20の驚異を探索。",
+                "loading": "NASAからの画像を読み込み中...",
+                "error": "画像の読み込みに失敗しました。後でもう一度お試しください。",
+                "date": "日付: ",
+                "explanation": "説明を表示"
+            }
+        }
+    }
+}

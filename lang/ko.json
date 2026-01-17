@@ -1,0 +1,329 @@
+{
+    "header": {
+        "role": "풀스택 개발자 백엔드 및 AI 중심",
+        "location": "몽펠리에, 프랑스"
+    },
+    "languages": {
+        "fr": "프랑스어",
+        "en": "영어",
+        "yo": "요루바어",
+        "zh": "중국어",
+        "ja": "일본어",
+        "ko": "한국어"
+    },
+    "nav": {
+        "stack": "기술 스택",
+        "education": "학력",
+        "cv": "이력서",
+        "projects": "프로젝트",
+        "interests": "관심사",
+        "contact": "연락처"
+    },
+    "about": {
+        "text1": "호기심 많고 꼼꼼하며 배우고자 하는 열정이 가득합니다... :)",
+        "text2": "나의 원동력: 기술이 실제로 상황을 개선할 수 있는 영향력 있는 프로젝트에 기여하는 것... 그리고 또 다른 버그를 만들지 않는 것",
+        "text3": "나의 목표: 항상 발전하고, 더 효율적이고 유용한 솔루션을 끊임없이 찾는 다재다능한 개발자로 성장하는 것... 최소한의 카페인과 많은 즐거움으로"
+    },
+    "cv": {
+        "title": "내 이력서",
+        "view": "이력서 보기",
+        "download": "📄 이력서 다운로드"
+    },
+    "skills": {
+        "title": "기술 스택",
+        "languages": "언어 & 프레임워크",
+        "databases": "데이터베이스",
+        "data_ai": "데이터 • AI • 머신 러닝",
+        "web_automation": "웹 • 스크래핑 • 자동화",
+        "tools": "도구 • DevOps • BI",
+        "tests": "테스트 정책 & CI/CD",
+        "collaboration": "협업",
+        "details": {
+            "lang_desc": "<ul><li><strong>C</strong> / <strong>C++</strong></li><li><strong>Python</strong> – 백엔드, AI, 스크립트, 자동화</li><li><strong>Django</strong> + <strong>Django REST Framework</strong></li><li><strong>JavaScript</strong> / <strong>Node.js</strong></li><li><strong>ReactJs</strong></li><li><strong>SQL & DAX (Power BI)</strong></li><li><strong>HTML</strong> / <strong>CSS</strong></li><li><strong>Docker</strong> – 컨테이너화</li></ul>",
+            "db_desc": "<ul><li><strong>MongoDB</strong> (NoSQL)</li><li><strong>MySQL / PostgreSQL</strong></li><li><strong>Django</strong>를 통한 관계형 데이터베이스</li><li>스키마 설계 & 마이그레이션</li></ul>",
+            "data_desc": "<ul><li>NumPy • pandas • scikit-learn</li><li>NLP (자연어 처리)</li><li>전체 파이프라인: 스크래핑 → 정제 → 분석 → 예측</li><li>Whisper + FFMPEG (오디오/비디오 변환)</li></ul>",
+            "web_desc": "<ul><li>고급 스크래핑 (Selenium, requests)</li><li>반복 작업 자동화</li><li>REST APIs • Webhooks • 타사 통합</li><li>OAuth2 (Youtube, Google, Linkedin…)</li><li><strong>Celery</strong> + Redis (비동기 작업)</li></ul>",
+            "tools_desc": "<ul><li><strong>Power BI</strong></li><li><strong>Azure</strong> (기초: VMs, Blob, Functions)</li><li><strong>Git</strong> & GitHub Actions (CI/CD)</li><li>Docker • Docker Compose</li><li>Postman • Swagger</li></ul>",
+            "tests_desc": "<ul><li><strong>단위 테스트:</strong> 중요 기능, 비즈니스 로직, 서비스, 유틸리티 커버리지.</li><li><strong>기능 테스트:</strong> 사용자 워크플로 및 API 엔드포인트의 완전한 검증.</li><li><strong>통합 테스트:</strong> 서비스, 데이터베이스, 외부 API 간의 상호 작용.</li><li><strong>모킹 & 픽스처:</strong> 의존성 격리, 시나리오 재현성.</li><li><strong>CI/CD:</strong> 자동화 테스트, 린팅 및 배포 (GitHub Actions / Docker).</li></ul>",
+            "collab_desc": "<ul><li><strong>Git</strong> / <strong>GitLab</strong> / <strong>GitHub</strong></li><li><strong>Jira</strong></li><li><strong>Trello</strong></li><li><strong>Microsoft Teams</strong></li></ul>"
+        }
+    },
+    "education": {
+        "title": "학력",
+        "master": "석사 — 인공 지능 & 데이터 관리",
+        "master_school": "IASchool / Nexa Digital School — 리옹",
+        "courses": "외부 과정",
+        "courses_desc": "<p>라발 대학교 — 비즈니스 수학</p><p>Udemy — PowerBI</p>",
+        "bachelor": "학사 — 컴퓨터 과학",
+        "bachelor_desc": "Epitech Technology — 프로젝트 기반 교육법<br>고급 개발 • 완전한 자율성 및 프로젝트 관리"
+    },
+    "projects": {
+        "title": "일부 진행한 프로젝트",
+        "click_details": "세부 정보 클릭 →",
+        "tech_label": "기술: ",
+        "list": [
+            { 
+                "title": "Champions League Stats", 
+                "short": "팀, 국가, 리그별 선수 통계 분석 및 비교...", 
+                "desc": "챔피언스 리그 선수 및 팀 성과에 대한 상세 분석, 고급 시각화 및 비교.", 
+                "tech": "Python, Pandas, NumPy, plotly, streamlit", 
+                "images": ["./assets/images/champions_league_4.png", "./assets/images/champions_league_2.png"] 
+            },
+            { 
+                "title": "PowerBI", 
+                "short": "Power BI 대시보드 + DAX + SQL + Python.", 
+                "desc": "상업 활동 모니터링을 위한 Power BI 대시보드", 
+                "tech": "Power BI, Python, SQL, DAX", 
+                "images": ["./assets/images/powerBi_adventure_works_1.png", "./assets/images/powerBi_adventure_works_2.png"] 
+            },
+            { 
+                "title": "Real-Time Dashboard – NASA APOD + Weather", 
+                "short": "실시간 날씨와 NASA 오늘의 이미지를 표시하는 인터랙티브 대시보드.", 
+                "desc": "실시간 날씨 (OpenWeatherMap API)와 오늘의 천문 이미지 (NASA APOD)를 표시하는 동적 대시보드. 데이터 자동 새로고침, 반응형 컴포넌트, 네트워크 오류 처리.", 
+                "tech": "NodeJs, API NASA, OpenWeatherMap, docker"
+            },
+            { 
+                "title": "AREA – Automation & Interconnections", 
+                "short": "Node, React, Docker를 사용한 IFTTT와 유사한 플랫폼.", 
+                "desc": "서비스 간의 작업(API, 주기적 작업, webhooks)을 자동화할 수 있는 IFTTT와 유사한 플랫폼.", 
+                "tech": "Node, React, Docker, API, Webhooks, SMTP, OAUTH" 
+            },
+            { 
+                "title": "Radiant – Personalized Advice & Product Recommendations", 
+                "short": "AI 기반 웹 상호 작용.", 
+                "desc": "사용자 정보 수집 및 재고 제품 추천을 포함한 개인화된 조언 생성.", 
+                "tech": "Python, OpenApi, ReactJs" 
+            },
+            { 
+                "title": "Bitcoin & Ethereum Analysis", 
+                "short": "완전한 데이터 파이프라인 및 ML 분석.", 
+                "desc": "스크래핑, 정제, 통계 분석, 시각화.", 
+                "tech": "Python, Pandas, NumPy, plotly" 
+            },
+            { 
+                "title": "E-learning", 
+                "short": "웹 개발 기초에 대한 온라인 교육.", 
+                "desc": "연습 문제와 개인별 추적 기능이 포함된 웹 개발 기초 학습을 위한 인터랙티브 플랫폼.", 
+                "tech": "Python, HTML/CSS/JS, SMTP" 
+            },
+            { 
+                "title": "Geo-Monitoring", 
+                "short": "모니터링 대상 제품의 지도 및 지리적 추적.", 
+                "desc": "실시간 지리적 모니터링 플랫폼 및 모든 모니터링 구역의 각 제품에 대한 상세 추적", 
+                "tech": "Python, Django, Celery" 
+            },
+            { 
+                "title": "Python + MongoDB Chatbot", 
+                "short": "컨텍스트 메모리를 갖춘 지능형 챗봇.", 
+                "desc": "컨텍스트 메모리, 제품 검색, 의도 동의어, 자동 수정 기능을 갖춘 챗봇.", 
+                "tech": "Python, MongoDB, NLP" 
+            },
+            { 
+                "title": "Scraping", 
+                "short": "다양한 소스 기반의 자동 스크래퍼.", 
+                "desc": "자동 정보 검색.", 
+                "tech": "Python, Scraping" 
+            },
+            { 
+                "title": "ID Card PDF Export – Django", 
+                "short": "은행 형식의 카드를 PDF로 자동 생성.", 
+                "desc": "사진, QR 코드, 행정 정보를 포함한 PDF 자동 생성.", 
+                "tech": "Python, Django, PDF, QR Code" 
+            }
+        ]
+    },
+    "interests": {
+        "title": "관심사",
+        "nature": {
+            "title": "자연",
+            "desc": "새로운 풍경의 발견과 인간에게 미치는 영향"
+        },
+        "psychology": {
+            "title": "심리학과 정신 건강",
+            "desc": "인간의 행동 이해 및 웰빙 증진"
+        },
+        "history": {
+            "title": "역사",
+            "desc": "과거의 문명과 현재에 미치는 영향"
+        },
+        "music": {
+            "title": "음악",
+            "desc": "다양한 장르 청취 및 새로운 장르 발견. 소울, R&B, 랩 등을 선호합니다..."
+        },
+        "reading": {
+            "title": "독서",
+            "desc": "다양한 문학 장르 탐구 및 자기 계발 (지금까지 파울로 코엘료, 리즈 부르보, 마크 맨슨 등을 매우 좋아합니다...)"
+        }
+    },
+    "footer": {
+        "copyright": "© 2025 Soraya Codo – 개인 포트폴리오"
+    },
+    "side_quests": {
+        "title": "사이드 퀘스트",
+        "subtitle": "호기심과 AI 및 창의성을 탐구하는 즐거움에서 탄생한 실험들.",
+        "simulation": "(인터랙티브 시뮬레이션)",
+        "loading": "AI가 생각 중...",
+        "messages": {
+            "error_skin_type": "피부 타입을 선택해주세요.",
+            "error_rhyme_input": "주제나 요소를 입력해주세요.",
+            "rhyme_title_prefix": "정신:"
+        },
+        "beauty": {
+            "title": "뷰티 & 케어",
+            "radiant": {
+                "title": "라디언트 스킨케어",
+                "desc": "피부 타입에 맞는 맞춤형 루틴을 받아보세요.",
+                "skin_type_label": "피부 타입",
+                "concerns_label": "고민 (선택 사항)",
+                "concerns_placeholder": "예: 여드름, 잡티, 주름, 칙칙함...",
+                "button": "루틴 생성",
+                "options": {
+                    "oily": "지성",
+                    "dry": "건성",
+                    "combo": "복합성",
+                    "sensitive": "민감성"
+                },
+                "results": {
+                    "see_more": "더 보기",
+                    "usage_title": "사용 팁",
+                    "usage": {
+                        "oily": "아침: 약산성 클렌저, 정화 세럼, 가벼운 수분 크림. 저녁: 이중 세안, 활성 성분(AHA/BHA), 수분 크림.",
+                        "dry": "아침: 플로럴 워터 또는 밀크, 수분 세럼, 리치 크림. 저녁: 오일 클렌징, 영양 크림, 페이스 오일.",
+                        "combo": "아침: 젤 클렌저, 밸런싱 세럼, 플루이드. 저녁: 부드러운 세안, 레티놀(선택), 수분 크림.",
+                        "sensitive": "아침: 온천수, 진정 세럼, 장벽 크림. 저녁: 오일 클렌징, 재생 케어. 마찰을 피하세요.",
+                        "default": "아침: 세안, 보습, 보호. 저녁: 세안, 관리, 보습."
+                    },
+                    "title": "당신의 맞춤형 루틴",
+                    "pro_tip": "프로 팁:",
+                    "routines": {
+                        "oily": "클렌저 (예: CeraVe Foaming, La Roche-Posay Effaclar, Bioderma Sebium) + 세럼 (예: The Ordinary Niacinamide, Paula's Choice Pore, Inkey List Niacinamide) + 젤 (예: Neutrogena Hydro Boost, Clinique Dramatically Different Gel, Versed Dew Point)",
+                        "dry": "밀크/오일 (예: La Roche-Posay Toleriane, DHC Oil, Avene Tolerance) + 세럼 (예: La Roche-Posay Hyalu B5, Vichy Mineral 89, The Ordinary Hyaluronic) + 크림 (예: CeraVe Pot, Avene XeraCalm, Embryolisse Lait-Crème)",
+                        "combo": "마일드 젤 (예: Bioderma Sensibio, Fresh Soy, Cetaphil Gentle) + 세럼 (예: The Ordinary Buffet, Caudalie Vinoperfect, Estée Lauder ANR) + 플루이드 (예: La Roche-Posay Effaclar Duo, Clinique Moisture Surge, Kiehl's Ultra Facial)",
+                        "sensitive": "미셀라 워터/밀크 (예: Bioderma Crealine, Avene Lait, La Roche-Posay Dermo-Cleanser) + 세럼 (예: La Roche-Posay Toleriane Ultra, Dr. Jart+ Cicapair, Avene Hydrance) + 밤 (예: Cicaplast B5, Avene Cicalfate, Uriage Bariederm)",
+                        "default": "약산성 클렌저 + 가벼운 수분 크림 + 자외선 차단제"
+                    },
+                    "hands_feet": {
+                        "title": "손 & 발 케어",
+                        "oily": "손: 가벼운 크림 (예: Neutrogena Hydro Boost, L'Occitane Verbena, Aesop Resurrection). 발: 스크럽 (예: The Body Shop Peppermint, Lush Pumice) + 젤 (예: Scholl Fresh, L'Occitane Shea).",
+                        "dry": "손: 리치 크림 (예: CeraVe Hand, Cicaplast Mains, Neutrogena Norwegian). 발: 우레아 (예: Eucerin 10% Urea, CeraVe SA Feet, SVR Xerial 30).",
+                        "combo": "손: 보습 (예: Nivea Hand, Mixa Intensif, Bioderma Atoderm). 발: 영양 (예: Neutrogena Very Dry Feet, Scholl Cream, Palmer's Cocoa Butter).",
+                        "sensitive": "손: 무향 (예: Bioderma Atoderm, Aveeno, Eucerin pH5). 발: 진정 (예: La Roche-Posay Lipikar, Avene XeraCalm, Uriage Keratosane).",
+                        "default": "손을 씻은 후 보습하세요. 저녁에는 발을 관리하세요."
+                    },
+                    "advice": {
+                        "oily": "주 2회 살리실산을 사용하세요.",
+                        "dry": "너무 뜨거운 물과 알코올 함유 제품을 피하세요.",
+                        "combo": "볼은 충분히 보습하고 T존은 국소적으로 관리하세요.",
+                        "sensitive": "적을수록 좋습니다. 무향 제품을 선택하세요."
+                    },
+                    "bonus_text": "\"{0}\"을 위한 보너스: 저녁에 타겟 활성 성분을 추가하세요 (예: 노화에는 레티놀, 광채에는 비타민 C)."
+                }
+            }
+        },
+        "literature": {
+            "title": "문학 & 자연",
+            "quote": {
+                "title": "명언",
+                "desc": "주제를 선택하여 시대를 초월한 생각을 발견하세요.",
+                "themes": {
+                    "love": "사랑",
+                    "courage": "용기",
+                    "time": "시간",
+                    "success": "성공",
+                    "wisdom": "지혜",
+                    "nature": "자연",
+                    "happiness": "행복",
+                    "peace": "평화"
+                },
+                "database": {
+                    "love": [
+                        { "text": "사랑한다는 것은 서로 마주 보는 것이 아니라, 함께 같은 방향을 바라보는 것이다.", "author": "앙투안 드 생텍쥐페리" },
+                        { "text": "세상에서 유일한 진정한 언어는 키스다.", "author": "알프레드 드 뮈세" }
+                    ],
+                    "courage": [
+                        { "text": "용기는 두려움이 없는 것이 아니라, 두려움을 이겨내는 능력이다.", "author": "넬슨 만델라" },
+                        { "text": "자신이 되기 위해서는 용기가 필요하다.", "author": "E.E. 커밍스" }
+                    ],
+                    "time": [
+                        { "text": "천천히 서둘러라.", "author": "부알로" },
+                        { "text": "시간은 위대한 스승이지만, 불행히도 제자를 죽인다.", "author": "엑토르 베를리오즈" }
+                    ],
+                    "success": [
+                        { "text": "성공이란 열정을 잃지 않고 실패를 거듭하는 것이다.", "author": "윈스턴 처칠" },
+                        { "text": "위대한 일을 하는 유일한 방법은 당신이 하는 일을 사랑하는 것이다.", "author": "스티브 잡스" }
+                    ],
+                    "wisdom": [
+                        { "text": "너 자신을 알라.", "author": "소크라테스" },
+                        { "text": "진정한 지혜는 현명해 보이지 않는 것이다.", "author": "아이스킬로스" }
+                    ],
+                    "nature": [
+                        { "text": "자연은 헛된 일을 하지 않는다.", "author": "아리스토텔레스" },
+                        { "text": "자연을 깊이 들여다보면 모든 것을 더 잘 이해할 수 있을 것이다.", "author": "알베르트 아인슈타인" }
+                    ],
+                    "happiness": [
+                        { "text": "행복은 때때로 미지의 곳에 숨겨져 있다.", "author": "빅토르 위고" },
+                        { "text": "행복은 쉬운 일이 아니다. 우리 안에서 찾기는 매우 어렵고, 다른 곳에서 찾기는 불가능하다.", "author": "샹포르" }
+                    ],
+                    "peace": [
+                        { "text": "평화는 미소에서 시작된다.", "author": "마더 테레사" },
+                        { "text": "좋은 전쟁도 나쁜 평화도 없다.", "author": "벤자민 프랭클린" }
+                    ]
+                }
+            },
+            "rhyme": {
+                "title": "라임 미 그린",
+                "desc": "자연의 요소나 주제(예: 바다, 숲, 사랑)를 입력하고 읽어보세요.",
+                "placeholder": "예: 오래된 참나무, 폭풍, 침묵...",
+                "button": "읽기",
+                "responses": {
+                    "forest": "나는 지구의 폐, 내 뿌리는 세계의 역사를 끌어안는다. 내 잎사귀의 속삭임을 들어라, 그것은 수세기의 지혜를 담고 있다.",
+                    "ocean": "광활하고 깊은 나는 심연의 비밀을 지킨다. 내 표면은 하늘을 비추지만, 내 심장은 영원한 조수의 리듬으로 뛴다.",
+                    "sun": "나는 생명을 주기 위해 끝없이 타오른다. 내 빛은 그림자를 쫓아내고, 모든 영혼, 모든 돌, 모든 희망을 따뜻하게 한다.",
+                    "moon": "밤의 여왕, 나는 너의 꿈을 지킨다. 은빛 침묵 속에서 나는 길 잃은 여행자와 고독한 시인을 인도한다.",
+                    "wind": "보이지 않지만 강력한, 나는 변화의 숨결이다. 얼굴을 어루만지고 의심을 뿌리째 뽑는, 얽매이지 않는 여행자.",
+                    "mountain": "움직이지 않고 자랑스럽게, 나는 구름에 닿는다. 내 정상은 도전이고, 내 계곡은 피난처이다. 나는 돌이 된 인내이다.",
+                    "flower": "덧없는 아름다움, 나는 우아하게 세상에 열린다. 모든 꽃잎은 색의 약속, 빛을 향한 미소이다.",
+                    "default": [
+                        "{0}의 침묵 속에서,<br>바람은 고대의 비밀을 속삭인다,<br>잎사귀는 춤추고, 마음은 평온해진다,<br>자연은 권리를 되찾고, 고요하다.",
+                        "{0}의 메아리가 멀리 울려 퍼진다,<br>아침의 어루만짐처럼,<br>모든 것이 깨어나고, 모든 것이 빛이다,<br>이 세상에서, 기도를.",
+                        "하늘 아래, {0}이 서 있다,<br>시간의 증인, 약함 없이,<br>뿌리는 깊고, 심장은 뛴다,<br>생명에 대한 찬가, 영원히."
+                    ]
+                }
+            },
+            "word_search": {
+                "title": "단어 찾기",
+                "desc": "단어를 선택하려면 처음부터 끝까지 드래그하세요.",
+                "theme1": "자연",
+                "theme2": "동물",
+                "theme3": "기술",
+                "size_small": "작은",
+                "size_medium": "중간",
+                "size_large": "큰",
+                "hint": "힌트 ({0})",
+                "no_hints": "힌트가 없습니다!",
+                "words_to_find": "찾을 단어:",
+                "reset": "재시작",
+                "time": "시간",
+                "best": "상위 3",
+                "success": "브라보! 모두 발견!",
+                "new_record": "신기록!"
+            },
+            "philosophy": {
+                "title": "철학적 정의",
+                "desc": "본질을 발견하기 위해 개념을 선택하십시오.",
+                "read_more": "위키백과에서 더 읽기"
+            }
+        },
+        "science": {
+            "title": "과학",
+            "gallery": {
+                "title": "NASA 갤러리",
+                "desc": "NASA 이미지 및 비디오 라이브러리의 최신 20가지 경이로움을 탐험하세요.",
+                "loading": "NASA에서 이미지를 불러오는 중...",
+                "error": "이미지를 불러오는 데 실패했습니다. 나중에 다시 시도해주세요.",
+                "date": "날짜: ",
+                "explanation": "설명 보기"
+            }
+        }
+    }
+}

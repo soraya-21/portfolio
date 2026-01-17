@@ -1,0 +1,345 @@
+{
+    "header": {
+        "role": "Développeuse Full-Stack orientée Backend & Intelligence Artificielle",
+        "location": "Montpellier, France"
+    },
+    "languages": {
+        "fr": "Français",
+        "en": "Anglais",
+        "yo": "Yoruba",
+        "zh": "Chinois",
+        "ja": "Japonais",
+        "ko": "Coréen"
+    },
+    "nav": {
+        "home": "Accueil",
+        "stack": "Stack",
+        "education": "Parcours",
+        "cv": "CV",
+        "projects": "Projets",
+        "interests": "Intérêts",
+        "contact": "Contact"
+    },
+    "about": {
+        "text1": "Curieuse, rigoureuse et avide d'apprendre... :)",
+        "text2": "Ce qui me motive : contribuer à des projets à fort impact, où la technologie peut réellement améliorer les choses… et éviter de créer un énième bug",
+        "text3": "Mon objectif : évoluer comme développeuse polyvalente, toujours en progrès, toujours en quête de solutions plus efficaces et plus utiles… avec un minimum de caféine et beaucoup de plaisir"
+    },
+    "cv": {
+        "title": "Mon CV",
+        "view": "Voir mon CV",
+        "download": "📄 Télécharger mon CV"
+    },
+    "skills": {
+        "title": "Stack Technologique",
+        "languages": "Langages & Frameworks",
+        "databases": "Bases de données",
+        "data_ai": "Data • IA • Machine Learning",
+        "web_automation": "Web • Scraping • Automatisation",
+        "tools": "Outils • DevOps • BI",
+        "tests": "Politique de Tests & CI/CD",
+        "collaboration": "Collaboration",
+        "details": {
+            "lang_desc": "<ul><li><strong>C</strong> / <strong>C++</strong></li><li><strong>Python</strong> – backend, IA, scripts, automatisation</li><li><strong>Django</strong> + <strong>Django REST Framework</strong></li><li><strong>JavaScript</strong> / <strong>Node.js</strong></li><li><strong>ReactJs</strong></li><li><strong>SQL & DAX (Power BI)</strong></li><li><strong>HTML</strong> / <strong>CSS</strong></li><li><strong>Docker</strong> – conteneurisation</li></ul>",
+            "db_desc": "<ul><li><strong>MongoDB</strong> (NoSQL)</li><li><strong>MySQL / PostgreSQL</strong></li><li>Bases relationnelles via <strong>Django</strong></li><li>Conception de schémas & migrations</li></ul>",
+            "data_desc": "<ul><li>NumPy • pandas • scikit-learn</li><li>NLP (traitement du langage naturel)</li><li>Pipelines complets : scraping → nettoyage → analyse → prédiction</li><li>Whisper + FFMPEG (transcription audio/vidéo)</li></ul>",
+            "web_desc": "<ul><li>Scraping avancé (Selenium, requests)</li><li>Automatisation de tâches répétitives</li><li>APIs REST • Webhooks • Intégrations tierces</li><li>OAuth2 (Youtube, Google, Linkedin…)</li><li><strong>Celery</strong> + Redis (tâches asynchrones)</li></ul>",
+            "tools_desc": "<ul><li><strong>Power BI</strong></li><li><strong>Azure</strong> (bases : VMs, Blob, Functions)</li><li><strong>Git</strong> & GitHub Actions (CI/CD)</li><li>Docker • Docker Compose</li><li>Postman • Swagger</li></ul>",
+            "tests_desc": "<ul><li><strong>Tests unitaires :</strong> couverture des fonctions critiques, logique métier, services, utils.</li><li><strong>Tests fonctionnels :</strong> vérification complète des workflows utilisateur et endpoints API.</li><li><strong>Tests d’intégration :</strong> interactions entre services, base de données, APIs externes.</li><li><strong>Mocking & fixtures :</strong> isolation des dépendances, reproductibilité des scénarios.</li><li><strong>CI/CD :</strong> automatisation des tests, linting et déploiements (GitHub Actions / Docker).</li></ul>",
+            "collab_desc": "<ul><li><strong>Git</strong> / <strong>GitLab</strong> / <strong>GitHub</strong></li><li><strong>Jira</strong></li><li><strong>Trello</strong></li><li><strong>Microsoft Teams</strong></li></ul>"
+        }
+    },
+    "education": {
+        "title": "Parcours académique",
+        "master": "Master — Intelligence Artificielle & Data Management",
+        "master_school": "IASchool / Nexa Digital School — Lyon",
+        "courses": "Cours externes",
+        "courses_desc": "<p>Université de Laval — Mathématiques pour les affaires</p><p>Udemy — PowerBI</p>",
+        "bachelor": "Bachelor — Computer Science",
+        "bachelor_desc": "Epitech Technology — Pédagogie par projet<br>Développement avancé • Autonomie totale et gestion de projets"
+    },
+    "projects": {
+        "title": "Quelques projets réalisés",
+        "click_details": "Cliquez pour les détails →",
+        "tech_label": "Technologies : ",
+        "list": [
+            { 
+                "title": "Champions League Stats", 
+                "short": "Analyse et comparaisons des stats des joueurs par équipe, pays, league...", 
+                "desc": "Analyse détaillée des performances des joueurs et équipes en Ligue des Champions, avec visualisations et comparaisons avancées.", 
+                "tech": "Python, Pandas, NumPy, plotly, streamlit", 
+                "images": ["./assets/images/champions_league_4.png", "./assets/images/champions_league_2.png"] 
+            },
+            { 
+                "title": "PowerBI", 
+                "short": "Dashboards Power BI + DAX + SQL + Python.", 
+                "desc": "Dashboards Power BI de monitoring d'activités commerciales", 
+                "tech": "Power BI, Python, SQL, DAX", 
+                "images": ["./assets/images/powerBi_adventure_works_1.png", "./assets/images/powerBi_adventure_works_2.png"] 
+            },
+            { 
+                "title": "Dashboard Temps Réel – NASA APOD + Météo", 
+                "short": "Tableau de bord interactif affichant la météo en direct et l’image NASA du jour.", 
+                "desc": "Dashboard dynamique affichant la météo en temps réel (API OpenWeatherMap) et l’image astronomique du jour (NASA APOD). Données rafraîchies automatiquement, composants réactifs et gestion des erreurs réseau.", 
+                "tech": "NodeJs, API NASA, OpenWeatherMap, docker"
+            },
+            { 
+                "title": "AREA – Automatisation & Interconnexions", 
+                "short": "Plateforme type IFTTT avec Node, React, Docker.", 
+                "desc": "Plateforme type IFTTT permettant d'automatiser des actions entre services (API, periodic tasks, webhooks).", 
+                "tech": "Node, React, Docker, API, Webhooks, SMTP, OAUTH" 
+            },
+            { 
+                "title": "Radiant – Conseils personnalisés & recommandations produits", 
+                "short": "Interactions web basées IA.", 
+                "desc": "Collecte d'informations utilisateur et génération de conseils personnalisés avec recommandations de produits en stock.", 
+                "tech": "Python, OpenApi, ReactJs" 
+            },
+            { 
+                "title": "Analyse Bitcoin & Ethereum", 
+                "short": "Pipeline data complet et analyses ML.", 
+                "desc": "Scraping, nettoyage, analyses statistiques, visualisations.", 
+                "tech": "Python, Pandas, NumPy, plotly" 
+            },
+            { 
+                "title": "E-learning", 
+                "short": "Formation en ligne sur les basiques du développement web.", 
+                "desc": "Plateforme interactive pour apprendre les fondamentaux du développement web, avec exercices et suivi personnalisé.", 
+                "tech": "Python, HTML/CSS/JS, SMTP" 
+            },
+            { 
+                "title": "Geo-Monitoring", 
+                "short": "Cartographie et suivi géographique des produits surveillés.", 
+                "desc": "Plateforme de monitoring géographique en temps réel et suivi détaillé de chaque produit dans toutes les zones surveillées", 
+                "tech": "Python, Django, Celery" 
+            },
+            { 
+                "title": "Chatbot Python + MongoDB", 
+                "short": "Chatbot intelligent avec mémoire de contexte.", 
+                "desc": "Chatbot avec mémoire de contexte, recherche produit, synonymes d’intention et autocorrection.", 
+                "tech": "Python, MongoDB, NLP" 
+            },
+            { 
+                "title": "Scraping", 
+                "short": "Scraper automatisé basé sur différentes sources.", 
+                "desc": "Récupération automatisée d’informations.", 
+                "tech": "Python, Scraping" 
+            },
+            { 
+                "title": "Export PDF Cartes d'identité – Django", 
+                "short": "Génération automatique de cartes format bancaire en PDF.", 
+                "desc": "Génération automatisée de PDFs avec photo, QR code, informations administratives.", 
+                "tech": "Python, Django, PDF, QR Code" 
+            }
+        ]
+    },
+    "interests": {
+        "title": "Centres d’intérêt",
+        "nature": {
+            "title": "Nature",
+            "desc": "Découvertes de nouveaux paysages et impacts sur l'être humain"
+        },
+        "psychology": {
+            "title": "Psychologie et santé mentale",
+            "desc": "Comprendre les comportements humains et promouvoir le bien-être"
+        },
+        "history": {
+            "title": "Histoire",
+            "desc": "Civilisations passées et leurs influences sur le présent"
+        },
+        "music": {
+            "title": "Musique",
+            "desc": "Écoute variée et découverte de nouveaux genres avec une préférence pour le Soul, le RnB, le Rap…"
+        },
+        "reading": {
+            "title": "Lecture",
+            "desc": "Exploration de divers genres littéraires et développement personnel (Jusqu'ici, gros coup de coeur pour Paulo Coelho, Lise Bourbeau, Mark Manson…)"
+        }
+    },
+    "footer": {
+        "copyright": "© 2025 Soraya Codo – Portfolio Personnel"
+    },
+    "side_quests": {
+        "title": "Side Quests",
+        "subtitle": "Des expérimentations nées de la curiosité et du plaisir d'explorer l'IA et la créativité.",
+        "simulation": "(Simulation interactive)",
+        "loading": "L'IA réfléchit...",
+        "messages": {
+            "error_skin_type": "Veuillez sélectionner votre type de peau.",
+            "error_rhyme_input": "Veuillez entrer un thème ou un élément.",
+            "rhyme_title_prefix": "L'Esprit de :"
+        },
+        "beauty": {
+            "title": "Beauté & Soin",
+            "radiant": {
+                "title": "Radiant Skincare",
+                "desc": "Obtenez une routine sur-mesure basée sur votre type de peau.",
+                "skin_type_label": "Type de Peau",
+                "concerns_label": "Préoccupations (Optionnel)",
+                "concerns_placeholder": "Ex: Acné, Taches, Rides, Teint terne...",
+                "button": "Générer ma Routine",
+                "options": {
+                    "oily": "Grasse",
+                    "dry": "Sèche",
+                    "combo": "Mixte",
+                    "sensitive": "Sensible"
+                },
+                "results": {
+                    "see_more": "Voir plus",
+                    "usage_title": "Conseils d'utilisation",
+                    "usage": {
+                        "oily": "Matin : Nettoyant doux, Sérum purifiant, Hydratant léger. Soir : Double nettoyage, Actif (AHA/BHA), Hydratant.",
+                        "dry": "Matin : Eau florale ou lait, Sérum hydratant, Crème riche. Soir : Démaquillant huile, Crème nourrissante, Huile visage.",
+                        "combo": "Matin : Nettoyant gel, Sérum équilibrant, Fluide. Soir : Nettoyage doux, Rétinol (optionnel), Hydratant.",
+                        "sensitive": "Matin : Eau thermale, Sérum apaisant, Crème barrière. Soir : Huile démaquillante, Soin réparateur. Évitez les frottements.",
+                        "default": "Matin : Nettoyer, Hydrater, Protéger. Soir : Nettoyer, Traiter, Hydrater."
+                    },
+                    "title": "Votre Routine Personnalisée",
+                    "pro_tip": "Conseil Pro :",
+                    "routines": {
+                        "oily": "Nettoyant (ex: CeraVe Moussant, La Roche-Posay Effaclar, Bioderma Sébium) + Sérum (ex: The Ordinary Niacinamide, SVR Sebiaclear, Paula's Choice Niacinamide) + Gel (ex: Neutrogena Hydro Boost, Clinique Dramatically Different Gel, Bioderma Sébium Mat)",
+                        "dry": "Lait/Huile (ex: La Roche-Posay Toleriane, DHC Huile, Avène Tolérance) + Sérum (ex: La Roche-Posay Hyalu B5, Vichy Minéral 89, The Ordinary Hyaluronic) + Crème (ex: CeraVe Pot, Avene XeraCalm, Embryolisse Lait-Crème)",
+                        "combo": "Gel Doux (ex: Bioderma Sensibio, Fresh Soy, Cetaphil Gentle) + Sérum (ex: The Ordinary Buffet, Caudalie Vinoperfect, Estée Lauder ANR) + Fluide (ex: La Roche-Posay Effaclar Duo, Clinique Moisture Surge, Kiehl's Ultra Facial)",
+                        "sensitive": "Eau Micellaire/Lait (ex: Bioderma Créaline, Avene Lait, La Roche-Posay Dermo-Nettoyant) + Sérum (ex: La Roche-Posay Toleriane Ultra, Dr. Jart+ Cicapair, Avene Hydrance) + Baume (ex: Cicaplast B5, Avene Cicalfate, Uriage Bariéderm)",
+                        "default": "Nettoyant doux + Hydratant léger + Protection solaire"
+                    },
+                    "hands_feet": {
+                        "title": "Soins Mains & Pieds",
+                        "oily": "Mains : Crème légère (ex: Neutrogena Hydro Boost, L'Occitane Verveine, Caudalie Gelée). Pieds : Exfoliant (ex: Scholl, The Body Shop Menthe, Mercurochrome) + Gel (ex: Akileïne Gel Frais, Yves Rocher Lavande, Scholl Gel).",
+                        "dry": "Mains : Crème Riche (ex: CeraVe Mains, Cicaplast Mains, Neutrogena Norvégienne). Pieds : Urée (ex: Eucerin 10% Urea, CeraVe SA Pieds, SVR Xérial 30).",
+                        "combo": "Mains : Hydratation (ex: Nivea Mains, Mixa Intensif, Bioderma Atoderm). Pieds : Nourrissant (ex: Neutrogena Pieds Très Secs, Scholl Crème, Palmer's Cocoa Butter).",
+                        "sensitive": "Mains : Sans parfum (ex: Bioderma Atoderm, Aveeno, Eucerin pH5). Pieds : Apaisant (ex: La Roche-Posay Lipikar, Avene XeraCalm, Uriage Kératosane).",
+                        "default": "Hydratez vos mains après chaque lavage. Prenez soin de vos pieds le soir."
+                    },
+                    "advice": {
+                        "oily": "Utilisez de l'acide salicylique 2x par semaine.",
+                        "dry": "Évitez l'eau trop chaude et les produits contenant de l'alcool.",
+                        "combo": "Hydratez bien les joues et traitez la zone T localement.",
+                        "sensitive": "Moins c'est plus. Privilégiez les produits sans parfum."
+                    },
+                    "bonus_text": "Bonus pour \"{0}\" : Ajoutez un actif ciblé le soir (ex: Rétinol pour l'âge, Vitamine C pour l'éclat)."
+                }
+            }
+        },
+        "literature": {
+            "title": "Littérature & Nature",
+            "quote": {
+                "title": "Citation Célèbre",
+                "desc": "Choisissez un thème pour découvrir une pensée intemporelle.",
+                "themes": {
+                    "love": "Amour",
+                    "courage": "Courage",
+                    "time": "Temps",
+                    "success": "Succès",
+                    "wisdom": "Sagesse",
+                    "nature": "Nature",
+                    "happiness": "Bonheur",
+                    "peace": "Paix"
+                },
+                "database": {
+                    "love": [
+                        { "text": "Aimer, ce n'est pas se regarder l'un l'autre, c'est regarder ensemble dans la même direction.", "author": "Antoine de Saint-Exupéry" },
+                        { "text": "Le seul vrai langage au monde est un baiser.", "author": "Alfred de Musset" }
+                    ],
+                    "courage": [
+                        { "text": "Le courage n'est pas l'absence de peur, mais la capacité de la vaincre.", "author": "Nelson Mandela" },
+                        { "text": "Il faut du courage pour grandir et devenir qui l'on est vraiment.", "author": "E.E. Cummings" }
+                    ],
+                    "time": [
+                        { "text": "Hâte-toi lentement.", "author": "Boileau" },
+                        { "text": "Le temps est un grand maître, dit-on. Le malheur est qu'il tue ses élèves.", "author": "Hector Berlioz" }
+                    ],
+                    "success": [
+                        { "text": "Le succès, c'est d'aller d'échec en échec sans perdre son enthousiasme.", "author": "Winston Churchill" },
+                        { "text": "La seule façon de faire du bon travail est d'aimer ce que vous faites.", "author": "Steve Jobs" }
+                    ],
+                    "wisdom": [
+                        { "text": "Connais-toi toi-même.", "author": "Socrate" },
+                        { "text": "La vraie sagesse est de ne pas sembler sage.", "author": "Eschyle" }
+                    ],
+                    "nature": [
+                        { "text": "La nature ne fait rien en vain.", "author": "Aristote" },
+                        { "text": "Regardez profondément dans la nature, et alors vous comprendrez tout mieux.", "author": "Albert Einstein" }
+                    ],
+                    "happiness": [
+                        { "text": "Le bonheur est parfois caché dans l'inconnu.", "author": "Victor Hugo" },
+                        { "text": "Le bonheur n'est pas chose aisée. Il est très difficile de le trouver en nous, et impossible de le trouver ailleurs.", "author": "Chamfort" }
+                    ],
+                    "peace": [
+                        { "text": "La paix commence par un sourire.", "author": "Mère Teresa" },
+                        { "text": "Il n'y a jamais eu de bonne guerre ni de mauvaise paix.", "author": "Benjamin Franklin" }
+                    ]
+                }
+            },
+            "rhyme": {
+                "title": "Rime-Moi Vert",
+                "desc": "Entrez un élément de la nature ou un thème (ex: Océan, Forêt, Amour) et lisez.",
+                "placeholder": "Ex: Vieux Chêne, Tempête, Silence...",
+                "button": "Lire",
+                "responses": {
+                    "forest": "Je suis le poumon de la terre, mes racines embrassent l'histoire du monde. Écoute le murmure de mes feuilles, il porte la sagesse des siècles.",
+                    "ocean": "Vaste et profond, je garde les secrets des abysses. Ma surface reflète le ciel, mais mon cœur bat au rythme des marées éternelles.",
+                    "sun": "Je brûle sans fin pour offrir la vie. Ma lumière chasse les ombres, réchauffant chaque âme, chaque pierre, chaque espoir.",
+                    "moon": "Reine de la nuit, je veille sur tes rêves. Dans mon silence d'argent, je guide les voyageurs égarés et les poètes solitaires.",
+                    "wind": "Invisible et puissant, je suis le souffle du changement. Je caresse les visages et déracine les doutes, voyageur sans attache.",
+                    "mountain": "Immobile et fière, je touche les nuages. Mes sommets sont des défis, mes vallées des refuges. Je suis la patience faite pierre.",
+                    "flower": "Éphémère beauté, je m'ouvre au monde avec grâce. Chaque pétale est une promesse de couleur, un sourire offert à la lumière.",
+                    "default": [
+                        "Dans le silence de {0},<br>Le vent murmure un secret ancien,<br>Les feuilles dansent, l'esprit s'apaise,<br>La nature reprend ses droits, sereine.",
+                        "L'écho de {0} résonne au loin,<br>Comme une caresse du matin,<br>Tout s'éveille, tout est lumière,<br>Dans ce monde, une prière.",
+                        "Sous le ciel, {0} se dresse,<br>Témoin du temps, sans faiblesse,<br>Racines profondes, cœur vibrant,<br>Hymne à la vie, éternellement."
+                    ]
+                }
+            },
+            "word_search": {
+                "title": "Mots Mêlés",
+                "desc": "Glissez du début à la fin d'un mot pour le sélectionner.",
+                "theme1": "Nature",
+                "theme2": "Animaux",
+                "theme3": "Techno",
+                "size_small": "Petite",
+                "size_medium": "Moyenne",
+                "size_large": "Grande",
+                "hint": "Indice ({0})",
+                "no_hints": "Plus d'indices !",
+                "words_to_find": "Mots à trouver :",
+                "reset": "Recommencer",
+                "time": "Temps",
+                "best": "Top 3",
+                "success": "Bravo ! Tout trouvé !",
+                "new_record": "Nouveau Record !"
+            },
+            "philosophy": {
+                "title": "Définitions Philosophiques",
+                "desc": "Choisissez un concept pour en découvrir l'essence.",
+                "read_more": "Lire la suite sur Wikipédia"
+            }
+        },
+        "science": {
+            "title": "Science",
+            "gallery": {
+                "title": "Galerie NASA",
+                "desc": "Exploration des 20 dernières merveilles de la NASA Image and Video Library.",
+                "loading": "Chargement de la librairie...",
+                "source": "Source : NASA Image and Video Library",
+                "refresh": "Actualiser la Galerie",
+                "no_images": "Aucune image trouvée pour cette année.",
+                "error": "Impossible de charger la galerie.",
+                "error_detail": "(Erreur réseau ou API indisponible)",
+                "date_label": "Date inconnue",
+                "untitled": "Sans titre",
+                "no_desc": "Aucune description disponible.",
+                "lang_note": "(Description originale en anglais)"
+            },
+            "chatgpt": {
+                "title": "ChatGPT",
+                "desc": "Accès rapide à votre assistant IA préféré pour toutes vos questions.",
+                "button": "Ouvrir ChatGPT"
+            }
+        },
+        "footer": {
+            "back": "Retour au Portfolio",
+            "copyright": "© 2025 Soraya Codo – Side Quests"
+        }
+    }
+}
