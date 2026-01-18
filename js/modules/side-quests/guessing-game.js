@@ -37,12 +37,12 @@ window.nextGuessStep = function(response) {
     if (response !== undefined) {
         if (response === 'yes') {
             // Number is > mid
-            // New range: [mid + 1, max]
+            // [mid + 1, max]
             const mid = Math.floor((guessingGameRange.min + guessingGameRange.max) / 2);
             guessingGameRange.min = mid + 1;
         } else {
             // Number is <= mid
-            // New range: [min, mid]
+            // [min, mid]
             const mid = Math.floor((guessingGameRange.min + guessingGameRange.max) / 2);
             guessingGameRange.max = mid;
         }
