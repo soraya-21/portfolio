@@ -401,7 +401,10 @@
                 "time": "Temps",
                 "best": "Top 3",
                 "success": "Bravo ! Tout trouvé !",
-                "new_record": "Nouveau Record !"
+                "new_record": "Nouveau Record !",
+                "best_score_title": "Top 3 Meilleurs Scores",
+                "reset_score": "Réinitialiser les scores",
+                "reset_success": "Scores réinitialisés !"
             },
             "philosophy": {
                 "title": "Définitions Philosophiques",

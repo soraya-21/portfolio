@@ -107,6 +107,25 @@ window.resetWordSearch = function() {
     startWordSearchGame(); 
 };
 
+window.resetWsBestScore = function() {
+    const lang = window.currentLanguage || document.documentElement.lang || 'fr';
+    const key = `ws_top3_${wsCurrentThemeIndex}_${wsGridSize}_${lang}`;
+    localStorage.removeItem(key);
+    
+    // Also try to remove potential variations if any (legacy)
+    // localStorage.removeItem(`ws_top3_${wsCurrentThemeIndex}_${wsGridSize}_undefined`);
+
+    loadWsBestScore();
+    
+    // Feedback
+    const msgEl = document.getElementById('ws-message');
+    const resetText = window.getTranslation('side_quests.literature.word_search.reset_success', "Scores réinitialisés !");
+    if(msgEl) {
+        msgEl.innerHTML = `<span style="color: var(--text-light); font-size: 0.8rem;">${resetText}</span>`;
+        setTimeout(() => msgEl.innerHTML = "", 2000);
+    }
+};
+
 // Internal Helper Functions
 function updateActiveButton(selector, index) {
     const card = document.getElementById('ws-grid').closest('.quest-card');
@@ -519,6 +538,8 @@ function loadWsBestScore() {
     const el = document.getElementById('ws-best-score');
     if(!el) return;
 
+    const title = window.getTranslation('side_quests.literature.word_search.best_score_title', "Top 3 Best Score");
+
     if (scores.length > 0) {
         const formatTime = (s) => {
              const m = Math.floor(s / 60).toString().padStart(2, '0');
@@ -527,11 +548,11 @@ function loadWsBestScore() {
         };
         
         const top3Str = scores.map(formatTime).join(' | ');
-        el.innerHTML = `Top 3:<br>${top3Str}`;
+        el.innerHTML = `${title}:<br>${top3Str}`;
         el.style.fontSize = '0.75rem';
         el.style.textAlign = 'right';
     } else {
-        el.innerText = `Top 3: --:--`;
+        el.innerText = `${title}: --:--`;
     }
 }
 

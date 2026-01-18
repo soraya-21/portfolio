@@ -340,7 +340,10 @@
                 "time": "Akoko",
                 "best": "Top 3",
                 "success": "Bravo! Gbogbo ri!",
-                "new_record": "Igbasilẹ tuntun!"
+                "new_record": "Igbasilẹ tuntun!",
+                "best_score_title": "Top 3 Awọn ikun to dara julọ",
+                "reset_score": "Tun awọn ikun to dara julọ ṣe",
+                "reset_success": "Awọn ikun tunto!"
             },
             "philosophy": {
                 "title": "Awọn Itumọ Imọye",

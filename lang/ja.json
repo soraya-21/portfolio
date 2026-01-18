@@ -340,7 +340,10 @@
                 "time": "時間",
                 "best": "トップ3",
                 "success": "ブラボー！すべてが見つかりました！",
-                "new_record": "新記録！"
+                "new_record": "新記録！",
+                "best_score_title": "ベストスコア Top 3",
+                "reset_score": "ベストスコアをリセット",
+                "reset_success": "スコアがリセットされました！"
             },
             "philosophy": {
                 "title": "哲学的定義",

@@ -340,7 +340,10 @@
                 "time": "시간",
                 "best": "상위 3",
                 "success": "브라보! 모두 발견!",
-                "new_record": "신기록!"
+                "new_record": "신기록!",
+                "best_score_title": "최고 점수 Top 3",
+                "reset_score": "최고 점수 초기화",
+                "reset_success": "점수가 초기화되었습니다!"
             },
             "philosophy": {
                 "title": "철학적 정의",

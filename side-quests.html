@@ -316,9 +316,10 @@
         </div>
 
             <!-- Controls -->
-            <div style="display: flex; gap: 10px; justify-content: center;">
+            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
                 <button class="quest-btn" onclick="useHint()" id="ws-hint-btn" data-i18n="side_quests.literature.word_search.hint">Indice (3)</button>
                 <button class="quest-btn" onclick="resetWordSearch()" style="background: transparent; border: 1px solid var(--accent); color: var(--text);" data-i18n="side_quests.literature.word_search.reset">Recommencer</button>
+                <button class="quest-btn" onclick="resetWsBestScore()" style="background: transparent; border: 1px solid var(--accent-secondary); color: var(--text-light); font-size: 0.8rem; padding: 10px 15px;" data-i18n="side_quests.literature.word_search.reset_score">Reset Best Score</button>
             </div>
             
             <div id="ws-message" style="margin-top: 15px; text-align: center; min-height: 20px; font-weight: bold;"></div>

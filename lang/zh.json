@@ -340,7 +340,10 @@
                 "time": "时间",
                 "best": "前 3 名",
                 "success": "太棒了！全部找到！",
-                "new_record": "新纪录！"
+                "new_record": "新纪录！",
+                "best_score_title": "前3名最佳成绩",
+                "reset_score": "重置最佳成绩",
+                "reset_success": "成绩已重置！"
             },
             "philosophy": {
                 "title": "哲学定义",
