@@ -210,6 +210,39 @@
                         "sensitive": "손: 무향 (예: Bioderma Atoderm, Aveeno, Eucerin pH5). 발: 진정 (예: La Roche-Posay Lipikar, Avene XeraCalm, Uriage Keratosane).",
                         "default": "손을 씻은 후 보습하세요. 저녁에는 발을 관리하세요."
                     },
+                    "concerns": {
+                        "acne": {
+                            "advice": "살리실산(BHA)은 최고의 아군입니다. 보습을 잊지 마세요. 건조한 피부는 더 많은 피지를 생성합니다!",
+                            "products": "하이드로콜로이드 패치 (예: COSRX), 살리실산 (예: Paula's Choice 2% BHA), 나이아신아마이드"
+                        },
+                        "aging": {
+                            "advice": "레티놀은 안티에이징의 표준입니다. 밤에 천천히(주 1-2회) 시작하세요. 아침에는 SPF가 필수입니다!",
+                            "products": "레티놀 (예: CeraVe Resurfacing, The Ordinary 0.2%), 비타민 C (예: La Roche-Posay), SPF 50+"
+                        },
+                        "dullness": {
+                            "advice": "화학적 각질 제거(글리콜산 같은 AHA)와 비타민 C가 피부 광채를 깨워줄 것입니다.",
+                            "products": "비타민 C (예: Garnier, Vichy), 글리콜산 토너 (예: The Ordinary 7%), 광채 마스크"
+                        },
+                        "dry": {
+                            "advice": "'슬러깅'(밤에 바셀린을 얇게 바르는 것)은 피부 장벽을 보호할 수 있습니다.",
+                            "products": "히알루론산, 스쿠알란, 바셀린 (Aquaphor)"
+                        },
+                        "sensitive": {
+                            "advice": "루틴을 단순화하세요. 향료, 알코올, 물리적 스크럽을 피하세요.",
+                            "products": "병풀 추출물 (예: Dr. Jart+), 판테놀 (B5), 콜로이달 오트밀"
+                        },
+                        "pigmentation": {
+                            "advice": "티로시나아제 억제가 핵심입니다. 부드러운 각질 제거와 철저한 자외선 차단을 병행하여 잡티가 진해지는 것을 방지하세요.",
+                            "products": "티아미돌 (예: Eucerin Anti-Pigment), 트라넥사믹애씨드 (예: Paula's Choice, The Inkey List), 아젤라산 (예: The Ordinary 10%), 비타민 C (예: La Roche-Posay Pure Vitamin C10), SPF 50+ (필수!)"
+                        }
+                    },
+                    "labels": {
+                        "bonus": "보너스 :",
+                        "advice": "조언 :",
+                        "key_products": "주요 제품 :",
+                        "hands": "손",
+                        "feet": "발"
+                    },
                     "advice": {
                         "oily": "주 2회 살리실산을 사용하세요.",
                         "dry": "너무 뜨거운 물과 알코올 함유 제품을 피하세요.",

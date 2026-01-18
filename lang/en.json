@@ -197,19 +197,112 @@
                     "title": "Your Personalized Routine",
                     "pro_tip": "Pro Tip:",
                     "routines": {
-                        "oily": "Cleanser (e.g., CeraVe Foaming, La Roche-Posay Effaclar, Bioderma Sebium) + Serum (e.g., The Ordinary Niacinamide, Paula's Choice Pore, Inkey List Niacinamide) + Gel (e.g., Neutrogena Hydro Boost, Clinique Dramatically Different Gel, Versed Dew Point)",
-                        "dry": "Milk/Oil (e.g., La Roche-Posay Toleriane, DHC Oil, Aveeno Calm+Restore) + Serum (e.g., Hyalu B5, Vichy Minéral 89, The Ordinary HA) + Cream (e.g., CeraVe Cream, First Aid Beauty Ultra Repair, Vanicream)",
-                        "combo": "Gentle Gel (e.g., Bioderma Sensibio, Fresh Soy, Youth to the People) + Serum (e.g., The Ordinary Buffet, Caudalie Vinoperfect, Estée Lauder ANR) + Fluid (e.g., La Roche-Posay Effaclar Duo, Kiehl's Ultra Facial, Clinique Moisture Surge)",
-                        "sensitive": "Micellar/Milk (e.g., Bioderma Sensibio, Aveeno Calm, Cetaphil Gentle) + Serum (e.g., La Roche-Posay Toleriane, Dr. Jart+ Cicapair, Aveeno Triple Oat) + Balm (e.g., Cicaplast B5, Avene Cicalfate, La Roche-Posay Lipikar)",
-                        "default": "Gentle Cleanser + Light Moisturizer + Sun Protection"
+                        "oily": "Cleanser (e.g., CeraVe Foaming, La Roche-Posay Effaclar) | Purifying Serum (e.g., The Ordinary Niacinamide, Paula's Choice Pore) | Gel Moisturizer (e.g., Neutrogena Hydro Boost, Versed Dew Point)",
+                        "dry": "Milk/Oil Cleanser (e.g., La Roche-Posay Toleriane, DHC Oil) | Hydrating Serum (e.g., Hyalu B5, Vichy Minéral 89) | Rich Cream (e.g., CeraVe Cream, First Aid Beauty Ultra Repair)",
+                        "combo": "Gentle Gel Cleanser (e.g., Bioderma Sensibio, Fresh Soy) | Balancing Serum (e.g., The Ordinary Buffet, Caudalie Vinoperfect) | Fluid Moisturizer (e.g., La Roche-Posay Effaclar Duo, Clinique Moisture Surge)",
+                        "sensitive": "Micellar/Milk (e.g., Bioderma Sensibio, Aveeno Calm) | Soothing Serum (e.g., La Roche-Posay Toleriane, Dr. Jart+ Cicapair) | Repair Balm (e.g., Cicaplast B5, Avene Cicalfate)",
+                        "default": "Gentle Cleanser | Light Moisturizer | Sun Protection"
                     },
                     "hands_feet": {
                         "title": "Hands & Feet Care",
-                        "oily": "Hands: Light Cream (e.g., Neutrogena Hydro Boost, L'Occitane Verbena, Aesop Resurrection). Feet: Scrub (e.g., The Body Shop Peppermint, Lush Pumice) + Gel (e.g., Scholl Fresh, L'Occitane Shea).",
-                        "dry": "Hands: Repair Cream (e.g., CeraVe Hand, O'Keeffe's Working Hands, Neutrogena Norwegian). Feet: Urea (e.g., Eucerin 10% Urea, CeraVe SA Renewing, Gold Bond).",
-                        "combo": "Hands: Daily Moisture (e.g., Nivea Soft, Vaseline, Aveeno Daily). Feet: Nourishing (e.g., Burt's Bees Coconut, Palmer's Cocoa Butter, Sol de Janeiro).",
-                        "sensitive": "Hands: Fragrance-Free (e.g., Aveeno Relief, Eucerin Advanced, CeraVe Therapeutic). Feet: Soothing (e.g., La Roche-Posay Lipikar, Aveeno CICA, Cetaphil).",
-                        "default": "Moisturize your hands after every wash. Care for your feet at night."
+                        "intro": "Don't forget your extremities! Here are 5 recommendations for you:",
+                        "oily": {
+                            "hands": [
+                                "Light non-greasy cream (e.g., Neutrogena Hydro Boost, L'Occitane Verbena, Aesop Resurrection)",
+                                "Fresh gel (e.g., L'Occitane Verbena, The Body Shop Yogurt, Clarins Gel)",
+                                "Mattifying care (e.g., Caudalie Jelly, Bioderma Sebium, SVR Topialyse)",
+                                "Gentle scrub 1x/week (e.g., Aesop Reverence, L'Occitane Shea Scrub, Rituals Scrub)",
+                                "Hand serum (e.g., Dove Serum, Verso Hand Serum, OPI ProSpa)"
+                            ],
+                            "feet": [
+                                "Refreshing spray (e.g., Scholl, The Body Shop Peppermint, Akileïne)",
+                                "Pumice stone scrub (e.g., Dr. Scholl, Earth Therapeutics, EcoTools)",
+                                "Sea salt foot bath (e.g., Dr Teal's, Westlab, Kneipp)",
+                                "Cooling gel (e.g., Peppermint, L'Occitane Shea, Yves Rocher Lavande)",
+                                "Absorbent powder (e.g., Talc, Gold Bond, Scholl Powder)"
+                            ]
+                        },
+                        "dry": {
+                            "hands": [
+                                "Repair cream (e.g., CeraVe Hand, O'Keeffe's Working Hands, Neutrogena Norwegian)",
+                                "Night mask with gloves (e.g., Aveeno CICA, Burt's Bees, Sephora Hand Mask)",
+                                "Rich balm (e.g., O'Keeffe's, La Roche-Posay Cicaplast Mains, Eucerin Advanced)",
+                                "Cuticle oil (e.g., OPI, Essie Apricot, Sally Hansen)",
+                                "Barrier cream (e.g., Gold Bond, Uriage Bariederm, Avene Cicalfate)"
+                            ],
+                            "feet": [
+                                "Urea 10% Cream (e.g., Eucerin, CeraVe SA, Flexitol)",
+                                "Cracked heel balm (e.g., Flexitol, O'Keeffe's Healthy Feet, Scholl Cracked Heel)",
+                                "Moisturizing sock mask (e.g., Dr. Jart+, Sephora Foot Mask, Aveeno Repairing)",
+                                "Pure Shea Butter (e.g., L'Occitane, Cattier, Now Foods)",
+                                "Massage oil (e.g., Bio-Oil, Weleda Arnica, Palmer's Oil)"
+                            ]
+                        },
+                        "combo": {
+                            "hands": [
+                                "Daily cream (e.g., Nivea Soft, Vaseline Essential, Aveeno Daily)",
+                                "Hydrating lotion (e.g., Vaseline, Jergens, E45)",
+                                "Hand sunscreen (e.g., Supergoop! Handscreen, Eucerin Daily Hydration SPF, Neutrogena Age Shield)",
+                                "Nail & cuticle care (e.g., Burt's Bees Cuticle Cream, Dior Crème Abricot, L'Occitane Oil)",
+                                "Gentle sugar scrub (e.g., Tree Hut, Burt's Bees Hand Scrub, Homemade Sugar & Honey)"
+                            ],
+                            "feet": [
+                                "Nourishing cream (e.g., Palmer's Cocoa Butter, Burt's Bees Coconut, Sol de Janeiro)",
+                                "Relaxing foot bath (e.g., Dr Teal's Epsom Salt, Johnson's Foot Soap, The Body Shop Peppermint)",
+                                "Gentle pumice stone (e.g., Mr. Pumice, Tweezerman, Titania)",
+                                "Daily moisturizer (e.g., CeraVe SA Cream, Amlactin, Gold Bond Softening)",
+                                "Deodorant spray (e.g., Scholl, Arm & Hammer, Odor-Eaters)"
+                            ]
+                        },
+                        "sensitive": {
+                            "hands": [
+                                "Fragrance-free cream (e.g., Aveeno Relief, Eucerin Advanced, CeraVe Therapeutic)",
+                                "Soothing lotion (e.g., Eucerin, Lubriderm, Vanicream)",
+                                "Sweet almond oil (e.g., Now Solutions, Weleda, Sky Organics)",
+                                "Superfatted soap (e.g., Dove Beauty Bar, CeraVe Hydrating Bar, Cetaphil Bar)",
+                                "Cotton gloves for cleaning (Generic 100% Cotton Gloves)"
+                            ],
+                            "feet": [
+                                "Lipid-replenishing balm (e.g., Lipikar, Avene XeraCalm, Bioderma Atoderm)",
+                                "Soothing cream (e.g., Aveeno CICA, Cetaphil Moisturizing Cream, La Roche-Posay Lipikar)",
+                                "Warm oatmeal bath (e.g., Aveeno Soothing Bath Treatment)",
+                                "Bamboo/Cotton socks (Breathable natural fibers)",
+                                "Anti-friction stick (e.g., Compeed, Body Glide, Band-Aid Block)"
+                            ]
+                        }
+                    },
+                    "concerns": {
+                        "acne": {
+                            "advice": "Salicylic Acid (BHA) is your best ally. Don't forget to hydrate; dried-out skin produces more sebum!",
+                            "products": "Hydrocolloid Patches (e.g., COSRX), Salicylic Acid (e.g., Paula's Choice 2% BHA), Niacinamide"
+                        },
+                        "aging": {
+                            "advice": "Retinol is the gold standard for anti-aging. Start slowly (1-2 times a week) at night. SPF is mandatory in the morning!",
+                            "products": "Retinol (e.g., CeraVe Resurfacing, The Ordinary 0.2%), Vitamin C (e.g., La Roche-Posay), SPF 50+"
+                        },
+                        "dullness": {
+                            "advice": "Chemical exfoliation (AHA like Glycolic Acid) and Vitamin C will wake up your glow.",
+                            "products": "Vitamin C (e.g., Garnier, Vichy), Glycolic Acid Toner (e.g., The Ordinary 7%), Radiance Mask"
+                        },
+                        "dry": {
+                            "advice": "'Slugging' (applying a thin layer of Vaseline at night) can save your skin barrier.",
+                            "products": "Hyaluronic Acid, Squalane, Vaseline (Aquaphor)"
+                        },
+                        "sensitive": {
+                            "advice": "Simplify your routine. Avoid fragrances, alcohol, and physical scrubs.",
+                            "products": "Centella Asiatica (e.g., Dr. Jart+), Panthenol (B5), Colloidal Oatmeal"
+                        },
+                        "pigmentation": {
+                            "advice": "Inhibiting tyrosinase is key. Combine gentle exfoliation with strict sun protection to prevent spots from darkening.",
+                            "products": "Thiamidol (e.g., Eucerin Anti-Pigment), Tranexamic Acid (e.g., Paula's Choice, The Inkey List), Azelaic Acid (e.g., The Ordinary 10%), Vitamin C (e.g., La Roche-Posay Pure Vitamin C10), SPF 50+ (Mandatory!)"
+                        }
+                    },
+                    "labels": {
+                        "bonus": "Bonus:",
+                        "advice": "Tip:",
+                        "key_products": "Key Products:",
+                        "hands": "Hands",
+                        "feet": "Feet"
                     },
                     "advice": {
                         "oily": "Use salicylic acid twice a week.",

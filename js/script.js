@@ -44,20 +44,29 @@ const flags = {
     ko: "assets/flags/kr.png"
 };
 
+const nativeLanguageNames = {
+    fr: "Français",
+    en: "English",
+    yo: "Yorùbá",
+    zh: "中文",
+    ja: "日本語",
+    ko: "한국어"
+};
+
 function updateLanguageSelector() {
     const customOptions = document.querySelector('.custom-options');
     const selectedFlag = document.getElementById('selected-flag');
     const selectedText = document.getElementById('selected-lang-text');
     
-    if (!customOptions || !translations.languages) return;
+    if (!customOptions) return;
 
     // Update trigger
     if (selectedFlag) selectedFlag.src = flags[currentLang];
-    if (selectedText) selectedText.textContent = translations.languages[currentLang];
+    if (selectedText) selectedText.textContent = nativeLanguageNames[currentLang] || currentLang;
 
     // Build options
     customOptions.innerHTML = '';
-    Object.keys(translations.languages).forEach(langCode => {
+    Object.keys(nativeLanguageNames).forEach(langCode => {
         const option = document.createElement('div');
         option.classList.add('custom-option');
         if (langCode === currentLang) option.classList.add('selected');
@@ -65,7 +74,7 @@ function updateLanguageSelector() {
         
         option.innerHTML = `
             <img src="${flags[langCode]}" alt="${langCode}" class="flag-icon">
-            <span>${translations.languages[langCode]}</span>
+            <span>${nativeLanguageNames[langCode]}</span>
         `;
         
         option.addEventListener('click', () => {
@@ -79,6 +88,7 @@ function updateLanguageSelector() {
         customOptions.appendChild(option);
     });
 }
+
 
 // Custom Dropdown Event Listeners
 document.addEventListener('DOMContentLoaded', () => {

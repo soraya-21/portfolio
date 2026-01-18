@@ -210,6 +210,39 @@
                         "sensitive": "手部：无香 (例: Bioderma Atoderm, Aveeno, Eucerin pH5). 足部：舒缓 (例: La Roche-Posay Lipikar, Avene XeraCalm, Uriage Keratosane).",
                         "default": "洗手后保湿。晚上护理足部。"
                     },
+                    "concerns": {
+                        "acne": {
+                            "advice": "水杨酸 (BHA) 是你最好的盟友。别忘了补水；干燥的皮肤会产生更多油脂！",
+                            "products": "水胶体痘痘贴 (如 COSRX), 水杨酸 (如 Paula's Choice 2% BHA), 烟酰胺"
+                        },
+                        "aging": {
+                            "advice": "视黄醇是抗衰老的黄金标准。从晚上开始慢慢使用（每周 1-2 次）。早上必须使用防晒霜！",
+                            "products": "视黄醇 (如 CeraVe Resurfacing, The Ordinary 0.2%), 维生素 C (如 La Roche-Posay), SPF 50+"
+                        },
+                        "dullness": {
+                            "advice": "化学去角质（如乙醇酸等 AHA）和维生素 C 将唤醒你的光泽。",
+                            "products": "维生素 C (如 Garnier, Vichy), 乙醇酸爽肤水 (如 The Ordinary 7%), 光泽面膜"
+                        },
+                        "dry": {
+                            "advice": "“Slugging”（晚上涂一层薄薄的凡士林）可以拯救你的皮肤屏障。",
+                            "products": "玻尿酸, 角鲨烷, 凡士林 (Aquaphor)"
+                        },
+                        "sensitive": {
+                            "advice": "简化你的护肤流程。避免香精、酒精和物理磨砂。",
+                            "products": "积雪草 (如 Dr. Jart+), 泛醇 (B5), 胶体燕麦"
+                        },
+                        "pigmentation": {
+                            "advice": "抑制酪氨酸酶是关键。结合温和去角质和严格的防晒保护，防止斑点变黑。",
+                            "products": "Thiamidol (如 Eucerin Anti-Pigment), 传明酸 (如 Paula's Choice, The Inkey List), 壬二酸 (如 The Ordinary 10%), 维生素 C (如 La Roche-Posay Pure Vitamin C10), SPF 50+ (强制!)"
+                        }
+                    },
+                    "labels": {
+                        "bonus": "奖励 :",
+                        "advice": "建议 :",
+                        "key_products": "关键产品 :",
+                        "hands": "手部",
+                        "feet": "足部"
+                    },
                     "advice": {
                         "oily": "每周使用2次水杨酸。",
                         "dry": "避免水温过高和含酒精的产品。",

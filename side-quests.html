@@ -34,7 +34,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* Particles & Background Fix */
+        /* Particles & Background */
         html { background-color: var(--marine); }
         body { background-color: var(--marine); z-index: -2; }
         
@@ -44,7 +44,7 @@
             left: 0; 
             width: 100vw; 
             height: 100vh;
-            height: 100dvh; /* Mobile viewport fix */
+            height: 100dvh;
             z-index: -1; 
             display: block;
             background: radial-gradient(circle at top center, var(--marine-light) 0%, var(--marine) 80%);
@@ -83,8 +83,8 @@
         .quest-card:hover { 
             transform: translateY(-5px); 
             background: var(--card-hover); 
-            border-color: rgba(255, 255, 255, 0.2); /* Subtle Light Border */
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Deep Shadow for Depth */
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
         
         [data-theme="light"] .quest-card:hover {
@@ -94,8 +94,6 @@
 
         .quest-card:hover::after { opacity: 1; }
         
-        /* Removed borderRotate animation */
-
         .quest-header { text-align: center; margin-bottom: 20px; display: flex; flex-direction: column; align-items: center; }
         
         .quest-title { 
@@ -115,7 +113,6 @@
             transition: color 0.3s;
         }
 
-        /* Improve visibility on hover */
         .quest-card:hover .quest-desc { color: var(--text); }
         .quest-card:hover .quest-input-area p { color: var(--text); }
         
@@ -199,7 +196,7 @@
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
             </svg>
             <span data-i18n="side_quests.title">Side Quests</span>
-        </a></li> <!-- Hidden on self, visible on index -->
+        </a></li>
     </ul>
 
     <div class="lang-selector">
@@ -246,7 +243,7 @@
         <!-- Beauté & Soin -->
 <h3 id="beauty" style="margin-top: 80px;" data-i18n="side_quests.beauty.title">Beauté & Soin</h3>
 <div class="quest-grid">
-    <!-- Tool 5: Radiant Skincare -->
+    <!-- Tool 1: Radiant Skincare -->
     <div class="quest-card">
         <div class="quest-header">
             <div class="quest-title" data-i18n="side_quests.beauty.radiant.title">Radiant Skincare</div>
@@ -273,7 +270,7 @@
         <!-- Literature & Nature -->
 <h3 id="poetry" style="margin-top: 80px;" data-i18n="side_quests.literature.title">Littérature & Nature</h3>
 
-<!-- Tool 3: Mots Mêlés (Full Width) -->
+<!-- Tool 2: Mots Mêlés (Full Width) -->
 <div class="quest-card" style="margin-bottom: 40px;">
     <div class="quest-header">
         <div class="quest-title" data-i18n="side_quests.literature.word_search.title">Mots Mêlés</div>
@@ -299,7 +296,7 @@
         <!-- Timer & Best Scores -->
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-size: 0.9rem; color: var(--text-light);">
             <div id="ws-timer">00:00</div>
-            <div id="ws-best-score">Top 3: --:--</div>
+            <div id="ws-best-score">Top 3: --:--:--</div>
         </div>
 
         <!-- Game Area: Grid + Word List -->
@@ -329,7 +326,7 @@
 </div>
 
 <div class="quest-grid">
-    <!-- Tool 1: Citation Célèbre -->
+    <!-- Tool 4: Citation Célèbre -->
     <div class="quest-card">
         <div class="quest-header">
             <div class="quest-title" data-i18n="side_quests.literature.quote.title">Citation Célèbre</div>
@@ -350,7 +347,7 @@
         <div id="quote-result" class="quest-result"></div>
     </div>
 
-    <!-- Tool 2: Rime-Moi Vert -->
+    <!-- Tool 5: Rime-Moi Vert -->
     <div class="quest-card">
         <div class="quest-header">
             <div class="quest-title" data-i18n="side_quests.literature.rhyme.title">Rime-Moi Vert</div>
@@ -363,7 +360,7 @@
         <div id="nature-poem-result" class="quest-result" style="text-align: left;"></div>
     </div>
 
-    <!-- Tool 4: Philosophical Definitions -->
+    <!-- Tool 6: Philosophical Definitions -->
     <div class="quest-card">
         <div class="quest-header">
             <div class="quest-title" data-i18n="side_quests.literature.philosophy.title">Définitions Philosophiques</div>
@@ -381,8 +378,8 @@
         
         <!-- Science & Tech -->
 <h3 id="science" style="margin-top: 80px;" data-i18n="side_quests.science.title">Science</h3>
-<div class="quest-grid" style="grid-template-columns: 1fr;"> <!-- Full width for gallery -->
-    <!-- Tool 3: NASA Image and Video Library Gallery -->
+<div class="quest-grid" style="grid-template-columns: 1fr;">
+    <!-- Tool 7: NASA Image and Video Library Gallery -->
     <div class="quest-card" style="overflow-x: auto;">
         <div class="quest-header">
             <div class="quest-title" data-i18n="side_quests.science.gallery.title">Galerie NASA</div>
@@ -413,6 +410,13 @@
 </footer>
 
 <script src="js/script.js"></script>
-<script src="js/side-quests.js"></script>
+    <!-- Load Side Quest Modules (Split for better maintenance) -->
+    <script src="js/modules/side-quests/utils.js"></script>
+    <script src="js/modules/side-quests/word-search.js"></script>
+    <script src="js/modules/side-quests/nasa.js"></script>
+    <script src="js/modules/side-quests/literature.js"></script>
+    <script src="js/modules/side-quests/philosophy.js"></script>
+    <script src="js/modules/side-quests/skincare.js"></script>
+    <script src="js/modules/side-quests/main.js"></script>
 </body>
 </html>

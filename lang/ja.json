@@ -210,6 +210,39 @@
                         "sensitive": "手：無香料 (例: Bioderma Atoderm, Aveeno, Eucerin pH5). 足：鎮静 (例: La Roche-Posay Lipikar, Avene XeraCalm, Uriage Keratosane).",
                         "default": "手洗い後は手を保湿してください。夜は足のケアを。"
                     },
+                    "concerns": {
+                        "acne": {
+                            "advice": "サリチル酸 (BHA) はあなたの強い味方です。保湿を忘れずに。乾燥した肌はより多くの皮脂を分泌します！",
+                            "products": "ハイドロコロイドパッチ (例: COSRX), サリチル酸 (例: Paula's Choice 2% BHA), ナイアシンアミド"
+                        },
+                        "aging": {
+                            "advice": "レチノールはアンチエイジングのゴールドスタンダードです。夜に少しずつ（週1〜2回）始めましょう。朝はSPFが必須です！",
+                            "products": "レチノール (例: CeraVe Resurfacing, The Ordinary 0.2%), ビタミンC (例: La Roche-Posay), SPF 50+"
+                        },
+                        "dullness": {
+                            "advice": "化学的ピーリング（グリコール酸などのAHA）とビタミンCが、肌の輝きを目覚めさせます。",
+                            "products": "ビタミンC (例: Garnier, Vichy), グリコール酸トナー (例: The Ordinary 7%), 輝きマスク"
+                        },
+                        "dry": {
+                            "advice": "「スラッギング」（夜にワセリンを薄く塗る）は、肌のバリアを救うことができます。",
+                            "products": "ヒアルロン酸, スクワラン, ワセリン (Aquaphor)"
+                        },
+                        "sensitive": {
+                            "advice": "ルーチンをシンプルにしましょう。香料、アルコール、物理的なスクラブは避けてください。",
+                            "products": "ツボクサ (例: Dr. Jart+), パンテノール (B5), コロイド状オートミール"
+                        },
+                        "pigmentation": {
+                            "advice": "チロシナーゼの阻害が鍵です。穏やかな角質除去と厳格な日焼け止めを組み合わせて、シミが濃くなるのを防ぎます。",
+                            "products": "チアミドール (例: Eucerin Anti-Pigment), トラネキサム酸 (例: Paula's Choice, The Inkey List), アゼライン酸 (例: The Ordinary 10%), ビタミンC (例: La Roche-Posay Pure Vitamin C10), SPF 50+ (必須!)"
+                        }
+                    },
+                    "labels": {
+                        "bonus": "ボーナス :",
+                        "advice": "アドバイス :",
+                        "key_products": "主要製品 :",
+                        "hands": "手",
+                        "feet": "足"
+                    },
                     "advice": {
                         "oily": "週2回サリチル酸を使用してください。",
                         "dry": "熱すぎるお湯やアルコールを含む製品は避けてください。",

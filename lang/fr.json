@@ -197,19 +197,112 @@
                     "title": "Votre Routine Personnalisée",
                     "pro_tip": "Conseil Pro :",
                     "routines": {
-                        "oily": "Nettoyant (ex: CeraVe Moussant, La Roche-Posay Effaclar, Bioderma Sébium) + Sérum (ex: The Ordinary Niacinamide, SVR Sebiaclear, Paula's Choice Niacinamide) + Gel (ex: Neutrogena Hydro Boost, Clinique Dramatically Different Gel, Bioderma Sébium Mat)",
-                        "dry": "Lait/Huile (ex: La Roche-Posay Toleriane, DHC Huile, Avène Tolérance) + Sérum (ex: La Roche-Posay Hyalu B5, Vichy Minéral 89, The Ordinary Hyaluronic) + Crème (ex: CeraVe Pot, Avene XeraCalm, Embryolisse Lait-Crème)",
-                        "combo": "Gel Doux (ex: Bioderma Sensibio, Fresh Soy, Cetaphil Gentle) + Sérum (ex: The Ordinary Buffet, Caudalie Vinoperfect, Estée Lauder ANR) + Fluide (ex: La Roche-Posay Effaclar Duo, Clinique Moisture Surge, Kiehl's Ultra Facial)",
-                        "sensitive": "Eau Micellaire/Lait (ex: Bioderma Créaline, Avene Lait, La Roche-Posay Dermo-Nettoyant) + Sérum (ex: La Roche-Posay Toleriane Ultra, Dr. Jart+ Cicapair, Avene Hydrance) + Baume (ex: Cicaplast B5, Avene Cicalfate, Uriage Bariéderm)",
-                        "default": "Nettoyant doux + Hydratant léger + Protection solaire"
+                        "oily": "Nettoyant (ex: CeraVe Moussant, La Roche-Posay Effaclar) | Sérum Purifiant (ex: The Ordinary Niacinamide, SVR Sebiaclear) | Gel Hydratant (ex: Neutrogena Hydro Boost, Bioderma Sébium Mat)",
+                        "dry": "Lait/Huile Nettoyante (ex: La Roche-Posay Toleriane, DHC Huile) | Sérum Hydratant (ex: La Roche-Posay Hyalu B5, Vichy Minéral 89) | Crème Riche (ex: CeraVe Pot, Avene XeraCalm)",
+                        "combo": "Gel Nettoyant Doux (ex: Bioderma Sensibio, Fresh Soy) | Sérum Équilibrant (ex: The Ordinary Buffet, Caudalie Vinoperfect) | Fluide Hydratant (ex: La Roche-Posay Effaclar Duo, Clinique Moisture Surge)",
+                        "sensitive": "Eau Micellaire/Lait (ex: Bioderma Créaline, Avene Lait) | Sérum Apaisant (ex: La Roche-Posay Toleriane Ultra, Dr. Jart+ Cicapair) | Baume Réparateur (ex: Cicaplast B5, Avene Cicalfate)",
+                        "default": "Nettoyant doux | Hydratant léger | Protection solaire"
                     },
                     "hands_feet": {
                         "title": "Soins Mains & Pieds",
-                        "oily": "Mains : Crème légère (ex: Neutrogena Hydro Boost, L'Occitane Verveine, Caudalie Gelée). Pieds : Exfoliant (ex: Scholl, The Body Shop Menthe, Mercurochrome) + Gel (ex: Akileïne Gel Frais, Yves Rocher Lavande, Scholl Gel).",
-                        "dry": "Mains : Crème Riche (ex: CeraVe Mains, Cicaplast Mains, Neutrogena Norvégienne). Pieds : Urée (ex: Eucerin 10% Urea, CeraVe SA Pieds, SVR Xérial 30).",
-                        "combo": "Mains : Hydratation (ex: Nivea Mains, Mixa Intensif, Bioderma Atoderm). Pieds : Nourrissant (ex: Neutrogena Pieds Très Secs, Scholl Crème, Palmer's Cocoa Butter).",
-                        "sensitive": "Mains : Sans parfum (ex: Bioderma Atoderm, Aveeno, Eucerin pH5). Pieds : Apaisant (ex: La Roche-Posay Lipikar, Avene XeraCalm, Uriage Kératosane).",
-                        "default": "Hydratez vos mains après chaque lavage. Prenez soin de vos pieds le soir."
+                        "intro": "Vos extrémités méritent aussi de l'attention :",
+                        "oily": {
+                            "hands": [
+                                "Crème légère non grasse (ex: Neutrogena Hydro Boost)",
+                                "Gelée fraîche (ex: L'Occitane Verveine)",
+                                "Soin matifiant (ex: Caudalie Gelée)",
+                                "Exfoliant doux 1x/semaine",
+                                "Sérum mains (ex: Dove)"
+                            ],
+                            "feet": [
+                                "Spray rafraîchissant (ex: Scholl)",
+                                "Gommage pierre ponce",
+                                "Bain de pieds au sel marin",
+                                "Gel effet glaçon (ex: Akileïne)",
+                                "Poudre absorbante (ex: Talc)"
+                            ]
+                        },
+                        "dry": {
+                            "hands": [
+                                "Crème réparatrice (ex: CeraVe Mains)",
+                                "Masque de nuit avec gants",
+                                "Baume riche (ex: Cicaplast Mains)",
+                                "Huile cuticules (ex: OPI)",
+                                "Crème barrière (ex: Uriage)"
+                            ],
+                            "feet": [
+                                "Crème Urée 10% (ex: Eucerin)",
+                                "Baume talon crevassé (ex: Scholl)",
+                                "Masque chaussette hydratant",
+                                "Beurre de karité pur",
+                                "Huile de massage (ex: Weleda)"
+                            ]
+                        },
+                        "combo": {
+                            "hands": [
+                                "Crème quotidienne (ex: Nivea Soft)",
+                                "Lotion hydratante (ex: Vaseline)",
+                                "Crème solaire mains",
+                                "Soin ongles et cuticules",
+                                "Gommage doux au sucre"
+                            ],
+                            "feet": [
+                                "Crème nourrissante (ex: Palmer's)",
+                                "Bain de pieds relaxant",
+                                "Pierre ponce douce",
+                                "Soin hydratant quotidien",
+                                "Spray déodorant (optionnel)"
+                            ]
+                        },
+                        "sensitive": {
+                            "hands": [
+                                "Crème sans parfum (ex: Bioderma Atoderm)",
+                                "Lait apaisant (ex: Aveeno)",
+                                "Huile d'amande douce",
+                                "Savon surgras",
+                                "Gants en coton pour le ménage"
+                            ],
+                            "feet": [
+                                "Baume relipidant (ex: Lipikar)",
+                                "Crème apaisante (ex: Avene XeraCalm)",
+                                "Bain tiède à l'avoine",
+                                "Chaussettes en bambou/coton",
+                                "Stick anti-frottement"
+                            ]
+                        }
+                    },
+                    "concerns": {
+                        "acne": {
+                            "advice": "L'acide salicylique (BHA) est votre meilleur allié. N'oubliez pas d'hydrater, une peau asséchée produit plus de sébum !",
+                            "products": "Patchs Hydrocolloïdes (ex: COSRX), Acide Salicylique (ex: Paula's Choice 2% BHA), Niacinamide"
+                        },
+                        "aging": {
+                            "advice": "Le Rétinol est l'étalon-or de l'anti-âge. Commencez doucement (1-2 fois par semaine) le soir. SPF obligatoire le matin !",
+                            "products": "Rétinol (ex: CeraVe Resurfacing, The Ordinary 0.2%), Vitamine C (ex: La Roche-Posay), SPF 50+"
+                        },
+                        "dullness": {
+                            "advice": "L'exfoliation chimique (AHA comme l'acide glycolique) et la Vitamine C vont réveiller votre éclat.",
+                            "products": "Vitamine C (ex: Garnier, Vichy), Tonique Acide Glycolique (ex: The Ordinary 7%), Masque Éclat"
+                        },
+                        "dry": {
+                            "advice": "Le 'Slugging' (appliquer une fine couche de vaseline le soir) peut sauver votre barrière cutanée.",
+                            "products": "Acide Hyaluronique, Squalane, Vaseline (Aquaphor)"
+                        },
+                        "sensitive": {
+                            "advice": "Simplifiez votre routine. Évitez les parfums, l'alcool et les gommages à grains.",
+                            "products": "Centella Asiatica (ex: Dr. Jart+), Panthénol (B5), Avoine Colloïdale"
+                        },
+                        "pigmentation": {
+                            "advice": "L'inhibition de la tyrosinase est clé. Combinez exfoliation douce et protection solaire stricte pour éviter que les taches ne foncent.",
+                            "products": "Thiamidol (ex: Eucerin Anti-Pigment), Acide Tranexamique (ex: Paula's Choice, The Inkey List), Acide Azélaïque (ex: The Ordinary 10%), Vitamine C (ex: La Roche-Posay Pure Vitamin C10), SPF 50+ (Obligatoire !)"
+                        }
+                    },
+                    "labels": {
+                        "bonus": "Bonus :",
+                        "advice": "Conseil :",
+                        "key_products": "Produits clés :",
+                        "hands": "Mains",
+                        "feet": "Pieds"
                     },
                     "advice": {
                         "oily": "Utilisez de l'acide salicylique 2x par semaine.",
