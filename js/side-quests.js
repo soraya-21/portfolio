@@ -490,25 +490,39 @@ window.handleTranslate = async function(btn, index) {
 // 6. Word Search Logic
 const wordSearchThemes = {
     'fr': [
-        { name: "Nature", words: ["ARBRE", "FLEUR", "SOLEIL", "LUNE", "RIVIERE", "FORET", "MONTAGNE", "OCEAN", "PLUIE", "NUAGE", "HERBE", "TERRE", "ETOILE", "CIEL", "VENT", "ORAGE", "NEIGE", "DESERT", "VOLCAN", "LAGON"] },
-        { name: "Animaux", words: ["LION", "TIGRE", "OURS", "AIGLE", "REQUIN", "LOUP", "RENARD", "PANDA", "CHIEN", "CHAT", "CHEVAL", "ELEPHANT", "GIRAFE", "SINGE", "SERPENT", "OISEAU", "DAUPHIN", "BALEINE", "PAPILLON", "TORTUE"] },
-        { name: "Techno", words: ["CODE", "ROBOT", "DATA", "WIFI", "PIXEL", "CYBER", "ECRAN", "SOURIS", "CLAVIER", "RESEAU", "PUCE", "SERVER", "CLOUD", "APP", "JAVA", "PYTHON", "LINUX", "GAMING", "VIRUS", "HACKER"] }
+        { name: "Nature", words: ["ARBRE", "FLEUR", "SOLEIL", "LUNE", "RIVIERE", "MONTAGNE", "FORET", "OCEAN", "NUAGE", "ETOILE", "VAGUE", "SABLE", "ROCHER", "PLUIE", "NEIGE", "VENT", "ORAGE", "FEUILLE", "BRANCHE", "RACINE", "HERBE", "MOUSSE", "CAILLOU", "SOURCE", "VOLCAN", "DESERT", "CASCADE", "GROTTE", "VALLEE", "COLLINE", "PRAIRIE", "MARAIS", "ETANG", "LAGON", "RECIF", "CANYON", "OASIS", "GIVRE", "BRUME", "FOUDRE"] },
+        { name: "Animaux", words: ["LION", "TIGRE", "OURS", "AIGLE", "REQUIN", "PANDA", "LOUP", "RENARD", "ZEBRE", "ELEPHANT", "GIRAFE", "SINGE", "SERPENT", "TORTUE", "DAUPHIN", "BALEINE", "CHOUETTE", "HIBOU", "CORBEAU", "CYGNE", "CANARD", "POULE", "VACHE", "MOUTON", "CHEVAL", "CHIEN", "CHAT", "SOURIS", "LAPIN", "ECUREUIL", "HERISSON", "CERF", "BICHE", "SANGLIER", "BLAIREAU", "CASTOR", "LOUTRE", "PHOQUE", "PINGOUIN", "GUEPARD"] },
+        { name: "Techno", words: ["CODE", "DATA", "ROBOT", "PIXEL", "RESEAU", "ECRAN", "CLAVIER", "SOURIS", "WIFI", "CLOUD", "SERVER", "JAVA", "PYTHON", "HTML", "CSS", "REACT", "NODE", "LINUX", "WINDOWS", "APPLE", "GOOGLE", "AMAZON", "FACEBOOK", "TWITTER", "INSTA", "ALGO", "CACHE", "BUG", "DEBUG", "FRAMEWORK", "API", "JSON", "REST", "SQL", "MONGO", "DOCKER", "GIT", "GITHUB", "GITLAB", "VSCODE"] }
     ],
     'en': [
-        { name: "Nature", words: ["TREE", "FLOWER", "SUN", "MOON", "RIVER", "FOREST", "MOUNTAIN", "OCEAN", "RAIN", "CLOUD", "GRASS", "EARTH", "STAR", "SKY", "WIND", "STORM", "SNOW", "DESERT", "VOLCANO", "LAGOON"] },
-        { name: "Animals", words: ["LION", "TIGER", "BEAR", "EAGLE", "SHARK", "WOLF", "FOX", "PANDA", "DOG", "CAT", "HORSE", "ELEPHANT", "GIRAFFE", "MONKEY", "SNAKE", "BIRD", "DOLPHIN", "WHALE", "BUTTERFLY", "TURTLE"] },
-        { name: "Tech", words: ["CODE", "ROBOT", "DATA", "WIFI", "PIXEL", "CYBER", "SCREEN", "MOUSE", "KEYBOARD", "NETWORK", "CHIP", "SERVER", "CLOUD", "APP", "JAVA", "PYTHON", "LINUX", "GAMING", "VIRUS", "HACKER"] }
+        { name: "Nature", words: ["TREE", "FLOWER", "SUN", "MOON", "RIVER", "MOUNTAIN", "FOREST", "OCEAN", "CLOUD", "STAR", "WAVE", "SAND", "ROCK", "RAIN", "SNOW", "WIND", "STORM", "LEAF", "BRANCH", "ROOT", "GRASS", "MOSS", "STONE", "SPRING", "VOLCANO", "DESERT", "VALLEY", "HILL", "MEADOW", "SWAMP", "POND", "LAGOON", "REEF", "CANYON", "OASIS", "FROST", "MIST", "THUNDER", "LIGHTNING", "CAVE"] },
+        { name: "Animals", words: ["LION", "TIGER", "BEAR", "EAGLE", "SHARK", "PANDA", "WOLF", "FOX", "ZEBRA", "ELEPHANT", "GIRAFFE", "MONKEY", "SNAKE", "TURTLE", "DOLPHIN", "WHALE", "OWL", "CROW", "SWAN", "DUCK", "HEN", "COW", "SHEEP", "HORSE", "GOAT", "DOG", "CAT", "MOUSE", "RABBIT", "SQUIRREL", "DEER", "BOAR", "BADGER", "BEAVER", "OTTER", "SEAL", "PENGUIN", "CHEETAH", "LEOPARD", "JAGUAR"] },
+        { name: "Tech", words: ["CODE", "DATA", "ROBOT", "PIXEL", "NETWORK", "SCREEN", "KEYBOARD", "MOUSE", "WIFI", "CLOUD", "SERVER", "JAVA", "PYTHON", "HTML", "CSS", "REACT", "NODE", "LINUX", "WINDOWS", "APPLE", "GOOGLE", "AMAZON", "FACEBOOK", "TWITTER", "INSTA", "ALGO", "CACHE", "BUG", "DEBUG", "FRAMEWORK", "API", "JSON", "REST", "SQL", "MONGO", "DOCKER", "GIT", "GITHUB", "GITLAB", "VSCODE"] }
     ],
     'yo': [
-        { name: "Iseda", words: ["IGI", "ODOODO", "OORUN", "OSUPA", "ODO", "IGBO", "OKE", "OKUN", "OJO", "IKUUKU", "EWE", "ILE", "IRAWO", "OFURUFU", "AFEFE", "IJI", "YO", "IYEPURU", "INA", "OMI"] },
-        { name: "Eranko", words: ["KINNIUN", "EKUN", "BEARI", "IDIPU", "SHARK", "IKOKO", "KOLOKOLO", "PANDA", "AJA", "OLOGBO", "ESIN", "ERIN", "AGUNTAN", "OBO", "EJO", "EYE", "EJA", "LABALABA", "IJAPA", "PEPEYE"] },
-        { name: "Imọ-ẹrọ", words: ["CODE", "ROBOT", "DATA", "WIFI", "PIXEL", "CYBER", "SCREEN", "MOUSE", "KEYBOARD", "NETWORK", "CHIP", "SERVER", "CLOUD", "APP", "JAVA", "PYTHON", "LINUX", "GAMING", "VIRUS", "HACKER"] }
+        { name: "Iseda", words: ["IGI", "ODO", "ORUN", "OSUPA", "OKE", "IGBO", "OKUN", "IRAWO", "EWE", "GBONGBO", "AFEFE", "IJI", "OJO", "ERUPE", "IYEP", "OKUTA", "ILU", "IGBI", "KURUKURU", "AMO", "AGINJU", "AFONIFOJI", "PAPA", "ERUN", "OGBE", "ODU", "OGIRI", "IYANRIN", "ERUP", "ERANKO", "EWEKO", "ISO", "ITANNA", "KOTO", "IHO", "OKUN"] },
+        { name: "Eranko", words: ["KINNIUN", "EKUN", "ABAMI", "IDI", "ERIN", "EJO", "AGUNTAN", "EWURE", "ADIE", "EYE", "EJA", "IGUN", "OWIW", "ASA", "LOGBO", "AJJA", "OOLOGBO", "ELEDE", "KETEKETE", "ESIN", "EKUTE", "AGBE", "ALUKO", "ODIDE", "LEKELEKE", "APARO", "ETU", "IYA", "OYA", "OKETE", "IGUN", "AKERE", "OPOLO", "ALANGBA", "AWUN"] },
+        { name: "Imọ-ẹrọ", words: ["ERO", "AYELUJARA", "DATA", "PIXEL", "WIFI", "CLOUD", "SERVER", "CODE", "ROBOT", "SCREEN", "KEYBOARD", "MOUSE", "PHONE", "LAPTOP", "TABLET", "APP", "WEB", "LINK", "FILE", "FOLDER", "VIDEO", "AUDIO", "IMAGE", "TEXT", "CHAT", "EMAIL", "LOGIN", "PASS", "USER", "ADMIN", "NET", "SITE", "PAGE", "POST", "LIKE"] }
     ],
-    // Fallbacks for other languages can be added here or use EN/FR
+    'zh': [
+        { name: "自然", words: ["树木", "花朵", "太阳", "月亮", "河流", "高山", "森林", "海洋", "云彩", "星星", "波浪", "沙子", "岩石", "雨水", "雪花", "风", "雷暴", "树叶", "树枝", "根", "草", "苔藓", "石头", "泉水", "火山", "沙漠", "瀑布", "洞穴", "山谷", "丘陵", "草原", "沼泽", "池塘", "泻湖", "珊瑚礁", "峡谷", "绿洲", "霜", "雾", "闪电"] },
+        { name: "动物", words: ["狮子", "老虎", "熊", "鹰", "鲨鱼", "熊猫", "狼", "狐狸", "斑马", "大象", "长颈鹿", "猴子", "蛇", "乌龟", "海豚", "鲸鱼", "猫头鹰", "乌鸦", "天鹅", "鸭子", "母鸡", "奶牛", "绵羊", "马", "山羊", "狗", "猫", "老鼠", "兔子", "松鼠", "刺猬", "鹿", "野猪", "獾", "海狸", "水獭", "海豹", "企鹅", "猎豹", "豹"] },
+        { name: "科技", words: ["代码", "数据", "机器人", "像素", "网络", "屏幕", "键盘", "鼠标", "无线", "云端", "服务器", "JAVA", "PYTHON", "HTML", "CSS", "REACT", "NODE", "LINUX", "WINDOWS", "APPLE", "GOOGLE", "AMAZON", "FACEBOOK", "TWITTER", "INSTA", "算法", "缓存", "漏洞", "调试", "框架", "接口", "JSON", "REST", "SQL", "MONGO", "DOCKER", "GIT", "GITHUB", "GITLAB", "VSCODE"] }
+    ],
+    'ja': [
+        { name: "自然", words: ["木", "花", "太陽", "月", "川", "山", "森", "海", "雲", "星", "波", "砂", "岩", "雨", "雪", "風", "嵐", "葉", "枝", "根", "草", "苔", "石", "泉", "火山", "砂漠", "滝", "洞窟", "谷", "丘", "草原", "沼", "池", "礁", "峡谷", "オアシス", "霜", "霧", "雷", "稲妻"] },
+        { name: "動物", words: ["ライオン", "トラ", "クマ", "ワシ", "サメ", "パンダ", "オオカミ", "キツネ", "シマウマ", "ゾウ", "キリン", "サル", "ヘビ", "カメ", "イルカ", "クジラ", "フクロウ", "カラス", "白鳥", "アヒル", "ニワトリ", "牛", "羊", "馬", "ヤギ", "犬", "猫", "ネズミ", "ウサギ", "リス", "ハリネズミ", "鹿", "イノシシ", "アナグマ", "ビーバー", "カワウソ", "アザラシ", "ペンギン", "チーター", "ヒョウ"] },
+        { name: "技術", words: ["コード", "データ", "ロボット", "ピクセル", "ネット", "画面", "キーボード", "マウス", "WIFI", "クラウド", "サーバ", "JAVA", "PYTHON", "HTML", "CSS", "REACT", "NODE", "LINUX", "WINDOWS", "APPLE", "GOOGLE", "AMAZON", "FACEBOOK", "TWITTER", "INSTA", "アルゴ", "キャッシュ", "バグ", "デバッグ", "フレームワーク", "API", "JSON", "REST", "SQL", "MONGO", "DOCKER", "GIT", "GITHUB", "GITLAB", "VSCODE"] }
+    ],
+    'ko': [
+        { name: "자연", words: ["나무", "꽃", "태양", "달", "강", "산", "숲", "바다", "구름", "별", "파도", "모래", "바위", "비", "눈", "바람", "폭풍", "잎", "가지", "뿌리", "풀", "이끼", "돌", "샘", "화산", "사막", "폭포", "동굴", "계곡", "언덕", "초원", "늪", "연못", "산호초", "협곡", "오아시스", "서리", "안개", "천둥", "번개"] },
+        { name: "동물", words: ["사자", "호랑이", "곰", "독수리", "상어", "팬더", "늑대", "여우", "얼룩말", "코끼리", "기린", "원숭이", "뱀", "거북이", "돌고래", "고래", "부엉이", "까마귀", "백조", "오리", "암탉", "소", "양", "말", "염소", "개", "고양이", "쥐", "토끼", "다람쥐", "고슴도치", "사슴", "멧돼지", "오소리", "비버", "수달", "물개", "펭귄", "치타", "표범"] },
+        { name: "기술", words: ["코드", "데이터", "로봇", "픽셀", "네트워크", "화면", "키보드", "마우스", "와이파이", "클라우드", "서버", "JAVA", "PYTHON", "HTML", "CSS", "REACT", "NODE", "LINUX", "WINDOWS", "APPLE", "GOOGLE", "AMAZON", "FACEBOOK", "TWITTER", "INSTA", "알고리즘", "캐시", "버그", "디버그", "프레임워크", "API", "JSON", "REST", "SQL", "MONGO", "DOCKER", "GIT", "GITHUB", "GITLAB", "VSCODE"] }
+    ],
     'default': [
-        { name: "Theme 1", words: ["HELLO", "WORLD", "GAME", "PLAY", "FUN", "CODE", "MUSIC", "ART", "BOOK", "PEN", "PAPER", "INK", "DESK", "CHAIR", "LAMP", "ROOM"] },
-        { name: "Theme 2", words: ["APPLE", "BANANA", "CHERRY", "DATE", "ELDER", "FIG", "GRAPE", "HONEY", "ICE", "JAM", "KIWI", "LEMON", "MANGO", "NUT", "OLIVE", "PEAR"] },
-        { name: "Theme 3", words: ["RED", "GREEN", "BLUE", "YELLOW", "PINK", "BLACK", "WHITE", "GRAY", "ORANGE", "PURPLE", "BROWN", "GOLD", "SILVER", "TEAL", "NAVY", "CYAN"] }
+        { name: "Theme 1", words: ["HELLO", "WORLD", "GAME", "PLAY", "FUN", "CODE", "MUSIC", "ART", "BOOK", "PEN", "PAPER", "INK", "DESK", "CHAIR", "LAMP", "ROOM", "PHONE", "WATCH", "CLOCK", "TIME", "DAY", "NIGHT", "YEAR", "MONTH", "WEEK"] },
+        { name: "Theme 2", words: ["APPLE", "BANANA", "CHERRY", "DATE", "ELDER", "FIG", "GRAPE", "HONEY", "ICE", "JAM", "KIWI", "LEMON", "MANGO", "NUT", "OLIVE", "PEAR", "PLUM", "QUINCE", "RAISIN", "STRAW", "TOMATO", "UGLI", "VANILLA", "WATER", "YAM"] },
+        { name: "Theme 3", words: ["RED", "GREEN", "BLUE", "YELLOW", "PINK", "BLACK", "WHITE", "GRAY", "ORANGE", "PURPLE", "BROWN", "GOLD", "SILVER", "TEAL", "NAVY", "CYAN", "LIME", "MAROON", "OLIVE", "VIOLET", "INDIGO", "BEIGE", "IVORY", "OCHRE", "RUBY"] }
     ]
 };
 
@@ -627,7 +641,11 @@ function generateGrid(words) {
         let placed = false;
         let attempts = 0;
         while (!placed && attempts < 100) {
-            const dir = Math.floor(Math.random() * 3); // 0: H, 1: V, 2: Diag
+            // Updated directions: 
+            // 0: H (0,1), 1: V (1,0), 2: Diag (1,1), 3: Rev H (0,-1)
+            // 4: Rev V (-1,0), 5: Rev Diag (-1,-1), 6: Diag Up-Right (-1,1), 7: Diag Down-Left (1,-1)
+            // We'll support all 8 directions for maximum challenge!
+            const dir = Math.floor(Math.random() * 8); 
             const r = Math.floor(Math.random() * wsGridSize);
             const c = Math.floor(Math.random() * wsGridSize);
             
@@ -656,30 +674,43 @@ function generateGrid(words) {
 }
 
 function canPlaceWord(word, r, c, dir) {
-    if (dir === 0) { // Horizontal
-        if (c + word.length > wsGridSize) return false;
-        for (let i = 0; i < word.length; i++) {
-            if (wsGrid[r][c + i] !== '' && wsGrid[r][c + i] !== word[i]) return false;
-        }
-    } else if (dir === 1) { // Vertical
-        if (r + word.length > wsGridSize) return false;
-        for (let i = 0; i < word.length; i++) {
-            if (wsGrid[r + i][c] !== '' && wsGrid[r + i][c] !== word[i]) return false;
-        }
-    } else { // Diagonal
-        if (r + word.length > wsGridSize || c + word.length > wsGridSize) return false;
-        for (let i = 0; i < word.length; i++) {
-            if (wsGrid[r + i][c + i] !== '' && wsGrid[r + i][c + i] !== word[i]) return false;
-        }
+    let dr = 0, dc = 0;
+    
+    if (dir === 0) { dr = 0; dc = 1; }      // H
+    else if (dir === 1) { dr = 1; dc = 0; } // V
+    else if (dir === 2) { dr = 1; dc = 1; } // Diag (Down-Right)
+    else if (dir === 3) { dr = 0; dc = -1; } // Rev H
+    else if (dir === 4) { dr = -1; dc = 0; } // Rev V (Up)
+    else if (dir === 5) { dr = -1; dc = -1; } // Rev Diag (Up-Left)
+    else if (dir === 6) { dr = -1; dc = 1; }  // Diag Up-Right
+    else if (dir === 7) { dr = 1; dc = -1; }  // Diag Down-Left
+
+    // Check bounds
+    if (r + (word.length-1)*dr >= wsGridSize || r + (word.length-1)*dr < 0) return false;
+    if (c + (word.length-1)*dc >= wsGridSize || c + (word.length-1)*dc < 0) return false;
+
+    // Check collision
+    for (let i = 0; i < word.length; i++) {
+        const nr = r + i*dr;
+        const nc = c + i*dc;
+        if (wsGrid[nr][nc] !== '' && wsGrid[nr][nc] !== word[i]) return false;
     }
     return true;
 }
 
 function placeWord(word, r, c, dir) {
+    let dr = 0, dc = 0;
+    if (dir === 0) { dr = 0; dc = 1; }
+    else if (dir === 1) { dr = 1; dc = 0; }
+    else if (dir === 2) { dr = 1; dc = 1; }
+    else if (dir === 3) { dr = 0; dc = -1; }
+    else if (dir === 4) { dr = -1; dc = 0; }
+    else if (dir === 5) { dr = -1; dc = -1; }
+    else if (dir === 6) { dr = -1; dc = 1; }
+    else if (dir === 7) { dr = 1; dc = -1; }
+
     for (let i = 0; i < word.length; i++) {
-        if (dir === 0) wsGrid[r][c + i] = word[i];
-        else if (dir === 1) wsGrid[r + i][c] = word[i];
-        else wsGrid[r + i][c + i] = word[i];
+        wsGrid[r + i*dr][c + i*dc] = word[i];
     }
 }
 
@@ -765,6 +796,12 @@ function updateSelection(endR, endC) {
         highlightCell(startR, startC, true);
         return;
     }
+    
+    // All 8 directions are implicitly handled here because:
+    // If user drags Right->Left, dc will be -1 (Reverse Horizontal)
+    // If user drags Bottom->Top, dr will be -1 (Reverse Vertical)
+    // If user drags BottomRight->TopLeft, dr=-1, dc=-1 (Reverse Diagonal)
+    // etc.
     
     // Calculate path
     const len = Math.max(Math.abs(endR - startR), Math.abs(endC - startC)) + 1;
@@ -861,7 +898,7 @@ function useHint() {
 }
 
 function findWordInGrid(word) {
-    // Search for the word in 3 directions
+    // Search for the word in 8 directions
     const len = word.length;
     
     // Helper to check at r,c with dr,dc
@@ -880,13 +917,19 @@ function findWordInGrid(word) {
     for (let r = 0; r < wsGridSize; r++) {
         for (let c = 0; c < wsGridSize; c++) {
             if (wsGrid[r][c] === word[0]) {
-                // Try H, V, Diag
-                let p = check(r, c, 0, 1); // H
-                if (p) return p;
-                p = check(r, c, 1, 0); // V
-                if (p) return p;
-                p = check(r, c, 1, 1); // Diag
-                if (p) return p;
+                // Try All 8 directions
+                // 0: H (0,1), 1: V (1,0), 2: Diag (1,1), 3: Rev H (0,-1)
+                // 4: Rev V (-1,0), 5: Rev Diag (-1,-1), 6: Diag Up-Right (-1,1), 7: Diag Down-Left (1,-1)
+                
+                const dirs = [
+                    {dr:0, dc:1}, {dr:1, dc:0}, {dr:1, dc:1}, {dr:0, dc:-1},
+                    {dr:-1, dc:0}, {dr:-1, dc:-1}, {dr:-1, dc:1}, {dr:1, dc:-1}
+                ];
+                
+                for(let d of dirs) {
+                    let p = check(r, c, d.dr, d.dc);
+                    if(p) return p;
+                }
             }
         }
     }
