@@ -240,11 +240,22 @@
             <em style="font-size: 0.9rem;" data-i18n="side_quests.simulation">(Simulation interactive)</em>
         </p>
 
+        <!-- Quick Navigation -->
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 50px; padding: 0 20px;">
+            <a href="#quest-skincare" class="theme-chip" style="text-decoration: none;" data-i18n="side_quests.beauty.radiant.title">Radiant Skincare</a>
+            <a href="#quest-wordsearch" class="theme-chip" style="text-decoration: none;" data-i18n="side_quests.literature.word_search.title">Mots Mêlés</a>
+            <a href="#quest-quote" class="theme-chip" style="text-decoration: none;" data-i18n="side_quests.literature.quote.title">Citation Célèbre</a>
+            <a href="#quest-rhyme" class="theme-chip" style="text-decoration: none;" data-i18n="side_quests.literature.rhyme.title">Rime-Moi Vert</a>
+            <a href="#quest-philosophy" class="theme-chip" style="text-decoration: none;" data-i18n="side_quests.literature.philosophy.title">Définitions Philosophiques</a>
+            <a href="#quest-nasa" class="theme-chip" style="text-decoration: none;" data-i18n="side_quests.science.gallery.title">Galerie NASA</a>
+            <a href="#quest-guessing" class="theme-chip" style="text-decoration: none;" data-i18n="side_quests.science.guessing_game.title">Devinette IA</a>
+        </div>
+
         <!-- Beauté & Soin -->
 <h3 id="beauty" style="margin-top: 80px;" data-i18n="side_quests.beauty.title">Beauté & Soin</h3>
 <div class="quest-grid">
     <!-- Tool 1: Radiant Skincare -->
-    <div class="quest-card">
+    <div id="quest-skincare" class="quest-card">
         <div class="quest-header">
             <div class="quest-title" data-i18n="side_quests.beauty.radiant.title">Radiant Skincare</div>
         </div>
@@ -271,7 +282,7 @@
 <h3 id="poetry" style="margin-top: 80px;" data-i18n="side_quests.literature.title">Littérature & Nature</h3>
 
 <!-- Tool 2: Mots Mêlés (Full Width) -->
-<div class="quest-card" style="margin-bottom: 40px;">
+<div id="quest-wordsearch" class="quest-card" style="margin-bottom: 40px;">
     <div class="quest-header">
         <div class="quest-title" data-i18n="side_quests.literature.word_search.title">Mots Mêlés</div>
     </div>
@@ -328,7 +339,7 @@
 
 <div class="quest-grid">
     <!-- Tool 4: Citation Célèbre -->
-    <div class="quest-card">
+    <div id="quest-quote" class="quest-card">
         <div class="quest-header">
             <div class="quest-title" data-i18n="side_quests.literature.quote.title">Citation Célèbre</div>
         </div>
@@ -349,7 +360,7 @@
     </div>
 
     <!-- Tool 5: Rime-Moi Vert -->
-    <div class="quest-card">
+    <div id="quest-rhyme" class="quest-card">
         <div class="quest-header">
             <div class="quest-title" data-i18n="side_quests.literature.rhyme.title">Rime-Moi Vert</div>
         </div>
@@ -379,7 +390,7 @@
         
         <!-- Science & Tech -->
 <h3 id="science" style="margin-top: 80px;" data-i18n="side_quests.science.title">Science</h3>
-<div class="quest-grid" style="grid-template-columns: 1fr;">
+<div class="quest-grid">
     <!-- Tool 7: NASA Image and Video Library Gallery -->
     <div class="quest-card" style="overflow-x: auto;">
         <div class="quest-header">
@@ -398,6 +409,23 @@
         <div style="text-align: center; margin-top: 10px;">
             <button class="quest-btn" onclick="fetchNASAGallery(true)" style="width: auto; padding: 10px 30px;" data-i18n="side_quests.science.gallery.refresh">Actualiser la Galerie</button>
         </div>
+    </div>
+
+    <!-- Tool 8: AI Guessing Game -->
+    <div id="quest-guessing" class="quest-card">
+        <div class="quest-header">
+            <div class="quest-title" data-i18n="side_quests.science.guessing_game.title">Devinette IA</div>
+        </div>
+        <p class="quest-desc" data-i18n="side_quests.science.guessing_game.desc">Pensez à un nombre entre 1 et 32. L'IA le trouvera en 5 questions !</p>
+        
+        <div class="quest-input-area" style="text-align: center;">
+            <button id="guessing-game-start-btn" class="quest-btn" onclick="startGuessingGame()" data-i18n="side_quests.science.guessing_game.start">Commencer</button>
+            
+            <div id="guessing-game-interaction" style="display: none;">
+                <!-- Interaction content injected by JS -->
+            </div>
+        </div>
+        <div id="guessing-game-result" class="quest-result"></div>
     </div>
 </div>
     </section>
@@ -418,6 +446,7 @@
     <script src="js/modules/side-quests/literature.js"></script>
     <script src="js/modules/side-quests/philosophy.js"></script>
     <script src="js/modules/side-quests/skincare.js"></script>
+    <script src="js/modules/side-quests/guessing-game.js"></script>
     <script src="js/modules/side-quests/main.js"></script>
 </body>
 </html>

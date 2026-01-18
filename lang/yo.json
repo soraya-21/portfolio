@@ -360,6 +360,23 @@
                 "error": "Kuna lati kojọpọ awọn aworan. Jọwọ gbiyanju lẹẹkansi nigbamii.",
                 "date": "Ọjọ: ",
                 "explanation": "Wo alaye"
+            },
+            "chatgpt": {
+                "title": "ChatGPT",
+                "desc": "Wiwọle yara si oluranlọwọ AI ayanfẹ rẹ fun gbogbo awọn ibeere rẹ.",
+                "button": "Ṣii ChatGPT"
+            },
+            "guessing_game": {
+                "title": "Ere amoro AI",
+                "desc": "Ronu ti nọmba kan laarin 1 ati 32. AI yoo rii ni awọn ibeere 5!",
+                "start": "Bẹrẹ",
+                "instruction": "Ronu ti nọmba kan laarin 1 ati 32.",
+                "ready": "Mo ti ṣetan",
+                "question": "Ṣe o tobi ju {0} lọ?",
+                "yes": "Bẹẹni",
+                "no": "Rara",
+                "result": "Nọmba rẹ jẹ {0}!",
+                "play_again": "Tun ṣere"
             }
         }
     }

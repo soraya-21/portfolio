@@ -360,6 +360,23 @@
                 "error": "加载图像失败。请稍后再试。",
                 "date": "日期：",
                 "explanation": "查看说明"
+            },
+            "chatgpt": {
+                "title": "ChatGPT",
+                "desc": "快速访问您最喜欢的 AI 助手以解决所有问题。",
+                "button": "打开 ChatGPT"
+            },
+            "guessing_game": {
+                "title": "AI 猜数字",
+                "desc": "想一个 1 到 32 之间的数字。AI 将在 5 个问题内找到它！",
+                "start": "开始",
+                "instruction": "想一个 1 到 32 之间的数字。",
+                "ready": "我准备好了",
+                "question": "它严格大于 {0} 吗？",
+                "yes": "是",
+                "no": "否",
+                "result": "你的数字是 {0}！",
+                "play_again": "再玩一次"
             }
         }
     }

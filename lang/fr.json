@@ -432,6 +432,18 @@
                 "title": "ChatGPT",
                 "desc": "Accès rapide à votre assistant IA préféré pour toutes vos questions.",
                 "button": "Ouvrir ChatGPT"
+            },
+            "guessing_game": {
+                "title": "Devinette IA",
+                "desc": "Pensez à un nombre entre 1 et 32. L'IA le trouvera en 5 questions !",
+                "start": "Commencer",
+                "instruction": "Pensez à un nombre entre 1 et 32.",
+                "ready": "Je suis prêt",
+                "question": "Est-il strictement supérieur à {0} ?",
+                "yes": "Oui",
+                "no": "Non",
+                "result": "Votre nombre est {0} !",
+                "play_again": "Rejouer"
             }
         },
         "footer": {

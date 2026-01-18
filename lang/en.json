@@ -432,6 +432,18 @@
                 "title": "ChatGPT",
                 "desc": "Quick access to your favorite AI assistant for all your questions.",
                 "button": "Open ChatGPT"
+            },
+            "guessing_game": {
+                "title": "AI Guessing Game",
+                "desc": "Think of a number between 1 and 32. The AI will find it in 5 questions!",
+                "start": "Start",
+                "instruction": "Think of a number between 1 and 32.",
+                "ready": "I'm Ready",
+                "question": "Is it strictly greater than {0}?",
+                "yes": "Yes",
+                "no": "No",
+                "result": "Your number is {0}!",
+                "play_again": "Play Again"
             }
         },
         "footer": {
