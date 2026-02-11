@@ -60,11 +60,9 @@ function updateLanguageSelector() {
     
     if (!customOptions) return;
 
-    // Update trigger
     if (selectedFlag) selectedFlag.src = flags[currentLang];
     if (selectedText) selectedText.textContent = nativeLanguageNames[currentLang] || currentLang;
 
-    // Build options
     customOptions.innerHTML = '';
     Object.keys(nativeLanguageNames).forEach(langCode => {
         const option = document.createElement('div');
@@ -158,8 +156,7 @@ function updateText() {
             if (element.getAttribute('data-i18n-html') === 'true') {
                 element.innerHTML = value;
             } else {
-                // If value contains HTML tags but attribute is not set, we might want to allow it or force set it
-                // For now, let's auto-detect simple tags like <br>
+
                 if (value.includes('<br>') || value.includes('<strong>')) {
                      element.innerHTML = value;
                 } else {
@@ -312,7 +309,6 @@ if (canvas) {
     });
 }
 
-// Projets - The project data is now loaded from JSON
 const container = document.getElementById('projects-container');
 const modal = document.getElementById('project-modal');
 const modalTitle = modal?.querySelector('.modal-title');

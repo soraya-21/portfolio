@@ -2,29 +2,18 @@
 <html lang="fr">
 <head>
     <script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/2d670fc942145.js" data-cmp-host="a.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NYC0R6PDD"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-8NYC0R6PDD');
-    </script>
+    <script src="./js/config.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Side Quests | Soraya Codo - Expérimentations IA & Web</title>
     <meta name="description" content="Explorez les Side Quests de Soraya Codo : des expérimentations interactives mêlant Intelligence Artificielle, Poésie et Beauté (Skincare).">
     <meta name="keywords" content="Soraya Codo, Développeuse, backend, Python, Django, Intelligence Artificielle, Data Science, Portfolio, Software Engineer, AI, Data Solutions">
     <meta name="author" content="Soraya Codo">
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sorayaportfolio.netlify.app/side-quests">
     <meta property="og:title" content="Side Quests | Soraya Codo - Expérimentations IA & Web">
     <meta property="og:description" content="Explorez les Side Quests de Soraya Codo : des expérimentations interactives mêlant Intelligence Artificielle, Poésie et Beauté (Skincare).">
     <meta property="og:image" content="assets/images/avatar_soraya_blue_portfolio.png">
-
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://sorayaportfolio.netlify.app/side-quests">
     <meta property="twitter:title" content="Side Quests | Soraya Codo - Expérimentations IA & Web">
@@ -201,9 +190,7 @@
 
     <div class="lang-selector">
         <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark/Light Mode">
-            <!-- Sun Icon -->
             <svg class="sun-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-            <!-- Moon Icon -->
             <svg class="moon-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
         </button>
         <div class="custom-select-wrapper">
@@ -216,11 +203,9 @@
                     <div class="arrow"></div>
                 </div>
                 <div class="custom-options">
-                    <!-- Options will be populated by JS -->
                 </div>
             </div>
         </div>
-        <!-- Hidden select for fallback/logic -->
         <select id="language-select" style="display: none;">
             <option value="fr">Français</option>
             <option value="en">English</option>
@@ -254,7 +239,7 @@
         <!-- Beauté & Soin -->
 <h3 id="beauty" style="margin-top: 80px;" data-i18n="side_quests.beauty.title">Beauté & Soin</h3>
 <div class="quest-grid">
-    <!-- Tool 1: Radiant Skincare -->
+    <!-- Radiant Skincare -->
     <div id="quest-skincare" class="quest-card">
         <div class="quest-header">
             <div class="quest-title" data-i18n="side_quests.beauty.radiant.title">Radiant Skincare</div>
@@ -281,7 +266,7 @@
         <!-- Literature & Nature -->
 <h3 id="poetry" style="margin-top: 80px;" data-i18n="side_quests.literature.title">Littérature & Nature</h3>
 
-<!-- Tool 2: Mots Mêlés (Full Width) -->
+<!-- Mots Mêlés (Full Width) -->
 <div id="quest-wordsearch" class="quest-card" style="margin-bottom: 40px;">
     <div class="quest-header">
         <div class="quest-title" data-i18n="side_quests.literature.word_search.title">Mots Mêlés</div>
@@ -338,7 +323,7 @@
 </div>
 
 <div class="quest-grid">
-    <!-- Tool 4: Citation Célèbre -->
+    <!-- Citation Célèbre -->
     <div id="quest-quote" class="quest-card">
         <div class="quest-header">
             <div class="quest-title" data-i18n="side_quests.literature.quote.title">Citation Célèbre</div>
@@ -359,7 +344,7 @@
         <div id="quote-result" class="quest-result"></div>
     </div>
 
-    <!-- Tool 5: Rime-Moi Vert -->
+    <!-- Rime-Moi Vert -->
     <div id="quest-rhyme" class="quest-card">
         <div class="quest-header">
             <div class="quest-title" data-i18n="side_quests.literature.rhyme.title">Rime-Moi Vert</div>
@@ -372,7 +357,7 @@
         <div id="nature-poem-result" class="quest-result" style="text-align: left;"></div>
     </div>
 
-    <!-- Tool 6: Philosophical Definitions -->
+    <!-- Philosophical Definitions -->
     <div class="quest-card">
         <div class="quest-header">
             <div class="quest-title" data-i18n="side_quests.literature.philosophy.title">Définitions Philosophiques</div>
@@ -411,7 +396,7 @@
         </div>
     </div>
 
-    <!-- Tool 8: AI Guessing Game -->
+    <!-- AI Guessing Game -->
     <div id="quest-guessing" class="quest-card">
         <div class="quest-header">
             <div class="quest-title" data-i18n="side_quests.science.guessing_game.title">Devinette IA</div>

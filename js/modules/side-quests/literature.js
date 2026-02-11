@@ -59,7 +59,7 @@ window.generateNaturePoem = function() {
                 hash = input.charCodeAt(i) + ((hash << 5) - hash);
             }
             const index = Math.abs(hash) % templates.length;
-            poem = templates[index].replace(/\{0\}/g, input); // Replace {0} with input
+            poem = templates[index].replace(/\{0\}/g, input);
         } else {
             poem = "Le vent souffle mais les mots manquent...";
         }

@@ -4,8 +4,7 @@ let selectedSkinType = null;
 
 window.selectSkinType = function(btn, type) {
     selectedSkinType = type;
-    // document.getElementById('skin-type').value = type; // Element removed from HTML
-    
+   
     // Visual feedback
     const buttons = btn.parentElement.querySelectorAll('.quest-option-btn');
     buttons.forEach(b => b.classList.remove('active'));
@@ -13,15 +12,6 @@ window.selectSkinType = function(btn, type) {
 };
 
 window.generateSkincare = function() {
-    // If using hidden input or just variable
-    // The HTML has a p with label but no hidden input for skin-type in the read file? 
-    // Wait, let me check the HTML again.
-    // HTML has: <button ... onclick="selectSkinType(this, 'oily')">
-    // But does it have an input? 
-    // <input type="text" id="skin-concern" ...>
-    // There is no input with id="skin-type". 
-    // So I must rely on the variable `selectedSkinType`.
-    
     const concern = document.getElementById('skin-concern').value;
     const resultDiv = document.getElementById('skincare-result');
     
@@ -35,7 +25,7 @@ window.generateSkincare = function() {
     resultDiv.classList.remove('visible');
     
     window.simulateLoading(resultDiv, () => {
-        // --- 1. ROUTINE VISAGE ---
+        // ROUTINE VISAGE 
         let routineKey = `side_quests.beauty.radiant.results.routines.${selectedSkinType}`;
         let adviceKey = `side_quests.beauty.radiant.results.advice.${selectedSkinType}`;
         
@@ -50,7 +40,7 @@ window.generateSkincare = function() {
 
         let advice = window.getTranslation(adviceKey, "");
 
-        // --- 2. CONCERNS LOGIC ---
+        // CONCERNS LOGIC 
         let concernHtml = "";
         const concernInput = concern ? concern.toLowerCase() : "";
         let concernData = null;
@@ -88,7 +78,7 @@ window.generateSkincare = function() {
              concernHtml = `<p style="margin-top:15px; font-size:0.9rem;"><strong>${bonusTemplate.replace('{0}', concern)}</strong></p>`;
         }
 
-        // --- 3. HANDS & FEET ---
+        // HANDS & FEET 
         let handsFeetHtml = "";
         const handsFeetDB = window.getTranslation('side_quests.beauty.radiant.results.hands_feet');
         if (handsFeetDB && handsFeetDB[selectedSkinType]) {

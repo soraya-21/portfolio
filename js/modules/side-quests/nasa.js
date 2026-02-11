@@ -1,6 +1,6 @@
 // NASA Image and Video Library Gallery Logic
 
-let currentGalleryItems = []; // Store items globally for translation
+let currentGalleryItems = [];
 
 window.fetchNASAGallery = async function(forceRefresh = false) {
     const container = document.getElementById('nasa-gallery-container');
@@ -12,7 +12,7 @@ window.fetchNASAGallery = async function(forceRefresh = false) {
     const errorText = window.getTranslation('side_quests.science.gallery.error', 'Impossible de charger la galerie.');
     const errorDetailText = window.getTranslation('side_quests.science.gallery.error_detail', '(Erreur réseau ou API indisponible)');
 
-    // 1. Check Cache
+    // Check Cache
     if (!forceRefresh) {
         const cachedData = localStorage.getItem(CACHE_KEY);
         if (cachedData) {
@@ -28,7 +28,7 @@ window.fetchNASAGallery = async function(forceRefresh = false) {
 
     container.innerHTML = `<div style="min-width: 300px; height: 400px; display: flex; align-items: center; justify-content: center; color: var(--text-light);">${loadingText}</div>`;
 
-    // 2. Fetch New Data
+    //Fetch New Data
     const currentYear = new Date().getFullYear();
     const searchYear = currentYear - 1;
     const url = `https://images-api.nasa.gov/search?q=space&media_type=image&year_start=${searchYear}`;
@@ -40,7 +40,7 @@ window.fetchNASAGallery = async function(forceRefresh = false) {
         const data = await response.json();
         let items = data.collection.items;
         
-        // Filter out future dates (NASA metadata errors)
+        //Filter out future dates (NASA metadata errors)
         const now = new Date();
         items = items.filter(item => {
             const dateStr = item.data[0].date_created;
@@ -60,7 +60,7 @@ window.fetchNASAGallery = async function(forceRefresh = false) {
             return;
         }
 
-        // 3. Save to Cache
+        // Save to Cache
         const cachePayload = {
             timestamp: Date.now(),
             items: items
@@ -83,7 +83,7 @@ window.fetchNASAGallery = async function(forceRefresh = false) {
 
 function renderGallery(items) {
     const container = document.getElementById('nasa-gallery-container');
-    container.innerHTML = ''; // Clear loading message
+    container.innerHTML = '';
     
     const untitledText = window.getTranslation('side_quests.science.gallery.untitled', "Sans titre");
     const noDescText = window.getTranslation('side_quests.science.gallery.no_desc', "Aucune description disponible.");
@@ -94,7 +94,7 @@ function renderGallery(items) {
         const dataInfo = item.data[0];
         const linkInfo = item.links ? item.links[0] : null;
 
-        if (!linkInfo) return; // Skip if no image link
+        if (!linkInfo) return;
 
         const title = dataInfo.title || untitledText;
         const description = dataInfo.description || noDescText;
@@ -126,7 +126,7 @@ function renderGallery(items) {
         card.style.display = 'flex';
         card.style.flexDirection = 'column';
         card.style.border = '1px solid rgba(255,255,255,0.1)';
-        card.style.flexShrink = '0'; // Prevent shrinking in flex container
+        card.style.flexShrink = '0';
 
         card.innerHTML = `
             <div style="height: 200px; overflow: hidden;">
@@ -154,7 +154,6 @@ function renderGallery(items) {
 async function translateText(text, targetLang) {
     if (!text) return '';
     try {
-        // Using MyMemory API (Free usage)
         const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en|${targetLang}`;
         const res = await fetch(url);
         const data = await res.json();
@@ -204,7 +203,6 @@ window.handleTranslate = async function(btn, index) {
     }
 };
 
-// Listen for language updates to refresh gallery texts
 window.addEventListener('sideQuestsLangUpdated', () => {
     if (document.getElementById('nasa-gallery-container') && localStorage.getItem('nasa_gallery_cache_v2')) {
         window.fetchNASAGallery(false);

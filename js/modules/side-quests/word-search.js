@@ -92,14 +92,14 @@ window.useHint = function() {
         
         setTimeout(() => {
             document.querySelectorAll('.hint-highlight').forEach(el => el.classList.remove('hint-highlight'));
-        }, 3000); 
+        }, 1000); 
     } else {
         // Fallback
         wsHintsRemaining++; 
         _updateHintButton();
         const msgEl = document.getElementById('ws-message');
         msgEl.innerHTML = `<span style="color: #ff3b30; font-size: 0.8rem;">Erreur indice: mot introuvable (bug)</span>`;
-        setTimeout(() => msgEl.innerHTML = "", 2000);
+        setTimeout(() => msgEl.innerHTML = "", 1000);
     }
 };
 
@@ -111,9 +111,6 @@ window.resetWsBestScore = function() {
     const lang = window.currentLanguage || document.documentElement.lang || 'fr';
     const key = `ws_top3_${wsCurrentThemeIndex}_${wsGridSize}_${lang}`;
     localStorage.removeItem(key);
-    
-    // Also try to remove potential variations if any (legacy)
-    // localStorage.removeItem(`ws_top3_${wsCurrentThemeIndex}_${wsGridSize}_undefined`);
 
     loadWsBestScore();
     
@@ -175,10 +172,6 @@ function startWordSearchGame() {
     loadWsBestScore();
 }
 
-// Also exposed because it's called on translationsLoaded
-// Note: In non-module scripts, top-level functions are already global, 
-// but we assign explicitly to window for clarity and to avoid the recursion bug 
-// (overwriting the function with a wrapper that calls itself).
 window.updateHintButton = _updateHintButton;
 
 function _updateHintButton() {
@@ -556,10 +549,8 @@ function loadWsBestScore() {
     }
 }
 
-// Auto Init on Lang Update
 window.addEventListener('sideQuestsLangUpdated', () => {
-    // Only if visible, maybe?
     if(document.getElementById('ws-hint-btn')) {
-        updateHintButton(); // This is now _updateHintButton
+        updateHintButton();
     }
 });

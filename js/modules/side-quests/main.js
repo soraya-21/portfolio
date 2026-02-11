@@ -3,12 +3,9 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Side Quests Main Initialized');
-    
-    // Initialize specific components if they exist on page
-    
+        
     // 1. NASA Gallery
     if (document.getElementById('nasa-gallery-container')) {
-        // Delay slightly to allow translations to load if needed, or check cache immediately
         setTimeout(() => {
             if(window.fetchNASAGallery) window.fetchNASAGallery();
         }, 100);
@@ -16,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Word Search
     if (document.getElementById('ws-grid')) {
-        // Start game with defaults
         if(window.resetWordSearch) window.resetWordSearch();
     }
 
@@ -26,4 +22,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Re-export or globalize anything if needed (mostly handled by sub-modules attaching to window)

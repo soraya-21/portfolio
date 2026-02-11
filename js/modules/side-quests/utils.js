@@ -10,7 +10,6 @@ window.addEventListener('translationsLoaded', (e) => {
     window.currentTranslations = e.detail.translations;
     window.currentLanguage = e.detail.language;
     
-    // Dispatch a custom event for sub-modules to react
     window.dispatchEvent(new CustomEvent('sideQuestsLangUpdated', { detail: e.detail }));
 });
 
