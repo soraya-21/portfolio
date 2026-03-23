@@ -94,12 +94,19 @@
     <!--SECTION CV -->
     <section id="cv" class="fade-in-up">
         <h3 data-i18n="cv.title">Mon CV</h3>
+        <div class="cv-language-switcher">
+            <label for="cv-language-select" data-i18n="cv.language_label">Version du CV</label>
+            <select id="cv-language-select">
+                <option value="fr" data-i18n="cv.language_fr">Français</option>
+                <option value="en" data-i18n="cv.language_en">English</option>
+            </select>
+        </div>
         <div class="cv-buttons">
             <a href="#" id="open-cv" class="btn btn-preview">
                 <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
                 <span data-i18n="cv.view">Voir mon CV</span>
             </a>
-            <a href="./assets/files/CV-Soraya-Codo-Dev-IA-Backend.pdf" download 
+            <a href="./assets/files/CV-Soraya-Codo-Dev-IA-Backend.pdf" id="download-cv" download 
                 class="btn btn-download">
                     <span data-i18n="cv.download">📄 Télécharger mon CV</span>
             </a>
@@ -263,7 +270,7 @@
 <div id="cv-popup">
     <div class="cv-content">
         <div class="cv-close" id="close-cv">×</div>
-        <iframe src="./assets/files/CV-Soraya-Codo-Dev-IA-Backend.pdf" title="CV Soraya Codo"></iframe>
+        <iframe id="cv-iframe" src="./assets/files/CV-Soraya-Codo-Dev-IA-Backend.pdf" title="CV Soraya Codo"></iframe>
     </div>
 </div>
 

@@ -28,7 +28,10 @@
     "cv": {
         "title": "Mon CV",
         "view": "Voir mon CV",
-        "download": "📄 Télécharger mon CV"
+        "download": "📄 Télécharger mon CV",
+        "language_label": "Version du CV",
+        "language_fr": "Français",
+        "language_en": "Anglais"
     },
     "skills": {
         "title": "Stack Technologique",

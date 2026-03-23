@@ -212,6 +212,44 @@ function setRandomAvatar() {
 }
 setRandomAvatar();
 
+// CV Language Selector
+const cvLanguageSelect = document.getElementById('cv-language-select');
+const cvDownloadLink = document.getElementById('download-cv');
+const cvIframe = document.getElementById('cv-iframe');
+
+const cvFiles = {
+    fr: './assets/files/CV-Soraya-Codo-Dev-IA-Backend.pdf',
+    en: './assets/files/CV-Soraya-Codo-Dev-IA-Backend-EN.pdf'
+};
+
+let currentCvLang = localStorage.getItem('cvLang') || 'fr';
+
+function updateCvFile() {
+    const selectedCvFile = cvFiles[currentCvLang] || cvFiles.fr;
+
+    if (cvDownloadLink) {
+        cvDownloadLink.href = selectedCvFile;
+    }
+
+    if (cvIframe) {
+        cvIframe.src = selectedCvFile;
+    }
+
+    if (cvLanguageSelect) {
+        cvLanguageSelect.value = currentCvLang;
+    }
+}
+
+if (cvLanguageSelect) {
+    cvLanguageSelect.addEventListener('change', (e) => {
+        currentCvLang = e.target.value;
+        localStorage.setItem('cvLang', currentCvLang);
+        updateCvFile();
+    });
+}
+
+updateCvFile();
+
 // Popup CV
 const openCvBtn = document.getElementById('open-cv');
 const closeCvBtn = document.getElementById('close-cv');

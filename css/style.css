@@ -316,6 +316,27 @@ h3 { text-align: center; font-size: 2.5rem; margin-bottom: 70px; color: var(--ac
 
 /* === SECTION CV === */
 #cv { text-align: center; padding: 60px 40px; }
+.cv-language-switcher {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 0 auto 30px;
+    color: var(--text-light);
+}
+.cv-language-switcher label {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+.cv-language-switcher select {
+    background: var(--card);
+    color: var(--text);
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
 .cv-buttons {
     display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; margin: 50px 0;
 }
@@ -431,6 +452,7 @@ footer .copyright { margin-top: 30px; font-size: 0.95rem; color: var(--text-ligh
     .project-card::after { font-size: 0.85rem; }
     .project-card::before { width: 9px; height: 9px; left: calc(50% + 70px); }
     .cv-buttons { flex-direction: column; align-items: center; }
+    .cv-language-switcher { flex-direction: column; gap: 10px; }
     html {background-color: var(--marine); z-index: -1;}
 }
 
