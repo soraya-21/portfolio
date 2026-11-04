@@ -20,7 +20,12 @@ let puzzleSolved = false;
 let puzzleSeconds = 0;
 let puzzleTimerInterval = null;
 
-const puzzleScoresKey = (size) => `puzzle_top3_${size}`;
+// One Top 3 per level AND per photo, e.g. "puzzle_top3_5_ranma-avatar".
+// Uses the file name (not the index) so scores survive a reordering of PUZZLE_PHOTOS.
+const puzzleScoresKey = () => {
+    const photoName = PUZZLE_PHOTOS[puzzlePhotoIndex].split('/').pop().replace(/\.[^.]+$/, '');
+    return `puzzle_top3_${puzzleSize}_${photoName}`;
+};
 const puzzleGrid = () => document.getElementById('puzzle-grid');
 
 function formatPuzzleTime(totalSeconds) {
@@ -158,36 +163,36 @@ function finishPuzzle() {
     document.getElementById('puzzle-message').innerHTML = html;
 }
 
-//Top 3 scores (one list per level)
+//Top 3 scores (one list per level and per photo)
 
-function getPuzzleScores(size) {
+function getPuzzleScores() {
     try {
-        return JSON.parse(localStorage.getItem(puzzleScoresKey(size)) || '[]');
+        return JSON.parse(localStorage.getItem(puzzleScoresKey()) || '[]');
     } catch {
         return [];
     }
 }
 
-// Returns true if this game is the new best score of the level
+// Returns true if this game is the new best score for this level + photo
 function savePuzzleScore() {
     const entry = { time: puzzleSeconds, moves: puzzleMoves };
-    const scores = getPuzzleScores(puzzleSize);
+    const scores = getPuzzleScores();
 
     scores.push(entry);
     scores.sort((a, b) => a.time - b.time || a.moves - b.moves); // fastest first, then fewest moves
     const top3 = scores.slice(0, 3);
 
-    localStorage.setItem(puzzleScoresKey(puzzleSize), JSON.stringify(top3));
+    localStorage.setItem(puzzleScoresKey(), JSON.stringify(top3));
     renderPuzzleScores();
     return top3[0] === entry;
 }
 
 function renderPuzzleScores() {
     const list = document.getElementById('puzzle-scores');
-    const scores = getPuzzleScores(puzzleSize);
+    const scores = getPuzzleScores();
 
     if (scores.length === 0) {
-        list.innerHTML = `<li>${window.getTranslation('side_quests.puzzle.no_score', 'Aucun score pour ce niveau')}</li>`;
+        list.innerHTML = `<li>${window.getTranslation('side_quests.puzzle.no_score', 'Aucun score pour ce niveau et cette photo')}</li>`;
         return;
     }
 
@@ -199,7 +204,7 @@ function renderPuzzleScores() {
 }
 
 window.resetPuzzleScores = function () {
-    localStorage.removeItem(puzzleScoresKey(puzzleSize));
+    localStorage.removeItem(puzzleScoresKey());
     renderPuzzleScores();
 };
 
