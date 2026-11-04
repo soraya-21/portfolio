@@ -188,7 +188,7 @@
             "reset_scores": "Reset scores",
             "win": "Well done! Solved in {time} with {moves} moves 🎉",
             "new_record": "New record!",
-            "note": "These pictures are AI-generated avatars based on photos of me… and a little bit of imagination."
+            "note": "These pictures are AI-generated avatars based on photos of me… and a little bit of imagination.<br>Each avatar reveals a side of my personality. Can you guess which one?"
         },
         "beauty": {
             "title": "Beauty & Care",
