@@ -22,10 +22,36 @@ let puzzleTimerInterval = null;
 
 // One Top 3 per level AND per photo, e.g. "puzzle_top3_5_ranma-avatar".
 // Uses the file name (not the index) so scores survive a reordering of PUZZLE_PHOTOS.
-const puzzleScoresKey = () => {
-    const photoName = PUZZLE_PHOTOS[puzzlePhotoIndex].split('/').pop().replace(/\.[^.]+$/, '');
-    return `puzzle_top3_${puzzleSize}_${photoName}`;
+const puzzleScoresKey = (size = puzzleSize, photoIndex = puzzlePhotoIndex) => {
+    const photoName = PUZZLE_PHOTOS[photoIndex].split('/').pop().replace(/\.[^.]+$/, '');
+    return `puzzle_top3_${size}_${photoName}`;
 };
+
+// Migration: scores used to be stored per level only ("puzzle_top3_3", "_5", "_7").
+// Move them to the first photo of each level so existing players keep their Top 3.
+// Runs on every page load but only acts if an old key is still present.
+(function migrateOldPuzzleScores() {
+    try {
+        [3, 5, 7].forEach(size => {
+            const oldKey = `puzzle_top3_${size}`;
+            const oldRaw = localStorage.getItem(oldKey);
+            if (oldRaw === null) return;
+
+            const newKey = puzzleScoresKey(size, 0);
+            const merged = [
+                ...JSON.parse(oldRaw),
+                ...JSON.parse(localStorage.getItem(newKey) || '[]'),
+            ]
+                .sort((a, b) => a.time - b.time || a.moves - b.moves)
+                .slice(0, 3);
+
+            localStorage.setItem(newKey, JSON.stringify(merged));
+            localStorage.removeItem(oldKey);
+        });
+    } catch (e) {
+        console.warn('Puzzle scores migration failed:', e);
+    }
+})();
 const puzzleGrid = () => document.getElementById('puzzle-grid');
 
 function formatPuzzleTime(totalSeconds) {
