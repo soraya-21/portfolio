@@ -1,7 +1,7 @@
 {
     "header": {
         "role": "Olùgbéejáde Full-Stack Backend & Idojukọ AI",
-        "location": "Montpellier, Faranse"
+        "location": " Faranse"
     },
     "languages": {
         "fr": "Faranse",
@@ -21,7 +21,7 @@
     },
     "about": {
         "text1": "Oniwadi, olùfọkànsí, ati itara lati kọ ẹkọ... :)",
-        "text2": "Agbara mi: idasi si awọn iṣẹ akanṣe ti o ni ipa nibiti imọ-ẹrọ le mu awọn nkan dara si nitootọ... ati yago fun ṣiṣẹda kokoro miiran",
+        "text2": "Agbara mi: idasi si awọn iṣẹ akanṣe ti o ni ipa nibiti imọ-ẹrọ le jẹ ki awọn ilana rọrun… ati yago fun ṣiṣẹda kokoro miiran",
         "text3": "Ibi-afẹde mi: dagbasoke bi olùgbéejáde ti o wapọ, nigbagbogbo ni ilọsiwaju, nigbagbogbo n wa awọn solusan ti o munadoko ati iwulo... pẹlu kafiini kekere ati igbadun pupọ"
     },
     "cv": {
@@ -39,23 +39,23 @@
         "tests": "Ilana Idanwo & CI/CD",
         "collaboration": "Ifowosowopo",
         "details": {
-            "lang_desc": "<ul><li><strong>C</strong> / <strong>C++</strong></li><li><strong>Python</strong> – Backend, AI, Iwe afọwọkọ, Adaṣiṣẹ</li><li><strong>Django</strong> + <strong>Django REST Framework</strong></li><li><strong>JavaScript</strong> / <strong>Node.js</strong></li><li><strong>ReactJs</strong></li><li><strong>SQL & DAX (Power BI)</strong></li><li><strong>HTML</strong> / <strong>CSS</strong></li><li><strong>Docker</strong> – Containerization</li></ul>",
-            "db_desc": "<ul><li><strong>MongoDB</strong> (NoSQL)</li><li><strong>MySQL / PostgreSQL</strong></li><li>Awọn ibi ipamọ data ibatan nipasẹ <strong>Django</strong></li><li>Apẹrẹ Schema & Iṣilọ</li></ul>",
+            "lang_desc": "<ul><li>C / C++</li><li>Python - Backend, AI, Iwe afọwọkọ, Adaṣiṣẹ</li><li>Django + Django REST Framework</li><li>JavaScript / Node.js</li><li>ReactJs</li><li>SQL & DAX (Power BI)</li><li>HTML / CSS</li><li>Docker - Containerization</li></ul>",
+            "db_desc": "<ul><li>MongoDB (NoSQL)</li><li>MySQL / PostgreSQL</li><li>Awọn ibi ipamọ data ibatan nipasẹ Django</li><li>Apẹrẹ Schema & Iṣilọ</li></ul>",
             "data_desc": "<ul><li>NumPy • pandas • scikit-learn</li><li>NLP (Ṣiṣẹda Ede Adayeba)</li><li>Pipeline pipe: Scraping → Cleaning → Analysis → Prediction</li><li>Whisper + FFMPEG (Gbigbasilẹ Ohun/Fidio)</li></ul>",
-            "web_desc": "<ul><li>Scraping to ti ni ilọsiwaju (Selenium, requests)</li><li>Adaṣiṣẹ ti awọn iṣẹ ṣiṣe atunwi</li><li>REST APIs • Webhooks • Isopọmọ ẹni-kẹta</li><li>OAuth2 (Youtube, Google, Linkedin…)</li><li><strong>Celery</strong> + Redis (Awọn iṣẹ ṣiṣe Asynchronous)</li></ul>",
-            "tools_desc": "<ul><li><strong>Power BI</strong></li><li><strong>Azure</strong> (Awọn ipilẹ: VMs, Blob, Functions)</li><li><strong>Git</strong> & GitHub Actions (CI/CD)</li><li>Docker • Docker Compose</li><li>Postman • Swagger</li></ul>",
+            "web_desc": "<ul><li>Scraping to ti ni ilọsiwaju (Selenium, requests)</li><li>Adaṣiṣẹ ti awọn iṣẹ ṣiṣe atunwi</li><li>REST APIs • Webhooks • Isopọmọ ẹni-kẹta</li><li>OAuth2 (Youtube, Google, Linkedin…)</li><li>Celery + Redis (Awọn iṣẹ ṣiṣe Asynchronous)</li></ul>",
+            "tools_desc": "<ul><li>Power BI</li><li>Azure (Awọn ipilẹ: VMs, Blob, Functions)</li><li>Git & GitHub Actions (CI/CD)</li><li>Docker • Docker Compose</li><li>Postman • Swagger</li></ul>",
             "tests_desc": "<ul><li><strong>Awọn Idanwo Unit:</strong> Ibora ti awọn iṣẹ pataki, ọgbọn iṣowo, awọn iṣẹ, awọn ohun elo.</li><li><strong>Awọn Idanwo Iṣẹ:</strong> Ijerisi pipe ti awọn ṣiṣan iṣẹ olumulo ati awọn aaye ipari API.</li><li><strong>Awọn Idanwo Isopọmọ:</strong> Awọn ibaraenisepo laarin awọn iṣẹ, awọn ibi ipamọ data, awọn API ita.</li><li><strong>Mocking & fixtures:</strong> Iyasọtọ ti awọn igbẹkẹle, atunṣe awọn oju iṣẹlẹ.</li><li><strong>CI/CD:</strong> Awọn idanwo adaṣe, linting ati imuṣiṣẹ (GitHub Actions / Docker).</li></ul>",
-            "collab_desc": "<ul><li><strong>Git</strong> / <strong>GitLab</strong> / <strong>GitHub</strong></li><li><strong>Jira</strong></li><li><strong>Trello</strong></li><li><strong>Microsoft Teams</strong></li></ul>"
+            "collab_desc": "<ul><li>Git / GitLab / GitHub</li><li>Jira</li><li>Trello</li><li>Azure DevOps</li><li>Confluence</li><li>Microsoft Suite</li></ul>"
         }
     },
     "education": {
         "title": "Eto ẹkọ",
-        "master": "Titunto si — Imọye Oríkĕ & Isakoso Data",
-        "master_school": "IASchool / Nexa Digital School — Lyon",
+        "master": "Titunto si - Imọye Oríkĕ & Isakoso Data",
+        "master_school": "IASchool / Nexa Digital School - Lyon",
         "courses": "Awọn iṣẹ ita",
-        "courses_desc": "<p>University Laval — Iṣiro Iṣowo</p><p>Udemy — PowerBI</p>",
-        "bachelor": "Bachelor — Imọ-ẹrọ Kọmputa",
-        "bachelor_desc": "Epitech Technology — Ẹkọ ti o da lori iṣẹ akanṣe<br>Idagbasoke ilọsiwaju • Idaduro pipe ati iṣakoso iṣẹ akanṣe"
+        "courses_desc": "<p>University Laval - Didara Sọfitiwia ninu Imọ-ẹrọ Kọmputa</p><p>Udemy - PowerBI</p><p>University Laval - Iṣiro Iṣowo</p>",
+        "bachelor": "Bachelor - Imọ-ẹrọ Kọmputa",
+        "bachelor_desc": "Epitech Technology - Ẹkọ ti o da lori iṣẹ akanṣe<br>Idagbasoke ilọsiwaju • Idaduro pipe ati iṣakoso iṣẹ akanṣe"
     },
     "projects": {
         "title": "Aṣayan ti Awọn iṣẹ akanṣe ti a ṣe",
@@ -77,19 +77,19 @@
                 "images": ["./assets/images/powerBi_adventure_works_1.png", "./assets/images/powerBi_adventure_works_2.png"] 
             },
             { 
-                "title": "Real-Time Dashboard – NASA APOD + Weather", 
+                "title": "Real-Time Dashboard - NASA APOD + Weather", 
                 "short": "Dasibodu ibaraenisepo ti n ṣafihan oju-ọjọ gidi-akoko ati aworan NASA ti ọjọ naa.", 
                 "desc": "Dasibodu agbara ti n ṣafihan oju-ọjọ gidi-akoko (OpenWeatherMap API) ati aworan astronomical ti ọjọ (NASA APOD). Isọdọtun data aifọwọyi, awọn paati ifaseyin, mimu aṣiṣe nẹtiwọọki.", 
                 "tech": "NodeJs, API NASA, OpenWeatherMap, docker"
             },
             { 
-                "title": "AREA – Automation & Interconnections", 
+                "title": "AREA - Automation & Interconnections", 
                 "short": "IFTTT-bi Syeed lilo Node, React, Docker.", 
                 "desc": "IFTTT-bi Syeed gbigba adaṣiṣẹ ti awọn iṣe laarin awọn iṣẹ (API, awọn iṣẹ ṣiṣe igbakọọkan, webhooks).", 
                 "tech": "Node, React, Docker, API, Webhooks, SMTP, OAUTH" 
             },
             { 
-                "title": "Radiant – Personalized Advice & Product Recommendations", 
+                "title": "Radiant - Personalized Advice & Product Recommendations", 
                 "short": "AI-orisun Web ibaraenisepo.", 
                 "desc": "Gbigba alaye olumulo ati iran ti imọran ti ara ẹni pẹlu awọn iṣeduro ọja ni iṣura.", 
                 "tech": "Python, OpenApi, ReactJs" 
@@ -125,7 +125,7 @@
                 "tech": "Python, Scraping" 
             },
             { 
-                "title": "ID Card PDF Export – Django", 
+                "title": "ID Card PDF Export - Django", 
                 "short": "Adaṣiṣẹ iran ti awọn kaadi ni banki kika ni PDF.", 
                 "desc": "Iran adaṣe ti PDF pẹlu fọto, koodu QR, alaye iṣakoso.", 
                 "tech": "Python, Django, PDF, QR Code" 
@@ -156,12 +156,13 @@
         }
     },
     "footer": {
-        "copyright": "© 2025 Soraya Codo – Portfolio ti ara ẹni"
+        "copyright": "© 2025 Soraya Codo - Portfolio ti ara ẹni"
     },
     "side_quests": {
         "title": "Awọn ibere ẹgbẹ",
         "subtitle": "Awọn idanwo ti a bi lati inu iwariiri ati ayọ ti ṣawari AI ati ẹda.",
         "simulation": "(Ibaraẹnisọrọ Simulation)",
+        "nav_puzzles": "Àdojúrú",
         "loading": "AI n ronu...",
         "messages": {
             "error_skin_type": "Jọwọ yan iru awọ ara rẹ.",

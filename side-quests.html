@@ -29,222 +29,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        /* Particles & Background */
-        html { background-color: var(--marine); }
-        body { background-color: var(--marine); z-index: -2; }
-        
-        canvas#particles-quest { 
-            position: fixed; 
-            top: 0; 
-            left: 0; 
-            width: 100vw; 
-            height: 100vh;
-            height: 100dvh;
-            z-index: -1; 
-            display: block;
-            background: radial-gradient(circle at top center, var(--marine-light) 0%, var(--marine) 80%);
-            transition: background 0.3s ease;
-        }
-
-        .quest-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
-        
-        .quest-card { 
-            background: var(--card); 
-            border-radius: 30px; 
-            padding: 40px 30px; 
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-            position: relative; 
-            overflow: visible; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        /* Sophisticated Professional Hover Effect */
-        .quest-card {
-            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
-        }
-
-        .quest-card::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 30px;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            z-index: -1;
-        }
-
-        .quest-card:hover { 
-            transform: translateY(-5px); 
-            background: var(--card-hover); 
-            border-color: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        [data-theme="light"] .quest-card:hover {
-            border-color: rgba(0, 0, 0, 0.1);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .quest-card:hover::after { opacity: 1; }
-        
-        .quest-header { text-align: center; margin-bottom: 20px; display: flex; flex-direction: column; align-items: center; }
-        
-        .quest-title { 
-            font-size: 1.8rem; 
-            font-weight: 800; 
-            color: var(--accent);
-            margin: 0;
-            text-shadow: 0 2px 10px color-mix(in srgb, var(--accent), transparent 80%);
-        }
-        
-        .quest-desc { 
-            font-size: 1rem; 
-            color: var(--text-light); 
-            margin-bottom: 30px; 
-            line-height: 1.6; 
-            text-align: center; 
-            transition: color 0.3s;
-        }
-
-        .quest-card:hover .quest-desc { color: var(--text); }
-        .quest-card:hover .quest-input-area p { color: var(--text); }
-        
-        .quest-input-area { background: rgba(255,255,255,0.03); padding: 25px; border-radius: 20px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1); }
-        [data-theme="light"] .quest-input-area { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.05); }
-        
-        .quest-input { 
-            width: 100%; 
-            background: rgba(255,255,255,0.05); 
-            border: 2px solid transparent; 
-            border-radius: 15px;
-            padding: 15px; 
-            color: var(--text); 
-            font-family: 'Poppins', sans-serif; 
-            font-size: 1rem; 
-            margin-bottom: 20px; 
-            outline: none; 
-            transition: 0.3s;
-        }
-        [data-theme="light"] .quest-input { background: rgba(0,0,0,0.05); }
-        .quest-input:focus { border-color: var(--accent); background: transparent; transform: scale(1.02); }
-        
-        .quest-btn { 
-            background: linear-gradient(90deg, var(--accent), var(--accent-hover));
-            color: white; 
-            border: none; 
-            padding: 15px 30px; 
-            border-radius: 50px; 
-            cursor: pointer; 
-            font-weight: 700; 
-            transition: 0.3s; 
-            width: 100%; 
-            font-size: 1rem;
-            box-shadow: 0 5px 20px color-mix(in srgb, var(--accent), transparent 70%);
-        }
-        .quest-btn:hover { transform: scale(1.02); box-shadow: 0 10px 25px color-mix(in srgb, var(--accent), transparent 50%); filter: brightness(1.1); }
-        
-        .quest-result { min-height: 60px; margin-top: 25px; padding: 20px; border-radius: 15px; background: color-mix(in srgb, var(--accent), transparent 90%); font-size: 1rem; color: var(--text); display: none; text-align: center; border: 1px dashed var(--accent); }
-        .quest-result.visible { display: block; animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-        
-        .quest-options { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; justify-content: center; }
-        .quest-option-btn { background: transparent; border: 2px solid var(--accent-secondary); color: var(--text-light); padding: 10px 20px; border-radius: 50px; cursor: pointer; transition: 0.3s; font-size: 0.9rem; font-weight: 600; }
-        .quest-option-btn:hover, .quest-option-btn.active { background: var(--accent); color: white; border-color: var(--accent); transform: scale(1.1); }
-
-        .theme-chip {
-            display: inline-block;
-            border: 1px solid var(--accent-secondary);
-            border-radius: 20px;
-            padding: 8px 16px;
-            font-size: 0.9rem;
-            margin: 5px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-light);
-            user-select: none;
-        }
-        .theme-chip:hover {
-            background: var(--accent);
-            color: white;
-            border-color: var(--accent);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        /* Puzzle Photo */
-        .puzzle-note {
-            max-width: 600px;
-            margin: -15px auto 25px;
-            padding: 6px 15px;
-            border-left: 3px solid var(--text-light);
-            color: var(--text-light);
-            opacity: 0.75;
-            font-size: 0.85rem;
-            font-style: italic;
-            line-height: 1.5;
-            text-align: left;
-        }
-        .puzzle-label { margin-bottom: 8px; font-size: 0.9rem; color: var(--text-light); text-align: center; }
-        .puzzle-stats {
-            display: flex; justify-content: center; gap: 30px;
-            margin: 10px 0 20px; font-size: 1.1rem; color: var(--text);
-            font-variant-numeric: tabular-nums; /* les chiffres du chrono ne "sautent" pas */
-        }
-        .puzzle-layout { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; align-items: flex-start; }
-        .puzzle-aside { width: 180px; display: flex; flex-direction: column; gap: 20px; }
-        #puzzle-preview {
-            width: 100%; aspect-ratio: 1 / 1; object-fit: cover;
-            border-radius: 12px; border: 2px solid var(--accent);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        #puzzle-scores { margin: 0; padding: 0; list-style: none; font-size: 0.85rem; color: var(--text-light); line-height: 1.8; text-align: center; }
-
-        #puzzle-grid {
-            display: grid;
-            gap: 2px;
-            width: min(100%, 450px);
-            aspect-ratio: 1 / 1;
-            user-select: none;
-        }
-        .puzzle-piece {
-            background-repeat: no-repeat;
-            border-radius: 4px;
-            cursor: pointer;
-            outline: 3px solid transparent;
-            transition: transform 0.15s, box-shadow 0.15s, outline-color 0.15s;
-        }
-        .puzzle-piece:hover { transform: scale(1.04); z-index: 1; }
-        .puzzle-piece.selected {
-            outline-color: var(--accent);
-            transform: scale(0.92);
-            box-shadow: 0 0 15px var(--accent);
-        }
-        #puzzle-grid.solved { gap: 0; }
-        #puzzle-grid.solved .puzzle-piece { border-radius: 0; cursor: default; transform: none; }
-
-        .puzzle-thumb {
-            width: 60px; height: 60px; object-fit: cover;
-            border-radius: 10px; cursor: pointer;
-            border: 3px solid transparent; opacity: 0.6; transition: 0.3s;
-        }
-        .puzzle-thumb:hover, .puzzle-thumb.active { opacity: 1; border-color: var(--accent); }
-
-        @media (max-width: 600px) {
-            .puzzle-aside { width: 100%; flex-direction: row; justify-content: center; }
-            .puzzle-aside > div { width: 140px; }
-
-            /* Bigger grid on phones: the card overflows the section padding (40px) and its inner paddings shrink */
-            #quest-puzzle { padding: 25px 10px; margin-left: -30px; margin-right: -30px; border-radius: 20px; }
-            #quest-puzzle .quest-input-area { padding: 15px 5px; }
-            #puzzle-grid { width: 100%; }
-        }
-
-
-        @keyframes popIn { 0% { opacity: 0; transform: scale(0.5); } 100% { opacity: 1; transform: scale(1); } }
-    </style>
+    <link rel="stylesheet" href="css/side-quests.css">
 </head>
 <body>
 
@@ -253,11 +38,12 @@
 <nav>
     <ul>
         <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+        <li><a href="#quest-puzzle" data-i18n="side_quests.nav_puzzles">Puzzles</a></li>
         <li><a href="#beauty" data-i18n="side_quests.beauty.title">Beauté</a></li>
         <li><a href="#poetry" data-i18n="side_quests.literature.title">Littérature</a></li>
         <li><a href="#science" data-i18n="side_quests.science.title">Science</a></li>
-        <li><a href="side-quests.html" class="nav-highlight" style="display: none;">
-            <svg style="width: 18px; height: 18px;" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <li><a href="side-quests.html" class="nav-highlight">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
             </svg>
             <span data-i18n="side_quests.title">Side Quests</span>
@@ -282,7 +68,7 @@
                 </div>
             </div>
         </div>
-        <select id="language-select" style="display: none;">
+        <select id="language-select">
             <option value="fr">Français</option>
             <option value="en">English</option>
             <option value="yo">Yorùbá</option>
@@ -293,28 +79,28 @@
     </div>
 </nav>
 
-<main style="padding-top: 50px;">
+<main class="side-quests-main">
     <section>
-        <h1 style="text-align: center; margin-bottom: 20px;" data-i18n="side_quests.title">Side Quests</h1>
-        <p style="text-align: center; color: var(--text-light); margin-bottom: 60px; max-width: 700px; margin-left: auto; margin-right: auto;">
+        <h1 class="page-title" data-i18n="side_quests.title">Side Quests</h1>
+        <p class="page-subtitle">
             <span data-i18n="side_quests.subtitle">Des expérimentations nées de la curiosité et du plaisir d'explorer l'IA et la créativité.</span> <br>
-            <em style="font-size: 0.9rem;" data-i18n="side_quests.simulation">(Simulation interactive)</em>
+            <em data-i18n="side_quests.simulation">(Simulation interactive)</em>
         </p>
 
         <!-- Quick Navigation -->
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 50px; padding: 0 20px;">
-            <a href="#quest-puzzle" class="theme-chip" style="text-decoration: none;" data-i18n="side_quests.puzzle.title">Puzzle Photo</a>
-            <a href="#quest-skincare" class="theme-chip" style="text-decoration: none;" data-i18n="side_quests.beauty.radiant.title">Radiant Skincare</a>
-            <a href="#quest-wordsearch" class="theme-chip" style="text-decoration: none;" data-i18n="side_quests.literature.word_search.title">Mots Mêlés</a>
-            <a href="#quest-quote" class="theme-chip" style="text-decoration: none;" data-i18n="side_quests.literature.quote.title">Citation Célèbre</a>
-            <a href="#quest-rhyme" class="theme-chip" style="text-decoration: none;" data-i18n="side_quests.literature.rhyme.title">Rime-Moi Vert</a>
-            <a href="#quest-philosophy" class="theme-chip" style="text-decoration: none;" data-i18n="side_quests.literature.philosophy.title">Définitions Philosophiques</a>
-            <a href="#quest-nasa" class="theme-chip" style="text-decoration: none;" data-i18n="side_quests.science.gallery.title">Galerie NASA</a>
-            <a href="#quest-guessing" class="theme-chip" style="text-decoration: none;" data-i18n="side_quests.science.guessing_game.title">Devinette IA</a>
+        <div class="quest-nav">
+            <a href="#quest-puzzle" class="theme-chip" data-i18n="side_quests.puzzle.title">Puzzle Photo</a>
+            <a href="#quest-skincare" class="theme-chip" data-i18n="side_quests.beauty.radiant.title">Radiant Skincare</a>
+            <a href="#quest-wordsearch" class="theme-chip" data-i18n="side_quests.literature.word_search.title">Mots Mêlés</a>
+            <a href="#quest-quote" class="theme-chip" data-i18n="side_quests.literature.quote.title">Citation Célèbre</a>
+            <a href="#quest-rhyme" class="theme-chip" data-i18n="side_quests.literature.rhyme.title">Rime-Moi Vert</a>
+            <a href="#quest-philosophy" class="theme-chip" data-i18n="side_quests.literature.philosophy.title">Définitions Philosophiques</a>
+            <a href="#quest-nasa" class="theme-chip" data-i18n="side_quests.science.gallery.title">Galerie NASA</a>
+            <a href="#quest-guessing" class="theme-chip" data-i18n="side_quests.science.guessing_game.title">Devinette IA</a>
         </div>
 
 <!-- Puzzle Photo -->
-<div id="quest-puzzle" class="quest-card" style="margin-bottom: 40px;">
+<div id="quest-puzzle" class="quest-card quest-card--full">
     <div class="quest-header">
         <div class="quest-title" data-i18n="side_quests.puzzle.title">Puzzle Photo</div>
     </div>
@@ -324,11 +110,11 @@
     <div class="quest-input-area">
         <!-- Choix de la photo -->
         <p class="puzzle-label" data-i18n="side_quests.puzzle.choose_photo">Choisissez une photo :</p>
-        <div id="puzzle-photos" class="quest-options" style="justify-content: center;"></div>
+        <div id="puzzle-photos" class="quest-options"></div>
 
         <!-- Choix du niveau -->
         <p class="puzzle-label" data-i18n="side_quests.puzzle.choose_level">Niveau de difficulté :</p>
-        <div class="quest-options" style="justify-content: center;">
+        <div class="quest-options">
             <button class="quest-option-btn puzzle-size-btn active" data-size="3" onclick="selectPuzzleSize(3)" data-i18n="side_quests.puzzle.easy">Facile (3×3)</button>
             <button class="quest-option-btn puzzle-size-btn" data-size="5" onclick="selectPuzzleSize(5)" data-i18n="side_quests.puzzle.medium">Moyen (5×5)</button>
             <button class="quest-option-btn puzzle-size-btn" data-size="7" onclick="selectPuzzleSize(7)" data-i18n="side_quests.puzzle.hard">Difficile (7×7)</button>
@@ -357,17 +143,17 @@
             <div id="puzzle-grid"></div>
         </div>
 
-        <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
-            <button class="quest-btn" onclick="initPuzzle()" style="max-width: 250px;" data-i18n="side_quests.puzzle.shuffle">Mélanger</button>
-            <button class="quest-btn" onclick="resetPuzzleScores()" style="max-width: 250px; background: transparent; border: 1px solid var(--accent-secondary); color: var(--text-light); font-size: 0.8rem;" data-i18n="side_quests.puzzle.reset_scores">Réinitialiser les scores</button>
+        <div class="quest-actions puzzle-actions">
+            <button class="quest-btn" onclick="initPuzzle()" data-i18n="side_quests.puzzle.shuffle">Mélanger</button>
+            <button class="quest-btn quest-btn--subtle" onclick="resetPuzzleScores()" data-i18n="side_quests.puzzle.reset_scores">Réinitialiser les scores</button>
         </div>
-        <div id="puzzle-message" style="margin-top: 15px; text-align: center; min-height: 20px; font-weight: bold;"></div>
+        <div id="puzzle-message" class="quest-message"></div>
     </div>
 </div>
 
 
         <!-- Beauté & Soin -->
-<h3 id="beauty" style="margin-top: 80px;" data-i18n="side_quests.beauty.title">Beauté & Soin</h3>
+<h3 id="beauty" class="quest-section-title" data-i18n="side_quests.beauty.title">Beauté & Soin</h3>
 <div class="quest-grid">
     <!-- Radiant Skincare -->
     <div id="quest-skincare" class="quest-card">
@@ -376,28 +162,28 @@
         </div>
         <p class="quest-desc" data-i18n="side_quests.beauty.radiant.desc">Obtenez une routine sur-mesure basée sur votre type de peau.</p>
         <div class="quest-input-area">
-            <p style="margin-bottom: 10px; font-size: 0.9rem; color: var(--text-light);" data-i18n="side_quests.beauty.radiant.skin_type_label">Type de Peau</p>
-            <div class="quest-options" style="justify-content: flex-start;">
+            <p class="quest-label" data-i18n="side_quests.beauty.radiant.skin_type_label">Type de Peau</p>
+            <div class="quest-options quest-options--start">
                 <button class="quest-option-btn" onclick="selectSkinType(this, 'oily')" data-i18n="side_quests.beauty.radiant.options.oily">Grasse</button>
                 <button class="quest-option-btn" onclick="selectSkinType(this, 'dry')" data-i18n="side_quests.beauty.radiant.options.dry">Sèche</button>
                 <button class="quest-option-btn" onclick="selectSkinType(this, 'combo')" data-i18n="side_quests.beauty.radiant.options.combo">Mixte</button>
                 <button class="quest-option-btn" onclick="selectSkinType(this, 'sensitive')" data-i18n="side_quests.beauty.radiant.options.sensitive">Sensible</button>
             </div>
             
-            <p style="margin-bottom: 10px; font-size: 0.9rem; color: var(--text-light); margin-top: 15px;" data-i18n="side_quests.beauty.radiant.concerns_label">Préoccupations (Optionnel)</p>
+            <p class="quest-label quest-label--spaced" data-i18n="side_quests.beauty.radiant.concerns_label">Préoccupations (Optionnel)</p>
             <input type="text" id="skin-concern" class="quest-input" placeholder="Ex: Acné, Taches, Rides, Teint terne..." data-i18n-placeholder="side_quests.beauty.radiant.concerns_placeholder">
             
             <button class="quest-btn" onclick="generateSkincare()" data-i18n="side_quests.beauty.radiant.button">Générer ma Routine</button>
         </div>
-        <div id="skincare-result" class="quest-result" style="text-align: left;"></div>
+        <div id="skincare-result" class="quest-result quest-result--left"></div>
     </div>
 </div>
 
         <!-- Literature & Nature -->
-<h3 id="poetry" style="margin-top: 80px;" data-i18n="side_quests.literature.title">Littérature & Nature</h3>
+<h3 id="poetry" class="quest-section-title" data-i18n="side_quests.literature.title">Littérature & Nature</h3>
 
 <!-- Mots Mêlés (Full Width) -->
-<div id="quest-wordsearch" class="quest-card" style="margin-bottom: 40px;">
+<div id="quest-wordsearch" class="quest-card quest-card--full">
     <div class="quest-header">
         <div class="quest-title" data-i18n="side_quests.literature.word_search.title">Mots Mêlés</div>
     </div>
@@ -405,50 +191,50 @@
     
     <div class="quest-input-area">
             <!-- Theme Selection -->
-            <div class="quest-options" style="justify-content: center; margin-bottom: 10px;">
+            <div class="quest-options ws-themes">
             <button class="quest-option-btn active" onclick="selectWordSearchTheme(0)" data-i18n="side_quests.literature.word_search.theme1">Nature</button>
             <button class="quest-option-btn" onclick="selectWordSearchTheme(1)" data-i18n="side_quests.literature.word_search.theme2">Animaux</button>
             <button class="quest-option-btn" onclick="selectWordSearchTheme(2)" data-i18n="side_quests.literature.word_search.theme3">Techno</button>
         </div>
 
         <!-- Size Selection -->
-        <p style="margin-bottom: 5px; color: var(--text-light); font-size: 0.9rem;" data-i18n="side_quests.literature.word_search.choose_size">Choisissez la taille de la grille :</p>
-        <div class="quest-options" style="justify-content: center; margin-bottom: 15px; transform: scale(0.9);">
+        <p class="quest-label ws-size-label" data-i18n="side_quests.literature.word_search.choose_size">Choisissez la taille de la grille :</p>
+        <div class="quest-options ws-sizes">
             <button class="quest-option-btn size-btn" onclick="selectWordSearchSize(8)" data-i18n="side_quests.literature.word_search.size_small">Petite</button>
             <button class="quest-option-btn size-btn active" onclick="selectWordSearchSize(10)" data-i18n="side_quests.literature.word_search.size_medium">Moyenne</button>
             <button class="quest-option-btn size-btn" onclick="selectWordSearchSize(12)" data-i18n="side_quests.literature.word_search.size_large">Grande</button>
         </div>
 
         <!-- Timer & Best Scores -->
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-size: 0.9rem; color: var(--text-light);">
+        <div class="ws-stats">
             <div id="ws-timer">00:00</div>
             <div id="ws-best-score">Top 3: --:--:--</div>
         </div>
 
         <!-- Game Area: Grid + Word List -->
-        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-bottom: 20px;">
+        <div class="ws-game">
             <!-- The Grid -->
-            <div id="ws-grid" style="display: grid; gap: 2px; user-select: none; touch-action: none; position: relative;">
+            <div id="ws-grid">
                 <!-- Cells generated by JS -->
             </div>
             
             <!-- Word List -->
-            <div id="ws-words" style="min-width: 150px; text-align: left;">
-                <h5 style="margin-top: 0; color: var(--accent); margin-bottom: 10px;" data-i18n="side_quests.literature.word_search.words_to_find">Mots à trouver :</h5>
-                <ul id="ws-word-list" style="list-style: none; padding: 0; margin: 0; color: var(--text-light); font-size: 0.9rem; line-height: 1.6;">
+            <div id="ws-words">
+                <h5 data-i18n="side_quests.literature.word_search.words_to_find">Mots à trouver :</h5>
+                <ul id="ws-word-list">
                     <!-- List items generated by JS -->
                 </ul>
             </div>
         </div>
 
             <!-- Controls -->
-            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+            <div class="quest-actions ws-actions">
                 <button class="quest-btn" onclick="useHint()" id="ws-hint-btn" data-i18n="side_quests.literature.word_search.hint">Indice (3)</button>
-                <button class="quest-btn" onclick="resetWordSearch()" style="background: transparent; border: 1px solid var(--accent); color: var(--text);" data-i18n="side_quests.literature.word_search.reset">Recommencer</button>
-                <button class="quest-btn" onclick="resetWsBestScore()" style="background: transparent; border: 1px solid var(--accent-secondary); color: var(--text-light); font-size: 0.8rem; padding: 10px 15px;" data-i18n="side_quests.literature.word_search.reset_score">Reset Best Score</button>
+                <button class="quest-btn quest-btn--outline" onclick="resetWordSearch()" data-i18n="side_quests.literature.word_search.reset">Recommencer</button>
+                <button class="quest-btn quest-btn--subtle" onclick="resetWsBestScore()" data-i18n="side_quests.literature.word_search.reset_score">Reset Best Score</button>
             </div>
             
-            <div id="ws-message" style="margin-top: 15px; text-align: center; min-height: 20px; font-weight: bold;"></div>
+            <div id="ws-message" class="quest-message"></div>
     </div>
 </div>
 
@@ -459,8 +245,8 @@
             <div class="quest-title" data-i18n="side_quests.literature.quote.title">Citation Célèbre</div>
         </div>
         <p class="quest-desc" data-i18n="side_quests.literature.quote.desc">Choisissez un thème pour découvrir une pensée intemporelle.</p>
-        <div class="quest-input-area" style="text-align: center;">
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; margin-bottom: 10px;">
+        <div class="quest-input-area quest-input-area--center">
+            <div class="quote-themes">
                 <span class="theme-chip" onclick="generateQuote('love')" data-i18n="side_quests.literature.quote.themes.love">Amour</span>
                 <span class="theme-chip" onclick="generateQuote('courage')" data-i18n="side_quests.literature.quote.themes.courage">Courage</span>
                 <span class="theme-chip" onclick="generateQuote('time')" data-i18n="side_quests.literature.quote.themes.time">Temps</span>
@@ -484,7 +270,7 @@
             <input type="text" id="nature-input" class="quest-input" placeholder="Ex: Vieux Chêne, Tempête, Silence..." data-i18n-placeholder="side_quests.literature.rhyme.placeholder">
             <button class="quest-btn" onclick="generateNaturePoem()" data-i18n="side_quests.literature.rhyme.button">Lire</button>
         </div>
-        <div id="nature-poem-result" class="quest-result" style="text-align: left;"></div>
+        <div id="nature-poem-result" class="quest-result quest-result--left"></div>
     </div>
 
     <!-- Philosophical Definitions -->
@@ -494,32 +280,32 @@
         </div>
         <p class="quest-desc" data-i18n="side_quests.literature.philosophy.desc">Choisissez un concept pour en découvrir l'essence.</p>
         
-        <div class="quest-input-area" style="text-align: center;">
-            <div id="philosophy-themes" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 10px;">
+        <div class="quest-input-area quest-input-area--center">
+            <div id="philosophy-themes">
                 <!-- Themes generated by JS -->
             </div>
         </div>
-        <div id="philosophy-result" class="quest-result" style="text-align: left; line-height: 1.6;"></div>
+        <div id="philosophy-result" class="quest-result quest-result--left"></div>
     </div>
 </div>
         
         <!-- Science & Tech -->
-<h3 id="science" style="margin-top: 80px;" data-i18n="side_quests.science.title">Science</h3>
+<h3 id="science" class="quest-section-title" data-i18n="side_quests.science.title">Science</h3>
 <div class="quest-grid">
     <!-- Tool 7: NASA Image and Video Library Gallery -->
-    <div id="quest-nasa" class="quest-card" style="overflow-x: auto;">
+    <div id="quest-nasa" class="quest-card">
         <div class="quest-header">
             <div class="quest-title" data-i18n="side_quests.science.gallery.title">Galerie NASA</div>
         </div>
         <p class="quest-desc" data-i18n="side_quests.science.gallery.desc">Exploration des 20 dernières merveilles de la NASA Image and Video Library.</p>
         
-        <div id="nasa-gallery-container" class="gallery-scroll" style="display: flex; overflow-x: auto; gap: 20px; padding-bottom: 20px; scroll-behavior: smooth;">
+        <div id="nasa-gallery-container" class="gallery-scroll">
             <!-- Gallery Items injected by JS -->
-            <div style="min-width: 300px; height: 400px; background: rgba(0,0,0,0.2); border-radius: 15px; display: flex; align-items: center; justify-content: center; color: var(--text-light);" data-i18n="side_quests.science.gallery.loading">
+            <div class="nasa-loading" data-i18n="side_quests.science.gallery.loading">
                 Chargement de la librairie...
             </div>
         </div>
-        <p style="text-align: right; font-size: 0.7rem; color: var(--text-light); margin-top: 5px; opacity: 0.7;" data-i18n="side_quests.science.gallery.source">Source : NASA Image and Video Library</p>
+        <p class="nasa-source" data-i18n="side_quests.science.gallery.source">Source : NASA Image and Video Library</p>
         
     </div>
 
@@ -530,10 +316,10 @@
         </div>
         <p class="quest-desc" data-i18n="side_quests.science.guessing_game.desc">Pensez à un nombre entre 1 et 32. L'IA le trouvera en 5 questions !</p>
         
-        <div class="quest-input-area" style="text-align: center;">
+        <div class="quest-input-area quest-input-area--center">
             <button id="guessing-game-start-btn" class="quest-btn" onclick="startGuessingGame()" data-i18n="side_quests.science.guessing_game.start">Commencer</button>
             
-            <div id="guessing-game-interaction" style="display: none;">
+            <div id="guessing-game-interaction">
                 <!-- Interaction content injected by JS -->
             </div>
         </div>
@@ -547,7 +333,7 @@
     <p>
         <a href="index.html">Retour au Portfolio</a>
     </p>
-    <p class="copyright">© 2025 Soraya Codo – Side Quests</p>
+    <p class="copyright">© 2025 Soraya Codo - Side Quests</p>
 </footer>
 
 <script src="js/script.js"></script>

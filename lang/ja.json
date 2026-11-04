@@ -1,7 +1,7 @@
 {
     "header": {
         "role": "フルスタックエンジニア バックエンド & AI志向",
-        "location": "モンペリエ、フランス"
+        "location": " フランス"
     },
     "languages": {
         "fr": "フランス語",
@@ -21,7 +21,7 @@
     },
     "about": {
         "text1": "好奇心旺盛で几帳面、そして学ぶことに意欲的です... :)",
-        "text2": "私の原動力：テクノロジーが物事を真に良くすることができる、インパクトのあるプロジェクトに貢献すること... そして、新たなバグを生み出さないこと",
+        "text2": "私の原動力：テクノロジーがプロセスをもっとスムーズにできる、インパクトのあるプロジェクトに貢献すること… そして、新たなバグを生み出さないこと",
         "text3": "私の目標：常に改善し、より効率的で有用なソリューションを常に模索する多才な開発者として進化すること... 最小限のカフェインとたくさんの楽しみと共に"
     },
     "cv": {
@@ -39,23 +39,23 @@
         "tests": "テストポリシー & CI/CD",
         "collaboration": "コラボレーション",
         "details": {
-            "lang_desc": "<ul><li><strong>C</strong> / <strong>C++</strong></li><li><strong>Python</strong> – バックエンド, AI, スクリプト, 自動化</li><li><strong>Django</strong> + <strong>Django REST Framework</strong></li><li><strong>JavaScript</strong> / <strong>Node.js</strong></li><li><strong>ReactJs</strong></li><li><strong>SQL & DAX (Power BI)</strong></li><li><strong>HTML</strong> / <strong>CSS</strong></li><li><strong>Docker</strong> – コンテナ化</li></ul>",
-            "db_desc": "<ul><li><strong>MongoDB</strong> (NoSQL)</li><li><strong>MySQL / PostgreSQL</strong></li><li><strong>Django</strong> 経由のリレーショナルデータベース</li><li>スキーマ設計 & マイグレーション</li></ul>",
+            "lang_desc": "<ul><li>C / C++</li><li>Python - バックエンド, AI, スクリプト, 自動化</li><li>Django + Django REST Framework</li><li>JavaScript / Node.js</li><li>ReactJs</li><li>SQL & DAX (Power BI)</li><li>HTML / CSS</li><li>Docker - コンテナ化</li></ul>",
+            "db_desc": "<ul><li>MongoDB (NoSQL)</li><li>MySQL / PostgreSQL</li><li>Django 経由のリレーショナルデータベース</li><li>スキーマ設計 & マイグレーション</li></ul>",
             "data_desc": "<ul><li>NumPy • pandas • scikit-learn</li><li>NLP (自然言語処理)</li><li>完全なパイプライン：スクレイピング → クリーニング → 分析 → 予測</li><li>Whisper + FFMPEG (音声/動画の書き起こし)</li></ul>",
-            "web_desc": "<ul><li>高度なスクレイピング (Selenium, requests)</li><li>反復タスクの自動化</li><li>REST APIs • Webhooks • サードパーティ統合</li><li>OAuth2 (Youtube, Google, Linkedin…)</li><li><strong>Celery</strong> + Redis (非同期タスク)</li></ul>",
-            "tools_desc": "<ul><li><strong>Power BI</strong></li><li><strong>Azure</strong> (基礎: VMs, Blob, Functions)</li><li><strong>Git</strong> & GitHub Actions (CI/CD)</li><li>Docker • Docker Compose</li><li>Postman • Swagger</li></ul>",
+            "web_desc": "<ul><li>高度なスクレイピング (Selenium, requests)</li><li>反復タスクの自動化</li><li>REST APIs • Webhooks • サードパーティ統合</li><li>OAuth2 (Youtube, Google, Linkedin…)</li><li>Celery + Redis (非同期タスク)</li></ul>",
+            "tools_desc": "<ul><li>Power BI</li><li>Azure (基礎: VMs, Blob, Functions)</li><li>Git & GitHub Actions (CI/CD)</li><li>Docker • Docker Compose</li><li>Postman • Swagger</li></ul>",
             "tests_desc": "<ul><li><strong>単体テスト：</strong> クリティカルな関数、ビジネスロジック、サービス、ユーティリティのカバレッジ。</li><li><strong>機能テスト：</strong> ユーザーワークフローと API エンドポイントの完全な検証。</li><li><strong>統合テスト：</strong> サービス、データベース、外部 API 間の相互作用。</li><li><strong>モッキング & フィクスチャ：</strong> 依存関係の分離、シナリオの再現性。</li><li><strong>CI/CD：</strong> 自動テスト、リンティング、デプロイ (GitHub Actions / Docker)。</li></ul>",
-            "collab_desc": "<ul><li><strong>Git</strong> / <strong>GitLab</strong> / <strong>GitHub</strong></li><li><strong>Jira</strong></li><li><strong>Trello</strong></li><li><strong>Microsoft Teams</strong></li></ul>"
+            "collab_desc": "<ul><li>Git / GitLab / GitHub</li><li>Jira</li><li>Trello</li><li>Azure DevOps</li><li>Confluence</li><li>Microsoft Officeスイート</li></ul>"
         }
     },
     "education": {
         "title": "学歴",
-        "master": "修士 — 人工知能 & データマネジメント",
-        "master_school": "IASchool / Nexa Digital School — リヨン",
+        "master": "修士 - 人工知能 & データマネジメント",
+        "master_school": "IASchool / Nexa Digital School - リヨン",
         "courses": "外部コース",
-        "courses_desc": "<p>ラヴァル大学 — ビジネス数学</p><p>Udemy — PowerBI</p>",
-        "bachelor": "学士 — コンピュータサイエンス",
-        "bachelor_desc": "Epitech Technology — プロジェクトベースの教育法<br>高度な開発 • 完全な自律性とプロジェクト管理"
+        "courses_desc": "<p>ラヴァル大学 - 情報科学におけるソフトウェア品質</p><p>Udemy - PowerBI</p><p>ラヴァル大学 - ビジネス数学</p>",
+        "bachelor": "学士 - コンピュータサイエンス",
+        "bachelor_desc": "Epitech Technology - プロジェクトベースの教育法<br>高度な開発 • 完全な自律性とプロジェクト管理"
     },
     "projects": {
         "title": "制作プロジェクトの一部",
@@ -77,19 +77,19 @@
                 "images": ["./assets/images/powerBi_adventure_works_1.png", "./assets/images/powerBi_adventure_works_2.png"] 
             },
             { 
-                "title": "Real-Time Dashboard – NASA APOD + Weather", 
+                "title": "Real-Time Dashboard - NASA APOD + Weather", 
                 "short": "リアルタイムの天気と NASA の今日の画像を表示するインタラクティブなダッシュボード。", 
                 "desc": "リアルタイムの天気 (OpenWeatherMap API) と今日の天文画像 (NASA APOD) を表示する動的ダッシュボード。自動更新データ、リアクティブコンポーネント、ネットワークエラー処理。", 
                 "tech": "NodeJs, API NASA, OpenWeatherMap, docker"
             },
             { 
-                "title": "AREA – Automation & Interconnections", 
+                "title": "AREA - Automation & Interconnections", 
                 "short": "Node, React, Docker を使用した IFTTT のようなプラットフォーム。", 
                 "desc": "サービス間のアクション (API, 定期タスク, webhooks) を自動化できる IFTTT のようなプラットフォーム。", 
                 "tech": "Node, React, Docker, API, Webhooks, SMTP, OAUTH" 
             },
             { 
-                "title": "Radiant – Personalized Advice & Product Recommendations", 
+                "title": "Radiant - Personalized Advice & Product Recommendations", 
                 "short": "AI ベースの Web インタラクション。", 
                 "desc": "ユーザー情報の収集と、在庫のある製品の推奨を含むパーソナライズされたアドバイスの生成。", 
                 "tech": "Python, OpenApi, ReactJs" 
@@ -125,7 +125,7 @@
                 "tech": "Python, Scraping" 
             },
             { 
-                "title": "ID Card PDF Export – Django", 
+                "title": "ID Card PDF Export - Django", 
                 "short": "銀行形式のカードを PDF で自動生成。", 
                 "desc": "写真、QR コード、管理情報を含む PDF の自動生成。", 
                 "tech": "Python, Django, PDF, QR Code" 
@@ -156,12 +156,13 @@
         }
     },
     "footer": {
-        "copyright": "© 2025 Soraya Codo – 個人ポートフォリオ"
+        "copyright": "© 2025 Soraya Codo - 個人ポートフォリオ"
     },
     "side_quests": {
         "title": "サイドクエスト",
         "subtitle": "好奇心とAIや創造性を探求する喜びから生まれた実験。",
         "simulation": "(インタラクティブシミュレーション)",
+        "nav_puzzles": "パズル",
         "loading": "AIが考え中...",
         "messages": {
             "error_skin_type": "肌タイプを選択してください。",

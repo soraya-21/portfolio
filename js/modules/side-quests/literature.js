@@ -14,7 +14,7 @@ window.generateQuote = function(category) {
             const text = randomQuote.text || randomQuote;
             const author = randomQuote.author || "";
             
-            resultDiv.innerHTML = `<blockquote style="font-style: italic; border-left: 3px solid var(--accent); padding-left: 10px; margin: 0;">"${text}" <br><span style="font-size:0.8em; opacity:0.8; font-style:normal;">— ${author}</span></blockquote>`;
+            resultDiv.innerHTML = `<blockquote style="font-style: italic; border-left: 3px solid var(--accent); padding-left: 10px; margin: 0;">"${text}" <br><span style="font-size:0.8em; opacity:0.8; font-style:normal;">- ${author}</span></blockquote>`;
         } else {
             const noQuoteMsg = window.getTranslation('side_quests.messages.no_quote', "Pas de citation disponible pour ce thème.");
             resultDiv.innerHTML = noQuoteMsg;

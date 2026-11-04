@@ -1,7 +1,7 @@
 {
     "header": {
         "role": "全栈开发人员 后端与人工智能方向",
-        "location": "蒙彼利埃，法国"
+        "location": " 法国"
     },
     "languages": {
         "fr": "法语",
@@ -21,7 +21,7 @@
     },
     "about": {
         "text1": "好奇，严谨，渴望学习... :)",
-        "text2": "我的动力：为高影响力的项目做出贡献，让技术真正改善事物... 并避免制造另一个 bug",
+        "text2": "我的动力：为高影响力的项目做出贡献，让技术简化流程… 并避免制造另一个 bug",
         "text3": "我的目标：成长为一名多才多艺的开发人员，不断进步，总是寻找更有效和更有用的解决方案... 用最少的咖啡因和很多的乐趣"
     },
     "cv": {
@@ -39,23 +39,23 @@
         "tests": "测试策略 & CI/CD",
         "collaboration": "协作",
         "details": {
-            "lang_desc": "<ul><li><strong>C</strong> / <strong>C++</strong></li><li><strong>Python</strong> – 后端, AI, 脚本, 自动化</li><li><strong>Django</strong> + <strong>Django REST Framework</strong></li><li><strong>JavaScript</strong> / <strong>Node.js</strong></li><li><strong>ReactJs</strong></li><li><strong>SQL & DAX (Power BI)</strong></li><li><strong>HTML</strong> / <strong>CSS</strong></li><li><strong>Docker</strong> – 容器化</li></ul>",
-            "db_desc": "<ul><li><strong>MongoDB</strong> (NoSQL)</li><li><strong>MySQL / PostgreSQL</strong></li><li>通过 <strong>Django</strong> 的关系数据库</li><li>架构设计 & 迁移</li></ul>",
+            "lang_desc": "<ul><li>C / C++</li><li>Python - 后端, AI, 脚本, 自动化</li><li>Django + Django REST Framework</li><li>JavaScript / Node.js</li><li>ReactJs</li><li>SQL & DAX (Power BI)</li><li>HTML / CSS</li><li>Docker - 容器化</li></ul>",
+            "db_desc": "<ul><li>MongoDB (NoSQL)</li><li>MySQL / PostgreSQL</li><li>通过 Django 的关系数据库</li><li>架构设计 & 迁移</li></ul>",
             "data_desc": "<ul><li>NumPy • pandas • scikit-learn</li><li>NLP (自然语言处理)</li><li>完整管道：爬取 → 清洗 → 分析 → 预测</li><li>Whisper + FFMPEG (音频/视频转录)</li></ul>",
-            "web_desc": "<ul><li>高级爬虫 (Selenium, requests)</li><li>重复任务自动化</li><li>REST APIs • Webhooks • 第三方集成</li><li>OAuth2 (Youtube, Google, Linkedin…)</li><li><strong>Celery</strong> + Redis (异步任务)</li></ul>",
-            "tools_desc": "<ul><li><strong>Power BI</strong></li><li><strong>Azure</strong> (基础: VMs, Blob, Functions)</li><li><strong>Git</strong> & GitHub Actions (CI/CD)</li><li>Docker • Docker Compose</li><li>Postman • Swagger</li></ul>",
+            "web_desc": "<ul><li>高级爬虫 (Selenium, requests)</li><li>重复任务自动化</li><li>REST APIs • Webhooks • 第三方集成</li><li>OAuth2 (Youtube, Google, Linkedin…)</li><li>Celery + Redis (异步任务)</li></ul>",
+            "tools_desc": "<ul><li>Power BI</li><li>Azure (基础: VMs, Blob, Functions)</li><li>Git & GitHub Actions (CI/CD)</li><li>Docker • Docker Compose</li><li>Postman • Swagger</li></ul>",
             "tests_desc": "<ul><li><strong>单元测试：</strong> 覆盖关键功能，业务逻辑，服务，工具。</li><li><strong>功能测试：</strong> 完整验证用户工作流和 API 端点。</li><li><strong>集成测试：</strong> 服务，数据库，外部 API 之间的交互。</li><li><strong>Mocking & fixtures：</strong> 依赖隔离，场景可复现性。</li><li><strong>CI/CD：</strong> 自动化测试，linting 和部署 (GitHub Actions / Docker)。</li></ul>",
-            "collab_desc": "<ul><li><strong>Git</strong> / <strong>GitLab</strong> / <strong>GitHub</strong></li><li><strong>Jira</strong></li><li><strong>Trello</strong></li><li><strong>Microsoft Teams</strong></li></ul>"
+            "collab_desc": "<ul><li>Git / GitLab / GitHub</li><li>Jira</li><li>Trello</li><li>Azure DevOps</li><li>Confluence</li><li>Microsoft 办公套件</li></ul>"
         }
     },
     "education": {
         "title": "学术背景",
-        "master": "硕士 — 人工智能与数据管理",
-        "master_school": "IASchool / Nexa Digital School — 里昂",
+        "master": "硕士 - 人工智能与数据管理",
+        "master_school": "IASchool / Nexa Digital School - 里昂",
         "courses": "外部课程",
-        "courses_desc": "<p>拉瓦尔大学 — 商业数学</p><p>Udemy — PowerBI</p>",
-        "bachelor": "学士 — 计算机科学",
-        "bachelor_desc": "Epitech Technology — 基于项目的教学法<br>高级开发 • 完全自主和项目管理"
+        "courses_desc": "<p>拉瓦尔大学 - 计算机软件质量</p><p>Udemy - PowerBI</p><p>拉瓦尔大学 - 商业数学</p>",
+        "bachelor": "学士 - 计算机科学",
+        "bachelor_desc": "Epitech Technology - 基于项目的教学法<br>高级开发 • 完全自主和项目管理"
     },
     "projects": {
         "title": "部分已完成项目",
@@ -77,19 +77,19 @@
                 "images": ["./assets/images/powerBi_adventure_works_1.png", "./assets/images/powerBi_adventure_works_2.png"] 
             },
             { 
-                "title": "Real-Time Dashboard – NASA APOD + Weather", 
+                "title": "Real-Time Dashboard - NASA APOD + Weather", 
                 "short": "交互式仪表板显示实时天气和 NASA 每日图片。", 
                 "desc": "动态仪表板显示实时天气 (OpenWeatherMap API) 和每日天文图片 (NASA APOD)。自动刷新数据，响应式组件和网络错误处理。", 
                 "tech": "NodeJs, API NASA, OpenWeatherMap, docker"
             },
             { 
-                "title": "AREA – Automation & Interconnections", 
+                "title": "AREA - Automation & Interconnections", 
                 "short": "使用 Node, React, Docker 的类 IFTTT 平台。", 
                 "desc": "类 IFTTT 平台，允许在服务之间自动化操作 (API, 定期任务, webhooks)。", 
                 "tech": "Node, React, Docker, API, Webhooks, SMTP, OAUTH" 
             },
             { 
-                "title": "Radiant – Personalized Advice & Product Recommendations", 
+                "title": "Radiant - Personalized Advice & Product Recommendations", 
                 "short": "基于 AI 的网络交互。", 
                 "desc": "收集用户信息并生成个性化建议，包括库存产品推荐。", 
                 "tech": "Python, OpenApi, ReactJs" 
@@ -125,7 +125,7 @@
                 "tech": "Python, Scraping" 
             },
             { 
-                "title": "ID Card PDF Export – Django", 
+                "title": "ID Card PDF Export - Django", 
                 "short": "自动生成银行格式的 PDF 卡片。", 
                 "desc": "自动生成带有照片、二维码、行政信息的 PDF。", 
                 "tech": "Python, Django, PDF, QR Code" 
@@ -156,12 +156,13 @@
         }
     },
     "footer": {
-        "copyright": "© 2025 Soraya Codo – 个人作品集"
+        "copyright": "© 2025 Soraya Codo - 个人作品集"
     },
     "side_quests": {
         "title": "Side Quests",
         "subtitle": "出于好奇和探索 AI 与创造力的乐趣而诞生的实验。",
         "simulation": "(交互式模拟)",
+        "nav_puzzles": "拼图",
         "loading": "AI 正在思考...",
         "messages": {
             "error_skin_type": "请选择您的肤质。",

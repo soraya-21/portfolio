@@ -1,7 +1,7 @@
 {
     "header": {
         "role": "풀스택 개발자 백엔드 및 AI 중심",
-        "location": "몽펠리에, 프랑스"
+        "location": " 프랑스"
     },
     "languages": {
         "fr": "프랑스어",
@@ -21,7 +21,7 @@
     },
     "about": {
         "text1": "호기심 많고 꼼꼼하며 배우고자 하는 열정이 가득합니다... :)",
-        "text2": "나의 원동력: 기술이 실제로 상황을 개선할 수 있는 영향력 있는 프로젝트에 기여하는 것... 그리고 또 다른 버그를 만들지 않는 것",
+        "text2": "나의 원동력: 기술이 업무 프로세스를 더 쉽게 만들 수 있는 영향력 있는 프로젝트에 기여하는 것… 그리고 또 다른 버그를 만들지 않는 것",
         "text3": "나의 목표: 항상 발전하고, 더 효율적이고 유용한 솔루션을 끊임없이 찾는 다재다능한 개발자로 성장하는 것... 최소한의 카페인과 많은 즐거움으로"
     },
     "cv": {
@@ -39,23 +39,23 @@
         "tests": "테스트 정책 & CI/CD",
         "collaboration": "협업",
         "details": {
-            "lang_desc": "<ul><li><strong>C</strong> / <strong>C++</strong></li><li><strong>Python</strong> – 백엔드, AI, 스크립트, 자동화</li><li><strong>Django</strong> + <strong>Django REST Framework</strong></li><li><strong>JavaScript</strong> / <strong>Node.js</strong></li><li><strong>ReactJs</strong></li><li><strong>SQL & DAX (Power BI)</strong></li><li><strong>HTML</strong> / <strong>CSS</strong></li><li><strong>Docker</strong> – 컨테이너화</li></ul>",
-            "db_desc": "<ul><li><strong>MongoDB</strong> (NoSQL)</li><li><strong>MySQL / PostgreSQL</strong></li><li><strong>Django</strong>를 통한 관계형 데이터베이스</li><li>스키마 설계 & 마이그레이션</li></ul>",
+            "lang_desc": "<ul><li>C / C++</li><li>Python - 백엔드, AI, 스크립트, 자동화</li><li>Django + Django REST Framework</li><li>JavaScript / Node.js</li><li>ReactJs</li><li>SQL & DAX (Power BI)</li><li>HTML / CSS</li><li>Docker - 컨테이너화</li></ul>",
+            "db_desc": "<ul><li>MongoDB (NoSQL)</li><li>MySQL / PostgreSQL</li><li>Django를 통한 관계형 데이터베이스</li><li>스키마 설계 & 마이그레이션</li></ul>",
             "data_desc": "<ul><li>NumPy • pandas • scikit-learn</li><li>NLP (자연어 처리)</li><li>전체 파이프라인: 스크래핑 → 정제 → 분석 → 예측</li><li>Whisper + FFMPEG (오디오/비디오 변환)</li></ul>",
-            "web_desc": "<ul><li>고급 스크래핑 (Selenium, requests)</li><li>반복 작업 자동화</li><li>REST APIs • Webhooks • 타사 통합</li><li>OAuth2 (Youtube, Google, Linkedin…)</li><li><strong>Celery</strong> + Redis (비동기 작업)</li></ul>",
-            "tools_desc": "<ul><li><strong>Power BI</strong></li><li><strong>Azure</strong> (기초: VMs, Blob, Functions)</li><li><strong>Git</strong> & GitHub Actions (CI/CD)</li><li>Docker • Docker Compose</li><li>Postman • Swagger</li></ul>",
+            "web_desc": "<ul><li>고급 스크래핑 (Selenium, requests)</li><li>반복 작업 자동화</li><li>REST APIs • Webhooks • 타사 통합</li><li>OAuth2 (Youtube, Google, Linkedin…)</li><li>Celery + Redis (비동기 작업)</li></ul>",
+            "tools_desc": "<ul><li>Power BI</li><li>Azure (기초: VMs, Blob, Functions)</li><li>Git & GitHub Actions (CI/CD)</li><li>Docker • Docker Compose</li><li>Postman • Swagger</li></ul>",
             "tests_desc": "<ul><li><strong>단위 테스트:</strong> 중요 기능, 비즈니스 로직, 서비스, 유틸리티 커버리지.</li><li><strong>기능 테스트:</strong> 사용자 워크플로 및 API 엔드포인트의 완전한 검증.</li><li><strong>통합 테스트:</strong> 서비스, 데이터베이스, 외부 API 간의 상호 작용.</li><li><strong>모킹 & 픽스처:</strong> 의존성 격리, 시나리오 재현성.</li><li><strong>CI/CD:</strong> 자동화 테스트, 린팅 및 배포 (GitHub Actions / Docker).</li></ul>",
-            "collab_desc": "<ul><li><strong>Git</strong> / <strong>GitLab</strong> / <strong>GitHub</strong></li><li><strong>Jira</strong></li><li><strong>Trello</strong></li><li><strong>Microsoft Teams</strong></li></ul>"
+            "collab_desc": "<ul><li>Git / GitLab / GitHub</li><li>Jira</li><li>Trello</li><li>Azure DevOps</li><li>Confluence</li><li>Microsoft 제품군</li></ul>"
         }
     },
     "education": {
         "title": "학력",
-        "master": "석사 — 인공 지능 & 데이터 관리",
-        "master_school": "IASchool / Nexa Digital School — 리옹",
+        "master": "석사 - 인공 지능 & 데이터 관리",
+        "master_school": "IASchool / Nexa Digital School - 리옹",
         "courses": "외부 과정",
-        "courses_desc": "<p>라발 대학교 — 비즈니스 수학</p><p>Udemy — PowerBI</p>",
-        "bachelor": "학사 — 컴퓨터 과학",
-        "bachelor_desc": "Epitech Technology — 프로젝트 기반 교육법<br>고급 개발 • 완전한 자율성 및 프로젝트 관리"
+        "courses_desc": "<p>라발 대학교 - 컴퓨터 과학 소프트웨어 품질</p><p>Udemy - PowerBI</p><p>라발 대학교 - 비즈니스 수학</p>",
+        "bachelor": "학사 - 컴퓨터 과학",
+        "bachelor_desc": "Epitech Technology - 프로젝트 기반 교육법<br>고급 개발 • 완전한 자율성 및 프로젝트 관리"
     },
     "projects": {
         "title": "일부 진행한 프로젝트",
@@ -77,19 +77,19 @@
                 "images": ["./assets/images/powerBi_adventure_works_1.png", "./assets/images/powerBi_adventure_works_2.png"] 
             },
             { 
-                "title": "Real-Time Dashboard – NASA APOD + Weather", 
+                "title": "Real-Time Dashboard - NASA APOD + Weather", 
                 "short": "실시간 날씨와 NASA 오늘의 이미지를 표시하는 인터랙티브 대시보드.", 
                 "desc": "실시간 날씨 (OpenWeatherMap API)와 오늘의 천문 이미지 (NASA APOD)를 표시하는 동적 대시보드. 데이터 자동 새로고침, 반응형 컴포넌트, 네트워크 오류 처리.", 
                 "tech": "NodeJs, API NASA, OpenWeatherMap, docker"
             },
             { 
-                "title": "AREA – Automation & Interconnections", 
+                "title": "AREA - Automation & Interconnections", 
                 "short": "Node, React, Docker를 사용한 IFTTT와 유사한 플랫폼.", 
                 "desc": "서비스 간의 작업(API, 주기적 작업, webhooks)을 자동화할 수 있는 IFTTT와 유사한 플랫폼.", 
                 "tech": "Node, React, Docker, API, Webhooks, SMTP, OAUTH" 
             },
             { 
-                "title": "Radiant – Personalized Advice & Product Recommendations", 
+                "title": "Radiant - Personalized Advice & Product Recommendations", 
                 "short": "AI 기반 웹 상호 작용.", 
                 "desc": "사용자 정보 수집 및 재고 제품 추천을 포함한 개인화된 조언 생성.", 
                 "tech": "Python, OpenApi, ReactJs" 
@@ -125,7 +125,7 @@
                 "tech": "Python, Scraping" 
             },
             { 
-                "title": "ID Card PDF Export – Django", 
+                "title": "ID Card PDF Export - Django", 
                 "short": "은행 형식의 카드를 PDF로 자동 생성.", 
                 "desc": "사진, QR 코드, 행정 정보를 포함한 PDF 자동 생성.", 
                 "tech": "Python, Django, PDF, QR Code" 
@@ -173,12 +173,13 @@
         }
     },
     "footer": {
-        "copyright": "© 2025 Soraya Codo – 개인 포트폴리오"
+        "copyright": "© 2025 Soraya Codo - 개인 포트폴리오"
     },
     "side_quests": {
         "title": "사이드 퀘스트",
         "subtitle": "호기심과 AI 및 창의성을 탐구하는 즐거움에서 탄생한 실험들.",
         "simulation": "(인터랙티브 시뮬레이션)",
+        "nav_puzzles": "퍼즐",
         "loading": "AI가 생각 중...",
         "messages": {
             "error_skin_type": "피부 타입을 선택해주세요.",

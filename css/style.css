@@ -1,3 +1,28 @@
+/* ==========================================================================
+   GLOBAL STYLES (all pages) + HOME PAGE (index.html)
+   Side Quests page specific styles live in side-quests.css.
+
+   1.  Theme variables (dark / light)
+   2.  Base
+   3.  Background (particles, blobs)
+   4.  Animations
+   5.  Navigation (menu, theme toggle, language selector)
+   6.  Header (home)
+   7.  Sections & titles
+   8.  CV section + CV popup
+   9.  Skills cards
+   10. Timeline
+   11. Interests
+   12. Projects + project modal
+   13. Footer
+   14. Responsive
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. THEME VARIABLES
+   ========================================================================== */
+
 :root {
     --marine: #020617; /* Deep Navy */
     --marine-light: #0f172a;
@@ -26,6 +51,11 @@
     --nav-bg: rgba(255, 255, 255, 0.98);
 }
 
+
+/* ==========================================================================
+   2. BASE
+   ========================================================================== */
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html, body {
     height: 100%;
@@ -38,12 +68,19 @@ html, body {
 }
 body { min-height: 100vh; display: flex; flex-direction: column; position: relative; }
 
-canvas#particles { 
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%; 
+main { flex: 1; }
+
+
+/* ==========================================================================
+   3. BACKGROUND
+   ========================================================================== */
+
+canvas#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: -1;
     display: block;
     background: radial-gradient(circle at top center, var(--marine-light) 0%, var(--marine) 80%);
@@ -57,9 +94,13 @@ canvas#particles {
 .blob1 { width: 600px; height: 600px; top: -200px; left: -200px; }
 .blob2 { width: 800px; height: 800px; bottom: -300px; right: -250px; animation-delay: 10s; }
 
+
+/* ==========================================================================
+   4. ANIMATIONS
+   ========================================================================== */
+
 @keyframes float { 0%,100%{transform:translate(0,0) rotate(0deg)} 50%{transform:translate(100px,-100px) rotate(180deg)} }
 
-/* --- Animation Classes --- */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -82,7 +123,30 @@ canvas#particles {
     animation: fadeInUp 0.8s ease-out forwards;
 }
 
-/* Theme Toggle Button */
+@keyframes bounce { 0%,100%{transform: translateX(0) rotate(45deg)} 50%{transform: translateX(6px) rotate(45deg)} }
+
+
+/* ==========================================================================
+   5. NAVIGATION
+   ========================================================================== */
+
+/* --- Menu --- */
+nav {
+    position: sticky; top: 0; z-index: 100; background: var(--nav-bg); backdrop-filter: blur(15px);
+    padding: 20px 0; border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+    transition: background 0.3s ease;
+}
+nav ul { display: flex; justify-content: center; gap: 60px; list-style: none; flex-wrap: wrap; }
+nav a { color: var(--text-light); text-decoration: none; font-weight: 500; letter-spacing: 1.5px; position: relative; transition: 0.4s; }
+nav a::after { content: ''; position: absolute; width: 0; height: 1px; bottom: -5px; left: 50%; background: var(--accent); transition: 0.4s; }
+nav a:hover { color: var(--accent); }
+nav a:hover::after { width: 100%; left: 0; }
+
+/* "Side Quests" link with its icon */
+nav a.nav-highlight { color: var(--accent); font-weight: 600; display: flex; align-items: center; gap: 5px; }
+nav a.nav-highlight svg { width: 18px; height: 18px; }
+
+/* --- Theme toggle button --- */
 .theme-btn {
     background: transparent;
     border: none;
@@ -113,7 +177,7 @@ canvas#particles {
 [data-theme="light"] .sun-icon { display: block; }
 [data-theme="light"] .moon-icon { display: none; }
 
-/* Language Selector */
+/* --- Language selector (custom dropdown) --- */
 .lang-selector {
     position: absolute;
     top: 20px;
@@ -123,7 +187,6 @@ canvas#particles {
     align-items: center;
 }
 
-/* Custom Dropdown Styles */
 .custom-select-wrapper {
     position: relative;
     user-select: none;
@@ -157,6 +220,11 @@ canvas#particles {
     background: var(--box-name);
     border-color: var(--accent-hover);
     box-shadow: 0 0 15px rgba(74, 144, 226, 0.15);
+}
+
+.select-content {
+    display: flex;
+    align-items: center;
 }
 
 .custom-options {
@@ -257,6 +325,11 @@ canvas#particles {
     display: none;
 }
 
+
+/* ==========================================================================
+   6. HEADER (home)
+   ========================================================================== */
+
 header {
     text-align: center; padding: 120px 20px 60px; position: relative; z-index: 2;
 }
@@ -269,28 +342,6 @@ h1 {
 }
 h2 { font-size: 1.1rem; color: var(--accent); letter-spacing: 3px; font-weight: 400; margin-top: 10px; text-transform: uppercase; }
 
-.location {
-    margin-top: 20px; font-size: 1.1rem; color: var(--text-light);
-}
-.location svg { width: 18px; height: 18px; margin-right: 8px; vertical-align: -3px; }
-
-.about {
-    text-align: justify; max-width: 900px; margin: 0 auto 80px; padding: 0 20px;
-    font-size: 1.1rem; line-height: 1.6; color: var(--text-light);
-}
-
-nav {
-    position: sticky; top: 0; z-index: 100; background: var(--nav-bg); backdrop-filter: blur(15px);
-    padding: 20px 0; border-bottom: 1px solid rgba(74, 144, 226, 0.2);
-    transition: background 0.3s ease;
-}
-nav ul { display: flex; justify-content: center; gap: 60px; list-style: none; flex-wrap: wrap; }
-nav a { color: var(--text-light); text-decoration: none; font-weight: 500; letter-spacing: 1.5px; position: relative; transition: 0.4s; }
-nav a::after { content: ''; position: absolute; width: 0; height: 1px; bottom: -5px; left: 50%; background: var(--accent); transition: 0.4s; }
-nav a:hover { color: var(--accent); }
-nav a:hover::after { width: 100%; left: 0; }
-nav a.nav-highlight { color: var(--accent); font-weight: 600; }
-
 .avatar {
     width: 170px;
     height: 170px;
@@ -302,19 +353,32 @@ nav a.nav-highlight { color: var(--accent); font-weight: 600; }
     opacity: 0;
     transition: opacity 0.6s ease-in-out;
 }
-
-.select-content {
-    display: flex;
-    align-items: center;
-}
-
 .avatar.loaded { opacity: 1; }
 
-main { flex: 1; }
+.location {
+    margin-top: 20px; font-size: 1.1rem; color: var(--text-light);
+}
+.location svg { width: 18px; height: 18px; margin-right: 8px; vertical-align: -3px; }
+
+
+/* ==========================================================================
+   7. SECTIONS & TITLES
+   ========================================================================== */
+
 section { padding: 50px 40px; max-width: 1500px; margin: 0 auto; }
 h3 { text-align: center; font-size: 2.5rem; margin-bottom: 70px; color: var(--accent); font-weight: 600; }
 
-/* === SECTION CV === */
+/* About text (home) */
+.about {
+    text-align: justify; max-width: 900px; margin: 0 auto 80px; padding: 50px 20px 0;
+    font-size: 1.1rem; line-height: 1.6; color: var(--text-light);
+}
+
+
+/* ==========================================================================
+   8. CV SECTION + CV POPUP
+   ========================================================================== */
+
 #cv { text-align: center; padding: 60px 40px; }
 .cv-language-switcher {
     display: flex;
@@ -364,7 +428,7 @@ h3 { text-align: center; font-size: 2.5rem; margin-bottom: 70px; color: var(--ac
 }
 .btn svg { width: 26px; height: 26px; }
 
-/* Popup CV */
+/* --- CV popup --- */
 #cv-popup {
     display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(0,0,0,0.95); z-index: 9999; justify-content: center; align-items: center;
@@ -385,6 +449,11 @@ h3 { text-align: center; font-size: 2.5rem; margin-bottom: 70px; color: var(--ac
 }
 .cv-close:hover { background: rgba(0,0,0,0.9); transform: scale(1.1); }
 
+
+/* ==========================================================================
+   9. SKILLS CARDS
+   ========================================================================== */
+
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 35px; }
 .card { background: var(--card); backdrop-filter: blur(14px); border: 1px solid rgba(0, 242, 255, 0.1); border-radius: 24px; padding: 38px; transition: all 0.5s ease; position: relative; overflow: hidden; }
 .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent-secondary)); transform: translateX(-100%); transition: 0.8s; }
@@ -394,6 +463,11 @@ h3 { text-align: center; font-size: 2.5rem; margin-bottom: 70px; color: var(--ac
 .card ul { list-style: none; line-height: 2.6; font-size: 1.02rem; }
 .card li::before { content: '>'; color: var(--accent); font-weight: bold; margin-right: 12px; }
 
+
+/* ==========================================================================
+   10. TIMELINE
+   ========================================================================== */
+
 .timeline { max-width: 800px; margin: 0 auto; position: relative; padding-left: 40px; }
 .timeline::before { content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 3px; background: var(--accent); opacity: 0.4; }
 .timeline-item { position: relative; margin-bottom: 60px; padding-left: 40px; }
@@ -401,11 +475,21 @@ h3 { text-align: center; font-size: 2.5rem; margin-bottom: 70px; color: var(--ac
 .timeline-item h4 { color: var(--accent); font-size: 1.1rem; margin-bottom: 10px; }
 .timeline-item p { color: var(--text-light); font-size: 1.1rem; line-height: 1.7; }
 
+
+/* ==========================================================================
+   11. INTERESTS
+   ========================================================================== */
+
 .interests { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; max-width: 1400px; margin: 0 auto; }
 .interest-card { background: var(--card); border-radius: 20px; padding: 32px 24px; text-align: center; border: 1px solid rgba(59,130,246,0.2); transition: all 0.4s ease; }
 .interest-card:hover { transform: translateY(-12px); border-color: var(--accent); box-shadow: 0 25px 50px rgba(59,130,246,0.25); }
 .interest-card h4 { margin-top: 16px; color: var(--box-name); font-size: 1.3rem; }
 .interest-card p { margin-top: 12px; color: var(--text-light); font-size: 1rem; line-height: 1.6; }
+
+
+/* ==========================================================================
+   12. PROJECTS + PROJECT MODAL
+   ========================================================================== */
 
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; }
 .project-card { background: var(--card); border-radius: 24px; overflow: hidden; cursor: pointer; border: 1px solid rgba(59,130,246,0.2); transition: all 0.5s ease; position: relative; padding: 30px 30px 70px 30px; }
@@ -416,7 +500,7 @@ h3 { text-align: center; font-size: 2.5rem; margin-bottom: 70px; color: var(--ac
 }
 .project-card h4 { font-size: 1.45rem; color: var(--box-name); margin-bottom: 12px; }
 .project-card p { color: var(--text-light); font-size: 0.98rem; margin-bottom: 20px; }
-/* CSS Modification for data-after attribute on project card */
+/* "See more" text, from the data-after attribute */
 .project-card::after {
     content: attr(data-after); /* Use attribute value */
     position: absolute;
@@ -428,20 +512,34 @@ h3 { text-align: center; font-size: 2.5rem; margin-bottom: 70px; color: var(--ac
     transform: translateY(10px);
     transition: 0.3s;
 }
+/* Small arrow at the bottom of the card */
 .project-card::before { content: ""; position: absolute; bottom: 22px; left: calc(50% + 80px); width: 10px; height: 10px; border-top: 2.5px solid var(--accent); border-right: 2.5px solid var(--accent); transform: rotate(45deg); opacity: 0.9; }
 .project-card:hover::before { animation: bounce 1.5s infinite; }
-@keyframes bounce { 0%,100%{transform: translateX(0) rotate(45deg)} 50%{transform: translateX(6px) rotate(45deg)} }
 
+/* --- Project modal --- */
 .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); justify-content: center; align-items: center; z-index: 9999; backdrop-filter: blur(8px); }
 .modal-content { background: var(--card); color: var(--text); padding: 50px; border-radius: 28px; max-width: 800px; width: 90%; max-height: 90vh; overflow-y: auto; border: 2px solid var(--accent); position: relative; box-shadow: 0 20px 80px rgba(0,0,0,0.4); }
 .close { position: absolute; top: 20px; right: 25px; font-size: 2.5rem; color: var(--accent); cursor: pointer; transition: 0.3s; }
 .close:hover { transform: scale(1.2); color: var(--accent-hover); }
+.modal-images { margin: 20px 0; }
+.modal-desc { margin: 30px 0; font-size: 1.1rem; line-height: 1.7; }
+.modal-tech { color: var(--accent); font-weight: 600; }
+
+
+/* ==========================================================================
+   13. FOOTER
+   ========================================================================== */
 
 footer { padding: 70px 20px 40px; text-align: center; background: var(--nav-bg); border-top: 1px solid var(--accent); position: relative; z-index: 10; }
 footer a { color: var(--accent); text-decoration: none; font-weight: 600; margin: 0 12px; transition: 0.3s; }
 footer a:hover { color: var(--accent-hover); }
 footer p { margin: 20px 0 10px; font-size: 1.2rem; line-height: 2; color: var(--text); }
 footer .copyright { margin-top: 30px; font-size: 0.95rem; color: var(--text-light); }
+
+
+/* ==========================================================================
+   14. RESPONSIVE
+   ========================================================================== */
 
 @media (max-width: 768px) {
     h1 { font-size: 3.2rem; }
@@ -454,42 +552,4 @@ footer .copyright { margin-top: 30px; font-size: 0.95rem; color: var(--text-ligh
     .cv-buttons { flex-direction: column; align-items: center; }
     .cv-language-switcher { flex-direction: column; gap: 10px; }
     html {background-color: var(--marine); z-index: -1;}
-}
-
-/* Word Search Styles */
-.ws-cell {
-    width: 30px;
-    height: 30px;
-    border: 1px solid #444;
-    background: white;
-    text-align: center;
-    line-height: 28px; /* Vertical align */
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 1rem;
-    color: black;
-    cursor: pointer;
-    user-select: none;
-    transition: background 0.2s;
-    position: relative; /* Crucial for z-index to work reliably in all contexts */
-}
-.ws-cell:hover {
-    background: #e0f7fa;
-}
-.ws-cell.selected {
-    background: var(--accent);
-    color: white;
-}
-.ws-cell.found {
-    background: #d4edda;
-    color: #155724;
-    border-color: #c3e6cb;
-}
-.ws-cell.hint-highlight {
-    background: #ffeb3b !important; /* Strong Yellow */
-    color: black !important;
-    box-shadow: 0 0 15px #ffeb3b;
-    transform: scale(1.1);
-    z-index: 10;
-    transition: all 0.3s ease;
 }
