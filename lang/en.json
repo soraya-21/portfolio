@@ -172,6 +172,24 @@
             "error_rhyme_input": "Please enter a theme or an element.",
             "rhyme_title_prefix": "The Spirit of:"
         },
+        "puzzle": {
+            "title": "Photo Puzzle",
+            "desc": "Pick a photo and a level, then click two pieces to swap them. The timer starts on your first click!",
+            "choose_photo": "Choose a photo:",
+            "choose_level": "Difficulty level:",
+            "easy": "Easy (3×3)",
+            "medium": "Medium (5×5)",
+            "hard": "Hard (7×7)",
+            "moves": "Moves",
+            "preview": "Preview",
+            "best_scores": "Level Top 3",
+            "no_score": "No score for this level yet",
+            "shuffle": "Shuffle",
+            "reset_scores": "Reset scores",
+            "win": "Well done! Solved in {time} with {moves} moves 🎉",
+            "new_record": "New record!",
+            "note": "These pictures are AI-generated avatars based on photos of me… and a little bit of imagination."
+        },
         "beauty": {
             "title": "Beauty & Care",
             "radiant": {

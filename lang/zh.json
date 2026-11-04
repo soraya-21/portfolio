@@ -168,6 +168,24 @@
             "error_rhyme_input": "请输入主题或元素。",
             "rhyme_title_prefix": "精神："
         },
+        "puzzle": {
+            "title": "照片拼图",
+            "desc": "选择一张照片和难度，然后点击两块拼图进行交换。计时从第一次点击开始！",
+            "choose_photo": "选择一张照片：",
+            "choose_level": "难度等级：",
+            "easy": "简单 (3×3)",
+            "medium": "中等 (5×5)",
+            "hard": "困难 (7×7)",
+            "moves": "步数",
+            "preview": "原图",
+            "best_scores": "本难度前三名",
+            "no_score": "该难度暂无成绩",
+            "shuffle": "打乱",
+            "reset_scores": "重置成绩",
+            "win": "太棒了！用时 {time}，共 {moves} 步完成 🎉",
+            "new_record": "新纪录！",
+            "note": "这些图片是根据我的照片、再加上一点想象力，由 AI 生成的头像。"
+        },
         "beauty": {
             "title": "美容 & 护理",
             "radiant": {

@@ -168,6 +168,24 @@
             "error_rhyme_input": "Jọwọ tẹ akori tabi ipin kan sii.",
             "rhyme_title_prefix": "Ẹmi ti:"
         },
+        "puzzle": {
+            "title": "Àdojúrú Fọ́tò",
+            "desc": "Yan fọ́tò kan àti ìpele kan, lẹ́yìn náà tẹ àwọn ègé méjì láti pààrọ̀ wọn. Aago yóò bẹ̀rẹ̀ nígbà tí o bá kọ́kọ́ tẹ̀!",
+            "choose_photo": "Yan fọ́tò kan:",
+            "choose_level": "Ìpele ìṣòro:",
+            "easy": "Rọrùn (3×3)",
+            "medium": "Àárín (5×5)",
+            "hard": "Ó le (7×7)",
+            "moves": "Ìgbésẹ̀",
+            "preview": "Àwòṣe",
+            "best_scores": "Top 3 ìpele yìí",
+            "no_score": "Kò sí èsì fún ìpele yìí síbẹ̀",
+            "shuffle": "Dà á pọ̀",
+            "reset_scores": "Tún àwọn èsì ṣe",
+            "win": "Kú iṣẹ́! O parí ní {time} pẹ̀lú ìgbésẹ̀ {moves} 🎉",
+            "new_record": "Àkọsílẹ̀ tuntun!",
+            "note": "Àwọn àwòrán wọ̀nyí jẹ́ àwọn avatar tí AI ṣẹ̀dá láti inú àwọn fọ́tò mi… pẹ̀lú díẹ̀ nínú ìrònú."
+        },
         "beauty": {
             "title": "Ẹwa & Itọju",
             "radiant": {
