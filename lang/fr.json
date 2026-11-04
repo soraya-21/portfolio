@@ -172,6 +172,23 @@
             "error_rhyme_input": "Veuillez entrer un thème ou un élément.",
             "rhyme_title_prefix": "L'Esprit de :"
         },
+        "puzzle": {
+            "title": "Puzzle Photo",
+            "desc": "Choisissez une photo et un niveau, puis cliquez sur deux pièces pour les échanger. Le chrono démarre au premier clic !",
+            "choose_photo": "Choisissez une photo :",
+            "choose_level": "Niveau de difficulté :",
+            "easy": "Facile (3×3)",
+            "medium": "Moyen (5×5)",
+            "hard": "Difficile (7×7)",
+            "moves": "Coups",
+            "preview": "Modèle",
+            "best_scores": "Top 3 du niveau",
+            "no_score": "Aucun score pour ce niveau",
+            "shuffle": "Mélanger",
+            "reset_scores": "Réinitialiser les scores",
+            "win": "Bravo ! Terminé en {time} et {moves} coups 🎉",
+            "new_record": "Nouveau record !"
+        },
         "beauty": {
             "title": "Beauté & Soin",
             "radiant": {

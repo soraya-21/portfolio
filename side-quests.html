@@ -167,6 +167,58 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
+        /* Puzzle Photo */
+        .puzzle-label { margin-bottom: 8px; font-size: 0.9rem; color: var(--text-light); text-align: center; }
+        .puzzle-stats {
+            display: flex; justify-content: center; gap: 30px;
+            margin: 10px 0 20px; font-size: 1.1rem; color: var(--text);
+            font-variant-numeric: tabular-nums; /* les chiffres du chrono ne "sautent" pas */
+        }
+        .puzzle-layout { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; align-items: flex-start; }
+        .puzzle-aside { width: 180px; display: flex; flex-direction: column; gap: 20px; }
+        #puzzle-preview {
+            width: 100%; aspect-ratio: 1 / 1; object-fit: cover;
+            border-radius: 12px; border: 2px solid var(--accent);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        #puzzle-scores { margin: 0; padding: 0; list-style: none; font-size: 0.85rem; color: var(--text-light); line-height: 1.8; text-align: center; }
+
+        #puzzle-grid {
+            display: grid;
+            gap: 2px;
+            width: min(100%, 450px);
+            aspect-ratio: 1 / 1;
+            user-select: none;
+        }
+        .puzzle-piece {
+            background-repeat: no-repeat;
+            border-radius: 4px;
+            cursor: pointer;
+            outline: 3px solid transparent;
+            transition: transform 0.15s, box-shadow 0.15s, outline-color 0.15s;
+        }
+        .puzzle-piece:hover { transform: scale(1.04); z-index: 1; }
+        .puzzle-piece.selected {
+            outline-color: var(--accent);
+            transform: scale(0.92);
+            box-shadow: 0 0 15px var(--accent);
+        }
+        #puzzle-grid.solved { gap: 0; }
+        #puzzle-grid.solved .puzzle-piece { border-radius: 0; cursor: default; transform: none; }
+
+        .puzzle-thumb {
+            width: 60px; height: 60px; object-fit: cover;
+            border-radius: 10px; cursor: pointer;
+            border: 3px solid transparent; opacity: 0.6; transition: 0.3s;
+        }
+        .puzzle-thumb:hover, .puzzle-thumb.active { opacity: 1; border-color: var(--accent); }
+
+        @media (max-width: 600px) {
+            .puzzle-aside { width: 100%; flex-direction: row; justify-content: center; }
+            .puzzle-aside > div { width: 140px; }
+        }
+
+
         @keyframes popIn { 0% { opacity: 0; transform: scale(0.5); } 100% { opacity: 1; transform: scale(1); } }
     </style>
 </head>
@@ -227,6 +279,7 @@
 
         <!-- Quick Navigation -->
         <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 50px; padding: 0 20px;">
+            <a href="#quest-puzzle" class="theme-chip" style="text-decoration: none;" data-i18n="side_quests.puzzle.title">Puzzle Photo</a>
             <a href="#quest-skincare" class="theme-chip" style="text-decoration: none;" data-i18n="side_quests.beauty.radiant.title">Radiant Skincare</a>
             <a href="#quest-wordsearch" class="theme-chip" style="text-decoration: none;" data-i18n="side_quests.literature.word_search.title">Mots Mêlés</a>
             <a href="#quest-quote" class="theme-chip" style="text-decoration: none;" data-i18n="side_quests.literature.quote.title">Citation Célèbre</a>
@@ -235,6 +288,58 @@
             <a href="#quest-nasa" class="theme-chip" style="text-decoration: none;" data-i18n="side_quests.science.gallery.title">Galerie NASA</a>
             <a href="#quest-guessing" class="theme-chip" style="text-decoration: none;" data-i18n="side_quests.science.guessing_game.title">Devinette IA</a>
         </div>
+
+<!-- Puzzle Photo -->
+<div id="quest-puzzle" class="quest-card" style="margin-bottom: 40px;">
+    <div class="quest-header">
+        <div class="quest-title" data-i18n="side_quests.puzzle.title">Puzzle Photo</div>
+    </div>
+    <p class="quest-desc" data-i18n="side_quests.puzzle.desc">Choisissez une photo et un niveau, puis cliquez sur deux pièces pour les échanger. Le chrono démarre au premier clic !</p>
+
+    <div class="quest-input-area">
+        <!-- Choix de la photo -->
+        <p class="puzzle-label" data-i18n="side_quests.puzzle.choose_photo">Choisissez une photo :</p>
+        <div id="puzzle-photos" class="quest-options" style="justify-content: center;"></div>
+
+        <!-- Choix du niveau -->
+        <p class="puzzle-label" data-i18n="side_quests.puzzle.choose_level">Niveau de difficulté :</p>
+        <div class="quest-options" style="justify-content: center;">
+            <button class="quest-option-btn puzzle-size-btn active" data-size="3" onclick="selectPuzzleSize(3)" data-i18n="side_quests.puzzle.easy">Facile (3×3)</button>
+            <button class="quest-option-btn puzzle-size-btn" data-size="5" onclick="selectPuzzleSize(5)" data-i18n="side_quests.puzzle.medium">Moyen (5×5)</button>
+            <button class="quest-option-btn puzzle-size-btn" data-size="7" onclick="selectPuzzleSize(7)" data-i18n="side_quests.puzzle.hard">Difficile (7×7)</button>
+        </div>
+
+        <!-- Chrono + coups -->
+        <div class="puzzle-stats">
+            <div>⏱️ <span id="puzzle-timer">00:00</span></div>
+            <div><span data-i18n="side_quests.puzzle.moves">Coups</span> : <span id="puzzle-moves">0</span></div>
+        </div>
+
+        <div class="puzzle-layout">
+            <!-- Aperçu + Top 3 -->
+            <aside class="puzzle-aside">
+                <div>
+                    <p class="puzzle-label" data-i18n="side_quests.puzzle.preview">Modèle</p>
+                    <img id="puzzle-preview" src="" alt="Aperçu de l'image originale">
+                </div>
+                <div>
+                    <p class="puzzle-label" data-i18n="side_quests.puzzle.best_scores">Top 3 du niveau</p>
+                    <ol id="puzzle-scores"></ol>
+                </div>
+            </aside>
+
+            <!-- Grille -->
+            <div id="puzzle-grid"></div>
+        </div>
+
+        <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+            <button class="quest-btn" onclick="initPuzzle()" style="max-width: 250px;" data-i18n="side_quests.puzzle.shuffle">Mélanger</button>
+            <button class="quest-btn" onclick="resetPuzzleScores()" style="max-width: 250px; background: transparent; border: 1px solid var(--accent-secondary); color: var(--text-light); font-size: 0.8rem;" data-i18n="side_quests.puzzle.reset_scores">Réinitialiser les scores</button>
+        </div>
+        <div id="puzzle-message" style="margin-top: 15px; text-align: center; min-height: 20px; font-weight: bold;"></div>
+    </div>
+</div>
+
 
         <!-- Beauté & Soin -->
 <h3 id="beauty" style="margin-top: 80px;" data-i18n="side_quests.beauty.title">Beauté & Soin</h3>
@@ -429,6 +534,7 @@
     <script src="js/modules/side-quests/philosophy.js"></script>
     <script src="js/modules/side-quests/skincare.js"></script>
     <script src="js/modules/side-quests/guessing-game.js"></script>
+    <script src="js/modules/side-quests/puzzle.js"></script>
     <script src="js/modules/side-quests/main.js"></script>
 </body>
 </html>

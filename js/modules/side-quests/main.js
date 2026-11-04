@@ -20,5 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('philosophy-themes')) {
         if(window.renderPhilosophyThemes) window.renderPhilosophyThemes();
     }
+
+    // 4. Photo Puzzle
+    if (document.getElementById('puzzle-grid')) {
+        if (window.renderPuzzlePhotos) window.renderPuzzlePhotos();
+        if (window.initPuzzle) window.initPuzzle();
+    }
 });
+
 
