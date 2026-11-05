@@ -106,6 +106,8 @@
 h1 .mini-avatar--heading { --mini-avatar-h: 1.25em; vertical-align: -0.2em; }
 /* bigger heading avatar (data-size="lg"), e.g. a scene like "reading" */
 .mini-avatar--heading.mini-avatar--lg { --mini-avatar-h: 2.2em; vertical-align: -0.65em; }
+/* extra large (data-size="xl"): a scene whose edges fade out, like "hobbies" */
+.mini-avatar--heading.mini-avatar--xl { --mini-avatar-h: 3.2em; vertical-align: -1.15em; margin-top: -0.6em; margin-bottom: -0.6em; }
 
 /* --- card: in a corner of a card --- */
 .mini-avatar--card {

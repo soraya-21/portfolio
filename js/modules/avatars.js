@@ -64,6 +64,9 @@
         science:     'scenes/science',
         skincare:    'scenes/skincare',
         developer:   'scenes/developer',
+        // One file per theme: the dark version is a full scene fading into the dark page,
+        // which would look like a dark stain on the light theme -> cut-out character instead
+        hobbies:     { dark: 'scenes/hobbies', light: 'scenes/hobbies-cutout' },
     };
 
     // Project cards that get an avatar.
@@ -90,13 +93,26 @@
     // 2. COMPONENT
     // ======================================================================
 
+    const currentTheme = () =>
+        document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+
     function avatarSrc(expression) {
         const file = AVATARS[expression];
         if (!file) {
             console.warn(`[MiniAvatar] Unknown expression "${expression}". Available: ${Object.keys(AVATARS).join(', ')}`);
             return null;
         }
-        return AVATAR_BASE + file + AVATAR_EXT;
+        // a string, or { dark, light } for avatars that have one file per theme
+        const path = typeof file === 'string' ? file : (file[currentTheme()] || file.dark);
+        return AVATAR_BASE + path + AVATAR_EXT;
+    }
+
+    // Real proportions of the image on the avatar box (the CSS 3:4 box is only a placeholder:
+    // scenes like "reading" or "hobbies" are landscape)
+    function applyRatio(el, img) {
+        const set = () => { el.style.aspectRatio = `${img.naturalWidth} / ${img.naturalHeight}`; };
+        if (img.complete && img.naturalWidth) set();
+        else img.addEventListener('load', set, { once: true });
     }
 
     function preload(expression) {
@@ -149,11 +165,7 @@
                 img.loading = loading;
                 img.src = src;
                 img.classList.add('is-active');
-                // Real proportions of the image (the CSS 3:4 box is only a placeholder,
-                // some avatars are landscape like "reading")
-                const applyRatio = () => { el.style.aspectRatio = `${img.naturalWidth} / ${img.naturalHeight}`; };
-                if (img.complete && img.naturalWidth) applyRatio();
-                else img.addEventListener('load', applyRatio, { once: true });
+                applyRatio(el, img);
             }
             body.appendChild(img);
         }
@@ -192,9 +204,12 @@
         });
     }
 
-    /** Smoothly switches the avatar to another expression (crossfade + small bounce). */
-    function setExpression(el, expression) {
-        if (!el || el.dataset.expression === expression) return;
+    /**
+     * Smoothly switches the avatar to another expression (crossfade + small bounce).
+     * `force`: reload even if it's the same expression (e.g. its file depends on the theme).
+     */
+    function setExpression(el, expression, force = false) {
+        if (!el || (el.dataset.expression === expression && !force)) return;
         const src = avatarSrc(expression);
         if (!src) return;
 
@@ -208,9 +223,10 @@
         const show = () => {
             next.onload = null;
             if (token !== el._miniAvatarToken) return;
+            el.style.aspectRatio = `${next.naturalWidth} / ${next.naturalHeight}`;
             next.classList.add('is-active');
             active.classList.remove('is-active');
-            react(el);
+            if (!force) react(el); // no bounce for a simple theme switch
         };
         next.onload = show;
         next.src = src;
@@ -443,6 +459,13 @@
 
     // script.js rewrites the translated texts on every language change, then fires this event
     window.addEventListener('translationsLoaded', glueAll);
+
+    // Theme switch: reload the avatars that have one file per theme (e.g. "hobbies")
+    new MutationObserver(() => {
+        document.querySelectorAll('.mini-avatar').forEach(el => {
+            if (typeof AVATARS[el.dataset.expression] === 'object') setExpression(el, el.dataset.expression, true);
+        });
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
     else init();
