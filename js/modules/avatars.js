@@ -59,6 +59,11 @@
         coffee:      'poses/coffee',
         celebrating: 'poses/celebrating',
         waving:      'poses/waving',
+        reading:     'poses/reading',     // landscape image (books, cup, bag)
+        // Scenes (landscape, with props)
+        science:     'scenes/science',
+        skincare:    'scenes/skincare',
+        developer:   'scenes/developer',
     };
 
     // Project cards that get an avatar.
@@ -144,6 +149,11 @@
                 img.loading = loading;
                 img.src = src;
                 img.classList.add('is-active');
+                // Real proportions of the image (the CSS 3:4 box is only a placeholder,
+                // some avatars are landscape like "reading")
+                const applyRatio = () => { el.style.aspectRatio = `${img.naturalWidth} / ${img.naturalHeight}`; };
+                if (img.complete && img.naturalWidth) applyRatio();
+                else img.addEventListener('load', applyRatio, { once: true });
             }
             body.appendChild(img);
         }
