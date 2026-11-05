@@ -5,11 +5,16 @@ let guessingGameRange = { min: 1, max: 32 };
 let guessingGameCurrentStep = 0;
 let guessingGameMaxQuestions = 5;
 let guessingGameIsActive = false;
+let guessingAvatarTimer = null; // pending "celebrating" after "surprised"
 
 window.startGuessingGame = function() {
     guessingGameRange = { min: 1, max: 32 };
     guessingGameCurrentStep = 0;
     guessingGameIsActive = true;
+
+    // Avatar: thinking while the visitor picks a number
+    clearTimeout(guessingAvatarTimer);
+    window.MiniAvatar?.show('guessing-reaction', 'thinking');
     
     const resultDiv = document.getElementById('guessing-game-result');
     const startBtn = document.getElementById('guessing-game-start-btn');
@@ -55,6 +60,9 @@ window.nextGuessStep = function(response) {
         return;
     }
     
+    // Avatar: curious while asking the questions
+    window.MiniAvatar?.show('guessing-reaction', 'curious');
+
     // Generate Next Question
     // We ask: Is it > mid?
     const mid = Math.floor((guessingGameRange.min + guessingGameRange.max) / 2);
@@ -97,4 +105,9 @@ function finishGuessingGame(number) {
     `;
     resultDiv.classList.add('visible');
     resultDiv.style.display = 'block';
+
+    // Avatar: surprised when the number is found, then celebrating
+    window.MiniAvatar?.show('guessing-reaction', 'surprised');
+    clearTimeout(guessingAvatarTimer);
+    guessingAvatarTimer = setTimeout(() => window.MiniAvatar?.show('guessing-reaction', 'celebrating'), 1200);
 }

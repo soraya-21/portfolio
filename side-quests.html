@@ -30,6 +30,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/side-quests.css">
+    <link rel="stylesheet" href="css/avatars.css">
 </head>
 <body>
 
@@ -81,7 +82,7 @@
 
 <main class="side-quests-main">
     <section>
-        <h1 class="page-title" data-i18n="side_quests.title">Side Quests</h1>
+        <h1 class="page-title"><span data-i18n="side_quests.title">Side Quests</span><span data-avatar="playful" data-variant="heading" data-loading="eager"></span></h1>
         <p class="page-subtitle">
             <span data-i18n="side_quests.subtitle">Des expérimentations nées de la curiosité et du plaisir d'explorer l'IA et la créativité.</span> <br>
             <em data-i18n="side_quests.simulation">(Simulation interactive)</em>
@@ -147,13 +148,14 @@
             <button class="quest-btn" onclick="initPuzzle()" data-i18n="side_quests.puzzle.shuffle">Mélanger</button>
             <button class="quest-btn quest-btn--subtle" onclick="resetPuzzleScores()" data-i18n="side_quests.puzzle.reset_scores">Réinitialiser les scores</button>
         </div>
+        <div id="puzzle-reaction" class="quest-reaction"></div>
         <div id="puzzle-message" class="quest-message"></div>
     </div>
 </div>
 
 
         <!-- Beauté & Soin -->
-<h3 id="beauty" class="quest-section-title" data-i18n="side_quests.beauty.title">Beauté & Soin</h3>
+<h3 id="beauty" class="quest-section-title"><span data-i18n="side_quests.beauty.title">Beauté & Soin</span><span data-avatar="happy" data-variant="heading"></span></h3>
 <div class="quest-grid">
     <!-- Radiant Skincare -->
     <div id="quest-skincare" class="quest-card">
@@ -180,7 +182,7 @@
 </div>
 
         <!-- Literature & Nature -->
-<h3 id="poetry" class="quest-section-title" data-i18n="side_quests.literature.title">Littérature & Nature</h3>
+<h3 id="poetry" class="quest-section-title"><span data-i18n="side_quests.literature.title">Littérature & Nature</span><span data-avatar="thinking" data-variant="heading"></span></h3>
 
 <!-- Mots Mêlés (Full Width) -->
 <div id="quest-wordsearch" class="quest-card quest-card--full">
@@ -234,6 +236,7 @@
                 <button class="quest-btn quest-btn--subtle" onclick="resetWsBestScore()" data-i18n="side_quests.literature.word_search.reset_score">Reset Best Score</button>
             </div>
             
+            <div id="ws-reaction" class="quest-reaction"></div>
             <div id="ws-message" class="quest-message"></div>
     </div>
 </div>
@@ -290,7 +293,7 @@
 </div>
         
         <!-- Science & Tech -->
-<h3 id="science" class="quest-section-title" data-i18n="side_quests.science.title">Science</h3>
+<h3 id="science" class="quest-section-title"><span data-i18n="side_quests.science.title">Science</span><span data-avatar="curious" data-variant="heading"></span></h3>
 <div class="quest-grid">
     <!-- Tool 7: NASA Image and Video Library Gallery -->
     <div id="quest-nasa" class="quest-card">
@@ -317,6 +320,7 @@
         <p class="quest-desc" data-i18n="side_quests.science.guessing_game.desc">Pensez à un nombre entre 1 et 32. L'IA le trouvera en 5 questions !</p>
         
         <div class="quest-input-area quest-input-area--center">
+            <div id="guessing-reaction" class="quest-reaction quest-reaction--top"><span data-avatar="thinking" data-variant="standalone"></span></div>
             <button id="guessing-game-start-btn" class="quest-btn" onclick="startGuessingGame()" data-i18n="side_quests.science.guessing_game.start">Commencer</button>
             
             <div id="guessing-game-interaction">
@@ -337,6 +341,7 @@
 </footer>
 
 <script src="js/script.js"></script>
+<script src="js/modules/avatars.js"></script>
     <!-- Load Side Quest Modules (Split for better maintenance) -->
     <script src="js/modules/side-quests/utils.js"></script>
     <script src="js/modules/side-quests/word-search.js"></script>

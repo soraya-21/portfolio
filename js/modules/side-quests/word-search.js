@@ -90,6 +90,9 @@ window.useHint = function() {
             if (cell) cell.classList.add('hint-highlight');
         });
         
+        // Avatar: a little confused, the visitor needed help
+        window.MiniAvatar?.show('ws-reaction', 'confused', { duration: 2500 });
+
         setTimeout(() => {
             document.querySelectorAll('.hint-highlight').forEach(el => el.classList.remove('hint-highlight'));
         }, 1000); 
@@ -154,6 +157,7 @@ function startWordSearchGame() {
     currentSelectionPath = [];
     
     document.getElementById('ws-message').innerHTML = "";
+    window.MiniAvatar?.clear('ws-reaction');
     _updateHintButton();
     
     const themeData = getWordsForCurrentLanguage();
@@ -504,6 +508,7 @@ function checkWin() {
         stopWsTimer();
         const successText = window.getTranslation('side_quests.literature.word_search.success', "Bravo ! Tout trouvé !");
         document.getElementById('ws-message').innerHTML = `<span style="color: #4cd964;">${successText}</span>`;
+        window.MiniAvatar?.show('ws-reaction', 'proud');
         saveWsBestScore();
     }
 }

@@ -103,6 +103,7 @@ window.initPuzzle = function () {
     shufflePuzzle();
 
     document.getElementById('puzzle-message').innerHTML = '';
+    window.MiniAvatar?.clear('puzzle-reaction');
     document.getElementById('puzzle-preview').src = PUZZLE_PHOTOS[puzzlePhotoIndex];
 
     buildPuzzleGrid();
@@ -183,6 +184,7 @@ function finishPuzzle() {
         html += `<br>🏆 ${window.getTranslation('side_quests.puzzle.new_record', 'Nouveau record !')}`;
     }
     document.getElementById('puzzle-message').innerHTML = html;
+    window.MiniAvatar?.show('puzzle-reaction', 'celebrating');
 }
 
 //Top 3 scores (one list per level and per photo)

@@ -1,0 +1,40 @@
+<!DOCTYPE html><html><body style="margin:0;background:#333">
+<iframe id="f" src="side-quests.html" style="border:0;width:390px;height:900px;position:fixed;top:0;left:0"></iframe>
+<pre id="log" style="position:fixed;left:400px;top:0;color:#fff;font-size:12px"></pre>
+<script>
+const log = m => document.getElementById('log').textContent += m + '\n';
+const wait = ms => new Promise(r => setTimeout(r, ms));
+const f = document.getElementById('f');
+f.addEventListener('load', async () => {
+  const w = f.contentWindow, d = f.contentDocument;
+  w.addEventListener('error', e => log('JS ERROR: ' + e.message));
+  await wait(2500);
+  const expr = id => { const a = d.querySelector('#' + id + ' .mini-avatar'); return a ? a.dataset.expression : '(vide)'; };
+  log('avatars: ' + [...d.querySelectorAll('.mini-avatar')].map(a => a.dataset.expression).join(', '));
+  log('page width: body=' + d.body.scrollWidth + ' viewport=' + w.innerWidth);
+  // Guessing game
+  log('guess initial: ' + expr('guessing-reaction'));
+  w.startGuessingGame(); await wait(300); log('guess start: ' + expr('guessing-reaction'));
+  w.nextGuessStep(); await wait(1500); log('guess question: ' + expr('guessing-reaction'));
+  for (let i = 0; i < 5; i++) { w.nextGuessStep('no'); await wait(1500); }
+  log('guess found (immediately): ' + expr('guessing-reaction') + ' | result: ' + d.getElementById('guessing-game-result').textContent.trim().slice(0, 30));
+  await wait(1500); log('guess found (+1.5s): ' + expr('guessing-reaction'));
+  w.startGuessingGame(); await wait(300); log('guess replay: ' + expr('guessing-reaction'));
+  // Puzzle
+  log('puzzle before: ' + expr('puzzle-reaction'));
+  w.eval('puzzleOrder.sort((a, b) => a - b)');
+  const piece = d.querySelector('#puzzle-grid .puzzle-piece'); piece.click(); piece.click(); await wait(500);
+  log('puzzle solved: ' + expr('puzzle-reaction') + ' | msg: ' + d.getElementById('puzzle-message').textContent.slice(0, 25));
+  w.initPuzzle(); await wait(300); log('puzzle reshuffled: ' + expr('puzzle-reaction'));
+  // Word search
+  w.useHint(); await wait(500); log('ws hint: ' + expr('ws-reaction'));
+  await wait(2600); log('ws hint +3s: ' + expr('ws-reaction'));
+  w.eval('wsFoundWords = wsWords.slice(); checkWin()'); await wait(500); log('ws win: ' + expr('ws-reaction'));
+  w.resetWordSearch(); await wait(300); log('ws reset: ' + expr('ws-reaction'));
+  // Language switch keeps heading avatars
+  await w.loadTranslations('en'); await wait(500);
+  log('en h1: ' + JSON.stringify(d.querySelector('h1.page-title').textContent) + ' | science h3: ' + JSON.stringify(d.getElementById('science').textContent));
+  log('avatars after lang: ' + d.querySelectorAll('.mini-avatar').length);
+  log('DONE');
+});
+</script></body></html>

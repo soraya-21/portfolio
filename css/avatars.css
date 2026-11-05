@@ -120,6 +120,12 @@ h1 .mini-avatar--heading { --mini-avatar-h: 1.25em; vertical-align: -0.2em; }
     margin: 0 auto 10px;
 }
 
+/* --- reaction slot: container where a game shows an avatar (MiniAvatar.show) --- */
+.quest-reaction { display: flex; justify-content: center; }
+.quest-reaction:not(:empty) { margin-top: 15px; }
+.quest-reaction .mini-avatar--standalone { margin-bottom: 0; }
+.quest-reaction--top:not(:empty) { margin: 0 0 15px; } /* slot placed above the content */
+
 /* --- companion: small fixed figurine that reacts to the visitor --- */
 .mini-avatar--companion {
     position: fixed;

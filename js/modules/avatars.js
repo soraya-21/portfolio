@@ -21,6 +21,9 @@
 // Usage in JS:
 //   const el = MiniAvatar.create({ expression: 'coding', variant: 'card' });
 //   MiniAvatar.setExpression(el, 'proud');
+//   MiniAvatar.show('puzzle-reaction', 'celebrating');               // reaction slot (games)
+//   MiniAvatar.show('ws-reaction', 'confused', { duration: 2500 });  // hides itself after 2.5 s
+//   MiniAvatar.clear('puzzle-reaction');
 
 (function () {
     'use strict';
@@ -202,6 +205,42 @@
         next.onload = show;
         next.src = src;
         if (next.complete && next.naturalWidth) show(); // already in cache
+    }
+
+    // --- Reaction slots: an empty container where a game shows an avatar on demand ---
+
+    function resolveSlot(slot) {
+        return typeof slot === 'string' ? document.getElementById(slot) : slot;
+    }
+
+    /**
+     * Shows an avatar in `slot` (created the first time, then the expression just changes).
+     * @param {string|HTMLElement} slot  id or element of the container
+     * @param {string} expression
+     * @param {{duration?: number, size?: string}} options  duration (ms): hides it automatically
+     */
+    function show(slot, expression, { duration = 0, size = 'md' } = {}) {
+        slot = resolveSlot(slot);
+        if (!slot) return null;
+        clearTimeout(slot._miniAvatarTimer);
+
+        let el = slot.querySelector('.mini-avatar');
+        if (el) {
+            setExpression(el, expression);
+        } else {
+            el = create({ expression, variant: 'standalone', size, loading: 'eager' });
+            slot.appendChild(el);
+        }
+        if (duration) slot._miniAvatarTimer = setTimeout(() => clear(slot), duration);
+        return el;
+    }
+
+    /** Removes the avatar of a reaction slot. */
+    function clear(slot) {
+        slot = resolveSlot(slot);
+        if (!slot) return;
+        clearTimeout(slot._miniAvatarTimer);
+        slot.replaceChildren();
     }
 
     function react(el) {
@@ -399,5 +438,5 @@
     else init();
 
     // Public API
-    window.MiniAvatar = { create, hydrate, setExpression, AVATARS };
+    window.MiniAvatar = { create, hydrate, setExpression, show, clear, AVATARS };
 })();
