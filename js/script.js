@@ -199,7 +199,6 @@ const avatars = [
     "./assets/images/avatar_soraya_blue_1_portfolio.png",
     "./assets/images/avatar_soraya_blue_2_portfolio.png",
     "./assets/images/avatar_soraya_blue_portfolio.png",
-    "./assets/images/avatar_soraya_portfolio.png"
 ];
 const imgAvatar = document.getElementById("profile-avatar");
 

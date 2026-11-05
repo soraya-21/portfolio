@@ -29,6 +29,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/avatars.css">
 
     
 </head>
@@ -36,7 +37,7 @@
 
 <header>
     <img id="profile-avatar" src="" alt="Portrait de Soraya Codo, Développeuse Full-Stack & IA" class="avatar">
-    <h1>Soraya CODO</h1>
+    <h1>Soraya CODO<span data-avatar="coffee" data-variant="heading" data-hover="happy" data-loading="eager"></span></h1>
     <h2 data-i18n="header.role">Développeuse Full-Stack orientée Backend & Intelligence Artificielle</h2>
     <div class="location">
         <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
@@ -121,7 +122,7 @@
     </section>
 
     <section id="education" class="fade-in-up">
-        <h3 data-i18n="education.title">Parcours académique</h3>
+        <h3><span data-i18n="education.title">Parcours académique</span><span data-avatar="presenting" data-variant="heading"></span></h3>
         <div class="timeline">
             <div class="timeline-item">
                 <h4 data-i18n="education.master">Master - Intelligence Artificielle & Data Management</h4>
@@ -143,12 +144,12 @@
     </section>
 
     <section id="projects" class="fade-in-up">
-        <h3 data-i18n="projects.title">Quelques projets réalisés</h3>
+        <h3><span data-i18n="projects.title">Quelques projets réalisés</span><span data-avatar="coding" data-variant="heading"></span></h3>
         <div class="projects-grid" id="projects-container"></div>
     </section>
 
     <section id="skills" class="fade-in-up">
-        <h3 data-i18n="skills.title">Stack Technologique</h3>
+        <h3><span data-i18n="skills.title">Stack Technologique</span><span data-avatar="focused" data-variant="heading"></span></h3>
         <div class="grid">
             <div class="card">
                 <h4 data-i18n="skills.languages">Langages & Frameworks</h4>
@@ -241,7 +242,7 @@
     </section>
 
     <section id="interests" class="fade-in-up">
-        <h3 data-i18n="interests.title">Centres d’intérêt</h3>
+        <h3><span data-i18n="interests.title">Centres d’intérêt</span><span data-avatar="playful" data-variant="heading"></span></h3>
         <div class="interests">
             <div class="interest-card">
                 <h4 data-i18n="interests.nature.title">Nature</h4>
@@ -297,5 +298,6 @@
 </div>
 
 <script src="js/script.js"></script>
+<script src="js/modules/avatars.js"></script>
 </body>
 </html>
